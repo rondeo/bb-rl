@@ -118,6 +118,14 @@ $borderColor: #303743;
         &.socials {
           border-right: 1px solid $borderColor;
         }
+
+        &.sign-in {
+          .nav-item {
+            display: flex;
+            align-items: center;
+            color: $highlightColor;
+          }
+        }
       }
     }
   }

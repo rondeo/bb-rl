@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 import './Header.css';
 
-import logo from './logo.png';
+import logo from './../../images/logo_100px.png';
 
 export default class Header extends PureComponent {
 
@@ -63,8 +63,8 @@ export default class Header extends PureComponent {
                             <li className="nav-item"><a className="nav-link" href="https://www.youtube.com/channel/UCPSSW0COqKjF5nSn-3aYh7w" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube" /></a></li>
                         </ul>
                         <ul className="navbar-nav sign-in">
-                            <li className={classnames("nav-item", {"active": active === "/anmelden"})}>
-                                <Link to="/anmelden" className="nav-link"><i className="fas fa-sign-in-alt d-none d-md-inline-block" /> Anmelden | Login</Link>
+                            <li className="nav-item">
+                                <i className="fas fa-sign-in-alt d-none d-md-inline-block" /> <Link to="/anmelden" className="nav-link">Anmelden</Link> | <Link to="/login" className="nav-link">Login</Link>
                             </li>
                         </ul>
                     </div>

@@ -3,8 +3,8 @@ import $ from 'jquery';
 
 import './Home.css';
 
-import bg from './img/rl-bg.jpg';
-import logo from './img/logo.png';
+import bgStart from './img/Bulls-BG-Start.jpg.jpg';
+import logoLarge from './../../images/logo_500px.png';
 
 export default class Home extends PureComponent {
 
@@ -70,11 +70,11 @@ export default class Home extends PureComponent {
     render() {
         return (
             <div className="container-fluid home">
-                <img className="background" src={bg} alt=""/>
+                <img className="background" src={bgStart} alt=""/>
 
                 <div className="banner">
                     <div className="inner">
-                        <img src={logo} alt="Battleground Bulls"/>
+                        <img src={logoLarge} alt="Battleground Bulls"/>
                         <div className="text">Nächstes<br/>Turnier in</div>
                         <div className="counter"/>
                         <button className="btn primary">Jetzt anmelden</button>

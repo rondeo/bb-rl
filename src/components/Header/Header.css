@@ -5,7 +5,7 @@
   width: 100%;
   padding: 0 30px;
   color: #fff;
-  background-color: rgba(8, 26, 41, 0.95);
+  background-color: #081a29;
   border-bottom: 1px solid #303743; }
   .navbar .container {
     position: relative;
@@ -75,5 +75,9 @@
               color: #fff; }
         .navbar .container .navbar-collapse .navbar-nav.socials {
           border-right: 1px solid #303743; }
+        .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item {
+          display: flex;
+          align-items: center;
+          color: #e31d3c; }
 
 /*# sourceMappingURL=Header.css.map */
