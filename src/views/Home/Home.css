@@ -1,0 +1,36 @@
+.home {
+  position: relative;
+  min-height: inherit;
+  margin-top: -91px;
+  padding: 0; }
+  .home .banner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 91px;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    background-color: rgba(8, 26, 41, 0.95);
+    color: #fff; }
+    .home .banner .inner {
+      text-align: center; }
+      .home .banner .inner img {
+        display: block;
+        width: 300px;
+        margin: 0 auto 50px; }
+      .home .banner .inner .text {
+        display: inline-block;
+        margin-right: 15px;
+        text-transform: uppercase;
+        color: #e31d3c;
+        font-size: 1.5em; }
+      .home .banner .inner .counter {
+        display: inline-block;
+        font-size: 4.5em; }
+      .home .banner .inner .btn {
+        margin: 25px auto 0; }
+
+/*# sourceMappingURL=Home.css.map */

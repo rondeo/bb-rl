@@ -1,0 +1,11 @@
+footer {
+  height: 60px;
+  line-height: 60px;
+  background-color: #081a29; }
+  footer a {
+    color: #fff; }
+    footer a:hover {
+      text-decoration: none;
+      color: #e31d3c; }
+
+/*# sourceMappingURL=Footer.css.map */

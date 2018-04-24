@@ -1,0 +1,124 @@
+@import "./../../variables.scss";
+
+$borderColor: #303743;
+.navbar {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  padding: 0 30px;
+  color: #fff;
+  background-color: $backgroundBlue;
+  border-bottom: 1px solid $borderColor;
+
+  .container {
+    position: relative;
+    justify-content: flex-end;
+
+    @media (min-width: $breakpoint-lg) {
+      //max-width: 100%;
+    }
+
+    .navbar-brand {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      img {
+        width: 100px;
+      }
+    }
+
+    .navbar-toggler {
+      width: 45px;
+      height: 91px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: .5s ease-in-out;
+      cursor: pointer;
+      border: none;
+
+      &:not(.collapsed) span {
+        &:nth-child(1) {
+          top: 32px;
+          width: 0;
+          left: 50%;
+        }
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+        &:nth-child(4) {
+          top: 32px;
+          width: 0;
+          left: 50%;
+        }
+      }
+
+      span {
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background: $highlightColor;
+        border-radius: 4px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+
+        &:nth-child(1) {
+          top: 32px;
+        }
+        &:nth-child(2), &:nth-child(3) {
+          top: 44px;
+        }
+        &:nth-child(4) {
+          top: 56px;
+        }
+      }
+    }
+
+    a {
+      color: #fff;
+      &:hover {
+        color: $highlightColor;
+      }
+    }
+
+    .navbar-collapse {
+      padding-left: 100px;
+
+      .navbar-nav {
+        padding: 25px 0;
+
+        &.default {
+          flex-grow: 1;
+          justify-content: space-between;
+          text-transform: uppercase;
+          li {
+            &.active a {
+              color: $highlightColor;
+            }
+          }
+        }
+
+        &.socials, &.sign-in {
+          padding: 25px 30px;
+
+          a {
+            color: $highlightColor;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+
+        &.socials {
+          border-right: 1px solid $borderColor;
+        }
+      }
+    }
+  }
+}

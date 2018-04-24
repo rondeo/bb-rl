@@ -1,0 +1,13 @@
+footer {
+  height: 60px;
+  line-height: 60px;
+  background-color: #081a29;
+
+  a {
+    color: #fff;
+    &:hover {
+      text-decoration: none;
+      color: #e31d3c;
+    }
+  }
+}

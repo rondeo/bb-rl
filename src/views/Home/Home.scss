@@ -1,0 +1,49 @@
+@import "./../../variables.scss";
+
+.home {
+  position: relative;
+  min-height: inherit;
+  margin-top: -91px;
+  padding: 0;
+
+  .banner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 91px;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
+    height: 500px;
+    background-color: rgba(8, 26, 41, 0.95);
+    color: #fff;
+
+    .inner {
+      text-align: center;
+
+      img {
+        display: block;
+        width: 300px;
+        margin: 0 auto 50px;
+      }
+
+      .text {
+        display: inline-block;
+        margin-right: 15px;
+        text-transform: uppercase;
+        color: $highlightColor;
+        font-size: 1.5em;
+      }
+
+      .counter {
+        display: inline-block;
+        font-size: 4.5em;
+      }
+
+      .btn {
+        margin: 25px auto 0;
+      }
+    }
+  }
+}
