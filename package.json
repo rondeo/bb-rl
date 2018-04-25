@@ -8,6 +8,7 @@
     "classnames": "^2.2.5",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "fullpage.js": "^2.9.7",
     "jquery": "^3.3.1",
     "path": "^0.12.7",
     "popper.js": "^1.14.1",

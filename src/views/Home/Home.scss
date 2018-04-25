@@ -3,46 +3,85 @@
 .home {
   position: relative;
   min-height: inherit;
-  margin-top: -91px;
   padding: 0;
 
-  .banner {
+  .section {
+    background: no-repeat center;
+    background-size: cover;
+
+    .fp-tableCell {
+      padding-top: 128px;
+      vertical-align: unset;
+    }
+
+    &.start {
+      background-image: url("./img/Bulls-BG-Start.jpg");
+
+      .container {
+        height: 100%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .inner {
+          margin-top: -50px;
+          img {
+            display: block;
+            width: 500px;
+            margin: 0 auto 50px;
+          }
+
+          .text {
+            display: inline-block;
+            margin-right: 15px;
+            text-transform: uppercase;
+            color: $highlightColor;
+            font-size: 1.5em;
+          }
+
+          .counter {
+            display: inline-block;
+            font-size: 4.5em;
+          }
+
+          button {
+            margin: 25px auto 0;
+            &:hover a {
+              color: #fff;
+            }
+            a {
+              color: $highlightColor;
+              transition: color .75s;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    &.bulls {
+      background-image: url("./img/Bulls-BG-Bulls.jpg");
+      color: #fff;
+    }
+    &.regeln {
+      background-image: url("./img/Bulls-BG-Regeln.jpg");
+    }
+  }
+
+  .scroll-down, .scroll-up {
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 91px;
-    left: 0;
-    width: 100%;
-    margin: 0 auto;
-    height: 500px;
-    color: #fff;
-
-    .inner {
-      text-align: center;
-
-      img {
-        display: block;
-        width: 500px;
-        margin: 0 auto 50px;
-      }
-
-      .text {
-        display: inline-block;
-        margin-right: 15px;
-        text-transform: uppercase;
-        color: $highlightColor;
-        font-size: 1.5em;
-      }
-
-      .counter {
-        display: inline-block;
-        font-size: 4.5em;
-      }
-
-      .btn {
-        margin: 25px auto 0;
-      }
+    left: 60px;
+    bottom: 30px;
+    font-family: "Droid Serif", sans-serif;
+    font-size: 14px;
+    color: $highlightColor;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+    i {
+      margin-right: 5px;
     }
   }
 }

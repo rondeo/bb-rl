@@ -1,6 +1,5 @@
 #app main {
-  margin-top: 91px;
-  min-height: calc(100vh - 91px - 60px); }
+  min-height: calc(100vh - 88px - 60px); }
 
 html {
   min-height: 100%; }

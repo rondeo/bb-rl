@@ -5,20 +5,34 @@
   width: 100%;
   padding: 0 30px;
   color: #fff;
+  font-size: 14px;
   background-color: #081a29;
   border-bottom: 1px solid #303743; }
+  .navbar .nav-item.active {
+    pointer-events: none; }
+  .navbar .nav-link.disabled, .navbar .nav-link.disabled a, .navbar .nav-item.disabled, .navbar .nav-item.disabled a {
+    color: #6c757d !important;
+    pointer-events: none !important; }
   .navbar .container {
-    position: relative;
     justify-content: flex-end; }
+    @media (min-width: 992px) {
+      .navbar .container {
+        position: relative; } }
     .navbar .container .navbar-brand {
       position: absolute;
-      left: 0;
+      left: 10px;
       top: 10px; }
+      @media (min-width: 576px) {
+        .navbar .container .navbar-brand {
+          left: 40px; } }
+      @media (min-width: 992px) {
+        .navbar .container .navbar-brand {
+          left: 0; } }
       .navbar .container .navbar-brand img {
         width: 100px; }
     .navbar .container .navbar-toggler {
       width: 45px;
-      height: 91px;
+      height: 88px;
       position: relative;
       transform: rotate(0deg);
       transition: .5s ease-in-out;
@@ -57,28 +71,48 @@
       color: #fff; }
       .navbar .container a:hover {
         color: #e31d3c; }
-    .navbar .container .navbar-collapse {
-      padding-left: 100px; }
+    @media (min-width: 992px) {
+      .navbar .container .navbar-collapse {
+        padding-left: 100px; } }
+    @media (min-width: 992px) {
       .navbar .container .navbar-collapse .navbar-nav {
-        padding: 25px 0; }
+        padding: 25px 0; } }
+    .navbar .container .navbar-collapse .navbar-nav.default {
+      flex-grow: 1;
+      justify-content: space-between;
+      text-transform: uppercase; }
+      @media (min-width: 992px) and (max-width: 1199px) {
         .navbar .container .navbar-collapse .navbar-nav.default {
-          flex-grow: 1;
-          justify-content: space-between;
-          text-transform: uppercase; }
-          .navbar .container .navbar-collapse .navbar-nav.default li.active a {
-            color: #e31d3c; }
-        .navbar .container .navbar-collapse .navbar-nav.socials, .navbar .container .navbar-collapse .navbar-nav.sign-in {
-          padding: 25px 30px; }
-          .navbar .container .navbar-collapse .navbar-nav.socials a, .navbar .container .navbar-collapse .navbar-nav.sign-in a {
-            color: #e31d3c; }
-            .navbar .container .navbar-collapse .navbar-nav.socials a:hover, .navbar .container .navbar-collapse .navbar-nav.sign-in a:hover {
-              color: #fff; }
-        .navbar .container .navbar-collapse .navbar-nav.socials {
-          border-right: 1px solid #303743; }
+          padding-right: 30px;
+          border-right: 1px solid #303743; } }
+      .navbar .container .navbar-collapse .navbar-nav.default li.active a {
+        color: #e31d3c; }
+    @media (min-width: 992px) {
+      .navbar .container .navbar-collapse .navbar-nav.socials, .navbar .container .navbar-collapse .navbar-nav.sign-in {
+        padding: 25px 30px; } }
+    .navbar .container .navbar-collapse .navbar-nav.socials .nav-link, .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-link {
+      color: #e31d3c; }
+      .navbar .container .navbar-collapse .navbar-nav.socials .nav-link:hover, .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-link:hover {
+        color: #fff; }
+    .navbar .container .navbar-collapse .navbar-nav.socials {
+      border-right: 1px solid #303743; }
+    @media (max-width: 991px) {
+      .navbar .container .navbar-collapse .navbar-nav.sign-in:before {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        content: " ";
+        border-top: 1px solid #303743; } }
+    .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item {
+      display: flex;
+      align-items: center;
+      color: #e31d3c; }
+      @media (min-width: 992px) {
         .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item {
-          display: flex;
-          align-items: center;
-          color: #e31d3c;
-          font-family: "Droid Serif", sans-serif; }
+          font-family: "Droid Serif", sans-serif; } }
+      .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item .nav-link:nth-child(2) {
+        margin-right: .5rem; }
+      .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item .nav-link:last-child {
+        margin-left: .5rem; }
 
 /*# sourceMappingURL=Header.css.map */

@@ -1,84 +1,70 @@
 import React, {PureComponent} from 'react';
+import {Link} from 'react-router-dom';
 import $ from 'jquery';
+
+import Counter from '../../components/Counter/Counter';
 
 import './Home.css';
 
-import bgStart from './img/Bulls-BG-Start.jpg.jpg';
-import logoLarge from './../../images/logo_500px.png';
+import logoSchriftzug from './../../images/logo-schriftzug_600px.png';
 
 export default class Home extends PureComponent {
 
     componentDidMount() {
         window.scrollTo(0, 0);
-        let $bgImage = $(".home img.background");
 
-        $bgImage.one("load", setBannerHeight).each(function () {
-            if (this.complete) $(this).load();
+        $("#fullpage").fullpage({
+            anchors: ["start", /*"teams", "spielplan",*/ "bulls", "regeln"]
         });
 
-        $(window).resize(setBannerHeight);
-
-        function setBannerHeight() {
-            $(".home .banner").height($bgImage.height() - $("nav.navbar").height());
-        }
-
-        /*
-        let clock = $(".counter").FlipClock(3600 * 24 * 3, {
-            clockFace: "DailyCounter",
-            countdown: true,
-            showSeconds: false
+        $(".scroll-down").on("click", function () {
+            $.fn.fullpage.moveSectionDown();
         });
-        */
-
-
-        let $counter = $(".counter");
-
-        // Set the date we're counting down to
-        // TODO: Get Date from Database
-        let countDownDate = new Date("April 29, 2018 16:15:00").getTime();
-
-        setCounter();
-
-        // Update the count down every second
-        let x = setInterval(setCounter, 1000);
-
-        function setCounter() {
-
-            // Get todays date and time
-            let now = new Date().getTime();
-
-            // Find the distance between now an the count down date
-            let distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Display the result in the element with id="demo"
-            $counter.html(days + ":" + hours + ":" + minutes + ":" + seconds);
-
-            // If the count down is finished, write some text
-            if (distance < 0) {
-                clearInterval(x);
-                $counter.html("Turnier läuft!");
-            }
-        }
+        $(".scroll-up").on("click", function () {
+            $.fn.fullpage.moveTo(1);
+        });
     }
 
     render() {
         return (
-            <div className="container-fluid home">
-                <img className="background" src={bgStart} alt=""/>
+            <div id="fullpage" className="container-fluid home">
 
-                <div className="banner">
-                    <div className="inner">
-                        <img src={logoLarge} alt="Battleground Bulls"/>
-                        <div className="text">Nächstes<br/>Turnier in</div>
-                        <div className="counter"/>
-                        <button className="btn primary">Jetzt anmelden</button>
+                <div className="section start">
+                    <div className="container">
+                        <div className="inner">
+                            <img src={logoSchriftzug} alt="Battleground Bulls"/>
+                            <div className="text">Nächstes<br/>Turnier in</div>
+                            <Counter />
+                            <button className="btn primary"><Link to="https://goo.gl/KEBC8z" target="_blank" rel="noopener noreferrer">Jetzt anmelden</Link></button>
+                        </div>
                     </div>
+
+                    <div className="scroll-down"><i className="fa fa-chevron-down" />weiter scrollen</div>
+                </div>
+
+                <div className="section bulls">
+                    <div className="container">
+                        <h2>Über die Bulls</h2>
+                        <p>
+                            Eos aut eaqui doluptur aut illam natenest dolupta doluptatem fugia vel moluptatque ipiet autem
+                            asrqgge inctemquam quae am, temolor emporia nullo cones estisimet.
+                        </p>
+
+                    </div>
+
+                    <div className="scroll-down"><i className="fa fa-chevron-down" />weiter scrollen</div>
+                </div>
+
+                <div className="section regeln">
+                    <div className="container">
+                        <h2>Turnier-Regeln</h2>
+                        <p>
+                            Eos aut eaqui doluptur aut illam natenest dolupta doluptatem fugia vel moluptatque ipiet autem
+                            asrqgge inctemquam quae am, temolor emporia nullo cones estisimet.
+                        </p>
+                    </div>
+
+                    <div className="scroll-up"><i className="fa fa-chevron-up" />nach oben</div>
                 </div>
             </div>
         );

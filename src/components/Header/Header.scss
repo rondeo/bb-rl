@@ -1,6 +1,7 @@
 @import "./../../variables.scss";
 
 $borderColor: #303743;
+$navbarCollapse: $breakpoint-lg;
 .navbar {
   position: fixed;
   z-index: 1;
@@ -8,12 +9,28 @@ $borderColor: #303743;
   width: 100%;
   padding: 0 30px;
   color: #fff;
+  font-size: 14px;
   background-color: $backgroundBlue;
   border-bottom: 1px solid $borderColor;
 
+
+
+  .nav-item.active {
+    pointer-events: none;
+  }
+
+  .nav-link.disabled, .nav-item.disabled {
+    &, a {
+      color: #6c757d !important;
+      pointer-events: none !important;
+    }
+  }
+
   .container {
-    position: relative;
     justify-content: flex-end;
+    @media (min-width: $navbarCollapse) {
+      position: relative;
+    }
 
     @media (min-width: $breakpoint-lg) {
       //max-width: 100%;
@@ -21,8 +38,14 @@ $borderColor: #303743;
 
     .navbar-brand {
       position: absolute;
-      left: 0;
+      left: 10px;
       top: 10px;
+      @media (min-width: $breakpoint-sm) {
+        left: 40px;
+      }
+      @media (min-width: $navbarCollapse) {
+        left: 0;
+      }
       img {
         width: 100px;
       }
@@ -30,7 +53,7 @@ $borderColor: #303743;
 
     .navbar-toggler {
       width: 45px;
-      height: 91px;
+      height: 88px;
       position: relative;
       transform: rotate(0deg);
       transition: .5s ease-in-out;
@@ -88,15 +111,23 @@ $borderColor: #303743;
     }
 
     .navbar-collapse {
-      padding-left: 100px;
+
+      @media (min-width: $navbarCollapse) {
+        padding-left: 100px;
+      }
 
       .navbar-nav {
-        padding: 25px 0;
-
+        @media (min-width: $navbarCollapse) {
+          padding: 25px 0;
+        }
         &.default {
           flex-grow: 1;
           justify-content: space-between;
           text-transform: uppercase;
+          @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl - 1) {
+            padding-right: 30px;
+            border-right: 1px solid $borderColor;
+          }
           li {
             &.active a {
               color: $highlightColor;
@@ -105,9 +136,10 @@ $borderColor: #303743;
         }
 
         &.socials, &.sign-in {
-          padding: 25px 30px;
-
-          a {
+          @media (min-width: $navbarCollapse) {
+            padding: 25px 30px;
+          }
+          .nav-link {
             color: $highlightColor;
             &:hover {
               color: #fff;
@@ -120,11 +152,28 @@ $borderColor: #303743;
         }
 
         &.sign-in {
+          @media (max-width: $navbarCollapse - 1) {
+            &:before {
+              position: absolute;
+              left: 0;
+              width: 100%;
+              content: " ";
+              border-top: 1px solid $borderColor;
+            }
+          }
           .nav-item {
             display: flex;
             align-items: center;
             color: $highlightColor;
-            font-family: "Droid Serif", sans-serif;
+            @media (min-width: $navbarCollapse) {
+              font-family: "Droid Serif", sans-serif;
+            }
+            .nav-link:nth-child(2) {
+              margin-right: .5rem;
+            }
+            .nav-link:last-child {
+              margin-left: .5rem;
+            }
           }
         }
       }

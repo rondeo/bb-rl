@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { Link } from 'react-router-dom'
 import classnames from 'classnames'
+import $ from 'jquery';
 
 import './Header.css';
 
@@ -23,12 +24,18 @@ export default class Header extends PureComponent {
         })
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.active !== prevState.active) {
+            $.fn.fullpage.moveTo(this.state.active.replace("/", "").replace("#", ""));
+        }
+    }
+
     render() {
         let { active } = this.state;
         return (
-            <nav className="navbar navbar-expand-md">
+            <nav className="navbar navbar-expand-lg">
                 <div className="container">
-                    <Link to="/" className="navbar-brand"><img src={logo} alt="Battleground-Bulls" /></Link>
+                    <Link to="/#start" className="navbar-brand"><img src={logo} alt="Battleground-Bulls" /></Link>
                     <div className="navbar-toggler collapsed" data-toggle="collapse"
                          data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                          aria-label="Toggle navigation">
@@ -39,14 +46,14 @@ export default class Header extends PureComponent {
                     </div>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav mr-auto default">
-                            <li className={classnames("nav-item", {"active": active === "/"})}>
-                                <Link to="/" className="nav-link disabled">Start</Link>
+                            <li className={classnames("nav-item", {"active": active === "/" || active === "/#start"})}>
+                                <Link to="/#start" className="nav-link">Start</Link>
                             </li>
                             <li className={classnames("nav-item", {"active": active === "/#teams"})}>
-                                <Link to="/#teams" className="nav-link">Teams</Link>
+                                <Link to="/#teams" className="nav-link disabled">Teams</Link>
                             </li>
                             <li className={classnames("nav-item", {"active": active === "/#spielplan"})}>
-                                <Link to="/#spielplan" className="nav-link">Spielplan</Link>
+                                <Link to="/#spielplan" className="nav-link disabled">Spielplan</Link>
                             </li>
                             <li className={classnames("nav-item", {"active": active === "/#bulls"})}>
                                 <Link to="/#bulls" className="nav-link">Über die Bulls</Link>
@@ -55,7 +62,7 @@ export default class Header extends PureComponent {
                                 <Link to="/#regeln" className="nav-link">Turnier-Regeln</Link>
                             </li>
                         </ul>
-                        <ul className="navbar-nav d-none d-md-flex socials">
+                        <ul className="navbar-nav d-none d-xl-flex socials">
                             <li className="nav-item"><a className="nav-link" href="https://www.twitch.tv/battleground_bulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitch" /></a></li>
                             <li className="nav-item"><a className="nav-link" href="https://discord.gg/gke2aYp" target="_blank" rel="noopener noreferrer"><i className="fab fa-discord" /></a></li>
                             <li className="nav-item"><a className="nav-link" href="https://www.facebook.com/groups/BattlegroundBuLLs/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f" /></a></li>
@@ -63,8 +70,8 @@ export default class Header extends PureComponent {
                             <li className="nav-item"><a className="nav-link" href="https://www.youtube.com/channel/UCPSSW0COqKjF5nSn-3aYh7w" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube" /></a></li>
                         </ul>
                         <ul className="navbar-nav sign-in">
-                            <li className="nav-item">
-                                <i className="fas fa-sign-in-alt d-none d-md-inline-block" /> <Link to="/anmelden" className="nav-link">Anmelden</Link> | <Link to="/login" className="nav-link">Login</Link>
+                            <li className="nav-item disabled">
+                                <i className="fas fa-sign-in-alt d-none d-lg-inline-block" /> <Link to="/anmelden" className="nav-link">Anmelden</Link> | <Link to="/login" className="nav-link">Login</Link>
                             </li>
                         </ul>
                     </div>
