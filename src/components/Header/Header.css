@@ -78,6 +78,7 @@
         .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item {
           display: flex;
           align-items: center;
-          color: #e31d3c; }
+          color: #e31d3c;
+          font-family: "Droid Serif", sans-serif; }
 
 /*# sourceMappingURL=Header.css.map */
