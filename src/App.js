@@ -14,7 +14,7 @@ class App extends PureComponent {
         return (
             <BrowserRouter>
                 <div id="app">
-                    <Route component={Header}/>
+                    <Header/>
                     <main>
                         <Route exact path="/" component={Home}/>
                         <Route path="/anmelden" component={Login}/>

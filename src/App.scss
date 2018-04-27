@@ -83,6 +83,13 @@ body {
   color: #777;
 }
 
+a {
+  color: $highlightColor;
+  &:hover {
+    color: $highlightColor;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;

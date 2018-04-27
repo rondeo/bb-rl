@@ -6,8 +6,9 @@
     background: no-repeat center;
     background-size: cover; }
     .home .section .fp-tableCell {
-      padding-top: 128px;
       vertical-align: unset; }
+    .home .section .container .inner {
+      margin-top: 128px; }
     .home .section.start {
       background-image: url("./img/Bulls-BG-Start.jpg"); }
       .home .section.start .container {
@@ -18,7 +19,7 @@
         justify-content: center;
         text-align: center; }
         .home .section.start .container .inner {
-          margin-top: -50px; }
+          margin-top: 88px; }
           .home .section.start .container .inner img {
             display: block;
             width: 500px;
@@ -45,6 +46,8 @@
       color: #fff; }
     .home .section.regeln {
       background-image: url("./img/Bulls-BG-Regeln.jpg"); }
+      .home .section.regeln .scroll-up {
+        bottom: 20px; }
   .home .scroll-down, .home .scroll-up {
     position: absolute;
     left: 60px;

@@ -1,14 +1,26 @@
 import React, {PureComponent} from "react";
 import $ from "jquery";
 
+import './Counter.css';
+
 export default class Counter extends PureComponent {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+        };
+    }
 
     componentDidMount() {
         let $counter = $(".counter");
 
         // Set the date we're counting down to
         // TODO: Get Date from Database
-        let countDownDate = new Date("April 29, 2018 16:15:00").getTime();
+        let countDownDate = new Date("April 28, 2018 16:15:00").getTime();
 
         setCounter();
 

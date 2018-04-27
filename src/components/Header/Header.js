@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import classnames from 'classnames'
 import $ from 'jquery';
 
@@ -7,7 +7,7 @@ import './Header.css';
 
 import logo from './../../images/logo_100px.png';
 
-export default class Header extends PureComponent {
+class Header extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -80,3 +80,4 @@ export default class Header extends PureComponent {
         );
     }
 }
+export default withRouter(Header);
