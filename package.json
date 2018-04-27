@@ -1,7 +1,7 @@
 {
   "author": "Moritz Ellmers <info@moritzellmers.de>",
   "name": "battleground-bulls.de",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0",
