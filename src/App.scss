@@ -88,6 +88,12 @@ a {
   &:hover {
     color: $highlightColor;
   }
+  &.disabled {
+    pointer-events: none;
+    color: $disabledColor;
+    cursor: unset;
+    text-decoration: none;
+  }
 }
 
 img {

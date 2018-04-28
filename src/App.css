@@ -68,6 +68,11 @@ a {
   color: #e31d3c; }
   a:hover {
     color: #e31d3c; }
+  a.disabled {
+    pointer-events: none;
+    color: #6c757d;
+    cursor: unset;
+    text-decoration: none; }
 
 img {
   max-width: 100%;

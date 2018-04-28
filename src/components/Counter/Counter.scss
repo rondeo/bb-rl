@@ -1,3 +1,22 @@
 .counter {
+  table {
+    table-layout: fixed;
+    width: 460px;
+  }
+  th {
+    font-size: .8em;
+    line-height: 1;
+  }
+  td {
+    position: relative;
+    font-size: 4.5em;
+    line-height: 1;
 
+    &:not(:last-child):after {
+      content: ":";
+      position: absolute;
+      right: -8px;
+      top: 0;
+    }
+  }
 }

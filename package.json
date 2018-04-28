@@ -14,16 +14,25 @@
     "jquery": "^3.3.1",
     "path": "^0.12.7",
     "popper.js": "^1.14.1",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.1",
     "steam-login": "^0.1.6"
   },
+  "devDependencies": {
+    "ftp-deploy": "^1.2.2",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-util": "^3.0.8",
+    "vinyl-ftp": "^0.6.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "start-https": "set HTTPS=true&&react-scripts start",
-    "build": "npm i & react-scripts build",
+    "build": "react-scripts build",
+    "buildAndUpload": "react-scripts build & gulp upload",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

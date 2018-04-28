@@ -1,0 +1,29 @@
+@import "../../variables";
+
+.square-card {
+  background-color: $backgroundBlue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  transition: transform .4s;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  &:hover  {
+    transform: scale(1.05);
+  }
+
+  .content {
+    height: inherit;
+    padding: 15px;
+
+    img {
+      max-height: 50%;
+    }
+    .text {
+      margin: 15px 0 25px;
+    }
+  }
+}

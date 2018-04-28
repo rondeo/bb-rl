@@ -32,7 +32,8 @@
             font-size: 1.5em; }
           .home .section.start .container .inner .counter {
             display: inline-block;
-            font-size: 4.5em; }
+            position: relative;
+            top: 12px; }
           .home .section.start .container .inner button {
             margin: 25px auto 0; }
             .home .section.start .container .inner button:hover a {
@@ -44,6 +45,8 @@
     .home .section.bulls {
       background-image: url("./img/Bulls-BG-Bulls.jpg");
       color: #fff; }
+      .home .section.bulls .square-card {
+        margin-bottom: 30px; }
     .home .section.regeln {
       background-image: url("./img/Bulls-BG-Regeln.jpg"); }
       .home .section.regeln .scroll-up {

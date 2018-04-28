@@ -46,7 +46,8 @@
 
           .counter {
             display: inline-block;
-            font-size: 4.5em;
+            position: relative;
+            top: 12px;
           }
 
           button {
@@ -66,6 +67,10 @@
     &.bulls {
       background-image: url("./img/Bulls-BG-Bulls.jpg");
       color: #fff;
+
+      .square-card {
+        margin-bottom: 30px;
+      }
     }
     &.regeln {
       background-image: url("./img/Bulls-BG-Regeln.jpg");

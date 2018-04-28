@@ -19,7 +19,7 @@ $navbarCollapse: $breakpoint-lg;
 
   .nav-link.disabled, .nav-item.disabled {
     &, a {
-      color: #6c757d !important;
+      color: $disabledColor !important;
       pointer-events: none !important;
     }
   }
@@ -99,6 +99,10 @@ $navbarCollapse: $breakpoint-lg;
           top: 56px;
         }
       }
+    }
+
+    a, .nav-link {
+      transition: color .25s;
     }
 
     a {

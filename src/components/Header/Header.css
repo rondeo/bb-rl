@@ -67,6 +67,8 @@
           top: 44px; }
         .navbar .container .navbar-toggler span:nth-child(4) {
           top: 56px; }
+    .navbar .container a, .navbar .container .nav-link {
+      transition: color .25s; }
     .navbar .container a {
       color: #fff; }
       .navbar .container a:hover {
