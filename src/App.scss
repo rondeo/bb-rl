@@ -134,7 +134,7 @@ img {
 }
 
 .container {
-  @media (min-width: 2000px) {
+  @media (min-width: $breakpoint-2k) {
     font-size: 1.5em;
     max-width: 1600px;
   }

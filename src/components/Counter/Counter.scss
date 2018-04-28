@@ -1,9 +1,14 @@
+@import "../../variables";
+
 .counter {
   font-size: 4.5em;
 
   table {
     table-layout: fixed;
     width: 460px;
+    @media (min-width: $breakpoint-sm) {
+      width: 660px;
+    }
   }
   th {
     font-size: .2em;
