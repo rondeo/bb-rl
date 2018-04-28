@@ -2,8 +2,11 @@
 
 #app {
   main {
-    //margin-top: 128px;
-    min-height: calc(100vh - 88px - 100px);
+    min-height: calc(100vh - 128px - 101px);
+
+    > .container:not(.home) {
+      margin-top: 128px;
+    }
   }
 }
 

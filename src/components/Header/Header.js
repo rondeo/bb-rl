@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import classnames from 'classnames'
-import $ from 'jquery';
 
 import './Header.css';
 
@@ -22,12 +21,6 @@ class Header extends PureComponent {
                active: route.pathname + route.hash
            });
         })
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (this.state.active !== prevState.active) {
-            $.fn.fullpage.moveTo(this.state.active.replace("/", "").replace("#", ""));
-        }
     }
 
     render() {

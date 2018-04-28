@@ -61,10 +61,16 @@ export default class Home extends PureComponent {
             });
             this.resizeTwitchPlayer();
         }
+
+        let currentPath = this.props.location.pathname + this.props.location.hash;
+        if (currentPath !== prevProps.location.pathname + prevProps.location.hash) {
+            $.fn.fullpage.moveTo(currentPath.replace("/", "").replace("#", ""));
+        }
     }
 
     componentWillUnmount() {
         $.fn.fullpage.destroy("all");
+        $(".scroll-down, .scroll-up").off();
     }
 
     resizeTwitchPlayer() {
