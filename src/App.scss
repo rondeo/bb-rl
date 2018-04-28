@@ -2,8 +2,8 @@
 
 #app {
   main {
-    //margin-top: 88px;
-    min-height: calc(100vh - 88px - 60px);
+    //margin-top: 128px;
+    min-height: calc(100vh - 88px - 100px);
   }
 }
 
@@ -45,7 +45,7 @@ body {
   width: 100%;
   margin-bottom: 0; /* Override default `<label>` margin */
   line-height: 1.5;
-  color: #495057;
+  color: $grey;
   border: 1px solid transparent;
   border-radius: .25rem;
   transition: all .1s ease-in-out;
@@ -127,5 +127,12 @@ img {
       background-size: 100% 100%;
       color: #fff;
     }
+  }
+}
+
+.container {
+  @media (min-width: 2000px) {
+    font-size: 1.5em;
+    max-width: 1600px;
   }
 }

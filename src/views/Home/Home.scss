@@ -30,6 +30,12 @@
 
         .inner {
           margin-top: 88px;
+
+          #twitch-embed iframe {
+            max-width: 100%;
+            box-shadow: 0 0 50px 0 black;
+          }
+
           img {
             display: block;
             width: 500px;
@@ -46,8 +52,10 @@
 
           .counter {
             display: inline-block;
-            position: relative;
-            top: 12px;
+            &:not(.ended) {
+              position: relative;
+              top: 12px;
+            }
           }
 
           button {
@@ -75,14 +83,19 @@
     &.regeln {
       background-image: url("./img/Bulls-BG-Regeln.jpg");
 
+      .inner {
+        margin-bottom: 125px;
+      }
+
       .scroll-up {
-        bottom: 20px;
+        bottom: 40px;
       }
     }
   }
 
   .scroll-down, .scroll-up {
     position: absolute;
+    z-index: 5;
     left: 60px;
     bottom: 30px;
     font-family: "Droid Serif", sans-serif;
@@ -95,5 +108,11 @@
     i {
       margin-right: 5px;
     }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }

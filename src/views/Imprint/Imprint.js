@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react';
+import React, {PureComponent} from 'react';
+import './Imprint.css';
 
 export default class Imprint extends PureComponent {
     render() {

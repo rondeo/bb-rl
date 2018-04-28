@@ -20,6 +20,9 @@
         text-align: center; }
         .home .section.start .container .inner {
           margin-top: 88px; }
+          .home .section.start .container .inner #twitch-embed iframe {
+            max-width: 100%;
+            box-shadow: 0 0 50px 0 black; }
           .home .section.start .container .inner img {
             display: block;
             width: 500px;
@@ -31,9 +34,10 @@
             color: #e31d3c;
             font-size: 1.5em; }
           .home .section.start .container .inner .counter {
-            display: inline-block;
-            position: relative;
-            top: 12px; }
+            display: inline-block; }
+            .home .section.start .container .inner .counter:not(.ended) {
+              position: relative;
+              top: 12px; }
           .home .section.start .container .inner button {
             margin: 25px auto 0; }
             .home .section.start .container .inner button:hover a {
@@ -49,10 +53,13 @@
         margin-bottom: 30px; }
     .home .section.regeln {
       background-image: url("./img/Bulls-BG-Regeln.jpg"); }
+      .home .section.regeln .inner {
+        margin-bottom: 125px; }
       .home .section.regeln .scroll-up {
-        bottom: 20px; }
+        bottom: 40px; }
   .home .scroll-down, .home .scroll-up {
     position: absolute;
+    z-index: 5;
     left: 60px;
     bottom: 30px;
     font-family: "Droid Serif", sans-serif;
@@ -63,5 +70,9 @@
       text-decoration: underline; }
     .home .scroll-down i, .home .scroll-up i {
       margin-right: 5px; }
+  .home footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
 
 /*# sourceMappingURL=Home.css.map */

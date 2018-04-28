@@ -1,5 +1,6 @@
-import React, {PureComponent} from "react";
-import $ from "jquery";
+import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import './Counter.css';
 
@@ -11,12 +12,15 @@ export default class Counter extends PureComponent {
             days: 0,
             hours: 0,
             minutes: 0,
-            seconds: 0
+            seconds: 0,
+            distance: 0
         };
     }
 
     componentDidMount() {
         this.setCounter = this.setCounter.bind(this);
+        this.endCallback = this.endCallback.bind(this);
+
         this.setCounter();
 
         // Update the count down every second
@@ -25,6 +29,11 @@ export default class Counter extends PureComponent {
 
     componentWillUnmount() {
         clearInterval(this.timer);
+    }
+
+    endCallback() {
+        if (this.props.endCallback)
+            this.props.endCallback();
     }
 
     setCounter() {
@@ -43,13 +52,14 @@ export default class Counter extends PureComponent {
             days: this.setDoubleDigit(Math.floor(distance / (1000 * 60 * 60 * 24))),
             hours: this.setDoubleDigit(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))),
             minutes: this.setDoubleDigit(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))),
-            seconds: this.setDoubleDigit(Math.floor((distance % (1000 * 60)) / 1000))
+            seconds: this.setDoubleDigit(Math.floor((distance % (1000 * 60)) / 1000)),
+            distance: distance
         });
 
         // If the count down is finished, write some text
-        if (distance < 0) {
+        if (distance <= 0) {
             clearInterval(this.timer);
-            $(".counter").html("Turnier läuft!");
+            this.endCallback();
         }
     }
 
@@ -61,28 +71,36 @@ export default class Counter extends PureComponent {
     }
 
     render() {
-        let { days, hours, minutes, seconds } = this.state;
+        let {days, hours, minutes, seconds, distance} = this.state;
         return (
-            <div className="counter">
-                <table>
-                    <thead>
+            <div className={classnames("counter", {"ended": distance <= 0})}>
+                {distance > 0 ? (
+                    <table>
+                        <thead>
                         <tr>
                             <th>Tage</th>
                             <th>Stunden</th>
                             <th>Minuten</th>
                             <th>Sekunden</th>
                         </tr>
-                    </thead>
-                    <tbody>
+                        </thead>
+                        <tbody>
                         <tr>
                             <td>{days}</td>
                             <td>{hours}</td>
                             <td>{minutes}</td>
                             <td>{seconds}</td>
                         </tr>
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                ) : (
+                    <div className="ended">Das Turnier läuft bereits!</div>
+                )}
             </div>
         );
     }
 }
+
+Counter.propTypes = {
+    endCallback: PropTypes.any
+};

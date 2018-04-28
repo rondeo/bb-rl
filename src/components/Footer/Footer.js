@@ -8,12 +8,9 @@ export default class Footer extends PureComponent {
         return (
             <footer>
                 <div className="container">
-                    <div className="float-left">
-                        <span className="text-muted">© Battleground Bulls 2018</span>
-                    </div>
-                    <div className="float-right">
-                        <Link to="/impressum">Impressum</Link>
-                    </div>
+                    <Link to="/datenschutz">Datenschutz</Link>
+                    <Link to="/impressum">Impressum</Link>
+                    <Link to="/kontakt">Kontakt</Link>
                 </div>
             </footer>
         );

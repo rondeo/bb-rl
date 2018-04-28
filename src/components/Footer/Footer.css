@@ -1,9 +1,12 @@
 footer {
-  height: 60px;
-  line-height: 60px;
-  background-color: #081a29; }
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  background-color: white; }
   footer a {
-    color: #fff; }
+    color: #495057;
+    padding: 0 15px;
+    font-family: "Droid Serif", sans-serif; }
     footer a:hover {
       text-decoration: none;
       color: #e31d3c; }

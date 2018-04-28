@@ -13,9 +13,20 @@ import kuehe from './img/kuehe.png';
 import setup from './img/setup.png';
 import streamtimes from './img/streamtimes.png';
 
+let Twitch = window.Twitch;
+
 export default class Home extends PureComponent {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            tournamentRunning: false
+        };
+    }
+
     componentDidMount() {
+        this.resizeTwitchPlayer = this.resizeTwitchPlayer.bind(this);
+
         window.scrollTo(0, 0);
 
         $(this.refs.fullpage).fullpage({
@@ -31,10 +42,36 @@ export default class Home extends PureComponent {
         $(".scroll-up").on("click", function () {
             $.fn.fullpage.moveTo(1);
         });
+
+        $(window).resize(() => {
+            clearTimeout(this.resizeTimer);
+            this.resizeTimer = setTimeout(() => {
+                this.resizeTwitchPlayer();
+            }, 250);
+        });
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.tournamentRunning !== prevState.tournamentRunning && this.state.tournamentRunning) {
+            new Twitch.Embed("twitch-embed", {
+                autoplay: false,
+                layout: "video",
+                width: 3000,
+                channel: "battleground_bulls"
+            });
+            this.resizeTwitchPlayer();
+        }
     }
 
     componentWillUnmount() {
         $.fn.fullpage.destroy("all");
+    }
+
+    resizeTwitchPlayer() {
+        let player = $("#twitch-embed iframe");
+        if (player.length > 0) {
+            player.height(player.width() / 16 * 9);
+        }
     }
 
     render() {
@@ -43,14 +80,22 @@ export default class Home extends PureComponent {
 
                 <div className="section start">
                     <div className="container">
-                        <div className="inner">
-                            <img src={logoSchriftzug} alt="Battleground Bulls"/>
-                            <div className="text">Nächstes<br/>Turnier in</div>
-                            <Counter/>
-                            <button className="btn primary"><Link to="https://goo.gl/KEBC8z" target="_blank"
-                                                                  rel="noopener noreferrer">Jetzt anmelden</Link>
-                            </button>
-                        </div>
+                        {this.state.tournamentRunning ? (
+                            <div className="inner">
+                                <div id="twitch-embed"/>
+                            </div>
+                        ) : (
+                            <div className="inner">
+                                <img src={logoSchriftzug} alt="Battleground Bulls"/>
+                                <div className="text">Nächstes<br/>Turnier in</div>
+                                <Counter endCallback={() => {
+                                    this.setState({tournamentRunning: true});
+                                }}/>
+                                <button className="btn primary"><Link to="https://goo.gl/KEBC8z" target="_blank"
+                                                                      rel="noopener noreferrer">Jetzt anmelden</Link>
+                                </button>
+                            </div>
+                        )}
                     </div>
 
                     <div className="scroll-down"><i className="fa fa-chevron-down"/>weiter scrollen</div>

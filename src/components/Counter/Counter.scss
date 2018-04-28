@@ -1,4 +1,6 @@
 .counter {
+  font-size: 4.5em;
+
   table {
     table-layout: fixed;
     width: 460px;
@@ -9,7 +11,6 @@
   }
   td {
     position: relative;
-    font-size: 4.5em;
     line-height: 1;
 
     &:not(:last-child):after {
