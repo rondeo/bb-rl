@@ -3,7 +3,7 @@
   .counter table {
     table-layout: fixed;
     width: 460px; }
-    @media (min-width: 576px) {
+    @media (min-width: 2000px) {
       .counter table {
         width: 660px; } }
   .counter th {

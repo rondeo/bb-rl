@@ -6,7 +6,7 @@
   table {
     table-layout: fixed;
     width: 460px;
-    @media (min-width: $breakpoint-sm) {
+    @media (min-width: $breakpoint-2k) {
       width: 660px;
     }
   }
