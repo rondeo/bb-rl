@@ -55,6 +55,23 @@
       background-image: url("./img/Bulls-BG-Regeln.jpg"); }
       .home .section.regeln .inner {
         margin-bottom: 125px; }
+        .home .section.regeln .inner h2 {
+          margin-bottom: 25px; }
+        .home .section.regeln .inner h3 {
+          cursor: pointer;
+          width: 100%;
+          margin-bottom: 10px; }
+          .home .section.regeln .inner h3:not(.collapsed):after {
+            transform: rotate(90deg); }
+          .home .section.regeln .inner h3:after {
+            content: "\f054";
+            font-family: "Font Awesome\ 5 Free";
+            font-weight: 900;
+            margin-left: 10px;
+            float: right;
+            transition: transform .3s; }
+        .home .section.regeln .inner div.collapse {
+          margin-bottom: 25px; }
       .home .section.regeln .scroll-up {
         bottom: 40px; }
   .home .scroll-down, .home .scroll-up {

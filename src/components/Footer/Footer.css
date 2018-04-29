@@ -6,9 +6,12 @@ footer {
   footer a {
     color: #495057;
     padding: 0 15px;
-    font-family: "Droid Serif", sans-serif; }
+    font-family: "Droid Serif", sans-serif;
+    text-decoration: none; }
+    footer a.active {
+      pointer-events: none;
+      color: #e31d3c; }
     footer a:hover {
-      text-decoration: none;
       color: #e31d3c; }
 
 /*# sourceMappingURL=Footer.css.map */

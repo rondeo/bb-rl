@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react'
-import { Link, withRouter } from 'react-router-dom'
-import classnames from 'classnames'
+import React, {PureComponent} from 'react';
+import {Link, withRouter} from 'react-router-dom';
+import classnames from 'classnames';
 
 import './Header.css';
 
@@ -16,43 +16,44 @@ class Header extends PureComponent {
     }
 
     componentWillMount() {
-        this.props.history.listen( route => {
-           this.setState({
-               active: route.pathname + route.hash
-           });
+        this.props.history.listen(route => {
+            this.setState({
+                active: route.pathname + route.hash
+            });
         })
     }
 
     render() {
-        let { active } = this.state;
+        let {active} = this.state;
         return (
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
-                    <Link to="/#start" className="navbar-brand"><img src={logo} alt="Battleground-Bulls" /></Link>
+                    <Link to="/#start" className="navbar-brand"><img src={logo} alt="Battleground-Bulls"/></Link>
                     <div className="navbar-toggler collapsed" data-toggle="collapse"
                          data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                          aria-label="Toggle navigation">
-                        <span />
-                        <span />
-                        <span />
-                        <span />
+                        <span/>
+                        <span/>
+                        <span/>
+                        <span/>
                     </div>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav mr-auto default">
                             <li className={classnames("nav-item", {"active": active === "/" || active === "/#start"})}>
-                                <Link to="/#start" className="nav-link">Start</Link>
+                                <Link to={{pathname: "/", hash: "#start"}} className="nav-link">Start</Link>
                             </li>
                             <li className={classnames("nav-item", {"active": active === "/#teams"})}>
-                                <Link to="/#teams" className="nav-link disabled">Teams</Link>
+                                <Link to={{pathname: "/", hash: "#teams"}} className="nav-link disabled">Teams</Link>
                             </li>
                             <li className={classnames("nav-item", {"active": active === "/#spielplan"})}>
-                                <Link to="/#spielplan" className="nav-link disabled">Spielplan</Link>
+                                <Link to={{pathname: "/", hash: "#spielplan"}}
+                                      className="nav-link disabled">Spielplan</Link>
                             </li>
                             <li className={classnames("nav-item", {"active": active === "/#bulls"})}>
-                                <Link to="/#bulls" className="nav-link">Über die Bulls</Link>
+                                <Link to={{pathname: "/", hash: "#bulls"}} className="nav-link">Über die Bulls</Link>
                             </li>
                             <li className={classnames("nav-item", {"active": active === "/#regeln"})}>
-                                <Link to="/#regeln" className="nav-link">Turnier-Regeln</Link>
+                                <Link to={{pathname: "/", hash: "#regeln"}} className="nav-link">Turnier-Regeln</Link>
                             </li>
                         </ul>
                         <ul className="navbar-nav d-none d-xl-flex socials">
@@ -73,4 +74,5 @@ class Header extends PureComponent {
         );
     }
 }
+
 export default withRouter(Header);

@@ -10,8 +10,12 @@ footer {
     color: $grey;
     padding: 0 15px;
     font-family: "Droid Serif", sans-serif;
+    text-decoration: none;
+    &.active {
+      pointer-events: none;
+      color: #e31d3c;
+    }
     &:hover {
-      text-decoration: none;
       color: #e31d3c;
     }
   }

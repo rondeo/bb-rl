@@ -85,6 +85,31 @@
 
       .inner {
         margin-bottom: 125px;
+
+        h2 {
+          margin-bottom: 25px;
+        }
+
+        h3 {
+          cursor: pointer;
+          width: 100%;
+          margin-bottom: 10px;
+          &:not(.collapsed):after {
+            transform: rotate(90deg);
+          }
+          &:after {
+            content: "\f054";
+            font-family: "Font Awesome\ 5 Free";
+            font-weight: 900;
+            margin-left: 10px;
+            float: right;
+            transition: transform .3s;
+          }
+        }
+
+        div.collapse {
+          margin-bottom: 25px;
+        }
       }
 
       .scroll-up {

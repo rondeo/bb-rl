@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -18,11 +18,13 @@ class App extends PureComponent {
                 <div id="app">
                     <Header/>
                     <main>
-                        <Route exact path="/" component={Home}/>
-                        <Route path="/anmelden" component={Login}/>
-                        <Route path="/datenschutz" component={Privacy}/>
-                        <Route path="/impressum" component={Imprint}/>
-                        <Route path="*" component={NotFound}/>
+                        <Switch>
+                            <Route path="/" component={Home} exact/>
+                            <Route path="/anmelden" component={Login} exact/>
+                            <Route path="/datenschutz" component={Privacy} exact/>
+                            <Route path="/impressum" component={Imprint} exact/>
+                            <Route component={NotFound} exact/>
+                        </Switch>
                     </main>
                     <Footer/>
                 </div>
