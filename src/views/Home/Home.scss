@@ -58,15 +58,10 @@
             }
           }
 
-          button {
+          .link {
             margin: 25px auto 0;
-            &:hover a {
-              color: #fff;
-            }
             a {
-              color: $highlightColor;
-              transition: color .75s;
-              text-decoration: none;
+              display: inline-block;
             }
           }
         }

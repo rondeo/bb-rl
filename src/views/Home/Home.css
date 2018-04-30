@@ -38,14 +38,10 @@
             .home .section.start .container .inner .counter:not(.ended) {
               position: relative;
               top: 12px; }
-          .home .section.start .container .inner button {
+          .home .section.start .container .inner .link {
             margin: 25px auto 0; }
-            .home .section.start .container .inner button:hover a {
-              color: #fff; }
-            .home .section.start .container .inner button a {
-              color: #e31d3c;
-              transition: color .75s;
-              text-decoration: none; }
+            .home .section.start .container .inner .link a {
+              display: inline-block; }
     .home .section.bulls {
       background-image: url("./img/Bulls-BG-Bulls.jpg");
       color: #fff; }
