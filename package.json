@@ -34,6 +34,7 @@
     "start-https": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "buildAndUpload": "react-scripts build & gulp upload",
+    "buildAndUploadDev": "react-scripts build & gulp uploadDev",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
