@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import Home from './views/Home/Home';
 import Imprint from './views/Imprint/Imprint';
 import Login from './views/Login/Login';
+import Registration from './views/Registration/Registration';
 import NotFound from './views/NotFound/NotFound';
 import Privacy from './views/Privacy/Privacy';
 import RocketLeagueOverlay from './views/RocketLeagueOverlay/RocketLeagueOverlay';
@@ -25,7 +26,8 @@ class App extends PureComponent {
                     <main>
                         <Switch>
                             <Route path="/" component={Home} exact/>
-                            <Route path="/anmelden" component={Login} exact/>
+                            <Route path="/login" component={Login} exact/>
+                            <Route path="/registrieren" component={Registration} exact/>
                             <Route path="/datenschutz" component={Privacy} exact/>
                             <Route path="/impressum" component={Imprint} exact/>
                             <Route path="/rl-overlay" component={RocketLeagueOverlay} exact/>

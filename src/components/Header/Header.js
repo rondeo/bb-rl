@@ -69,8 +69,8 @@ class Header extends PureComponent {
                             <li className="nav-item"><a className="nav-link" href="https://www.youtube.com/channel/UCPSSW0COqKjF5nSn-3aYh7w" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube" /></a></li>
                         </ul>
                         <ul className="navbar-nav sign-in">
-                            <li className="nav-item disabled">
-                                <i className="fas fa-sign-in-alt d-none d-lg-inline-block" /> <Link to="/anmelden" className="nav-link">Anmelden</Link> | <Link to="/login" className="nav-link">Login</Link>
+                            <li className="nav-item">
+                                <i className="fas fa-sign-in-alt d-none d-lg-inline-block" /> <Link to="/login" className="nav-link">Einloggen</Link> | <Link to="/registrieren" className="nav-link">Registrieren</Link>
                             </li>
                         </ul>
                     </div>
