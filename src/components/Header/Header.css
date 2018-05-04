@@ -75,7 +75,7 @@
         color: #e31d3c; }
     @media (min-width: 992px) {
       .navbar .container .navbar-collapse {
-        padding-left: 100px; } }
+        padding-left: 85px; } }
     @media (min-width: 992px) {
       .navbar .container .navbar-collapse .navbar-nav {
         padding: 25px 0; } }
@@ -85,19 +85,22 @@
       text-transform: uppercase; }
       @media (min-width: 992px) and (max-width: 1199px) {
         .navbar .container .navbar-collapse .navbar-nav.default {
-          padding-right: 30px;
+          padding-right: 25px;
           border-right: 1px solid #303743; } }
       .navbar .container .navbar-collapse .navbar-nav.default li.active a {
         color: #e31d3c; }
     @media (min-width: 992px) {
       .navbar .container .navbar-collapse .navbar-nav.socials, .navbar .container .navbar-collapse .navbar-nav.sign-in {
-        padding: 25px 30px; } }
+        padding-left: 25px; } }
     .navbar .container .navbar-collapse .navbar-nav.socials .nav-link, .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-link {
       color: #e31d3c; }
       .navbar .container .navbar-collapse .navbar-nav.socials .nav-link:hover, .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-link:hover {
         color: #fff; }
     .navbar .container .navbar-collapse .navbar-nav.socials {
       border-right: 1px solid #303743; }
+      @media (min-width: 992px) {
+        .navbar .container .navbar-collapse .navbar-nav.socials {
+          padding-right: 25px; } }
     @media (max-width: 991px) {
       .navbar .container .navbar-collapse .navbar-nav.sign-in:before {
         position: absolute;

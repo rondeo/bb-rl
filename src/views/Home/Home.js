@@ -5,6 +5,7 @@ import $ from 'jquery';
 import About from '../../components/About/About';
 import Counter from '../../components/Counter/Counter';
 import Rules from '../../components/Rules/Rules';
+import Partner from '../../components/Partner/Partner';
 
 import './Home.css';
 
@@ -27,9 +28,9 @@ export default class Home extends PureComponent {
         window.scrollTo(0, 0);
 
         $(this.refs.fullpage).fullpage({
-            anchors: ["start", /*"teams", "spielplan",*/ "bulls", "regeln"],
+            anchors: ["start", /*"teams", "spielplan",*/ "bulls", "regeln", "partner"],
             navigation: true,
-            navigationTooltips: ["Start", /*"Teams", "Spielplan",*/ "Über die Bulls", "Turnier-Regeln"],
+            navigationTooltips: ["Start", /*"Teams", "Spielplan",*/ "Über die Bulls", "Turnier-Regeln", "Partner"],
             scrollOverflow: true
         });
 
@@ -107,6 +108,8 @@ export default class Home extends PureComponent {
                 <About/>
 
                 <Rules/>
+
+                <Partner/>
 
             </div>
         );

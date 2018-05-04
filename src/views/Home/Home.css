@@ -70,6 +70,10 @@
           margin-bottom: 25px; }
       .home .section.regeln .scroll-up {
         bottom: 40px; }
+    .home .section.partner h2 {
+      margin-bottom: 50px; }
+    .home .section.partner img {
+      margin-bottom: 1rem; }
   .home .scroll-down, .home .scroll-up {
     position: absolute;
     z-index: 5;

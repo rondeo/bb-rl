@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import Footer from '../Footer/Footer';
 import $ from "jquery";
 
 export default class Rules extends React.PureComponent {
@@ -117,8 +116,6 @@ export default class Rules extends React.PureComponent {
                 </div>
 
                 <div className="scroll-up"><i className="fa fa-chevron-up"/>nach oben</div>
-
-                <Footer/>
             </div>
         );
     }

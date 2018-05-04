@@ -30,7 +30,7 @@ $navbarCollapse: $breakpoint-lg;
       position: relative;
     }
 
-    @media (min-width: $breakpoint-lg) {
+    @media (min-width: $navbarCollapse) {
       //max-width: 100%;
     }
 
@@ -115,7 +115,7 @@ $navbarCollapse: $breakpoint-lg;
     .navbar-collapse {
 
       @media (min-width: $navbarCollapse) {
-        padding-left: 100px;
+        padding-left: 85px;
       }
 
       .navbar-nav {
@@ -127,7 +127,7 @@ $navbarCollapse: $breakpoint-lg;
           justify-content: space-between;
           text-transform: uppercase;
           @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl - 1) {
-            padding-right: 30px;
+            padding-right: 25px;
             border-right: 1px solid $borderColor;
           }
           li {
@@ -139,7 +139,7 @@ $navbarCollapse: $breakpoint-lg;
 
         &.socials, &.sign-in {
           @media (min-width: $navbarCollapse) {
-            padding: 25px 30px;
+            padding-left: 25px;
           }
           .nav-link {
             color: $highlightColor;
@@ -151,6 +151,9 @@ $navbarCollapse: $breakpoint-lg;
 
         &.socials {
           border-right: 1px solid $borderColor;
+          @media (min-width: $navbarCollapse) {
+            padding-right: 25px;
+          }
         }
 
         &.sign-in {

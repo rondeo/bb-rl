@@ -55,6 +55,9 @@ class Header extends PureComponent {
                             <li className={classnames("nav-item", {"active": active === "/#regeln"})}>
                                 <Link to={{pathname: "/", hash: "#regeln"}} className="nav-link">Turnier-Regeln</Link>
                             </li>
+                            <li className={classnames("nav-item", {"active": active === "/#partner"})}>
+                                <Link to={{pathname: "/", hash: "#partner"}} className="nav-link">Partner</Link>
+                            </li>
                         </ul>
                         <ul className="navbar-nav d-none d-xl-flex socials">
                             <li className="nav-item"><a className="nav-link" href="https://www.twitch.tv/battleground_bulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitch" /></a></li>
