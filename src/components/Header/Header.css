@@ -110,8 +110,7 @@
         border-top: 1px solid #303743; } }
     .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item {
       display: flex;
-      align-items: center;
-      color: #e31d3c; }
+      align-items: center; }
       @media (min-width: 992px) {
         .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item {
           font-family: "Droid Serif", sans-serif; } }
@@ -119,5 +118,11 @@
         margin-right: .5rem; }
       .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item .nav-link:last-child {
         margin-left: .5rem; }
+      .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item .fas, .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item .fab {
+        color: #e31d3c; }
+      .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item a {
+        color: #fff; }
+        .navbar .container .navbar-collapse .navbar-nav.sign-in .nav-item a:hover {
+          color: #e31d3c; }
 
 /*# sourceMappingURL=Header.css.map */
