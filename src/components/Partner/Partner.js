@@ -10,7 +10,7 @@ export default class Partner extends React.PureComponent {
             <div className="section partner">
                 <div className="container">
                     <div className="inner">
-                        <h2>Unsere Partner und unser Support!</h2>
+                        <h2 className="text-center">Unterstütze die Battleground Bulls und kaufe über diese Links</h2>
 
                         <div className="row">
                             <div className="col-12 col-sm-6 col-md-4">

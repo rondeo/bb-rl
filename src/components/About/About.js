@@ -13,7 +13,7 @@ export default class About extends React.PureComponent {
                     <div className="inner">
                         <h2>Über die Bulls</h2>
                         <div className="row">
-                            <div className="col-12 col-md-5">
+                            <div className="col-12 col-md-6">
                                 <p>
                                     Die Battleground Bulls bestehen aus einem kleinen familiären Haufen Zweibeiner,
                                     die durch eine Idee von Patrick aka m4kar0ny und Malthe aka xPainHunt3r
@@ -24,7 +24,12 @@ export default class About extends React.PureComponent {
                                 </p>
                                 <p>
                                     Wir haben uns als Aufgabe gesetzt eine Community für alle zu Gründen, die Lust
-                                    auf nette und korrekte Leute haben, die sich über die Spiele, egal ob neu
+                                    auf nette und korrekte Leute haben, die
+                                </p>
+                            </div>
+                            <div className="col-12 col-md-6">
+                                <p>
+                                    sich über die Spiele, egal ob neu
                                     oder alt, austauschen und diese ebenfalls zusammen spielen können. Unser Motto
                                     ist es somit, dass niemand alleine spielen muss. Unser Ziel ist es die
                                     Familie mit eurer Hilfe wachsen zu lassen und den Stream so unterhaltsam wie
@@ -36,36 +41,29 @@ export default class About extends React.PureComponent {
                                     um zu sehen ob es etwas Neues gibt.
                                 </p>
                             </div>
-                            <div className="col-12 col-md-7">
-                                <div className="row">
-                                    <div className="col-12 col-md-6">
-                                        <SquareCard
-                                            image={streamtimes}
-                                            text="Wann seid ihr online?"
-                                            linkTo="https://goo.gl/SnMqEj"
-                                            linkText="Wir sind bald wieder da"
-                                        />
-                                    </div>
-                                    <div className="col-12 col-md-6">
-                                        <SquareCard
-                                            image={kuehe}
-                                            text="Schau bei unserer Bullen-Familie herein."
-                                            linkTo="/#bulls"
-                                            linkText="Mehr über uns"
-                                            linkDisabled={true}
-                                        />
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-12 col-md-6">
-                                        <SquareCard
-                                            image={setup}
-                                            text="Unser Setup"
-                                            linkTo="https://docs.google.com/document/d/1cQO5QDKdD0eSQG0GA1yMonL7T0TjIHBzxzlK8iShJRY/"
-                                            linkText="Schau dir hier unser Setup an"
-                                        />
-                                    </div>
-                                </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-12 col-sm-4">
+                                <SquareCard
+                                    image={streamtimes}
+                                    text="Du willst wissen wann wir online sind?"
+                                    linkTo="https://goo.gl/SnMqEj"
+                                />
+                            </div>
+                            <div className="col-12 col-sm-4">
+                                <SquareCard
+                                    image={kuehe}
+                                    text="Du willst Mitglied der Bulls-Familie werden?"
+                                    linkTo="/#bulls"
+                                    linkDisabled={true}
+                                />
+                            </div>
+                            <div className="col-12 col-sm-4">
+                                <SquareCard
+                                    image={setup}
+                                    text="Hier gehts zu unserem Streaming-Setup"
+                                    linkTo="https://docs.google.com/document/d/1cQO5QDKdD0eSQG0GA1yMonL7T0TjIHBzxzlK8iShJRY/"
+                                />
                             </div>
                         </div>
                     </div>

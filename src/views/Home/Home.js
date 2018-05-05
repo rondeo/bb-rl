@@ -95,8 +95,9 @@ export default class Home extends PureComponent {
                                 <Counter endCallback={() => {
                                     this.setState({tournamentRunning: true});
                                 }}/>
-                                <div className="link">
+                                <div className="links">
                                     <Link to="https://goo.gl/KEBC8z" className="btn primary" target="_blank" rel="noopener noreferrer">Jetzt anmelden</Link>
+                                    <Link to="https://discord.gg/gke2aYp" className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</Link>
                                 </div>
                             </div>
                         )}

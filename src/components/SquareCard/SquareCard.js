@@ -15,6 +15,7 @@ export default class SquareCard extends PureComponent {
 
     render() {
         let {children, image, alt, text, linkTo, linkText, linkDisabled} = this.props;
+        let moreText = linkText || "mehr erfahren";
         return (
             <div className="square-card" ref="card">
                 {children ? children : (
@@ -23,7 +24,7 @@ export default class SquareCard extends PureComponent {
                         <div className="text">
                             {text}
                         </div>
-                        {linkTo ? linkTo.indexOf("http") !== -1 ? <a href={linkTo} className={classnames({"disabled": linkDisabled})} target="_blank" rel="noopener noreferrer">{linkText}</a> : <Link to={linkTo} className={classnames({"disabled": linkDisabled})}>{linkText}</Link> : null}
+                        {linkTo ? linkTo.indexOf("http") !== -1 ? <a href={linkTo} className={classnames({"disabled": linkDisabled})} target="_blank" rel="noopener noreferrer">{moreText}</a> : <Link to={linkTo} className={classnames({"disabled": linkDisabled})}>{moreText}</Link> : null}
                     </div>
                 )
                 }

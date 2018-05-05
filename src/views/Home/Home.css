@@ -38,47 +38,62 @@
             .home .section.start .container .inner .counter:not(.ended) {
               position: relative;
               top: 12px; }
-          .home .section.start .container .inner .link {
+          .home .section.start .container .inner .links {
             margin: 25px auto 0; }
-            .home .section.start .container .inner .link a {
+            .home .section.start .container .inner .links a {
               display: inline-block; }
+              .home .section.start .container .inner .links a:not(:last-child) {
+                margin-right: 50px; }
     .home .section.bulls {
       background-image: url("./img/Bulls-BG-Bulls.jpg");
       color: #fff; }
+      .home .section.bulls h2 {
+        color: #e31d3c; }
       .home .section.bulls .square-card {
-        margin-bottom: 30px; }
+        margin-top: 50px; }
+        .home .section.bulls .square-card img {
+          max-height: 40%; }
     .home .section.regeln {
       background-image: url("./img/Bulls-BG-Regeln.jpg"); }
       .home .section.regeln .inner {
         margin-bottom: 125px; }
         .home .section.regeln .inner h2 {
           margin-bottom: 25px; }
-        .home .section.regeln .inner h3 {
+        .home .section.regeln .inner div[data-toggle="collapse"] {
           cursor: pointer;
           width: 100%;
-          margin-bottom: 10px; }
-          .home .section.regeln .inner h3:not(.collapsed):after {
-            transform: rotate(90deg); }
-          .home .section.regeln .inner h3:after {
+          padding: 15px 0;
+          color: #e31d3c;
+          text-transform: uppercase;
+          font-weight: bold;
+          border-bottom: 1px solid #fff; }
+          .home .section.regeln .inner div[data-toggle="collapse"]:not(.collapsed) {
+            border-color: transparent; }
+            .home .section.regeln .inner div[data-toggle="collapse"]:not(.collapsed) :after {
+              transform: rotate(90deg); }
+          .home .section.regeln .inner div[data-toggle="collapse"]:after {
             content: "\f054";
             font-family: "Font Awesome\ 5 Free";
             font-weight: 900;
+            font-size: 14px;
+            line-height: 24px;
             margin-left: 10px;
             float: right;
             transition: transform .3s; }
-        .home .section.regeln .inner div.collapse {
-          margin-bottom: 25px; }
       .home .section.regeln .scroll-up {
         bottom: 40px; }
-    .home .section.partner h2 {
-      margin-bottom: 50px; }
-    .home .section.partner img {
-      margin-bottom: 1rem; }
+    .home .section.partner {
+      background-image: url("./img/Bulls-BG-Partner.jpg");
+      color: #fff; }
+      .home .section.partner h2 {
+        margin-bottom: 50px; }
+      .home .section.partner img {
+        margin-bottom: 1rem; }
   .home .scroll-down, .home .scroll-up {
     position: absolute;
     z-index: 5;
     left: 60px;
-    bottom: 30px;
+    bottom: 40px;
     font-family: "Droid Serif", sans-serif;
     font-size: 14px;
     color: #e31d3c;

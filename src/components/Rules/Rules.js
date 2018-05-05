@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import $ from "jquery";
+import $ from 'jquery';
 
 export default class Rules extends React.PureComponent {
 
@@ -15,12 +15,14 @@ export default class Rules extends React.PureComponent {
         return (
             <div ref="rules" className="section regeln">
                 <div className="container">
-                    <div className="inner">
-                        <h2>Regelwerk Rocket League Turnier</h2>
+                    <div className="inner" id="rules-container">
+                        <h2>Turnier-Regeln</h2>
 
-                        <h3 className="collapsed" data-toggle="collapse" data-target="#allgemein" role="button"
-                            aria-controls="allgemein">§ 1 Allgemeines</h3>
-                        <div className="collapse" id="allgemein">
+                        <p className="text-uppercase text-muted">Hinweis: Mögliche Änderungen sind während des Streams durch den Streamer möglich!</p>
+
+                        <div data-toggle="collapse" data-target="#allgemein" role="button"
+                            aria-controls="allgemein">Allgemeines</div>
+                        <div className="collapse show" id="allgemein" data-parent="#rules-container">
                             <p>
                                 Alle Teilnehmer des Turniers haben das <strong>Recht, fair</strong> und mit dem
                                 nötigen <strong>Respekt</strong> behandelt zu werden!
@@ -32,9 +34,9 @@ export default class Rules extends React.PureComponent {
                             </p>
                         </div>
 
-                        <h3 className="collapsed" data-toggle="collapse" data-target="#registration" role="button"
-                            aria-controls="registration">§ 1.1 Teamanmeldung</h3>
-                        <div className="collapse" id="registration">
+                        <div className="collapsed" data-toggle="collapse" data-target="#registration" role="button"
+                            aria-controls="registration">Teamanmeldung</div>
+                        <div className="collapse" id="registration" data-parent="#rules-container">
                             <p>
                                 Ein 2v2 Team besteht aus <strong>max.</strong> 2 Spielern. Nach Start des Turniers
                                 werden <strong>keine Team Änderungen</strong> mehr vorgenommen. Sollte es dennoch
@@ -50,9 +52,9 @@ export default class Rules extends React.PureComponent {
                             </p>
                         </div>
 
-                        <h3 className="collapsed" data-toggle="collapse" data-target="#tournament" role="button"
-                            aria-controls="tournament">§ 1.2 Turnier</h3>
-                        <div className="collapse" id="tournament">
+                        <div className="collapsed" data-toggle="collapse" data-target="#tournament" role="button"
+                            aria-controls="tournament">Turnier</div>
+                        <div className="collapse" id="tournament" data-parent="#rules-container">
                             <p>
                                 Die Anmeldung eines Teams für das Turnier, zählt nur für das <strong>aktuelle
                                 Turnier</strong>.
@@ -68,9 +70,9 @@ export default class Rules extends React.PureComponent {
                             </p>
                         </div>
 
-                        <h3 className="collapsed" data-toggle="collapse" data-target="#winner" role="button"
-                            aria-controls="winner">§ 1.3 Sieger</h3>
-                        <div className="collapse" id="winner">
+                        <div className="collapsed" data-toggle="collapse" data-target="#winner" role="button"
+                            aria-controls="winner">Sieger</div>
+                        <div className="collapse" id="winner" data-parent="#rules-container">
                             <p>
                                 Den Turniersiegern wird im Discord der Rang “<strong>Turniersieger</strong>”
                                 verliehen. Dieser gilt in der Zeit, bis das nächste Turnier stattfindet und ein
@@ -83,9 +85,9 @@ export default class Rules extends React.PureComponent {
                             </p>
                         </div>
 
-                        <h3 className="collapsed" data-toggle="collapse" data-target="#general-tournament" role="button"
-                            aria-controls="general-tournament">§ 2 Allgemeines zum Turniersystem</h3>
-                        <div className="collapse" id="general-tournament">
+                        <div className="collapsed" data-toggle="collapse" data-target="#general-tournament" role="button"
+                            aria-controls="general-tournament">Allgemeines zum Turniersystem</div>
+                        <div className="collapse" id="general-tournament" data-parent="#rules-container">
                             <p>
                                 Alle Spiele vom Turnier werden <strong>Live</strong> von den Battleground Bulls
                                 gestreamt und kommentiert. Vor dem Start des Turniers wird der Turnierplan gezeigt,
@@ -98,18 +100,14 @@ export default class Rules extends React.PureComponent {
                                      rel="noopener noreferrer">https://www.twitch.tv/battleground_bulls</Link></p>
                         </div>
 
-                        <h3 className="collapsed" data-toggle="collapse" data-target="#commands" role="button"
-                            aria-controls="commands">§ 3 Chat Kommandos</h3>
-                        <div className="collapse" id="commands">
+                        <div className="collapsed" data-toggle="collapse" data-target="#commands" role="button"
+                            aria-controls="commands">Chat Kommandos</div>
+                        <div className="collapse" id="commands" data-parent="#rules-container">
                             <p>
                                 !Anmeldung -> Anmeldelink (siehe Oben) <br/>
                                 !Teams -> Aktuelle Teamaufstellung <br/>
                                 !Discord -> Link zu unserem Discord
                             </p>
-                        </div>
-
-                        <div className="alert alert-danger" role="alert">PS: Mögliche Änderungen sind während
-                            des Streams durch den Streamer möglich!
                         </div>
 
                     </div>
