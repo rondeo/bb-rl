@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Header from './components/Header/Header';
@@ -14,10 +14,13 @@ import NewFollower from "./views/NewFollower/NewFollower";
 import NewSub from "./views/NewSub/NewSub";
 import NewBits from "./views/NewBits/NewBits";
 import StreamTimes from "./views/StreamTimes/StreamTimes";
+import TournamentList from './views/TournamentList/TournamentList';
+
+import requireAuthentication from './utils/AuthComponent';
 
 import './App.css';
 
-class App extends PureComponent {
+class App extends React.PureComponent {
     render() {
         return (
             <BrowserRouter>
@@ -30,6 +33,7 @@ class App extends PureComponent {
                             <Route path="/registrieren" component={Registration} exact/>
                             <Route path="/datenschutz" component={Privacy} exact/>
                             <Route path="/impressum" component={Imprint} exact/>
+                            <Route path="/turniere" component={requireAuthentication(TournamentList)} exact/>
                             <Route path="/rl-overlay" component={RocketLeagueOverlay} exact/>
                             <Route path="/new-follower" component={NewFollower} exact/>
                             <Route path="/new-sub" component={NewSub} exact/>
