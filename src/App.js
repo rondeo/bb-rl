@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Header from './components/Header/Header';
@@ -10,10 +10,13 @@ import Registration from './views/Registration/Registration';
 import NotFound from './views/NotFound/NotFound';
 import Privacy from './views/Privacy/Privacy';
 import RocketLeagueOverlay from './views/RocketLeagueOverlay/RocketLeagueOverlay';
+import TournamentList from './views/TournamentList/TournamentList';
+
+import requireAuthentication from './utils/AuthComponent';
 
 import './App.css';
 
-class App extends PureComponent {
+class App extends React.PureComponent {
     render() {
         return (
             <BrowserRouter>
@@ -27,6 +30,7 @@ class App extends PureComponent {
                             <Route path="/datenschutz" component={Privacy} exact/>
                             <Route path="/impressum" component={Imprint} exact/>
                             <Route path="/rl-overlay" component={RocketLeagueOverlay} exact/>
+                            <Route path="/turniere" component={requireAuthentication(TournamentList)} exact/>
                             <Route component={NotFound} exact/>
                         </Switch>
                     </main>

@@ -1,9 +1,11 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import $ from 'jquery';
+
+import {searchToObject} from '../../utils/helperFunctions';
 
 import './Login.css';
 
-export default class Login extends PureComponent {
+export default class Login extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -19,25 +21,26 @@ export default class Login extends PureComponent {
         e.preventDefault();
         let formData = $("form").serializeObject();
 
-        console.log("submit", formData);
-
         let headers = new Headers();
         headers.append("Authorization", "Basic " + btoa(formData.username + ":" + formData.password));
 
         fetch("http://localhost:9000/user/login", {
             headers: headers
         })
-            .then(function (response) {
+            .then(response => {
                 return response.json();
             })
-            .then(function (json) {
+            .then(json => {
                 if (json.error) {
                     console.error("Status: " + json.status + ", Error: " + json.error + ", Message: " + json.message);
                 }
                 // Save data and greet user; save basic auth in cookie
-                console.log(json);
+                console.log(json, this.props.history);
+                sessionStorage.setItem("user", JSON.stringify(json));
+                let search = searchToObject(this.props.location.search);
+                this.props.history.push(search.next || "/");
             })
-            .catch(function (error) {
+            .catch( error => {
                 // Show error; user has to try again
                 console.log(error);
             });
