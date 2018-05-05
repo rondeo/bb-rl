@@ -11,7 +11,8 @@ class Header extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            active: props.location.pathname + props.location.hash
+            active: props.location.pathname + props.location.hash,
+            user: JSON.parse(sessionStorage.getItem("user"))
         };
     }
 
@@ -20,11 +21,11 @@ class Header extends PureComponent {
             this.setState({
                 active: route.pathname + route.hash
             });
-        })
+        });
     }
 
     render() {
-        let {active} = this.state;
+        let {active, user} = this.state;
         return (
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
@@ -67,9 +68,15 @@ class Header extends PureComponent {
                             <li className="nav-item"><a className="nav-link" href="https://www.youtube.com/channel/UCPSSW0COqKjF5nSn-3aYh7w" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube" /></a></li>
                         </ul>
                         <ul className="navbar-nav sign-in">
-                            <li className="nav-item">
-                                <i className="fas fa-sign-in-alt d-none d-lg-inline-block" /> <Link to="/login" className="nav-link">Einloggen</Link> | <Link to="/registrieren" className="nav-link">Registrieren</Link>
-                            </li>
+                            {user ? (
+                                <li className="nav-item">
+                                    Hallo {user.username}! <div className="text-muted" onClick={function() { sessionStorage.setItem("user", null); }}>Logout</div>
+                                </li>
+                            )  : (
+                                <li className="nav-item">
+                                    <i className="fas fa-sign-in-alt d-none d-lg-inline-block" /> <Link to="/login" className="nav-link">Einloggen</Link> | <Link to="/registrieren" className="nav-link">Registrieren</Link>
+                                </li>
+                            )}
                         </ul>
                     </div>
                 </div>

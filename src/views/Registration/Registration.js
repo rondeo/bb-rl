@@ -10,6 +10,10 @@ export default class Registration extends PureComponent {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     onSubmit(e) {
         e.preventDefault();
         console.log("submit", $("form").serializeArray());

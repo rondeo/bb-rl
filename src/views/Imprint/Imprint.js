@@ -2,6 +2,11 @@ import React, {PureComponent} from 'react';
 import './Imprint.css';
 
 export default class Imprint extends PureComponent {
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     render() {
         return (
             <div className="container imprint">
