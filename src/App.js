@@ -39,6 +39,7 @@ class App extends React.PureComponent {
                             <Route path="/new-sub" component={NewSub} exact/>
                             <Route path="/new-bits" component={NewBits} exact/>
                             <Route path="/streamzeiten" component={StreamTimes} exact/>
+                            <Route path="/turniere" component={requireAuthentication(TournamentList)} exact/>
                             <Route component={NotFound} exact/>
                         </Switch>
                     </main>

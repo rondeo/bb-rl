@@ -25,6 +25,10 @@ export default class Registration extends PureComponent {
         window.scrollTo(0, 0);
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     onSubmit(e) {
         e.preventDefault();
 
