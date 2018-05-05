@@ -85,10 +85,6 @@
     .home .section.partner {
       background-image: url("./img/Bulls-BG-Partner.jpg");
       color: #fff; }
-      .home .section.partner h2 {
-        margin-bottom: 50px; }
-      .home .section.partner img {
-        margin-bottom: 1rem; }
   .home .scroll-down, .home .scroll-up {
     position: absolute;
     z-index: 5;

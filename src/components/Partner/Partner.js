@@ -3,6 +3,10 @@ import React from 'react';
 import Footer from './../Footer/Footer';
 
 import MMOGA_IMG from './img/Twitch_Support_MMOGA_DE.png';
+import Runtime_IMG from './img/Logo_Runtime_GG.png';
+import Merch_IMG from './img/Merch-Shop-Logo.png';
+
+import './Partner.css';
 
 export default class Partner extends React.PureComponent {
     render() {
@@ -23,6 +27,21 @@ export default class Partner extends React.PureComponent {
                                     Jeder Kauf über unseren MMOGA Partner-Link unterstützt uns und kostet dich keinen Cent
                                     mehr! Egal ob aktuelle Top-Games, Gamecards, Gold oder Coins - MMOGA hat immer die
                                     besten Deals! Schau doch mal vorbei!
+                                </p>
+                            </div>
+                            <div className="col-12 col-sm-6 col-md-4 runtime">
+                                <a href="https://runtime.idevaffiliate.com/780-1-3-2.html" target="_blank" rel="noopener noreferrer"><img src={Runtime_IMG} alt="Runtime.gg"/></a>
+                                <p>
+                                    <strong>Eat, play and win!</strong>
+                                </p>
+                                <p>
+                                    Schnelle, gesunde und praktische Mahlzeiten.
+                                </p>
+                            </div>
+                            <div className="col-12 col-sm-6 col-md-4 merch-shop">
+                                <a href="https://shop.spreadshirt.de/Battleground-Bulls/" target="_blank" rel="noopener noreferrer"><img src={Merch_IMG} alt="Merch-Shop"/><h2>Merch-Shop</h2></a>
+                                <p>
+                                    <strong>Du möchtest unseren Stream und die Webseite unterstützen? Kaufe stylische Kleidung auf in unserem <a href="https://shop.spreadshirt.de/Battleground-Bulls/" target="_blank" rel="noopener noreferrer">Merch-Shop</a>!</strong>
                                 </p>
                             </div>
                         </div>
