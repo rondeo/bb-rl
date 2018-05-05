@@ -252,7 +252,6 @@ $navbarCollapse: $breakpoint-lg;
           .nav-item {
             display: flex;
             align-items: center;
-            color: $highlightColor;
             @media (min-width: $navbarCollapse) {
               font-family: "Droid Serif", sans-serif;
             }
@@ -261,6 +260,17 @@ $navbarCollapse: $breakpoint-lg;
             }
             .nav-link:last-child {
               margin-left: .5rem;
+            }
+
+            .fas, .fab {
+              color: $highlightColor;
+            }
+
+            a {
+              color: #fff;
+              &:hover {
+                color: $highlightColor;
+              }
             }
           }
         }

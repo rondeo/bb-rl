@@ -76,7 +76,7 @@ class Header extends PureComponent {
                                 </li>
                             )  : (
                                 <li className="nav-item">
-                                    <i className="fas fa-sign-in-alt d-none d-lg-inline-block" /> <Link to="/login" className="nav-link">Einloggen</Link> | <Link to="/registrieren" className="nav-link">Registrieren</Link>
+                                    <i className="fas fa-user d-none d-lg-inline-block" /> <Link to="/login" className="nav-link">Einloggen</Link> | <Link to="/registrieren" className="nav-link">Registrieren</Link>
                                 </li>
                             )}
                         </ul>
