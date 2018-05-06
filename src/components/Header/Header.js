@@ -28,8 +28,6 @@ class Header extends React.PureComponent {
     render() {
         let {active} = this.state;
         let {UserStore} = this.props;
-        console.log(UserStore.user);
-        console.log(UserStore.user ? UserStore.user.username : "Kein Username");
         return (
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
