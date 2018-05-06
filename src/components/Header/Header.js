@@ -1,12 +1,13 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import classnames from 'classnames';
+import {inject, observer} from 'mobx-react';
 
 import './Header.css';
 
 import logo from './../../images/logo_100px.png';
 
-class Header extends PureComponent {
+class Header extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -25,7 +26,10 @@ class Header extends PureComponent {
     }
 
     render() {
-        let {active, user} = this.state;
+        let {active} = this.state;
+        let {UserStore} = this.props;
+        console.log(UserStore.user);
+        console.log(UserStore.user ? UserStore.user.username : "Kein Username");
         return (
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
@@ -70,9 +74,9 @@ class Header extends PureComponent {
                             <li className="nav-item"><a className="nav-link" href="https://www.youtube.com/channel/UCPSSW0COqKjF5nSn-3aYh7w" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube" /></a></li>
                         </ul>
                         <ul className="navbar-nav sign-in">
-                            {user ? (
+                            {UserStore.user ? (
                                 <li className="nav-item">
-                                    Hallo {user.username}! <div className="text-muted" onClick={function() { sessionStorage.setItem("user", null); }}>Logout</div>
+                                    Hallo {UserStore.user.username}! <div className="text-muted" onClick={function() { UserStore.setUser(null); }}>Logout</div>
                                 </li>
                             )  : (
                                 <li className="nav-item">
@@ -87,4 +91,4 @@ class Header extends PureComponent {
     }
 }
 
-export default withRouter(Header);
+export default withRouter(inject("UserStore")(observer(Header)));
