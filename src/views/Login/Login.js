@@ -1,11 +1,12 @@
 import React from 'react';
 import $ from 'jquery';
+import {inject, observer} from 'mobx-react';
 
 import {searchToObject} from '../../utils/helperFunctions';
 
 import './Login.css';
 
-export default class Login extends React.PureComponent {
+class Login extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -39,6 +40,7 @@ export default class Login extends React.PureComponent {
                 sessionStorage.setItem("user", JSON.stringify(json));
                 let search = searchToObject(this.props.location.search);
                 this.props.history.push(search.next || "/");
+                this.props.UserStore.setUser(json);
             })
             .catch( error => {
                 // Show error; user has to try again
@@ -70,3 +72,5 @@ export default class Login extends React.PureComponent {
         );
     }
 }
+
+export default inject("UserStore")(observer(Login));
