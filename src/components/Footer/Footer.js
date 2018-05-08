@@ -6,11 +6,11 @@ import './Footer.css';
 class Footer extends PureComponent {
     render() {
         return (
-            <footer>
+            <footer id="footer">
                 <div className="container">
                     <NavLink to="/datenschutz" activeClassName="active">Datenschutz</NavLink>
                     <NavLink to="/impressum" activeClassName="active">Impressum</NavLink>
-                    <NavLink to="/kontakt" activeClassName="active">Kontakt</NavLink>
+                    {/*<NavLink to="/kontakt" activeClassName="active">Kontakt</NavLink>*/}
                 </div>
             </footer>
         );

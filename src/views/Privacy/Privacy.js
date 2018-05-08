@@ -95,11 +95,10 @@ export default class Privacy extends React.PureComponent {
                         <p>
                             Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br/>
                             <br/>
-                            Malthe<br/>
-                            Anschrift<br/>
-                            PLZ Ort<br/>
-                            <br/>
-                            E-Mail: info@battleground-bulls.de
+                            Malthe Strauch <br/>
+                            Herrenkamp 21 <br/>
+                            27299 Langwedel <br/>
+                            <a href="mailto:business@battleground-bulls.de">business@battleground-bulls.de</a>
                         </p>
                         <p>
                             Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam

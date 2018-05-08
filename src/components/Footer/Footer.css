@@ -1,17 +1,17 @@
-footer {
+footer#footer {
   height: 100px;
   line-height: 100px;
   text-align: center;
   background-color: white; }
-  footer a {
+  footer#footer a {
     color: #495057;
     padding: 0 15px;
     font-family: "Droid Serif", sans-serif;
     text-decoration: none; }
-    footer a.active {
+    footer#footer a.active {
       pointer-events: none;
       color: #e31d3c; }
-    footer a:hover {
+    footer#footer a:hover {
       color: #e31d3c; }
 
 /*# sourceMappingURL=Footer.css.map */
