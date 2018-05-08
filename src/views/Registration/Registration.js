@@ -8,6 +8,7 @@ export default class Registration extends PureComponent {
         super(props);
 
         this.onSubmit = this.onSubmit.bind(this);
+        this.onUsernameChange = this.onUsernameChange.bind(this);
     }
 
     componentDidMount() {
@@ -38,6 +39,30 @@ export default class Registration extends PureComponent {
             });
     }
 
+    onUsernameChange(e) {
+        let input = $(e.target);
+        clearTimeout(this.usernameChangeTimeout);
+        this.usernameChangeTimeout = setTimeout(function() {
+            let username = input.val();
+            console.log(username);
+            let headers = new Headers();
+            headers.append("Authorization", "Basic " + btoa("demo:demo"));
+            let formData = new FormData();
+            formData.append("username", username);
+            fetch("http://localhost:9000/user/checkUsername", {
+                headers: headers,
+                body: formData,
+                method: "POST"
+            })
+                .then(function (response) {
+                    console.log(response.status);
+                    // if 409: show error, else: username ok
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }, 1000);
+    }
 
     render() {
         return (
@@ -54,7 +79,7 @@ export default class Registration extends PureComponent {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="username">Benutzername</label>
-                                <input type="text" className="form-control" id="username" placeholder="Benutzername" required/>
+                                <input type="text" className="form-control" id="username" placeholder="Benutzername" onChange={this.onUsernameChange} required/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="password1">Passwort</label>
