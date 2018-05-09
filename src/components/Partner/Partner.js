@@ -18,7 +18,7 @@ export default class Partner extends React.PureComponent {
 
                         <div className="row">
                             <div className="col-12 col-sm-6 col-md-4">
-                                <a href="https://www.mmoga.de" target="_blank" rel="noopener noreferrer"><img src={MMOGA_IMG} alt="MMOGA"/></a>
+                                <a href="https://www.mmoga.de/?ref=29428" target="_blank" rel="noopener noreferrer"><img src={MMOGA_IMG} alt="MMOGA"/></a>
                                 <p>
                                     <strong>Du möchtest unseren Stream und die Webseite unterstützen? Kauf deine Spiele,
                                         Gamecards, Coins uvm. einfach bei MMOGA!</strong>
