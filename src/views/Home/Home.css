@@ -69,7 +69,7 @@
           border-bottom: 1px solid #fff; }
           .home .section.regeln .inner div[data-toggle="collapse"]:not(.collapsed) {
             border-color: transparent; }
-            .home .section.regeln .inner div[data-toggle="collapse"]:not(.collapsed) :after {
+            .home .section.regeln .inner div[data-toggle="collapse"]:not(.collapsed):after {
               transform: rotate(90deg); }
           .home .section.regeln .inner div[data-toggle="collapse"]:after {
             content: "\f054";
