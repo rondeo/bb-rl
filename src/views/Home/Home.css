@@ -40,6 +40,8 @@
               top: 12px; }
           .home .section.start .container .inner .links {
             margin: 25px auto 0; }
+            .home .section.start .container .inner .links .twitch {
+              min-width: 300px; }
             .home .section.start .container .inner .links a {
               display: inline-block; }
               .home .section.start .container .inner .links a:not(:last-child) {

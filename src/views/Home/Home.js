@@ -18,6 +18,7 @@ export default class Home extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
+            live: false,
             tournamentRunning: false
         };
     }
@@ -47,6 +48,27 @@ export default class Home extends PureComponent {
                 this.resizeTwitchPlayer();
             }, 250);
         });
+
+        // Request stream and look if stream is online
+        let headers = new Headers();
+        headers.append("Client-ID", "swviygtzpvpvtpm5r79410wd6221th");
+        setInterval(() => {
+            fetch("https://api.twitch.tv/helix/streams?user_login=battleground_bulls", {
+                headers: headers
+            })
+                .then(response => { return response.json()})
+                .then(json => {
+                    let live = false;
+                    if (json.data.length > 0) {
+                        live = true;
+                        console.log(json.data[0].started_at);
+                        // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
+                    }
+                    if (live !== this.state.life) {
+                        this.setState({ live: live });
+                    }
+                });
+        }, 60000);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -79,6 +101,8 @@ export default class Home extends PureComponent {
     }
 
     render() {
+        let { live } = this.state;
+        let liveButton = live ? <Link to="https://www.twitch.tv/battleground_bulls" className="btn twitch animated infinite pulse" target="_blank" rel="noopener noreferrer">Jetzt LIVE</Link> : null;
         return (
             <div ref="fullpage" className="container-fluid home">
 
@@ -97,6 +121,7 @@ export default class Home extends PureComponent {
                                 }}/>
                                 <div className="links">
                                     <Link to="https://goo.gl/KEBC8z" className="btn primary" target="_blank" rel="noopener noreferrer">Jetzt anmelden</Link>
+                                    {liveButton}
                                     <Link to="https://discord.gg/gke2aYp" className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</Link>
                                 </div>
                             </div>

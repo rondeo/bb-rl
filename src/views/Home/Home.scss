@@ -60,6 +60,9 @@
 
           .links {
             margin: 25px auto 0;
+            .twitch {
+              min-width: 300px;
+            }
             a {
               display: inline-block;
               &:not(:last-child) {
