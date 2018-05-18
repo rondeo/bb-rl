@@ -49,26 +49,9 @@ export default class Home extends PureComponent {
             }, 250);
         });
 
-        // Request stream and look if stream is online
-        let headers = new Headers();
-        headers.append("Client-ID", "swviygtzpvpvtpm5r79410wd6221th");
-        setInterval(() => {
-            fetch("https://api.twitch.tv/helix/streams?user_login=battleground_bulls", {
-                headers: headers
-            })
-                .then(response => { return response.json()})
-                .then(json => {
-                    let live = false;
-                    if (json.data.length > 0) {
-                        live = true;
-                        console.log(json.data[0].started_at);
-                        // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
-                    }
-                    if (live !== this.state.life) {
-                        this.setState({ live: live });
-                    }
-                });
-        }, 60000);
+        this.checkStreamIsOnline();
+
+        setInterval(this.checkStreamIsOnline, 60000);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -91,6 +74,27 @@ export default class Home extends PureComponent {
     componentWillUnmount() {
         $.fn.fullpage.destroy("all");
         $(".scroll-down, .scroll-up").off();
+    }
+
+    checkStreamIsOnline () {
+        // Request stream and look if stream is online
+        let headers = new Headers();
+        headers.append("Client-ID", "swviygtzpvpvtpm5r79410wd6221th");
+        fetch("https://api.twitch.tv/helix/streams?user_login=battleground_bulls", {
+            headers: headers
+        })
+            .then(response => { return response.json()})
+            .then(json => {
+                let live = false;
+                if (json.data.length > 0) {
+                    live = true;
+                    // console.log(json.data[0].started_at);
+                    // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
+                }
+                if (live !== this.state.life) {
+                    this.setState({ live: live });
+                }
+            });
     }
 
     resizeTwitchPlayer() {
