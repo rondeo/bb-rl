@@ -67,6 +67,9 @@ export default class Registration extends PureComponent {
                 case ERROR_PASSWORD_NOT_EQUAL:
                     passwordErrorText = "Die Passwörter stimmen nicht überein";
                     break;
+                default:
+                    passwordErrorText = "Ups, etwas ist schiefgelaufen. Bitte wende dich an einen Admin.";
+                    break;
             }
             passwordErrorDiv = <div className="alert alert-danger">{passwordErrorText}</div>;
         }

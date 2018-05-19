@@ -1,19 +1,19 @@
-import React from 'react';
-import {Link, withRouter} from 'react-router-dom';
-import classnames from 'classnames';
-import {inject, observer} from 'mobx-react';
+import React from "react";
+import {Link, withRouter} from "react-router-dom";
+import classnames from "classnames";
+import {inject, observer} from "mobx-react";
+import isEqual from "lodash/isEqual";
 
-import './Header.css';
+import "./Header.css";
 
-import logo from './../../images/logo_100px.png';
+import logo from "./../../images/logo_100px.png";
 
-class Header extends React.PureComponent {
+class Header extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            active: props.location.pathname + props.location.hash,
-            user: JSON.parse(sessionStorage.getItem("user"))
+            active: props.location.pathname + props.location.hash
         };
     }
 
@@ -25,9 +25,17 @@ class Header extends React.PureComponent {
         });
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log(this.props.UserStore.user, nextProps.UserStore.user)
+        return !isEqual(this.props.UserStore.user, nextProps.UserStore.user)
+            || !isEqual(this.props.history, nextProps.history)
+            || this.state.active !== nextState.active;
+    }
+
     render() {
         let {active} = this.state;
         let {UserStore} = this.props;
+        console.log(UserStore.user)
         return (
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
