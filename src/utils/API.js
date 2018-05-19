@@ -1,5 +1,6 @@
 import * as CONSTANTS from "../constants";
 import $ from "jquery";
+import includes from "lodash/includes";
 
 export default class API {
 
@@ -72,6 +73,6 @@ export default class API {
     }
 
     _parseJson(response) {
-        return response.status + "".indexOf("204", "309") > -1 ? { status: response.status } : response.json()
+        return includes([204, 309], response.status) ? { status: response.status } : response.json()
     }
 }
