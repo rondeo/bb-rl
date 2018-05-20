@@ -1,14 +1,15 @@
 import React from "react";
 import {Link, withRouter} from "react-router-dom";
 import classnames from "classnames";
-import {inject, observer} from "mobx-react";
-import isEqual from "lodash/isEqual";
+import {connect} from "react-redux";
+
+import {logout} from "../../actions/ApplicationActions";
 
 import "./Header.css";
 
 import logo from "./../../images/logo_100px.png";
 
-class Header extends React.Component {
+class Header extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -25,17 +26,9 @@ class Header extends React.Component {
         });
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log(this.props.UserStore.user, nextProps.UserStore.user)
-        return !isEqual(this.props.UserStore.user, nextProps.UserStore.user)
-            || !isEqual(this.props.history, nextProps.history)
-            || this.state.active !== nextState.active;
-    }
-
     render() {
         let {active} = this.state;
-        let {UserStore} = this.props;
-        console.log(UserStore.user)
+        let {user} = this.props;
         return (
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
@@ -80,11 +73,11 @@ class Header extends React.Component {
                             <li className="nav-item"><a className="nav-link" href="https://www.youtube.com/channel/UCPSSW0COqKjF5nSn-3aYh7w" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube" /></a></li>
                         </ul>
                         <ul className="navbar-nav sign-in">
-                            {UserStore.user ? (
+                            {user ? (
                                 <li className="nav-item">
-                                    Hallo {UserStore.user.username}! <div className="text-muted" onClick={function() { UserStore.setUser(null); }}>Logout</div>
+                                    Hallo {user.username}! <div className="text-muted" onClick={() => { this.props.dispatch(logout()); }}>Logout</div>
                                 </li>
-                            )  : (
+                            ) : (
                                 <li className="nav-item">
                                     <i className="fas fa-user d-none d-lg-inline-block" /> <Link to="/login" className="nav-link">Einloggen</Link> | <Link to="/registrieren" className="nav-link">Registrieren</Link>
                                 </li>
@@ -97,4 +90,9 @@ class Header extends React.Component {
     }
 }
 
-export default withRouter(inject("UserStore")(observer(Header)));
+function mapStateToProps(state, props) {
+    return {
+        ...state
+    };
+}
+export default withRouter(connect(mapStateToProps)(Header));

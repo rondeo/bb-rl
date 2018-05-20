@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import registerServiceWorker, {unregister} from './registerServiceWorker';
+import {Provider} from "react-redux";
+import store from "./store";
+import registerServiceWorker from './registerServiceWorker';
 
 /* eslint-disable import/first */
 import $ from 'jquery';
@@ -82,6 +85,42 @@ require('fullpage.js');
     };
 })($);
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+const rootEl = document.getElementById('root');
+
+// Create a reusable render method that we can call more than once
+let render = () => {
+    // Dynamically import our main App component, and render it
+    const App = require("./App").default;
+
+    ReactDOM.render(
+        <Provider store={store()}>
+            <App />
+        </Provider>,
+        rootEl
+    );
+};
+
+if (module.hot) {
+    const renderApp = render;
+    // In development, we wrap the rendering function to catch errors,
+    // and if something breaks, log the error and render it to the screen
+    render = () => {
+        try {
+            renderApp();
+        }
+        catch(error) {
+            console.error(error);
+        }
+    };
+
+    // Whenever the App component file or one of its dependencies
+    // is changed, re-import the updated component and re-render it
+    module.hot.accept("./App", () => {
+        setTimeout(render);
+    });
+}
+
+render();
+
 //registerServiceWorker();
 unregister();
