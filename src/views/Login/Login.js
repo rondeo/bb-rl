@@ -1,14 +1,15 @@
 import React from 'react';
 import $ from 'jquery';
-import {inject, observer} from 'mobx-react';
-import isEqual from "lodash/isEqual";
+import {connect} from "react-redux";
 
+import {login} from "../../actions/ApplicationActions";
+
+import API from "../../utils/API";
 import {searchToObject} from '../../utils/helperFunctions';
 
 import './Login.css';
-import API from "../../utils/API";
 
-class Login extends React.Component {
+class Login extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -18,10 +19,6 @@ class Login extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return !isEqual(this.props.UserStore.user, nextProps.UserStore.user);
     }
 
     onSubmit(e) {
@@ -39,10 +36,9 @@ class Login extends React.Component {
             }
             // Save data and greet user; save basic auth in cookie
             console.log(this, json, this.props.history);
-            sessionStorage.setItem("user", JSON.stringify(json));
             let search = searchToObject(this.props.location.search);
             this.props.history.push(search.next || "/");
-            this.props.UserStore.setUser(json);
+            this.props.dispatch(login(json));
         });
     }
 
@@ -70,5 +66,9 @@ class Login extends React.Component {
         );
     }
 }
-
-export default inject("UserStore")(observer(Login));
+function mapStateToProps(state, props) {
+    return {
+        ...state
+    };
+}
+export default connect(mapStateToProps)(Login);
