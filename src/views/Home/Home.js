@@ -49,6 +49,8 @@ export default class Home extends PureComponent {
             }, 250);
         });
 
+        this.checkStreamIsOnline = this.checkStreamIsOnline.bind(this);
+
         this.checkStreamIsOnline();
 
         setInterval(this.checkStreamIsOnline, 60000);
@@ -91,6 +93,7 @@ export default class Home extends PureComponent {
                     // console.log(json.data[0].started_at);
                     // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
                 }
+                console.log(this)
                 if (live !== this.state.live) {
                     this.setState({ live: live });
                 }
