@@ -10,6 +10,7 @@ class Footer extends PureComponent {
                 <div className="container">
                     <NavLink to="/datenschutz" activeClassName="active">Datenschutz</NavLink>
                     <NavLink to="/impressum" activeClassName="active">Impressum</NavLink>
+                    <NavLink to="/rl-overlay">RL Overlay</NavLink>
                     {/*<NavLink to="/kontakt" activeClassName="active">Kontakt</NavLink>*/}
                 </div>
             </footer>

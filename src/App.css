@@ -11,6 +11,10 @@ body {
   padding: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 500; }
+  body.blank {
+    overflow: hidden; }
+    body.blank nav, body.blank footer {
+      display: none; }
 
 /**
  * Floating labels

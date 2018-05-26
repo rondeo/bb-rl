@@ -91,7 +91,7 @@ export default class Home extends PureComponent {
                     // console.log(json.data[0].started_at);
                     // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
                 }
-                if (live !== this.state.life) {
+                if (live !== this.state.live) {
                     this.setState({ live: live });
                 }
             });
