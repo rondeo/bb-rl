@@ -67,12 +67,12 @@ export default class API {
             })
             .catch(error => {
                 console.error("Unexpected Error in API", error);
-                dfr.reject(error);
+                dfr.reject({error: error});
             });
         return dfr;
     }
 
     _parseJson(response) {
-        return includes([204, 309], response.status) ? { status: response.status } : response.json()
+        return includes([204, 409], response.status) ? { status: response.status } : response.json()
     }
 }

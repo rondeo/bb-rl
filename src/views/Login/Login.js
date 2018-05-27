@@ -34,11 +34,9 @@ class Login extends React.PureComponent {
             if (json.error) {
                 console.error("Status: " + json.status + ", Error: " + json.error + ", Message: " + json.message);
             }
-            // Save data and greet user; save basic auth in cookie
-            console.log(this, json, this.props.history);
             let search = searchToObject(this.props.location.search);
-            this.props.history.push(search.next || "/");
             this.props.dispatch(login(json));
+            this.props.history.push(search.next || "/");
         });
     }
 
