@@ -1,4 +1,4 @@
-import React, {PureComponent} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 import $ from "jquery";
 
@@ -6,8 +6,11 @@ import API from "./../../utils/API";
 import {ERROR_PASSWORD_NOT_EQUAL} from "./../../constants";
 
 import "./Registration.css";
+import {login} from "../../actions/ApplicationActions";
+import {searchToObject} from "../../utils/helperFunctions";
+import {connect} from "react-redux";
 
-export default class Registration extends PureComponent {
+class Registration extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -39,7 +42,15 @@ export default class Registration extends PureComponent {
                 password: formData.password1,
                 username: formData.username
             }).then(response => {
-                console.log(response)
+                console.log(response);
+                if (response.error) {
+                    console.error("Status: " + response.status + ", Error: " + response.error + ", Message: " + response.message);
+                }
+                if (response.id) {
+                    let search = searchToObject(this.props.location.search);
+                    this.props.dispatch(login(response));
+                    this.props.history.push(search.next || "/");
+                }
             });
         } else if (formData.password1 !== formData.password2) {
             this.setState({ errors: {password: ERROR_PASSWORD_NOT_EQUAL} });
@@ -52,7 +63,7 @@ export default class Registration extends PureComponent {
         this.usernameChangeTimeout = setTimeout(() => {
             let username = input.val();
             API.getInstance()._fetch("/user/checkUsername", "POST", {username: username})
-                .then(response => {
+                .always(response => {
                     this.setState({ usernameStatus: response.status });
                 });
         }, 500);
@@ -60,6 +71,7 @@ export default class Registration extends PureComponent {
 
     render() {
         let { usernameStatus, errors } = this.state;
+        console.log(usernameStatus)
         let passwordErrorDiv = null,
             passwordErrorText = null;
         if (errors && errors.password) {
@@ -116,3 +128,9 @@ export default class Registration extends PureComponent {
         );
     }
 }
+function mapStateToProps(state, props) {
+    return {
+        ...state
+    };
+}
+export default connect(mapStateToProps)(Registration);
