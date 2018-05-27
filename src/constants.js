@@ -1,4 +1,6 @@
-export const API_ROUTE = "http://localhost:9000";
+export const API_ROUTE = "https://bb-api.moritzellmers.de";
+export const API_ROUTE_DEV = "https://bb-api-dev.moritzellmers.de";
+export const API_ROUTE_LOCAL = "http://localhost:9000";
 export const WEBCLIENT_NAME = "webclient";
 export const WEBCLIENT_SECRET = "KqsL4vuFPKmA";
 
