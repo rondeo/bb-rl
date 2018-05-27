@@ -37,7 +37,7 @@ export default class API {
         }
 
         if (url.indexOf("http") === -1) {
-            url = CONSTANTS.API_ROUTE_LOCAL + url;
+            url = CONSTANTS.API_ROUTE_DEV + url;
         }
 
         if (query) {
