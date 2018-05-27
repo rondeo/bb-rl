@@ -58,8 +58,8 @@ export default class RocketLeagueOverlay extends React.PureComponent {
         }
         return (
             <div id="rl-overlay">
-                <img ref="img" src={imgSrc} alt="" />
                 <img ref="winnerImg" src={winnerImgSrc} alt="" />
+                <img ref="img" src={imgSrc} alt="" />
                 <button className="blue-1" onClick={() => { this.setState({ counterBlue: 1 }); }}>Blau 1</button>
                 <button className="blue-2" onClick={() => { this.setState({ counterBlue: 2 }); }}>Blau 2</button>
                 <button className="orange-1" onClick={() => { this.setState({ counterOrange: 1 }); }}>Orange 1</button>
