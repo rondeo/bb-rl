@@ -9,6 +9,8 @@ import Login from './views/Login/Login';
 import NotFound from './views/NotFound/NotFound';
 import Privacy from './views/Privacy/Privacy';
 import RocketLeagueOverlay from './views/RocketLeagueOverlay/RocketLeagueOverlay';
+import NewFollower from "./views/NewFollower/NewFollower";
+import NewSub from "./views/NewSub/NewSub";
 
 import './App.css';
 
@@ -25,6 +27,8 @@ class App extends PureComponent {
                             <Route path="/datenschutz" component={Privacy} exact/>
                             <Route path="/impressum" component={Imprint} exact/>
                             <Route path="/rl-overlay" component={RocketLeagueOverlay} exact/>
+                            <Route path="/new-follower" component={NewFollower} exact/>
+                            <Route path="/new-sub" component={NewSub} exact/>
                             <Route component={NotFound} exact/>
                         </Switch>
                     </main>
