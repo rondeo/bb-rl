@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker, {unregister} from './registerServiceWorker';
 
 /* eslint-disable import/first */
 import $ from 'jquery';
@@ -15,4 +15,5 @@ require('fullpage.js/vendors/scrolloverflow');
 require('fullpage.js');
 
 ReactDOM.render(<App/>, document.getElementById('root'));
-registerServiceWorker();
+//registerServiceWorker();
+unregister();
