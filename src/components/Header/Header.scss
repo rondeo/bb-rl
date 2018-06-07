@@ -13,8 +13,30 @@ $navbarCollapse: $breakpoint-lg;
   background-color: $backgroundBlue;
   border-bottom: 1px solid $borderColor;
 
-  .nav-item.active {
-    pointer-events: none;
+  .nav-item {
+    position: relative;
+    &.active {
+      pointer-events: none;
+    }
+    &:hover ul.submenu {
+      opacity: 1;
+    }
+
+    ul.submenu {
+      opacity: 0;
+      position: absolute;
+      list-style: none;
+      padding: 15px 0;
+      background-color: darken($backgroundBlue, 2%);
+      transition: opacity .25s;
+      li {
+        padding: 5px 10px;
+        transition: background-color .25s;
+        &:hover {
+          background-color: $backgroundBlue;
+        }
+      }
+    }
   }
 
   .nav-link.disabled, .nav-item.disabled {

@@ -47,7 +47,7 @@ export default class About extends React.PureComponent {
                                 <SquareCard
                                     image={streamtimes}
                                     text="Du willst wissen wann wir online sind?"
-                                    linkTo="https://goo.gl/SnMqEj"
+                                    linkTo="/streamzeiten"
                                 />
                             </div>
                             <div className="col-12 col-sm-4">

@@ -12,6 +12,7 @@ import RocketLeagueOverlay from './views/RocketLeagueOverlay/RocketLeagueOverlay
 import NewFollower from "./views/NewFollower/NewFollower";
 import NewSub from "./views/NewSub/NewSub";
 import NewBits from "./views/NewBits/NewBits";
+import StreamTimes from "./views/StreamTimes/StreamTimes";
 
 import './App.css';
 
@@ -31,6 +32,7 @@ class App extends PureComponent {
                             <Route path="/new-follower" component={NewFollower} exact/>
                             <Route path="/new-sub" component={NewSub} exact/>
                             <Route path="/new-bits" component={NewBits} exact/>
+                            <Route path="/streamzeiten" component={StreamTimes} exact/>
                             <Route component={NotFound} exact/>
                         </Switch>
                     </main>

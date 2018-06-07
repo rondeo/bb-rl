@@ -8,8 +8,24 @@
   font-size: 14px;
   background-color: #081a29;
   border-bottom: 1px solid #303743; }
-  .navbar .nav-item.active {
-    pointer-events: none; }
+  .navbar .nav-item {
+    position: relative; }
+    .navbar .nav-item.active {
+      pointer-events: none; }
+    .navbar .nav-item:hover ul.submenu {
+      opacity: 1; }
+    .navbar .nav-item ul.submenu {
+      opacity: 0;
+      position: absolute;
+      list-style: none;
+      padding: 15px 0;
+      background-color: #061520;
+      transition: opacity .25s; }
+      .navbar .nav-item ul.submenu li {
+        padding: 5px 10px;
+        transition: background-color .25s; }
+        .navbar .nav-item ul.submenu li:hover {
+          background-color: #081a29; }
   .navbar .nav-link.disabled, .navbar .nav-link.disabled a, .navbar .nav-item.disabled, .navbar .nav-item.disabled a {
     color: #6c757d !important;
     pointer-events: none !important; }
