@@ -3,9 +3,9 @@ import $ from "jquery";
 
 import bbFollowGif from "./bb-follow.gif";
 
-import "./NewSub.css";
+import "./NewBits.css";
 
-export default class NewSub extends React.PureComponent {
+export default class NewBits extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -17,12 +17,12 @@ export default class NewSub extends React.PureComponent {
 
         this.state = {
             accessToken: accessToken,
-            newSub: []
+            newBits: []
         };
     }
 
     componentDidMount() {
-        this.testFollow = this.testFollow.bind(this);
+        this.testBitsDonation = this.testBitsDonation.bind(this);
 
         $("body").addClass("blank");
 
@@ -35,7 +35,7 @@ export default class NewSub extends React.PureComponent {
             this.ws.onopen = (event) => {
                 console.log("Open connection");
 
-                let listenToNewSub = {
+                let listenToNewBits = {
                     "type": "LISTEN",
                     "nonce": "bb",
                     "data": {
@@ -44,7 +44,7 @@ export default class NewSub extends React.PureComponent {
                         "auth_token": accessToken
                     }
                 };
-                this.ws.send(JSON.stringify(listenToNewSub));
+                this.ws.send(JSON.stringify(listenToNewBits));
             };
 
             this.ws.onmessage = (event) => {
@@ -52,10 +52,10 @@ export default class NewSub extends React.PureComponent {
             };
 
             setInterval(() => {
-                let {newSub} = this.state;
-                console.log("Sub", newSub);
-                if (newSub.length > 0) {
-                    let name = newSub[0].name;
+                let {newBits} = this.state;
+                console.log("Bits", newBits);
+                if (newBits.length > 0) {
+                    let name = newBits[0].name;
                     console.log('Notifying about: ' + name);
 
                     $(this.refs.bg).attr("src", bbFollowGif).show();
@@ -67,7 +67,7 @@ export default class NewSub extends React.PureComponent {
                                     $(this.refs.text).fadeOut(700, () => {
                                         $(this.refs.bg).attr("src", "").hide();
                                     });
-                                    newSub.shift();
+                                    newBits.shift();
                                 }, 5000);
                             });
                     }, 3000);
@@ -82,11 +82,11 @@ export default class NewSub extends React.PureComponent {
         this.ws.close();
     }
 
-    testFollow() {
-        let newSub = this.state.newSub.splice(0);
-        newSub.push({id: "0", name: Math.random().toString(36).substring(7)});
+    testBitsDonation() {
+        let newBits = this.state.newBits.splice(0);
+        newBits.push({id: "0", name: Math.random().toString(36).substring(7)});
         this.setState({
-            newSub: newSub
+            newBits: newBits
         });
     }
 
@@ -97,7 +97,7 @@ export default class NewSub extends React.PureComponent {
             // form = (
             //     <form action="https://id.twitch.tv/oauth2/authorize">
             //         <input type="text" name="client_id" value="w213h4q0il8sg1oeqdim41rlcp29v4" hidden readOnly/>
-            //         <input type="text" name="redirect_uri" value="http://localhost:3000/new-sub" hidden readOnly />
+            //         <input type="text" name="redirect_uri" value="http://localhost:3000/new-bits" hidden readOnly />
             //         <input type="text" name="response_type" value="token id_token" hidden readOnly />
             //         <input type="text" name="scope" value="bits:read openid" hidden readOnly />
             //         <button type="submit" className="btn twitch">Anmelden</button>
@@ -105,7 +105,7 @@ export default class NewSub extends React.PureComponent {
             form = (
                 <form action="https://id.twitch.tv/oauth2/authorize">
                     <input type="text" name="client_id" value="yp4vqw7qgi1nd01tm1vr1gqvaiap17" hidden readOnly/>
-                    <input type="text" name="redirect_uri" value="https://www.battleground-bulls.de/new-sub" hidden readOnly />
+                    <input type="text" name="redirect_uri" value="https://www.battleground-bulls.de/new-bits" hidden readOnly />
                     <input type="text" name="response_type" value="token id_token" hidden readOnly />
                     <input type="text" name="scope" value="bits:read openid" hidden readOnly />
                     <button type="submit" className="btn twitch">Anmelden</button>
@@ -138,16 +138,16 @@ export default class NewSub extends React.PureComponent {
         }
          */
         return (
-            <div id="new-sub">
+            <div id="new-bits">
                 {form}
 
-                <span ref="text" className="sub-text">
-                    <span ref="name" className="sub-name">SUB</span> just subbed!
+                <span ref="text" className="donation-text">
+                    <span ref="name" className="username">BITS</span> just donated!
                 </span>
 
-                <img ref="bg" className="sub-background" alt="" />
+                <img ref="bg" className="bits-background" alt="" />
 
-                <button onClick={this.testFollow.bind(this)} className="test-follow-btn">Test sub</button>
+                <button onClick={this.testBitsDonation.bind(this)} className="test-bits-donation-btn">Test bit donation</button>
             </div>
         );
     }
