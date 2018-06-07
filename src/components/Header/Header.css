@@ -10,8 +10,6 @@
   border-bottom: 1px solid #303743; }
   .navbar .nav-item {
     position: relative; }
-    .navbar .nav-item.active {
-      pointer-events: none; }
     .navbar .nav-item:hover ul.submenu {
       opacity: 1; }
     .navbar .nav-item ul.submenu {

@@ -16,7 +16,7 @@ $navbarCollapse: $breakpoint-lg;
   .nav-item {
     position: relative;
     &.active {
-      pointer-events: none;
+      //pointer-events: none;
     }
     &:hover ul.submenu {
       opacity: 1;
