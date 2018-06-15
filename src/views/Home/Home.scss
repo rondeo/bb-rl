@@ -14,7 +14,7 @@
     }
 
     .container .inner {
-      margin-top: 128px;
+      margin-top: $headerHeight + 40;
     }
 
     &.start {
@@ -29,7 +29,7 @@
         text-align: center;
 
         .inner {
-          margin-top: 88px;
+          margin-top: $headerHeight;
 
           #twitch-embed iframe {
             max-width: 100%;
@@ -93,7 +93,6 @@
       background-image: url("./img/Bulls-BG-Regeln.jpg");
 
       .inner {
-        margin-bottom: 125px;
 
         h2 {
           margin-bottom: 25px;
@@ -133,6 +132,10 @@
     &.partner {
       background-image: url("./img/Bulls-BG-Partner.jpg");
       color: #fff;
+
+      .inner {
+        margin-bottom: 125px;
+      }
     }
   }
 

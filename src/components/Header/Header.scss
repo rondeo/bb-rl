@@ -4,7 +4,7 @@ $borderColor: #303743;
 $navbarCollapse: $breakpoint-lg;
 .navbar {
   position: fixed;
-  z-index: 1;
+  z-index: 101;
   top: 0;
   width: 100%;
   padding: 0 30px;
@@ -13,31 +13,6 @@ $navbarCollapse: $breakpoint-lg;
   background-color: $backgroundBlue;
   border-bottom: 1px solid $borderColor;
 
-  .nav-item {
-    position: relative;
-    &.active {
-      //pointer-events: none;
-    }
-    &:hover ul.submenu {
-      opacity: 1;
-    }
-
-    ul.submenu {
-      opacity: 0;
-      position: absolute;
-      list-style: none;
-      padding: 15px 0;
-      background-color: darken($backgroundBlue, 2%);
-      transition: opacity .25s;
-      li {
-        padding: 5px 10px;
-        transition: background-color .25s;
-        &:hover {
-          background-color: $backgroundBlue;
-        }
-      }
-    }
-  }
 
   .nav-link.disabled, .nav-item.disabled {
     &, a {
@@ -59,7 +34,7 @@ $navbarCollapse: $breakpoint-lg;
     .navbar-brand {
       position: absolute;
       left: 10px;
-      top: 10px;
+      top: 0;
       @media (min-width: $breakpoint-sm) {
         left: 40px;
       }
@@ -67,13 +42,13 @@ $navbarCollapse: $breakpoint-lg;
         left: 0;
       }
       img {
-        width: 100px;
+        width: 90px;
       }
     }
 
     .navbar-toggler {
       width: 45px;
-      height: 88px;
+      height: $headerHeight;
       position: relative;
       transform: rotate(0deg);
       transition: .5s ease-in-out;
@@ -82,7 +57,7 @@ $navbarCollapse: $breakpoint-lg;
 
       &:not(.collapsed) span {
         &:nth-child(1) {
-          top: 32px;
+          top: 29px;
           width: 0;
           left: 50%;
         }
@@ -93,7 +68,7 @@ $navbarCollapse: $breakpoint-lg;
           transform: rotate(-45deg);
         }
         &:nth-child(4) {
-          top: 32px;
+          top: 29px;
           width: 0;
           left: 50%;
         }
@@ -112,19 +87,20 @@ $navbarCollapse: $breakpoint-lg;
         transition: .25s ease-in-out;
 
         &:nth-child(1) {
-          top: 32px;
+          top: 17px;
         }
         &:nth-child(2), &:nth-child(3) {
-          top: 44px;
+          top: 29px;
         }
         &:nth-child(4) {
-          top: 56px;
+          top: 41px;
         }
       }
     }
 
     a, .nav-link {
       transition: color .25s;
+      padding: 10px 5px;
     }
 
     a {
@@ -141,20 +117,104 @@ $navbarCollapse: $breakpoint-lg;
       }
 
       .navbar-nav {
-        @media (min-width: $navbarCollapse) {
-          padding: 25px 0;
-        }
+        position: relative;
         &.default {
           flex-grow: 1;
           justify-content: space-between;
           text-transform: uppercase;
+          @media (max-width: $navbarCollapse - 1) {
+            margin-top: 50px;
+          }
           @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl - 1) {
             padding-right: 25px;
             border-right: 1px solid $borderColor;
           }
-          li {
-            &.active a {
-              color: $highlightColor;
+          .nav-item {
+            &.active {
+              > a {
+                color: $highlightColor;
+              }
+            }
+            /*
+            &:hover {
+              @media (max-width: $navbarCollapse - 1) {
+                background-size: 100% 100%;
+                color: #fff;
+                ul.submenu {
+                  opacity: 1;
+                  pointer-events: all;
+                }
+              }
+            }
+            */
+
+            > a {
+              background-color: transparent;
+              background-image: linear-gradient($highlightColor, $highlightColor);
+              background-repeat: no-repeat;
+              background-position: 50% 50%;
+              background-size: 100% 0;
+              transition: background-size .5s, color .75s;
+              @media (min-width: $navbarCollapse) {
+                padding: 20px 5px;
+              }
+              &:hover {
+                background-size: 100% 100%;
+                color: #fff;
+                + ul.submenu {
+                  opacity: 1;
+                  pointer-events: all;
+                  @media (max-width: $navbarCollapse - 1) {
+                    position: static;
+                  }
+                }
+              }
+            }
+
+            ul.submenu {
+              opacity: 0;
+              position: absolute;
+              top: 100%;
+              list-style: none;
+              background-color: $backgroundBlue;
+              transition: opacity .25s;
+              border-top: 2px solid #fff;
+              width: 100%;
+              pointer-events: none;
+              &:hover {
+                opacity: 1;
+                pointer-events: all;
+              }
+              @media (max-width: $navbarCollapse - 1) {
+                top: -99999px;
+              }
+              @media (min-width: $navbarCollapse) {
+                margin-bottom: 15px;
+                padding: 0;
+                width: auto;
+              }
+              li {
+                &.active a {
+                  color: $highlightColor;
+                }
+                a {
+                  background-color: transparent;
+                  background-image: linear-gradient($highlightColor, $highlightColor);
+                  background-repeat: no-repeat;
+                  background-position: 50% 50%;
+                  background-size: 100% 0;
+                  transition: background-size .5s, color .75s;
+                  list-style: none;
+                  text-transform: initial;
+                  &:hover {
+                    background-size: 100% 100%;
+                    color: #fff;
+                  }
+                  @media (min-width: $navbarCollapse) {
+                    padding: 17px 15px;
+                  }
+                }
+              }
             }
           }
         }
@@ -179,6 +239,7 @@ $navbarCollapse: $breakpoint-lg;
         }
 
         &.sign-in {
+          position: static;
           @media (max-width: $navbarCollapse - 1) {
             &:before {
               position: absolute;

@@ -39,7 +39,7 @@ export default class Counter extends PureComponent {
     setCounter() {
         // Set the date we're counting down to
         // TODO: Get Date from Database
-        let countDownDate = new Date("June 10, 2018 15:15:00").getTime();
+        let countDownDate = new Date("June 24, 2018 16:15:00").getTime();
 
         // Get todays date and time
         let now = new Date().getTime();

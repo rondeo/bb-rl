@@ -42,17 +42,16 @@ class Header extends PureComponent {
                             <li className={classnames("nav-item", {"active": active === "/" || active === "/#start"})}>
                                 <Link to={{pathname: "/", hash: "#start"}} className="nav-link">Start</Link>
                             </li>
-                            <li className={classnames("nav-item", {"active": active === "/#teams"})}>
-                                <Link to={{pathname: "/", hash: "#teams"}} className="nav-link disabled">Teams</Link>
+                            <li className={classnames("nav-item disabled", {"active": active === "/#teams"})}>
+                                <Link to={{pathname: "/", hash: "#teams"}} className="nav-link">Teams</Link>
                             </li>
-                            <li className={classnames("nav-item", {"active": active === "/#spielplan"})}>
-                                <Link to={{pathname: "/", hash: "#spielplan"}}
-                                      className="nav-link disabled">Spielplan</Link>
+                            <li className={classnames("nav-item disabled", {"active": active === "/#spielplan"})}>
+                                <Link to={{pathname: "/", hash: "#spielplan"}} className="nav-link">Spielplan</Link>
                             </li>
                             <li className={classnames("nav-item", {"active": active === "/#bulls"})}>
                                 <Link to={{pathname: "/", hash: "#bulls"}} className="nav-link">Über die Bulls</Link>
                                 <ul className="submenu">
-                                    <li><Link to={{pathname: "/streamzeiten"}} className="nav-link">Streamzeiten</Link></li>
+                                    <li className={classnames({"active": active === "/streamzeiten"})}><Link to={{pathname: "/streamzeiten"}} className="nav-link">Streamzeiten</Link></li>
                                 </ul>
                             </li>
                             <li className={classnames("nav-item", {"active": active === "/#regeln"})}>

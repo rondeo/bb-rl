@@ -2,8 +2,8 @@
 
 .stream-times {
   width: 100%;
-  min-height: calc(100vh - 87px);
-  margin-top: 87px;
+  min-height: calc(100vh - #{$headerHeight});
+  margin-top: $headerHeight;
   background: url("./Bulls-BG-Start.jpg") no-repeat center;
   background-size: cover;
   display: flex;
