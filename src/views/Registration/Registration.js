@@ -28,10 +28,6 @@ class Registration extends React.PureComponent {
         window.scrollTo(0, 0);
     }
 
-    componentDidMount() {
-        window.scrollTo(0, 0);
-    }
-
     onSubmit(e) {
         e.preventDefault();
 
