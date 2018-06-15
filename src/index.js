@@ -4,7 +4,6 @@ import App from './App';
 import registerServiceWorker, {unregister} from './registerServiceWorker';
 import {Provider} from "react-redux";
 import store from "./store";
-import registerServiceWorker from './registerServiceWorker';
 
 /* eslint-disable import/first */
 import $ from 'jquery';
