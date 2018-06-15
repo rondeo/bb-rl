@@ -78,7 +78,7 @@ class Header extends React.PureComponent {
                                     Hallo {user.username}! <div className="text-muted" onClick={() => { this.props.dispatch(logout()); }}>Logout</div>
                                 </li>
                             ) : (
-                                <li className="nav-item">
+                                <li className="nav-item disabled">
                                     <i className="fas fa-user d-none d-lg-inline-block" /> <Link to="/login" className="nav-link">Einloggen</Link> | <Link to="/registrieren" className="nav-link">Registrieren</Link>
                                 </li>
                             )}
