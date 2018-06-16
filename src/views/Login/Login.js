@@ -40,11 +40,24 @@ class Login extends React.PureComponent {
         });
     }
 
+    renderAccessDenied() {
+        let search = searchToObject(this.props.location.search);
+        return search.role ? (
+            <div className="access-denied">
+                <div className="alert alert-danger">
+                    <h1>Zugriff verweigert.</h1> <br/> Bitte logge dich mit der richtigen Berechtigung ein.
+                </div>
+            </div>
+        ) : null;
+    }
+
     render() {
         return (
             <div className="container login">
                 <div className="row">
                     <div className="col-12 col-md-6 offset-md-3">
+                        {this.renderAccessDenied()}
+
                         <h1>Login</h1>
 
                         <form onSubmit={this.onSubmit}>

@@ -15,6 +15,7 @@ import NewSub from "./views/NewSub/NewSub";
 import NewBits from "./views/NewBits/NewBits";
 import StreamTimes from "./views/StreamTimes/StreamTimes";
 import TournamentList from './views/TournamentList/TournamentList';
+import Admin from './views/Admin/Admin';
 
 import requireAuthentication from './utils/AuthComponent';
 
@@ -29,15 +30,15 @@ class App extends React.PureComponent {
                     <main>
                         <Switch>
                             <Route path="/" component={Home} exact/>
-                            <Route path="/login" component={Login} exact/>
-                            <Route path="/registrieren" component={Registration} exact/>
+                            <Route path="/admin" component={requireAuthentication(Admin, "ROLE_ADMIN")} exact/>
                             <Route path="/datenschutz" component={Privacy} exact/>
                             <Route path="/impressum" component={Imprint} exact/>
-                            <Route path="/turniere" component={requireAuthentication(TournamentList)} exact/>
-                            <Route path="/rl-overlay" component={RocketLeagueOverlay} exact/>
+                            <Route path="/login" component={Login} exact/>
+                            <Route path="/new-bits" component={NewBits} exact/>
                             <Route path="/new-follower" component={NewFollower} exact/>
                             <Route path="/new-sub" component={NewSub} exact/>
-                            <Route path="/new-bits" component={NewBits} exact/>
+                            <Route path="/registrieren" component={Registration} exact/>
+                            <Route path="/rl-overlay" component={RocketLeagueOverlay} exact/>
                             <Route path="/streamzeiten" component={StreamTimes} exact/>
                             <Route path="/turniere" component={requireAuthentication(TournamentList)} exact/>
                             <Route component={NotFound} exact/>
