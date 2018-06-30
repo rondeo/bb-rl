@@ -60,7 +60,7 @@ export default class Home extends PureComponent {
         if (this.state.tournamentRunning !== prevState.tournamentRunning && this.state.tournamentRunning) {
             new Twitch.Embed("twitch-embed", {
                 autoplay: false,
-                layout: "video",
+                layout: "video-with-chat",
                 width: 3000,
                 channel: "battleground_bulls"
             });
@@ -93,7 +93,7 @@ export default class Home extends PureComponent {
                     // console.log(json.data[0].started_at);
                     // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
                 }
-                console.log(this)
+                //console.log(this);
                 if (live !== this.state.live) {
                     this.setState({ live: live });
                 }
@@ -107,9 +107,19 @@ export default class Home extends PureComponent {
         }
     }
 
+    toggleLive() {
+        this.setState({ tournamentRunning: !this.state.tournamentRunning });
+        $("iframe").remove();
+    }
+
     render() {
         let { live } = this.state;
-        let liveButton = live ? <Link to="https://www.twitch.tv/battleground_bulls" className="btn twitch animated infinite pulse" target="_blank" rel="noopener noreferrer">Jetzt LIVE</Link> : null;
+        let liveButton = null,
+            img = <img src={logoSchriftzug} alt="Battleground Bulls"/>;
+        if (live) {
+            liveButton = <div className="live" onClick={this.toggleLive.bind(this)}><div className="record" />Jetzt live</div>;
+            img = <img className="live" src={logoSchriftzug} alt="Battleground Bulls" onClick={this.toggleLive.bind(this)}/>;
+        }
         return (
             <div ref="fullpage" className="container-fluid home">
 
@@ -118,17 +128,18 @@ export default class Home extends PureComponent {
                         {this.state.tournamentRunning ? (
                             <div className="inner">
                                 <div id="twitch-embed"/>
+                                <button className="btn primary back" onClick={this.toggleLive.bind(this)}>Zurück</button>
                             </div>
                         ) : (
                             <div className="inner">
-                                <img src={logoSchriftzug} alt="Battleground Bulls"/>
+                                {liveButton}
+                                {img}
                                 <div className="text">Nächstes<br/>Turnier in</div>
                                 <Counter endCallback={() => {
                                     this.setState({tournamentRunning: true});
                                 }}/>
                                 <div className="links">
-                                    <Link to="https://goo.gl/KEBC8z" className="btn primary" target="_blank" rel="noopener noreferrer">Jetzt anmelden</Link>
-                                    {liveButton}
+                                    <Link to="/anmeldung" className="btn primary">Jetzt anmelden</Link>
                                     <Link to="https://discord.gg/gke2aYp" className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</Link>
                                 </div>
                             </div>

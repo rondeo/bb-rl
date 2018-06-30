@@ -53,9 +53,8 @@ export default class About extends React.PureComponent {
                             <div className="col-12 col-sm-4">
                                 <SquareCard
                                     image={kuehe}
-                                    text="Du willst Mitglied der Bulls-Familie werden?"
-                                    linkTo="/#bulls"
-                                    linkDisabled={true}
+                                    text="Du willst Mitglied der Bulls-Familie werden? - Schau dir unsere Bullen an"
+                                    linkTo="/bulls"
                                 />
                             </div>
                             <div className="col-12 col-sm-4">

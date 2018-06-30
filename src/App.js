@@ -16,6 +16,8 @@ import NewBits from "./views/NewBits/NewBits";
 import StreamTimes from "./views/StreamTimes/StreamTimes";
 import TournamentList from './views/TournamentList/TournamentList';
 import Admin from './views/Admin/Admin';
+import Bulls from "./views/Bulls/Bulls";
+import TournamentRegistration from "./views/TournamentRegistration/TournamentRegistration";
 
 import requireAuthentication from './utils/AuthComponent';
 
@@ -41,6 +43,8 @@ class App extends React.PureComponent {
                             <Route path="/rl-overlay" component={RocketLeagueOverlay} exact/>
                             <Route path="/streamzeiten" component={StreamTimes} exact/>
                             <Route path="/turniere" component={requireAuthentication(TournamentList)} exact/>
+                            <Route path="/bulls" component={Bulls} exact/>
+                            <Route path="/anmeldung" component={TournamentRegistration} exact/>
                             <Route component={NotFound} exact/>
                         </Switch>
                     </main>

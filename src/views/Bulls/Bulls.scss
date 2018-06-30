@@ -1,0 +1,14 @@
+@import "./../../variables";
+
+.view.full-container.bulls {
+  background: url("./img/Bulls-BG-Bulls.jpg") no-repeat center;
+  background-size: cover;
+  color: #fff;
+  .container {
+    padding-top: 50px;
+
+    h1, .member {
+      margin-bottom: 50px;
+    }
+  }
+}

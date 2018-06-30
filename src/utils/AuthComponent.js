@@ -11,7 +11,7 @@ export default function requireAuthentication(ChildComponent, role = null) {
                 render = <ChildComponent {...this.props} />;
             }
             if (role && user && user.role && user.role.role !== role) {
-                render = <Redirect push={true} to={"/login" + "?role=" + role + (this.props.location.pathname !== "" ? '&next=' + this.props.location.pathname : "")}/>;
+                render = <Redirect push={true} to={"/login?role=" + role + (this.props.location.pathname !== "" ? '&next=' + this.props.location.pathname : "")}/>;
             }
             return render;
         }

@@ -2,6 +2,7 @@ import React from "react";
 import {Link, withRouter} from "react-router-dom";
 import classnames from "classnames";
 import {connect} from "react-redux";
+import $ from "jquery";
 
 import {logout} from "../../actions/ApplicationActions";
 
@@ -24,6 +25,20 @@ class Header extends React.PureComponent {
                 active: route.pathname + route.hash
             });
         });
+    }
+
+    componentDidMount() {
+        $(".nav-item")
+            .on("mouseenter", function () {
+                $(this).find("ul.submenu").slideDown(200);
+            })
+            .on("mouseleave", function () {
+                $(this).find("ul.submenu").slideUp(200);
+            });
+    }
+
+    componentWillUnmount() {
+        $(".nav-item").off();
     }
 
     render() {
@@ -75,11 +90,14 @@ class Header extends React.PureComponent {
                         <ul className="navbar-nav sign-in">
                             {user ? (
                                 <li className="nav-item">
-                                    Hallo {user.username}! <div className="text-muted" onClick={() => { this.props.dispatch(logout()); }}>Logout</div>
+                                    <a className="username">{user.username}</a>
+                                    <ul className="submenu">
+                                        <li className="text-muted" onClick={() => { this.props.dispatch(logout()); }}>Ausloggen</li>
+                                    </ul>
                                 </li>
                             ) : (
                                 <li className="nav-item disabled">
-                                    <i className="fas fa-user d-none d-lg-inline-block" /> <Link to="/login" className="nav-link">Einloggen</Link> | <Link to="/registrieren" className="nav-link">Registrieren</Link>
+                                    <i className="fas fa-user d-none d-lg-inline-block" /> <Link to="/login" className="nav-link">Einloggen</Link>|<Link to="/registrieren" className="nav-link">Registrieren</Link>
                                 </li>
                             )}
                         </ul>
