@@ -96,10 +96,14 @@ class Header extends React.PureComponent {
                                     </ul>
                                 </li>
                             ) : (
+                                <li className="nav-item">
+                                    <Link to="https://goo.gl/KEBC8z" className="nav-link" target="_blank" rel="noopener noreferrer">Jetzt anmelden</Link>
+                                </li>
+                            ) /*(
                                 <li className="nav-item disabled">
                                     <i className="fas fa-user d-none d-lg-inline-block" /> <Link to="/login" className="nav-link">Einloggen</Link>|<Link to="/registrieren" className="nav-link">Registrieren</Link>
                                 </li>
-                            )}
+                            )*/}
                         </ul>
                     </div>
                 </div>
