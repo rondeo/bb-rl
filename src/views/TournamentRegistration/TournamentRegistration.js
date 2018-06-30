@@ -8,13 +8,102 @@ export default class TournamentRegistration extends React.PureComponent {
                 <h1>Turnieranmeldung Rocket League</h1>
                 <form>
                     <div className="form-row">
-                        <div className="form-group col-md-3">
-                            <label htmlFor="inputEmail4">Email</label>
-                            <input type="email" className="form-control" id="inputEmail4" placeholder="Email"/>
+                        <div className="form-group col-md-6">
+                            <label htmlFor="inputTeamName">Teamname</label>
+                            <input type="text" className="form-control" id="inputTeamName" placeholder="Teamname"/>
                         </div>
-                        <div className="form-group col-md-9">
-                            <label htmlFor="inputPassword4">Password</label>
-                            <input type="password" className="form-control" id="inputPassword4" placeholder="Password"/>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <label htmlFor="inputMitglied1">Mitglied 1</label>
+                            <input type="text" className="form-control" id="inputMitglied1" placeholder="Mitglied 1"/>
+                        </div>
+                        <div className="form-group col-md-6">
+                            <label htmlFor="inputMitglied1Rang">Rang</label>
+                            <select id="inputMitglied1Rang" className="form-control">
+                                <option selected>Bitte auswählen</option>
+                                <option>Bronze 1</option>
+                                <option>Bronze 2</option>
+                                <option>Bronze 3</option>
+                                <option>Silber 1</option>
+                                <option>Silber 2</option>
+                                <option>Silber 3</option>
+                                <option>Gold 1</option>
+                                <option>Gold 2</option>
+                                <option>Gold 3</option>
+                                <option>Platin 1</option>
+                                <option>Platin 2</option>
+                                <option>Platin 3</option>
+                                <option>Diamant 1</option>
+                                <option>Diamant 2</option>
+                                <option>Diamant 3</option>
+                                <option>Champion 1</option>
+                                <option>Champion 2</option>
+                                <option>Champion 3</option>
+                                <option>Grand Champ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <label htmlFor="inputMitglied2">Mitglied 2</label>
+                            <input type="text" className="form-control" id="inputMitglied2" placeholder="Mitglied 2"/>
+                        </div>
+                        <div className="form-group col-md-6">
+                            <label htmlFor="inputMitglied2Rang">Rang</label>
+                            <select id="inputMitglied2Rang" className="form-control">
+                                <option selected>Bitte auswählen</option>
+                                <option>Bronze 1</option>
+                                <option>Bronze 2</option>
+                                <option>Bronze 3</option>
+                                <option>Silber 1</option>
+                                <option>Silber 2</option>
+                                <option>Silber 3</option>
+                                <option>Gold 1</option>
+                                <option>Gold 2</option>
+                                <option>Gold 3</option>
+                                <option>Platin 1</option>
+                                <option>Platin 2</option>
+                                <option>Platin 3</option>
+                                <option>Diamant 1</option>
+                                <option>Diamant 2</option>
+                                <option>Diamant 3</option>
+                                <option>Champion 1</option>
+                                <option>Champion 2</option>
+                                <option>Champion 3</option>
+                                <option>Grand Champ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col-md-6">
+                            <label htmlFor="inputMitglied3">Mitglied 3</label>
+                            <input type="text" className="form-control" id="inputMitglied3" placeholder="Mitglied 3"/>
+                        </div>
+                        <div className="form-group col-md-6">
+                            <label htmlFor="inputMitglied3Rang">Rang</label>
+                            <select id="inputMitglied3Rang" className="form-control">
+                                <option selected>Bitte auswählen</option>
+                                <option>Bronze 1</option>
+                                <option>Bronze 2</option>
+                                <option>Bronze 3</option>
+                                <option>Silber 1</option>
+                                <option>Silber 2</option>
+                                <option>Silber 3</option>
+                                <option>Gold 1</option>
+                                <option>Gold 2</option>
+                                <option>Gold 3</option>
+                                <option>Platin 1</option>
+                                <option>Platin 2</option>
+                                <option>Platin 3</option>
+                                <option>Diamant 1</option>
+                                <option>Diamant 2</option>
+                                <option>Diamant 3</option>
+                                <option>Champion 1</option>
+                                <option>Champion 2</option>
+                                <option>Champion 3</option>
+                                <option>Grand Champ</option>
+                            </select>
                         </div>
                     </div>
                     <div className="form-group">
@@ -36,6 +125,7 @@ export default class TournamentRegistration extends React.PureComponent {
                             <select id="inputState" className="form-control">
                                 <option selected>Choose...</option>
                                 <option>...</option>
+                                <option>2</option>
                             </select>
                         </div>
                         <div className="form-group col-md-2">
