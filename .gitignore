@@ -174,4 +174,5 @@ fabric.properties
 
 # Custom
 
-src/*.css
+src/**/*.css
+src/**/*.css.map
