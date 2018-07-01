@@ -1,0 +1,17 @@
+.view.full-container.tournament-registration {
+    background: url("./Bulls-BG-Partner.jpg") no-repeat center;
+    background-size: cover;
+    color: #fff;
+    .container {
+      padding-top: 80px;
+      padding-bottom: 100px;
+      .btn { margin-top: 10px;}
+      form {
+          margin-top: 80px;
+      }
+      h1 {
+          font-size: 300%;
+          text-align: center;
+      }
+    }
+}
