@@ -2,16 +2,21 @@
 
 #app {
   main {
+    position: relative;
+    z-index: 10;
+    margin-bottom: $footerHeight;
     min-height: calc(100vh - (#{$headerHeight} + 59px) - #{$footerHeight});
 
     > .container:not(.home), > .view {
-      margin-top: $headerHeight + 50px;
+      padding-top: $headerHeight + 50px;
     }
 
     > .full-container {
       width: 100%;
       min-height: calc(100vh - #{$headerHeight});
-      margin-top: $headerHeight;
+      &:not(.view) {
+        padding-top: $headerHeight;
+      }
     }
   }
 }
