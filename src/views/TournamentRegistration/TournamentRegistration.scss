@@ -3,15 +3,21 @@
     background-size: cover;
     color: #fff;
     .container {
-      padding-top: 80px;
       padding-bottom: 100px;
-      .btn { margin-top: 10px;}
+
+      h1 {
+        font-size: 300%;
+        text-align: center;
+        text-decoration: underline;
+      }
       form {
           margin-top: 80px;
       }
-      h1 {
-          font-size: 300%;
-          text-align: center;
+      .btn {
+        margin-top: 10px;
+      }
+      .alert {
+        margin-top: 50px;
       }
     }
 }

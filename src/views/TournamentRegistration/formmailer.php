@@ -1,31 +1,36 @@
 <?php
 
+// ======= Benötigte Header setzen:
+
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 header('Content-Type: application/json;charset=UTF-8');
 
+// ======= Daten werden aus dem Body geholt:
+$data = array();
+parse_str(json_decode(file_get_contents('php://input')), $data);
+
 // ======= Konfiguration:
 
-$mailTo = 'info@battleground-bulls.de';
-$mailFrom = '"FormMailer" <info@battleground-bulls.de>';
-$mailSubject    = 'Turnier-Anmeldung';
-$returnPage = 'http://battleground-bulls.de/Erfolgreich-Angemeldet.html';
-$returnErrorPage = 'http://battleground-bulls.de/Error.html';
+$mailTo = 'anmeldung@battleground-bulls.de';
+$mailFrom = '"Webseite Formular Anmeldung" <info@battleground-bulls.de>';
+$mailSubject = 'Turnier-Anmeldung';
 $mailText = '';
+$mailSent1 = $mailSent2 = false;
 
 // ======= Text der Mail aus den Formularfeldern erstellen:
-// Wenn Daten mit method="post" versendet wurden:
-if(isset($_POST)) {
+
+if (isset($data) && count($data) > 0) {
    // alle Formularfelder der Reihe nach durchgehen:
-   foreach($_POST as $name => $value) {
+   foreach($data as $name => $value) {
       // Wenn der Feldwert aus mehreren Werten besteht:
       // (z.B. <select multiple>)
-      if(is_array($value)) {
+      if (is_array($value)) {
           // "Feldname:" und Zeilenumbruch dem Mailtext hinzufügen
           $mailText .= $name . ":\n";
           // alle Werte des Feldes abarbeiten
-          foreach($valueArray as $entry) {
+          foreach ($value as $entry) {
              // Einrückungsleerzeichen, Wert und Zeilenumbruch
              // dem Mailtext hinzufügen
              $mailText .= "   " . $value . "\n";
@@ -37,46 +42,58 @@ if(isset($_POST)) {
           $mailText .= $name . ": " . $value . "\n";
       } // ENDE: else
    } // ENDE: foreach
+
+
+    // ======= Korrekturen vor dem Mailversand
+    // Wenn PHP "Magic Quotes" vor Apostrophzeichen einfügt:
+    if (get_magic_quotes_gpc()) {
+        // eventuell eingefügte Backslashes entfernen
+        $mailText = stripslashes($mailText);
+    }
+
+    // ======= Mailversand
+    // Mail versenden und Versanderfolg merken
+    $mailSent1 = @mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
 } // if
 
-// ======= Korrekturen vor dem Mailversand
+// ======= Bestätigungsversand
+// Wenn Mail von Benutzer übergeben wurde, dann schicke eine Bestätigungsmail
 
-// Wenn PHP "Magic Quotes" vor Apostrophzeichen einfügt:
- if(get_magic_quotes_gpc()) {
-     // eventuell eingefügte Backslashes entfernen
-     $mailtext = stripslashes($mailtext);
- }
+if ($data && $data['mail'])
+{
+    $mailTo = $mailFrom = $data['mail'];
+    $mailSubject = 'Bestätigung der Turnieranmeldung';
+    $mailText  = "Vielen Dank für deine Anmeldung. \n\n";
+    $mailText .= "Hiermit bestätigen wir eure Anmeldung! \n\n";
+    $mailText .= "Du kannst die Teamübersicht und das Bracket unter folgenden Links sehen: \n";
+    $mailText .= "Teamübersicht - https://goo.gl/vS1M3Q \n";
+    $mailText .= "Bracket - https://goo.gl/F8zHDx \n\n";
+    $mailText .= "Liebe Grüße \n";
+    $mailText .= "Deine Bulls";
+    $mailSent2 = @mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
+}
 
-// ======= Mailversand
-
-// Mail versenden und Versanderfolg merken
-$mailSent = @mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
-
-// ======= Return-Seite an den Browser senden
-
+// Wenn der Mailversand und die Bestätigungsmail erfolgreich waren:
+if ($mailSent1 == TRUE && $mailSent2 === TRUE) {
+    echo json_encode(array(
+        'code' => 'mail-sent-with-confirmation',
+        'message' => 'Successful registration and confirmation sent.',
+        'status' => 'OK'
+    ));
+}
 // Wenn der Mailversand erfolgreich war:
-if ($mailSent == TRUE) {
-   // Seite "Formular verarbeitet" senden:
-   //header("Location: " . $returnPage);
-   echo json_encode(array(
-       'code' => 'mail-not-sent',
-       'message' => 'E-Mail sent.',
-       'status' => 'OK'
-   ));
+else if ($mailSent1 == TRUE) {
+    echo json_encode(array(
+        'code' => 'mail-sent',
+        'message' => 'Successful registration.',
+        'status' => 'OK'
+    ));
 }
 // Wenn die Mail nicht versendet werden konnte:
 else {
-   // Seite "Fehler aufgetreten" senden:
-   //header(Location:  . $returnErrorPage);
-   echo json_encode(array(
-       'code' => 'mail-sent',
-       'message' => 'E-Mail not sent.',
-       'status' => 'ERROR'
-   ));
+    echo json_encode(array(
+        'code' => 'mail-not-sent',
+        'message' => 'E-Mail not sent.',
+        'status' => 'ERROR'
+    ));
 }
-
-// ======= Ende
-
-//exit();
-
-?>
