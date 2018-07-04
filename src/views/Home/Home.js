@@ -1,15 +1,18 @@
-import React, {PureComponent} from 'react';
-import {Link} from 'react-router-dom';
-import $ from 'jquery';
+import React, {PureComponent} from "react";
+import classnames from "classnames";
+import {Link} from "react-router-dom";
+import $ from "jquery";
 
-import About from '../../components/About/About';
-import Counter from '../../components/Counter/Counter';
-import Rules from '../../components/Rules/Rules';
-import Partner from '../../components/Partner/Partner';
+import About from "../../components/About/About";
+import Counter from "../../components/Counter/Counter";
+import Rules from "../../components/Rules/Rules";
+import Partner from "../../components/Partner/Partner";
 
-import './Home.css';
+import API from "../../utils/API";
 
-import logoSchriftzug from './../../images/logo-schriftzug_600px.png';
+import "./Home.css";
+
+import logoSchriftzug from "./../../images/logo-schriftzug_600px.png";
 
 let Twitch = window.Twitch;
 
@@ -18,8 +21,8 @@ export default class Home extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            live: false,
-            tournamentRunning: false
+            liveBB: false,
+            liveBP: false
         };
     }
 
@@ -30,8 +33,8 @@ export default class Home extends PureComponent {
 
         $(this.refs.fullpage).fullpage({
             anchors: ["start", /*"teams", "spielplan",*/ "bulls", "regeln", "partner"],
-            navigation: true,
-            navigationTooltips: ["Start", /*"Teams", "Spielplan",*/ "Über die Bulls", "Turnier-Regeln", "Partner"],
+            //navigation: true,
+            //navigationTooltips: ["Start", /*"Teams", "Spielplan",*/ "Über die Bulls", "Turnier-Regeln", "Partner"],
             scrollOverflow: true
         });
 
@@ -49,22 +52,29 @@ export default class Home extends PureComponent {
             }, 250);
         });
 
-        this.checkStreamIsOnline = this.checkStreamIsOnline.bind(this);
+        this.moveToLiveStream = this.moveToLiveStream.bind(this);
 
-        this.checkStreamIsOnline();
+        this.checkBBStreamIsOnline = this.checkBBStreamIsOnline.bind(this);
+        this.checkBPStreamIsOnline = this.checkBPStreamIsOnline.bind(this);
 
-        setInterval(this.checkStreamIsOnline, 60000);
+        this.openStream = this.openStream.bind(this);
+
+        //this.checkBBStreamIsOnline();
+        //this.checkBPStreamIsOnline();
+
+        //setInterval(this.checkBBStreamIsOnline, 60000);
+        //setInterval(this.checkBPStreamIsOnline, 60000);
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.state.tournamentRunning !== prevState.tournamentRunning && this.state.tournamentRunning) {
-            new Twitch.Embed("twitch-embed", {
+        if (!prevProps.liveBB && this.state.liveBB) {
+            /*new Twitch.Embed("twitch-embed-bb", {
                 autoplay: false,
                 layout: "video-with-chat",
                 width: 3000,
                 channel: "battleground_bulls"
             });
-            this.resizeTwitchPlayer();
+            this.resizeTwitchPlayer();*/
         }
 
         let currentPath = this.props.location.pathname + this.props.location.hash;
@@ -78,83 +88,130 @@ export default class Home extends PureComponent {
         $(".scroll-down, .scroll-up").off();
     }
 
-    checkStreamIsOnline () {
+    checkBBStreamIsOnline () {
         // Request stream and look if stream is online
-        let headers = new Headers();
-        headers.append("Client-ID", "swviygtzpvpvtpm5r79410wd6221th");
-        fetch("https://api.twitch.tv/helix/streams?user_login=battleground_bulls", {
-            headers: headers
+        API.getInstance()._fetch("https://api.twitch.tv/helix/streams?user_login=battleground_bulls", "GET", null, null, {"Client-ID": "swviygtzpvpvtpm5r79410wd6221th"}).then(json => {
+            let liveBB = false;
+            if (json.data.length > 0) {
+                liveBB = true;
+                // console.log(json.data[0].started_at);
+                // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
+            }
+            if (liveBB !== this.state.liveBB) {
+                this.setState({ liveBB: liveBB });
+            }
+        });
+    }
+
+    checkBPStreamIsOnline () {
+        // Request stream and look if stream is online
+        fetch("https://api.twitch.tv/helix/streams?user_login=battleground_playground", {
+            headers: {
+                "Client-ID": "swviygtzpvpvtpm5r79410wd6221th"
+            }
         })
             .then(response => { return response.json()})
             .then(json => {
-                let live = false;
+                let liveBP = false;
                 if (json.data.length > 0) {
-                    live = true;
+                    liveBP = true;
                     // console.log(json.data[0].started_at);
                     // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
                 }
                 //console.log(this);
-                if (live !== this.state.live) {
-                    this.setState({ live: live });
+                if (liveBP !== this.state.liveBP) {
+                    this.setState({ liveBP: liveBP });
                 }
             });
     }
 
+    moveToLiveStream () {
+        $.fn.fullpage.moveTo(1, 1);
+    }
+
+    openStream(stream) {
+        $(this.refs.fullpage).find(".stream .actions").fadeOut(function () {
+            console.log("faded out");
+        });
+        switch (stream) {
+            case "bp":
+                new Twitch.Embed("twitch-embed-bp", {
+                    autoplay: true,
+                    layout: "video-with-chat",
+                    width: 3000,
+                    channel: "bulls_playground"
+                });
+                break;
+            default:
+                new Twitch.Embed("twitch-embed-bb", {
+                    autoplay: true,
+                    layout: "video-with-chat",
+                    width: 3000,
+                    channel: "battleground_bulls"
+                });
+                this.resizeTwitchPlayer();
+                break;
+        }
+    }
+
     resizeTwitchPlayer() {
-        let player = $("#twitch-embed iframe");
+        let player = $("#twitch-embed-bb iframe, #twitch-embed-bp iframe");
         if (player.length > 0) {
             player.height(player.width() / 16 * 9);
         }
     }
 
-    toggleLive() {
-        this.setState({ tournamentRunning: !this.state.tournamentRunning });
-        $("iframe").remove();
-    }
-
     render() {
-        let { live } = this.state;
+        let { liveBB, liveBP } = this.state;
         let liveButton = null,
             img = <img src={logoSchriftzug} alt="Battleground Bulls"/>;
-        if (live) {
-            liveButton = <div className="live" onClick={this.toggleLive.bind(this)}><div className="record" />Jetzt live</div>;
-            img = <img className="live" src={logoSchriftzug} alt="Battleground Bulls" onClick={this.toggleLive.bind(this)}/>;
+        if (liveBB || liveBP) {
+            liveButton = <div className="live" onClick={this.moveToLiveStream} title="Zum Live-Stream"><div className="record"/>Jetzt live</div>;
+            img = <img src={logoSchriftzug} alt="Battleground Bulls" title="Zum Live-Stream" onClick={this.moveToLiveStream} />;
         }
         return (
             <div ref="fullpage" className="container-fluid home">
 
-                <div className="section start">
-                    <div className="container">
-                        {this.state.tournamentRunning ? (
-                            <div className="inner">
-                                <div id="twitch-embed"/>
-                                <button className="btn primary back" onClick={this.toggleLive.bind(this)}>Zurück</button>
-                            </div>
-                        ) : (
-                            <div className="inner">
-                                {liveButton}
-                                {img}
-                                <div className="text">Nächstes<br/>Turnier in</div>
-                                <Counter endCallback={() => {
-                                    this.setState({tournamentRunning: true});
-                                }}/>
-                                <div className="links">
-                                    <Link to="https://goo.gl/KEBC8z" className="btn primary" target="_blank" rel="noopener noreferrer">Jetzt anmelden</Link>
-                                    <Link to="https://discord.gg/gke2aYp" className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</Link>
+                <div className={classnames("fullpage-inner-wrapper", {"live": (liveBB || liveBP)})}>
+
+                    <div className="section start">
+
+                        <div className="slide start">
+                            <div className="container">
+                                <div className="inner">
+                                    {liveButton}
+                                    {img}
+                                    <Counter endDate="July 1, 2018 16:15:00" />
+                                    <div className="links">
+                                        <Link to="https://goo.gl/KEBC8z" className="btn primary" target="_blank" rel="noopener noreferrer">Jetzt anmelden</Link>
+                                        <Link to="https://discord.gg/gke2aYp" className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</Link>
+                                    </div>
                                 </div>
                             </div>
-                        )}
+                        </div>
+
+                        <div className="slide stream">
+                            <div className="full-container">
+                                <div className="actions">
+                                    {liveBB ? <button className="btn twitch" onClick={this.openStream.bind(this, "bb")}>Battleground Bulls</button> : null}
+                                    {liveBP ? <button className="btn twitch" onClick={this.openStream.bind(this, "bp")}>Bulls Playground</button> : null}
+                                </div>
+
+                                <div id="twitch-embed-bb" />
+                                <div id="twitch-embed-bp" />
+                            </div>
+                        </div>
+
+                        <div className="scroll-down"><i className="fa fa-chevron-down"/>weiter scrollen</div>
                     </div>
 
-                    <div className="scroll-down"><i className="fa fa-chevron-down"/>weiter scrollen</div>
+                    <About/>
+
+                    <Rules/>
+
+                    <Partner/>
+
                 </div>
-
-                <About/>
-
-                <Rules/>
-
-                <Partner/>
-
             </div>
         );
     }

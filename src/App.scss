@@ -183,6 +183,45 @@ img {
   }
 }
 
+
+/**
+ *  Fullpage.js
+ */
+
+.fp-controlArrow {
+  &.fp-prev {
+    left: 60px;
+    border-color: transparent $highlightColor transparent transparent;
+  }
+  &.fp-next {
+    right: 60px;
+    border-color: transparent transparent transparent $highlightColor;
+  }
+}
+
+#fp-nav {
+  .fp-tooltip {
+    padding: 0 20px;
+    overflow: unset !important;
+    &:after {
+      content: ' ';
+      position: absolute;
+      z-index: -1;
+      top: -10px;
+      right: 0;
+      bottom: -10px;
+      left: 0;
+      background-color: rgba($backgroundBlue, 0.7);
+      filter: blur(10px);
+    }
+  }
+}
+
+
+/**
+  *  Responsive changes
+  */
+
 .container {
   @media (min-width: $breakpoint-2k) {
     font-size: 1.5em;

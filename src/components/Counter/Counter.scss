@@ -1,28 +1,40 @@
 @import "../../variables";
 
 .counter {
-  font-size: 4.5em;
+  .text {
+    display: inline-block;
+    margin-right: 15px;
+    text-transform: uppercase;
+    color: $highlightColor;
+    font-size: 1.5em;
+  }
 
-  table {
-    table-layout: fixed;
-    width: 460px;
-    @media (min-width: $breakpoint-2k) {
-      width: 660px;
+  .timer {
+    display: inline-block;
+    font-size: 4.5em;
+    table {
+      table-layout: fixed;
+      width: 460px;
+      position: relative;
+      top: 12px;
+      @media (min-width: $breakpoint-2k) {
+        width: 660px;
+      }
     }
-  }
-  th {
-    font-size: .2em;
-    line-height: 1;
-  }
-  td {
-    position: relative;
-    line-height: 1;
+    th {
+      font-size: .2em;
+      line-height: 1;
+    }
+    td {
+      position: relative;
+      line-height: 1;
 
-    &:not(:last-child):after {
-      content: ":";
-      position: absolute;
-      right: -8px;
-      top: 0;
+      &:not(:last-child):after {
+        content: ":";
+        position: absolute;
+        right: -8px;
+        top: 0;
+      }
     }
   }
 }
