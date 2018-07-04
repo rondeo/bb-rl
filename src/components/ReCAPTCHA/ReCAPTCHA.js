@@ -12,15 +12,6 @@ export default class ReCAPTCHA extends React.PureComponent {
     }
 
     componentDidMount() {
-        // Create a script to make sure the ReCAPTCHA API is called.
-        const script = document.createElement('script');
-        script.text = `
-            var onloadCallback = function() {
-                console.log('grecaptcha is ready');
-            };
-        `;
-        document.body.appendChild(script);
-
         // We will render ReCAPTCHA after the page is loaded,
         // because we want to bind our own submit methods.
         if (document.readyState !== "complete") {
@@ -58,7 +49,7 @@ export default class ReCAPTCHA extends React.PureComponent {
         return (
             <div>
                 <Helmet>
-                    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer />
+                    <script src="https://www.google.com/recaptcha/api.js" async defer />
                 </Helmet>
                 <div id={this.id} />
             </div>
