@@ -1,6 +1,8 @@
 import React from "react";
 import $ from "jquery";
 
+import ReCAPTCHA from "../../components/ReCAPTCHA/ReCAPTCHA";
+
 import "./TournamentRegistration.css";
 
 export default class TournamentRegistration extends React.PureComponent {
@@ -8,16 +10,15 @@ export default class TournamentRegistration extends React.PureComponent {
     constructor(props) {
         super(props);
 
+        this.onSubmit = this.onSubmit.bind(this);
+
         this.state = {
             result: null,
             sending: false
         };
     }
 
-    onSubmit(e) {
-        e.preventDefault();
-        this.setState({ sending: true });
-
+    onSubmit() {
         fetch("http://localhost/battleground-bulls.de/src/views/TournamentRegistration/formmailer.php", {
             body: JSON.stringify($("form").serialize()),
             method: "POST",
@@ -64,7 +65,7 @@ export default class TournamentRegistration extends React.PureComponent {
             <div className="view full-container tournament-registration">
                 <div className="container">
                     <h1>Turnieranmeldung Rocket League {teams}</h1>
-                    <form onSubmit={this.onSubmit.bind(this)}>
+                    <form onSubmit={(e) => { e.preventDefault(e); this.setState({ sending: true }); ReCAPTCHA.execute(e); }}>
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputTeamName">Teamname *</label>
@@ -198,6 +199,8 @@ export default class TournamentRegistration extends React.PureComponent {
                         <div className="form-group">
                             {sending ? <button className="btn white disabled" disabled>Anmelden <i className="fas fa-cog fa-spin" /></button> : <button type="submit" className="btn white">Anmelden</button>}
                         </div>
+
+                        <ReCAPTCHA callback={this.onSubmit} />
 
                         {this.renderResult()}
                     </form>
