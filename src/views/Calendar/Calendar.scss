@@ -1,3 +1,5 @@
+@import "./../../variables";
+
 .view.full-container.calendar {
   background: url("./Background.jpg") no-repeat center;
   background-size: cover;
@@ -6,5 +8,33 @@
   .container {
     padding-bottom: 50px;
     text-align: center;
+
+    .fc {
+      button {
+        background-color: $highlightColor;
+        border-color: $highlightColor;
+        &.active, &:hover:not(.disabled) {
+          border-color: #fff;
+        }
+      }
+
+      .fc-today {
+        background-color: lighten($highlightColor, 25%);
+      }
+
+      .fc-event {
+        background-color: $highlightColor;
+        border-color: $highlightColor;
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+          border-color: #fff;
+        }
+      }
+
+      .fc-event-dot {
+        background-color: $highlightColor;
+      }
+    }
   }
 }
