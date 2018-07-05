@@ -5,14 +5,14 @@ gulp.task('upload', function () {
     let conn = ftpHelper.getConn({
         path: 'web2/web'
     });
-    gulp.src('build/**', { base: '.', buffer: false } )
+    gulp.src('build/**')
         .pipe(conn);
 });
 
-gulp.task('uploadDev', function (done) {
+gulp.task('uploadDev', function () {
     let conn = ftpHelper.getConn({
         path: 'web4/web'
     });
-    gulp.src('build/**', { base: '.', buffer: false } )
+    gulp.src('build/**')
         .pipe(conn);
 });

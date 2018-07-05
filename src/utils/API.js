@@ -25,19 +25,19 @@ export default class API {
     _fetch(url, method = "GET", body = null, query = null, header = {}, contentType = "application/json") {
         let dfr = $.Deferred();
 
-        header = $.extend({}, {
-            "Accept": "application/json",
-            "Authorization": "Basic " + btoa(CONSTANTS.WEBCLIENT_NAME + ":" + CONSTANTS.WEBCLIENT_SECRET),
-            "Content-Type": contentType
-        }, header);
+        if (url.indexOf("http") === -1) {
+            header = $.extend({}, {
+                "Accept": "application/json",
+                "Authorization": "Basic " + btoa(CONSTANTS.WEBCLIENT_NAME + ":" + CONSTANTS.WEBCLIENT_SECRET),
+                "Content-Type": contentType
+            }, header);
+            url = CONSTANTS.API_ROUTE_DEV + url;
+        }
+
         let headers = new Headers();
         for (let key in header) {
             if (!header.hasOwnProperty(key)) continue;
             headers.append(key, header[key]);
-        }
-
-        if (url.indexOf("http") === -1) {
-            url = CONSTANTS.API_ROUTE_DEV + url;
         }
 
         if (query) {

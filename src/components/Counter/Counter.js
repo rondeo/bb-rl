@@ -39,7 +39,7 @@ export default class Counter extends PureComponent {
     setCounter() {
         // Set the date we're counting down to
         // TODO: Get Date from Database
-        let countDownDate = new Date("July 1, 2018 16:15:00").getTime();
+        let countDownDate = new Date(this.props.endDate).getTime();
 
         // Get todays date and time
         let now = new Date().getTime();
@@ -73,34 +73,39 @@ export default class Counter extends PureComponent {
     render() {
         let {days, hours, minutes, seconds, distance} = this.state;
         return (
-            <div className={classnames("counter", {"ended": distance <= 0})}>
-                {distance > 0 ? (
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Tage</th>
-                            <th>Stunden</th>
-                            <th>Minuten</th>
-                            <th>Sekunden</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>{days}</td>
-                            <td>{hours}</td>
-                            <td>{minutes}</td>
-                            <td>{seconds}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                ) : (
-                    <div className="ended">Das Turnier läuft bereits!</div>
-                )}
+            <div className={classnames("counter", {"ended": distance <= 0}, {"d-none": !this.props.showOnEnd})}>
+                <div className="text">Nächstes<br/>Turnier in</div>
+                <div className="timer">
+                    {distance > 0 ? (
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Tage</th>
+                                <th>Stunden</th>
+                                <th>Minuten</th>
+                                <th>Sekunden</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{days}</td>
+                                <td>{hours}</td>
+                                <td>{minutes}</td>
+                                <td>{seconds}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    ) : (
+                        <div className="running">Das Turnier läuft bereits!</div>
+                    )}
+                </div>
             </div>
         );
     }
 }
 
 Counter.propTypes = {
-    endCallback: PropTypes.any
+    endDate: PropTypes.string.isRequired, // Format: "July 29, 2018 16:15:00"
+    endCallback: PropTypes.any,
+    showOnEnd: PropTypes.bool
 };
