@@ -8,7 +8,8 @@
     min-height: calc(100vh - (#{$headerHeight} + 59px) - #{$footerHeight});
 
     > .container:not(.home), > .view {
-      padding-top: $headerHeight + 50px;
+      margin-top: $headerHeight;
+      padding-top: 50px;
     }
 
     > .full-container {

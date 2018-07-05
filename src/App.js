@@ -18,6 +18,7 @@ import TournamentList from './views/TournamentList/TournamentList';
 import Admin from './views/Admin/Admin';
 import Bulls from "./views/Bulls/Bulls";
 import TournamentRegistration from "./views/TournamentRegistration/TournamentRegistration";
+import Calendar from "./views/Calendar/Calendar";
 
 import requireAuthentication from './utils/AuthComponent';
 
@@ -45,6 +46,7 @@ class App extends React.PureComponent {
                             <Route path="/turniere" component={requireAuthentication(TournamentList)} exact/>
                             <Route path="/bulls" component={Bulls} exact/>
                             <Route path="/anmeldung/:teams?" component={TournamentRegistration} exact/>
+                            <Route path="/kalender" component={Calendar} exact/>
                             <Route component={NotFound} exact/>
                         </Switch>
                     </main>
