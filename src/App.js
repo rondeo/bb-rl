@@ -25,7 +25,6 @@ import Commands from "./views/Commands/Commands";
 import News from "./views/News/News";
 import NewsDetail from "./views/NewsDetail/NewsDetail";
 
-
 import requireAuthentication from "./utils/AuthComponent";
 
 import "./App.css";
