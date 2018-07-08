@@ -4,5 +4,15 @@
   color: #fff;
   .container {
     padding-bottom: 100px;
+    form {
+      .actions {
+        button {
+          display: inline-block;
+          &:not(last-child) {
+            margin-right: 25px;
+          }
+        }
+      }
+    }
   }
 }
