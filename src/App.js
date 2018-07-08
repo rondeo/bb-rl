@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import moment from "moment";
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -19,12 +20,19 @@ import Admin from './views/Admin/Admin';
 import Bulls from "./views/Bulls/Bulls";
 import TournamentRegistration from "./views/TournamentRegistration/TournamentRegistration";
 import Calendar from "./views/Calendar/Calendar";
+import MyProfile from "./views/MyProfile/MyProfile";
 
 import requireAuthentication from './utils/AuthComponent';
 
 import './App.css';
 
 class App extends React.PureComponent {
+    constructor(props) {
+        super(props);
+
+        moment.locale("de");
+    }
+
     render() {
         return (
             <BrowserRouter>
@@ -47,6 +55,7 @@ class App extends React.PureComponent {
                             <Route path="/bulls" component={Bulls} exact/>
                             <Route path="/anmeldung/:teams?" component={TournamentRegistration} exact/>
                             <Route path="/kalender" component={Calendar} exact/>
+                            <Route path="/mein-profil" component={MyProfile} exact/>
                             <Route component={NotFound} exact/>
                         </Switch>
                     </main>
