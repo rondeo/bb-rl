@@ -200,7 +200,7 @@ export default class Privacy extends React.PureComponent {
                             Datenschutzerklärung gesondert behandelt.
                         </p>
 
-                        <h3>Kontakformular</h3>
+                        <h3>Kontaktformular</h3>
                         <p>
                             Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem
                             Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der

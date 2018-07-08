@@ -31,7 +31,13 @@ export default class API {
                 "Authorization": "Basic " + btoa(CONSTANTS.WEBCLIENT_NAME + ":" + CONSTANTS.WEBCLIENT_SECRET),
                 "Content-Type": contentType
             }, header);
-            url = CONSTANTS.API_ROUTE_DEV + url;
+            if (process.env.REACT_APP_API === "local") {
+                url = CONSTANTS.API_ROUTE_LOCAL + url;
+            } else if (process.env.NODE_ENV === "development") {
+                url = CONSTANTS.API_ROUTE_DEV + url;
+            } else {
+                url = CONSTANTS.API_ROUTE_DEV + url; // TODO: Replace with "API_ROUTE_DEV"
+            }
         }
 
         let headers = new Headers();

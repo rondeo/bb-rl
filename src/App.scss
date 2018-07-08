@@ -6,6 +6,7 @@
     z-index: 10;
     margin-bottom: $footerHeight;
     min-height: calc(100vh - (#{$headerHeight} + 59px) - #{$footerHeight});
+    background-color: #fff;
 
     > .container:not(.home), > .view {
       margin-top: $headerHeight;
