@@ -1,22 +1,22 @@
-import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import React from "react";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import moment from "moment";
 
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Home from './views/Home/Home';
-import Imprint from './views/Imprint/Imprint';
-import Login from './views/Login/Login';
-import Registration from './views/Registration/Registration';
-import NotFound from './views/NotFound/NotFound';
-import Privacy from './views/Privacy/Privacy';
-import RocketLeagueOverlay from './views/RocketLeagueOverlay/RocketLeagueOverlay';
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Home from "./views/Home/Home";
+import Imprint from "./views/Imprint/Imprint";
+import Login from "./views/Login/Login";
+import Registration from "./views/Registration/Registration";
+import NotFound from "./views/NotFound/NotFound";
+import Privacy from "./views/Privacy/Privacy";
+import RocketLeagueOverlay from "./views/RocketLeagueOverlay/RocketLeagueOverlay";
 import NewFollower from "./views/NewFollower/NewFollower";
 import NewSub from "./views/NewSub/NewSub";
 import NewBits from "./views/NewBits/NewBits";
 import StreamTimes from "./views/StreamTimes/StreamTimes";
-import TournamentList from './views/TournamentList/TournamentList';
-import Admin from './views/Admin/Admin';
+import TournamentList from "./views/TournamentList/TournamentList";
+import Admin from "./views/Admin/Admin";
 import Bulls from "./views/Bulls/Bulls";
 import TournamentRegistration from "./views/TournamentRegistration/TournamentRegistration";
 import Calendar from "./views/Calendar/Calendar";
@@ -26,9 +26,9 @@ import News from "./views/News/News";
 import NewsDetail from "./views/NewsDetail/NewsDetail";
 
 
-import requireAuthentication from './utils/AuthComponent';
+import requireAuthentication from "./utils/AuthComponent";
 
-import './App.css';
+import "./App.css";
 
 class App extends React.PureComponent {
     constructor(props) {

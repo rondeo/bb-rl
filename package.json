@@ -34,17 +34,17 @@
   "devDependencies": {
     "ftp-deploy": "^1.2.2",
     "gulp": "^3.9.1",
-    "gulp-sftp": "^0.1.5",
-    "gulp-util": "^3.0.8"
+    "gulp-sftp": "^0.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
+    "startLocalApi": "set REACT_APP_API=local&& react-scripts start",
     "start-https": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
+    "serve": "serve -s build",
     "buildAndUpload": "react-scripts build & gulp upload",
     "buildAndUploadDev": "react-scripts build & gulp uploadDev",
     "upload": "gulp upload",
-    "serve": "serve -s build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
