@@ -31,7 +31,7 @@ export default class MyProfile extends React.PureComponent {
                 <div className="container">
                     <h1>Mein Profil</h1>
 
-                    <h3>Persönliche Informationen</h3>
+                    <h3><u>Persönliche Informationen</u></h3>
 
                     <form onSubmit={this.onSubmit}>
                         <div className="form-row">
@@ -50,7 +50,7 @@ export default class MyProfile extends React.PureComponent {
                                     type="text"
                                     name="SecondName"
                                     className="form-control"
-                                    id="inputSecondName="
+                                    id="inputSecondName"
                                     placeholder="Nachname"/>
                             </div>
                         </div>
@@ -93,7 +93,7 @@ export default class MyProfile extends React.PureComponent {
 
                         <hr color="white" width="100%"/>
 
-                        <h3>Gaming Informationen</h3>
+                        <h3><u>Gaming Informationen</u></h3>
 
                         <div className="form-row">
                             <div className="form-group col-md-5">
@@ -166,7 +166,7 @@ export default class MyProfile extends React.PureComponent {
 
                         <hr color="white" width="100%"/>
 
-                        <label htmlfor="inputHardware">Deine Hardware</label>
+                        <h3><u>Deine Hardware</u></h3>
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputCase">Gehäuse</label>
