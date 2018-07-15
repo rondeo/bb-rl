@@ -162,7 +162,8 @@ class Header extends React.PureComponent {
                 </nav>
                 <div className={classnames("sidebar-wrapper", {"open": userSidebarOpen})}>
                     <ul ref="sidebar">
-                        <li><Link to="/einstellungen"><i className="fas fa-cog" />Einstellungen</Link></li>
+                        <li><Link to="/mein-profil"><i className="fas fa-address-card" />Mein Profil</Link></li>
+                        {/*<li><Link to="/einstellungen"><i className="fas fa-cog" />Einstellungen</Link></li>*/}
                         <li><Link to="/kalender"><i className="far fa-calendar-alt" />Kalender</Link></li>
                         <li onClick={() => { this.props.dispatch(logout()); }}><Link to={this.props.location}><i className="fas fa-sign-out-alt" />Ausloggen</Link></li>
                     </ul>
