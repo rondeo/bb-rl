@@ -54,8 +54,8 @@ class App extends React.PureComponent {
                             <Route path="/turniere" component={requireAuthentication(TournamentList)} exact/>
                             <Route path="/bulls" component={Bulls} exact/>
                             <Route path="/anmeldung/:teams?" component={TournamentRegistration} exact/>
-                            <Route path="/kalender" component={Calendar} exact/>
-                            <Route path="/mein-profil" component={MyProfile} exact/>
+                            <Route path="/kalender" component={requireAuthentication(Calendar)} exact/>
+                            <Route path="/mein-profil" component={requireAuthentication(MyProfile)} exact/>
                             <Route component={NotFound} exact/>
                         </Switch>
                     </main>

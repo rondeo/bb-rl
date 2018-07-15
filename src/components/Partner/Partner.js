@@ -41,7 +41,7 @@ export default class Partner extends React.PureComponent {
                             <div className="col-12 col-sm-6 col-md-4 merch-shop">
                                 <a href="https://shop.spreadshirt.de/Battleground-Bulls/" target="_blank" rel="noopener noreferrer"><img src={Merch_IMG} alt="Merch-Shop"/><h2>Merch-Shop</h2></a>
                                 <p>
-                                    <strong>Du möchtest unseren Stream und die Webseite unterstützen? Kaufe stylische Kleidung in unserem <a href="https://shop.spreadshirt.de/Battleground-Bulls/" target="_blank" rel="noopener noreferrer">Merch-Shop</a>!</strong>
+                                    <strong>Du möchtest unseren Stream und die Webseite unterstützen? Kaufe stylische Kleidung in unserem <a className="link-light" href="https://shop.spreadshirt.de/Battleground-Bulls/" target="_blank" rel="noopener noreferrer">Merch-Shop</a>!</strong>
                                 </p>
                             </div>
                         </div>
