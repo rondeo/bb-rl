@@ -14,7 +14,7 @@ parse_str(json_decode(file_get_contents('php://input')), $data);
 // ======= Konfiguration:
 
 $mailTo = 'anmeldung@battleground-bulls.de';
-$mailFrom = '"Webseite Formular Anmeldung" <info@battleground-bulls.de>';
+$mailFrom = '"Rocket League Anmeldung" <anmeldung@battleground-bulls.de>';
 $mailSubject = 'Turnier-Anmeldung';
 $mailText = '';
 $mailSent1 = $mailSent2 = false;
@@ -61,7 +61,7 @@ if (isset($data) && count($data) > 0) {
 
 if ($data && $data['mail'])
 {
-    $mailTo = $mailFrom = $data['mail'];
+    $mailTo = $data['mail'];
     $mailSubject = 'Bestätigung der Turnieranmeldung';
     $mailText  = "Vielen Dank für deine Anmeldung. \n\n";
     $mailText .= "Hiermit bestätigen wir eure Anmeldung! \n\n";
@@ -73,27 +73,31 @@ if ($data && $data['mail'])
     $mailSent2 = @mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
 }
 
+$responseJson = array();
+
 // Wenn der Mailversand und die Bestätigungsmail erfolgreich waren:
 if ($mailSent1 == TRUE && $mailSent2 === TRUE) {
-    echo json_encode(array(
+    $responseJson = array(
         'code' => 'mail-sent-with-confirmation',
         'message' => 'Successful registration and confirmation sent.',
         'status' => 'OK'
-    ));
+    );
 }
 // Wenn der Mailversand erfolgreich war:
 else if ($mailSent1 == TRUE) {
-    echo json_encode(array(
+    $responseJson = array(
         'code' => 'mail-sent',
         'message' => 'Successful registration.',
         'status' => 'OK'
-    ));
+    );
 }
 // Wenn die Mail nicht versendet werden konnte:
 else {
-    echo json_encode(array(
+    $responseJson = array(
         'code' => 'mail-not-sent',
         'message' => 'E-Mail not sent.',
         'status' => 'ERROR'
-    ));
+    );
 }
+
+echo json_encode($responseJson);
