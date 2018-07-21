@@ -44,6 +44,11 @@ export default class ReCAPTCHA extends React.PureComponent {
         grecaptcha.execute();
     };
 
+    static reset() {
+        const { grecaptcha } = window;
+        grecaptcha.reset();
+    }
+
 
     render () {
         return (

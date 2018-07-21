@@ -32,10 +32,8 @@
   "devDependencies": {
     "ftp-deploy": "^1.2.2",
     "gulp": "^3.9.1",
-    "gulp-load-plugins": "^1.5.0",
     "gulp-sftp": "^0.1.5",
-    "gulp-util": "^3.0.8",
-    "vinyl-ftp": "^0.6.1"
+    "gulp-util": "^3.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,6 +42,7 @@
     "buildAndUpload": "react-scripts build & gulp upload",
     "buildAndUploadDev": "react-scripts build & gulp uploadDev",
     "upload": "gulp upload",
+    "serve": "serve -s build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

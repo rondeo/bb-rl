@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 import $ from 'jquery';
 
@@ -47,8 +46,7 @@ export default class Rules extends React.PureComponent {
                                 zur Verfügung stehen muss.
                             </p>
                             <p>
-                                Anmeldung bitte hier ausfüllen: <Link to="https://goo.gl/KEBC8z" target="_blank"
-                                                                      rel="noopener noreferrer">Anmeldeformular</Link>
+                                Anmeldung bitte hier ausfüllen: <a href="https://goo.gl/KEBC8z" target="_blank" rel="noopener noreferrer">Anmeldeformular</a>
                             </p>
                         </div>
 
@@ -96,8 +94,7 @@ export default class Rules extends React.PureComponent {
                                 2-4 Stunden</strong> veranschlagt. Alle <strong>Ergebnisse</strong> werden nach dem
                                 Spiel <strong>Live</strong> im Turnierplan eingetragen.
                             </p>
-                            <p><Link to="https://www.twitch.tv/battleground_bulls" target="_blank"
-                                     rel="noopener noreferrer">https://www.twitch.tv/battleground_bulls</Link></p>
+                            <p><a href="https://www.twitch.tv/battleground_bulls" target="_blank" rel="noopener noreferrer">https://www.twitch.tv/battleground_bulls</a></p>
                         </div>
 
                         <div className="collapsed" data-toggle="collapse" data-target="#commands" role="button"

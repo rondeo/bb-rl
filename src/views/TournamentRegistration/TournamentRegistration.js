@@ -19,7 +19,7 @@ export default class TournamentRegistration extends React.PureComponent {
     }
 
     onSubmit() {
-        fetch("http://localhost/battleground-bulls.de/src/views/TournamentRegistration/formmailer.php", {
+        fetch("/php/tournament-registration.php", {
             body: JSON.stringify($("form").serialize()),
             method: "POST",
             headers: {
@@ -28,12 +28,13 @@ export default class TournamentRegistration extends React.PureComponent {
         })
             .then(response => response.json())
             .then(json => {
-                console.log("JSON:", json);
+                //console.log("JSON:", json);
                 this.setState({ result: json, sending: false });
             })
             .catch(error => {
-                console.error("Unexpected error in formmailer: ", error);
+                console.error("Unexpected error in tournament registration: ", error);
             });
+        ReCAPTCHA.reset();
     }
 
     renderResult() {
@@ -65,7 +66,7 @@ export default class TournamentRegistration extends React.PureComponent {
             <div className="view full-container tournament-registration">
                 <div className="container">
                     <h1>Turnieranmeldung Rocket League {teams}</h1>
-                    <form onSubmit={(e) => { e.preventDefault(e); this.setState({ sending: true }); ReCAPTCHA.execute(e); }}>
+                    <form onSubmit={(e) => { e.preventDefault(e); this.setState({ result: null, sending: true }); ReCAPTCHA.execute(e); }}>
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputTeamName">Teamname *</label>
