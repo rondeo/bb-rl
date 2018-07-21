@@ -176,3 +176,5 @@ fabric.properties
 
 src/**/*.css
 src/**/*.css.map
+
+.idea/**
