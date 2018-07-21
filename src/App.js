@@ -21,6 +21,7 @@ import Bulls from "./views/Bulls/Bulls";
 import TournamentRegistration from "./views/TournamentRegistration/TournamentRegistration";
 import Calendar from "./views/Calendar/Calendar";
 import MyProfile from "./views/MyProfile/MyProfile";
+import Commands from "./views/Commands/Commands";
 
 import requireAuthentication from './utils/AuthComponent';
 
@@ -56,6 +57,7 @@ class App extends React.PureComponent {
                             <Route path="/anmeldung/:teams?" component={TournamentRegistration} exact/>
                             <Route path="/kalender" component={Calendar} exact/>
                             <Route path="/mein-profil" component={MyProfile} exact/>
+                            <Route path="/befehle" component={Commands} exact/>
                             <Route component={NotFound} exact/>
                         </Switch>
                     </main>
