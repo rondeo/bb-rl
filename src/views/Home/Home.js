@@ -1,5 +1,6 @@
 import React, {PureComponent} from "react";
 import classnames from "classnames";
+import Helmet from "react-helmet";
 import $ from "jquery";
 
 import About from "../../components/About/About";
@@ -12,8 +13,8 @@ import API from "../../utils/API";
 import "./Home.css";
 
 import logoSchriftzug from "./../../images/logo-schriftzug_600px.png";
-
-let Twitch = window.Twitch;
+import btnStreamBB from "./img/Vorschau-Stream-1.png";
+import btnStreamBP from "./img/Vorschau-Stream-2.png";
 
 export default class Home extends PureComponent {
 
@@ -21,7 +22,8 @@ export default class Home extends PureComponent {
         super(props);
         this.state = {
             liveBB: false,
-            liveBP: false
+            liveBP: false,
+            Twitch: null
         };
     }
 
@@ -56,26 +58,14 @@ export default class Home extends PureComponent {
         this.checkBBStreamIsOnline = this.checkBBStreamIsOnline.bind(this);
         this.checkBPStreamIsOnline = this.checkBPStreamIsOnline.bind(this);
 
-        this.openStream = this.openStream.bind(this);
+        this.checkBBStreamIsOnline();
+        this.checkBPStreamIsOnline();
 
-        //this.checkBBStreamIsOnline();
-        //this.checkBPStreamIsOnline();
-
-        //setInterval(this.checkBBStreamIsOnline, 60000);
-        //setInterval(this.checkBPStreamIsOnline, 60000);
+        setInterval(this.checkBBStreamIsOnline, 60000);
+        setInterval(this.checkBPStreamIsOnline, 60000);
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (!prevProps.liveBB && this.state.liveBB) {
-            /*new Twitch.Embed("twitch-embed-bb", {
-                autoplay: false,
-                layout: "video-with-chat",
-                width: 3000,
-                channel: "battleground_bulls"
-            });
-            this.resizeTwitchPlayer();*/
-        }
-
         let currentPath = this.props.location.pathname + this.props.location.hash;
         if (currentPath !== prevProps.location.pathname + prevProps.location.hash) {
             $.fn.fullpage.moveTo(currentPath.replace("/", "").replace("#", ""));
@@ -117,7 +107,6 @@ export default class Home extends PureComponent {
                     // console.log(json.data[0].started_at);
                     // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
                 }
-                //console.log(this);
                 if (liveBP !== this.state.liveBP) {
                     this.setState({ liveBP: liveBP });
                 }
@@ -129,27 +118,32 @@ export default class Home extends PureComponent {
     }
 
     openStream(stream) {
-        $(this.refs.fullpage).find(".stream .actions").fadeOut(function () {
-            console.log("faded out");
-        });
-        switch (stream) {
-            case "bp":
-                new Twitch.Embed("twitch-embed-bp", {
-                    autoplay: true,
-                    layout: "video-with-chat",
-                    width: 3000,
-                    channel: "bulls_playground"
-                });
-                break;
-            default:
-                new Twitch.Embed("twitch-embed-bb", {
-                    autoplay: true,
-                    layout: "video-with-chat",
-                    width: 3000,
-                    channel: "battleground_bulls"
-                });
-                this.resizeTwitchPlayer();
-                break;
+        clearTimeout(this.openStreamTimer);
+
+        let { Twitch } = this.state;
+        if (Twitch) {
+            $(this.refs.fullpage).find(".stream .actions").fadeOut();
+            switch (stream) {
+                case "bp":
+                    new Twitch.Embed("twitch-embed-bp", {
+                        autoplay: true,
+                        layout: "video-with-chat",
+                        width: 3000,
+                        channel: "bulls_playground"
+                    });
+                    break;
+                default:
+                    new Twitch.Embed("twitch-embed-bb", {
+                        autoplay: true,
+                        layout: "video-with-chat",
+                        width: 3000,
+                        channel: "battleground_bulls"
+                    });
+                    break;
+            }
+            this.resizeTwitchPlayer();
+        } else {
+            this.openStreamTimer = setTimeout(this.openStream.bind(this, stream), 250);
         }
     }
 
@@ -170,6 +164,10 @@ export default class Home extends PureComponent {
         }
         return (
             <div ref="fullpage" className="container-fluid home">
+
+                <Helmet onChangeClientState={()=>{ this.setState({ Twitch: window.Twitch }) }}>
+                    <script src="https://embed.twitch.tv/embed/v1.js" async defer />
+                </Helmet>
 
                 <div className={classnames("fullpage-inner-wrapper", {"live": (liveBB || liveBP)})}>
 
@@ -192,8 +190,8 @@ export default class Home extends PureComponent {
                         <div className="slide stream">
                             <div className="full-container">
                                 <div className="actions">
-                                    {liveBB ? <button className="btn twitch" onClick={this.openStream.bind(this, "bb")}>Battleground Bulls</button> : null}
-                                    {liveBP ? <button className="btn twitch" onClick={this.openStream.bind(this, "bp")}>Bulls Playground</button> : null}
+                                    {liveBB ? <img src={btnStreamBB} title="Battleground Bulls" alt="Battleground Bulls" onClick={this.openStream.bind(this, "bb")} /> : null}
+                                    {liveBP ? <img src={btnStreamBP} title="Bulls Playground" alt="Bulls Playground" onClick={this.openStream.bind(this, "bp")} /> : null}
                                 </div>
 
                                 <div id="twitch-embed-bb" />
