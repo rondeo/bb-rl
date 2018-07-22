@@ -167,11 +167,11 @@ export default class TournamentRegistration extends React.PureComponent {
                         ) : null}
                         <div className="form-group">
                             <label htmlFor="inputSteamLinkMember1">Steam Link Mitglied 1 *</label>
-                            <input type="text" name="Steam Link Mitglied 1" className="form-control" id="inputSteamLinkMember1" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
+                            <input type="url" name="Steam Link Mitglied 1" className="form-control" id="inputSteamLinkMember1" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
                         </div>
                         <div className="form-group">
                             <label htmlFor="inputSteamLinkMember2">Steam Link Mitglied 2 *</label>
-                            <input type="text" name="Steam Link Mitglied 2" className="form-control" id="inputSteamLinkMember2" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
+                            <input type="url" name="Steam Link Mitglied 2" className="form-control" id="inputSteamLinkMember2" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
                         </div>
                         { teams === "3vs3" ? (
                             <div className="form-group">
