@@ -169,6 +169,10 @@ export default class Home extends PureComponent {
                     <script src="https://embed.twitch.tv/embed/v1.js" async defer />
                 </Helmet>
 
+                <Helmet onChangeClientState={()=>{ this.setState({ Twitch: window.Twitch }) }}>
+                    <script src="https://embed.twitch.tv/embed/v1.js" async defer />
+                </Helmet>
+
                 <div className={classnames("fullpage-inner-wrapper", {"live": (liveBB || liveBP)})}>
 
                     <div className="section start">
