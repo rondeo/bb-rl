@@ -181,9 +181,9 @@ export default class Home extends PureComponent {
                                 <div className="inner">
                                     {liveButton}
                                     {img}
-                                    <Counter endDate="July 1, 2018 16:15:00" />
+                                    <Counter endDate="July 29, 2018 16:15:00" />
                                     <div className="links">
-                                        <a href="https://goo.gl/KEBC8z" className="btn primary" target="_blank" rel="noopener noreferrer">Jetzt anmelden</a>
+                                        <Link to="/anmeldung/2vs2" className="btn primary">Jetzt anmelden</Link>
                                         <a href="https://discord.gg/gke2aYp" className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</a>
                                     </div>
                                 </div>

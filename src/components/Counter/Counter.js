@@ -73,7 +73,7 @@ export default class Counter extends PureComponent {
     render() {
         let {days, hours, minutes, seconds, distance} = this.state;
         return (
-            <div className={classnames("counter", {"ended": distance <= 0}, {"d-none": !this.props.showOnEnd})}>
+            <div className={classnames("counter", {"ended": distance <= 0}, {"d-none": distance <= 0 && !this.props.showOnEnd})}>
                 <div className="text">Nächstes<br/>Turnier in</div>
                 <div className="timer">
                     {distance > 0 ? (

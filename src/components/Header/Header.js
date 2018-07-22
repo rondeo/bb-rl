@@ -97,8 +97,8 @@ class Header extends React.PureComponent {
                                 </li>
                             ) : (
                                 <li className="nav-item">
-                                    <a href="https://goo.gl/KEBC8z" className="nav-link" target="_blank" rel="noopener noreferrer">Jetzt anmelden</a>
-                                    {/*<Link to="/anmeldung/2vs2" className="nav-link">Jetzt anmelden</Link>*/}
+                                    {/*<a href="https://goo.gl/KEBC8z" className="nav-link" target="_blank" rel="noopener noreferrer">Jetzt anmelden</a>*/}
+                                    <Link to="/anmeldung/2vs2" className="nav-link">Jetzt anmelden</Link>
                                 </li>
                             ) /*(
                                 <li className="nav-item disabled">
