@@ -71,9 +71,12 @@
         justify-content: center;
 
         .actions {
-          .btn {
-            display: inline-block;
-            margin: 0 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 45%;
+            cursor: pointer;
           }
         }
       }
