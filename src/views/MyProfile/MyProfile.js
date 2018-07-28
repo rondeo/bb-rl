@@ -1,5 +1,6 @@
 import React from "react";
 import $ from "jquery";
+import {Helmet} from "react-helmet";
 
 import DateTime from "react-datetime";
 import "react-datetime/css/react-datetime.css";
@@ -46,6 +47,7 @@ export default class MyProfile extends React.PureComponent {
         console.log(user);
         return (
             <div id="my-profile" className="view full-container my-profile">
+                <Helmet><title>Mein Profil - Battleground-Bulls</title></Helmet>
                 <div className="container">
                     <h1>Mein Profil</h1>
 

@@ -1,4 +1,5 @@
 ﻿import React from "react";
+import {Helmet} from "react-helmet";
 
 import Member from "../../components/Member/Member";
 
@@ -12,6 +13,7 @@ export default class Bulls extends React.PureComponent {
     render() {
         return (
             <div className="view full-container bulls">
+                <Helmet><title>Member - Battleground-Bulls</title></Helmet>
                 <div className="container">
                     <h1>Das sind wir - die Bullen im Stall</h1>
 

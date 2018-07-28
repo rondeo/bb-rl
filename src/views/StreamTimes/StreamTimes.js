@@ -1,4 +1,5 @@
 import React from "react";
+import {Helmet} from "react-helmet";
 
 import banner from "./Streamingzeiten.png";
 
@@ -8,6 +9,7 @@ export default class StreamTimes extends React.PureComponent {
     render() {
         return (
             <div className="stream-times">
+                <Helmet><title>Stream-Zeiten - Battleground-Bulls</title></Helmet>
                 <img src={banner} alt="Streamzeiten" />
 
                 <ul>

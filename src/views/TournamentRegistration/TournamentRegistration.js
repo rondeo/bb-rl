@@ -1,5 +1,6 @@
 import React from "react";
 import $ from "jquery";
+import {Helmet} from "react-helmet";
 
 import ReCAPTCHA from "../../components/ReCAPTCHA/ReCAPTCHA";
 
@@ -63,6 +64,7 @@ export default class TournamentRegistration extends React.PureComponent {
         let teams = this.props.match.params ? this.props.match.params.teams : null;
         return (
             <div className="view full-container tournament-registration">
+                <Helmet><title>Turnier-Anmeldung - Battleground-Bulls</title></Helmet>
                 <div className="container">
                     <h1>Turnieranmeldung Rocket League {teams}</h1>
                     <form onSubmit={(e) => { e.preventDefault(e); this.setState({ sending: true }); ReCAPTCHA.execute(e); }}>

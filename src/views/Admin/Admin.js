@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
+import {Helmet} from "react-helmet";
 
 class Admin extends React.PureComponent {
 
@@ -11,6 +12,7 @@ class Admin extends React.PureComponent {
         console.log(this.props.user);
         return (
             <div className="container admin-view">
+                <Helmet><title>Admin - Battleground-Bulls</title></Helmet>
                 <h1>Admin panel</h1>
             </div>
         );
