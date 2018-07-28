@@ -1,6 +1,7 @@
 import React, {PureComponent} from "react";
 import classnames from "classnames";
 import $ from "jquery";
+import {Helmet} from "react-helmet";
 
 import About from "../../components/About/About";
 import Counter from "../../components/Counter/Counter";
@@ -170,6 +171,7 @@ export default class Home extends PureComponent {
         }
         return (
             <div ref="fullpage" className="container-fluid home">
+                <Helmet><title>Home - Battleground-Bulls</title></Helmet>
 
                 <div className={classnames("fullpage-inner-wrapper", {"live": (liveBB || liveBP)})}>
 
