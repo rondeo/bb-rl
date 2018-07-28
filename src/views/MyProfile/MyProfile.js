@@ -2,6 +2,7 @@ import React from "react";
 import DateTime from "react-datetime";
 import Helmet from "react-helmet";
 import $ from "jquery";
+import {Helmet} from "react-helmet";
 
 import "react-datetime/css/react-datetime.css";
 
