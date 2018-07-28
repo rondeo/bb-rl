@@ -4,6 +4,7 @@
   "version": "0.1.2",
   "private": true,
   "dependencies": {
+    "3d-react-carousal": "^2.0.0",
     "animate.css": "^3.6.1",
     "bootstrap": "^4.1.1",
     "build": "^0.1.4",

@@ -13,7 +13,6 @@ $navbarCollapse: $breakpoint-lg;
   background-color: $backgroundBlue;
   border-bottom: 1px solid $borderColor;
 
-
   .nav-link.disabled, .nav-item.disabled {
     &, a {
       color: $disabledColor !important;
@@ -166,6 +165,10 @@ $navbarCollapse: $breakpoint-lg;
               li {
                 &.active a {
                   color: $highlightColor;
+                }
+                &.disabled a {
+                  color: $disabledColor;
+                  pointer-events: none;
                 }
                 a {
                   background-color: transparent;

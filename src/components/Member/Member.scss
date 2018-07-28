@@ -1,11 +1,39 @@
+@import "./../../variables";
+
 .member {
-  transition: transform .25s;
-  &:hover {
-    transform: scale(1.025);
+  margin-top: 50px;
+  img {
+    transition: transform .25s;
+    &:hover {
+      transform: scale(1.35);
+    }
   }
 
-  .title:not(.description) {
-    display: inline-block;
-    width: 100px;
+  .title {
+    margin-bottom: 10px;
+    &:not(.description) {
+      display: inline-block;
+      width: 100px;
+    }
+  }
+
+  .read-more-wrapper {
+    &.expanded {
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      bottom: 0;
+      padding: 1em 1.5em 2.5em;
+      background-color: $grey;
+
+      p {
+        overflow: auto;
+      }
+
+      button {
+        left: 1.5em;
+        bottom: .6em;
+      }
+    }
   }
 }

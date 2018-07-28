@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import ReadMore from "../ReadMore/ReadMore";
+
 import imgPlaceholder from "./../../images/logo-schriftzug_600px.png";
 
 import "./Member.css";
@@ -11,15 +13,15 @@ export default class Member extends React.PureComponent {
         let {img, name, job, games, description} = this.props;
         return (
             <div className="member row">
-                <div className="col-12 col-md-3">
+                <div className="col-12 col-md-4">
                     <img src={img ? img : imgPlaceholder} alt={name} />
                 </div>
-                <div className="col-12 col-md-9">
-                    <p><div className="title">Name:</div> {name}</p>
-                    <p><div className="title">Funktion:</div> {Array.isArray(job) ? job.join(", ") : job}</p>
-                    <p><div className="title">Spiele:</div> {Array.isArray(games) ? games.join(", ") : games}</p>
-                    <p><div className="title description">Warum bist du bei den Battleground Bulls?</div></p>
-                    <p>{description}</p>
+                <div className="col-12 col-md-8">
+                    <div><div className="title">Name:</div> {name}</div>
+                    <div><div className="title">Funktion:</div> {Array.isArray(job) ? job.join(", ") : job}</div>
+                    <div><div className="title">Spiele:</div> {Array.isArray(games) ? games.join(", ") : games}</div>
+                    <div><div className="title description">Warum bist du bei den Battleground Bulls?</div></div>
+                    <ReadMore>{description}</ReadMore>
                 </div>
             </div>
         );

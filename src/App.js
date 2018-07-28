@@ -22,6 +22,8 @@ import TournamentRegistration from "./views/TournamentRegistration/TournamentReg
 import Calendar from "./views/Calendar/Calendar";
 import MyProfile from "./views/MyProfile/MyProfile";
 import Commands from "./views/Commands/Commands";
+import News from "./views/News/News";
+import NewsDetail from "./views/NewsDetail/NewsDetail";
 
 import requireAuthentication from './utils/AuthComponent';
 
@@ -58,6 +60,8 @@ class App extends React.PureComponent {
                             <Route path="/kalender" component={Calendar} exact/>
                             <Route path="/mein-profil" component={MyProfile} exact/>
                             <Route path="/befehle" component={Commands} exact/>
+                            <Route path="/news" component={News} exact/>
+                            <Route path="/news/:title" component={NewsDetail} exact/>
                             <Route component={NotFound} exact/>
                         </Switch>
                     </main>

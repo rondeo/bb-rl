@@ -61,20 +61,22 @@ class Header extends React.PureComponent {
                             <li className={classnames("nav-item", {"active": active === "/" || active === "/#start"})}>
                                 <Link to={{pathname: "/", hash: "#start"}} className="nav-link">Start</Link>
                             </li>
-                            <li className={classnames("nav-item disabled", {"active": active === "/#teams"})}>
-                                <Link to={{pathname: "/", hash: "#teams"}} className="nav-link">Teams</Link>
+                            <li className={classnames("nav-item", {"active": active === "/news"})}>
+                                <Link to="/news" className="nav-link">News</Link>
                             </li>
-                            <li className={classnames("nav-item disabled", {"active": active === "/#spielplan"})}>
-                                <Link to={{pathname: "/", hash: "#spielplan"}} className="nav-link">Spielplan</Link>
+                            <li className={classnames("nav-item", {"active": active === "/#regeln"})}>
+                                <Link to={{pathname: "/", hash: "#regeln"}} className="nav-link">Turnier</Link>
+                                <ul className="submenu">
+                                    <li className={classnames("disabled", {"active": active === "/turnier/teams"})}><Link to={{pathname: "/turnier/teams"}} className="nav-link">Teams</Link></li>
+                                    <li className={classnames("disabled", {"active": active === "/turnier/spielplan"})}><Link to={{pathname: "/turnier/spielplan"}} className="nav-link">Spielplan</Link></li>
+                                    <li className={classnames({"active": active === "/#regeln"})}><Link to={{pathname: "/", hash: "#regeln"}} className="nav-link">Turnier-Regeln</Link></li>
+                                </ul>
                             </li>
                             <li className={classnames("nav-item", {"active": active === "/#bulls"})}>
                                 <Link to={{pathname: "/", hash: "#bulls"}} className="nav-link">Über die Bulls</Link>
                                 <ul className="submenu">
                                     <li className={classnames({"active": active === "/streamzeiten"})}><Link to={{pathname: "/streamzeiten"}} className="nav-link">Streamzeiten</Link></li>
                                 </ul>
-                            </li>
-                            <li className={classnames("nav-item", {"active": active === "/#regeln"})}>
-                                <Link to={{pathname: "/", hash: "#regeln"}} className="nav-link">Turnier-Regeln</Link>
                             </li>
                             <li className={classnames("nav-item", {"active": active === "/#partner"})}>
                                 <Link to={{pathname: "/", hash: "#partner"}} className="nav-link">Partner</Link>

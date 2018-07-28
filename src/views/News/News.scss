@@ -1,0 +1,73 @@
+@import "./../../variables";
+
+.view.full-container.news {
+  background: url("./img/Bulls-BG-Bulls.jpg") no-repeat center;
+  background-size: cover;
+  color: #fff;
+  .container {
+    .button-group.filters-button-group {
+      margin-bottom: 25px;
+      button {
+        display: inline-block;
+        &:not(:last-child) {
+          margin-right: 5px;
+        }
+
+        &.active {
+          background-image: linear-gradient($highlightColor, $highlightColor);
+          color: $highlightColor;
+          border-color: $highlightColor;
+
+          &:hover {
+            background-size: 100% 100%;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .grid {
+      transition: opacity .5s;
+      &.loading {
+        opacity: 0;
+      }
+
+      .grid-item {
+        position: relative;
+        width: 25%;
+        padding-right: 15px;
+        transition: transform .4s;
+
+        &:hover {
+          transform: scale(1.05);
+
+          .inner-wrapper .overlay {
+            bottom: 30%;
+          }
+        }
+
+        .inner-wrapper {
+          position: relative;
+          .overlay {
+            position: absolute;
+            right: 15px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 15px;
+            transition: bottom .5s;
+
+            .date, .title {
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              color: #fff;
+            }
+            .date {
+              font-size: 0.7em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
