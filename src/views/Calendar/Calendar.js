@@ -2,6 +2,7 @@ import React from "react";
 import "moment/min/locales.min";
 import "fullcalendar";
 import $ from "jquery";
+import {Helmet} from "react-helmet";
 
 import "fullcalendar/dist/fullcalendar.min.css";
 import "./Calendar.css";
@@ -76,6 +77,7 @@ export default class Calendar extends React.PureComponent {
     render() {
         return (
             <div className="view full-container calendar">
+                <Helmet><title>Kalender - Battleground-Bulls</title></Helmet>
                 <div className="container">
                     <div ref="calendar" />
                 </div>
