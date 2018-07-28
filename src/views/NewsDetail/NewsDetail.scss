@@ -1,3 +1,24 @@
-.view.full-container.news-detail {
-
+.view.full-container.news-detail .container {
+  > a {
+    display: block;
+    margin-bottom: 25px;
+    i {
+      margin-right: 5px;
+    }
+  }
+  h1 {
+    text-transform: uppercase;
+    margin-left: -3px;
+  }
+  .author, .category {
+    display: inline-block;
+    margin-right: 15px;
+    i {
+      margin-right: 5px;
+    }
+  }
+  img {
+    display: block;
+    margin: 25px 0;
+  }
 }

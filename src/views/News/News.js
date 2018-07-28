@@ -28,45 +28,47 @@ export default class News extends React.PureComponent {
     static getNews(title) {
         let news = [
             {
+                author: "Malthe S.",
                 img: news1,
                 imgDetail: news1Detail,
-                category: "hardware",
+                category: "Hardware",
                 date: "28. Juli 2018",
                 title: "Hardware 1 hat einen langen Titel",
                 text: "Test"
             },
             {
+                author: "Malthe S.",
                 img: news2,
                 imgDetail: news2Detail,
-                category: "hardware",
+                category: "Hardware",
                 date: "27. Juli 2018",
                 title: "Hardware 2"
             },
             {
+                author: "Malthe S.",
                 img: news3,
                 imgDetail: news3Detail,
-                category: "stream",
+                category: "Stream",
                 date: "26. Juli 2018",
                 title: "Stream 1"
             },
             {
+                author: "Malthe S.",
                 img: news4,
                 imgDetail: news4Detail,
-                category: "hardware",
+                category: ["Hardware", "Stream"],
                 date: "25. Juli 2018",
-                title: "Hardware 3"
+                title: "Hardware & Stream"
             }
         ];
 
         if (title) {
             let singleNews = {};
             news.forEach( news => {
-                console.log(news);
                 if (news.title === title) {
                     singleNews = news;
                 }
             });
-            console.log(singleNews);
             return singleNews;
         }
 
