@@ -2,7 +2,6 @@ import React, {PureComponent} from "react";
 import classnames from "classnames";
 import Helmet from "react-helmet";
 import $ from "jquery";
-import {Helmet} from "react-helmet";
 
 import About from "../../components/About/About";
 import Counter from "../../components/Counter/Counter";
@@ -165,9 +164,8 @@ export default class Home extends PureComponent {
         }
         return (
             <div ref="fullpage" className="container-fluid home">
-                <Helmet><title>Home - Battleground-Bulls</title></Helmet>
-
                 <Helmet onChangeClientState={()=>{ this.setState({ Twitch: window.Twitch }) }}>
+                    <title>Home - Battleground-Bulls</title>
                     <script src="https://embed.twitch.tv/embed/v1.js" async defer />
                 </Helmet>
 
