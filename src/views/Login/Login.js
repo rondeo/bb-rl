@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import {connect} from "react-redux";
+import {Helmet} from "react-helmet";
 
 import {login} from "../../actions/ApplicationActions";
 
@@ -44,6 +45,7 @@ class Login extends React.PureComponent {
         let search = searchToObject(this.props.location.search);
         return search.role ? (
             <div className="access-denied">
+                <Helmet><title>Login - Battleground-Bulls</title></Helmet>
                 <div className="alert alert-danger">
                     <h1>Zugriff verweigert.</h1> <br/> Bitte logge dich mit der richtigen Berechtigung ein.
                 </div>

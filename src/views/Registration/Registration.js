@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import $ from "jquery";
+import {Helmet} from "react-helmet";
 
 import UsernameInput from "../../components/UsernameInput/UsernameInput";
 
@@ -76,7 +77,8 @@ class Registration extends React.PureComponent {
         return (
             <div className="view full-container registration">
                 <div className="container">
-                    <div className="row">
+                    <Helmet><title>Registration - Battleground-Bulls</title></Helmet>
+                <div className="row">
                         <div className="col-12 col-md-6 offset-md-3">
                             <h1>Registrierung</h1>
 

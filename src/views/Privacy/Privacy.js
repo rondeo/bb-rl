@@ -1,5 +1,8 @@
 import React from 'react';
+import {Helmet} from "react-helmet";
+
 import './Privacy.css';
+
 
 export default class Privacy extends React.PureComponent {
 
@@ -10,6 +13,7 @@ export default class Privacy extends React.PureComponent {
     render() {
         return (
             <div className="container privacy">
+                <Helmet><title>Datenschutz - Battleground-Bulls</title></Helmet>
                 <h1>Datenschutz</h1>
                 <div className="row">
                     <div className="col-12">
