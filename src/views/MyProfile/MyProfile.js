@@ -1,8 +1,8 @@
 import React from "react";
-import $ from "jquery";
-import {Helmet} from "react-helmet";
-
 import DateTime from "react-datetime";
+import Helmet from "react-helmet";
+import $ from "jquery";
+
 import "react-datetime/css/react-datetime.css";
 
 import UsernameInput from "../../components/UsernameInput/UsernameInput";
