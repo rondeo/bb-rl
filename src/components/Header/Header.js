@@ -76,6 +76,7 @@ class Header extends React.PureComponent {
 
     hideSidebar() {
         $(this.refs.sidebar).width(0);
+        $("body").removeClass("no-scroll");
         this.setState({userSidebarOpen: false});
     }
 
@@ -88,11 +89,14 @@ class Header extends React.PureComponent {
     toggleUserSidebar() {
         let userSidebarOpen = this.state.userSidebarOpen,
             sideBar = $(this.refs.sidebar),
-            navSignIn = $(this.refs.navSignIn);
+            navSignIn = $(this.refs.navSignIn),
+            body = $("body");
         if (userSidebarOpen) {
             sideBar.width(0);
+            body.removeClass("no-scroll");
         } else {
             sideBar.width($(window).width() - navSignIn.offset().left);
+            body.addClass("no-scroll");
         }
         this.setState({userSidebarOpen: !userSidebarOpen});
     }

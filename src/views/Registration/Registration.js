@@ -102,7 +102,7 @@ class Registration extends React.PureComponent {
                                 <input type="checkbox" className="form-check-input" id="privacy" required/>
                                 <label className="form-check-label" htmlFor="privacy">Bitte akzeptiere unsere <Link to="/datenschutz" target="_blank">Datenschutzbestimmungen</Link>.</label>
                             </div>
-                            <button type="submit" className="btn btn-primary">Registrierung abschließen</button>
+                            <button type="submit" className="btn primary">Registrierung abschließen</button>
                         </form>
                     </div>
                 </div>
