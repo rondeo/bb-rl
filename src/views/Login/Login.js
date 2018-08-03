@@ -72,7 +72,7 @@ class Login extends React.PureComponent {
                                     <label htmlFor="password">Passwort</label>
                                     <input type="password" className="form-control" id="password" name="password" placeholder="Passwort" required/>
                                 </div>
-                                <button type="submit" className="btn btn-primary">Einloggen</button>
+                                <button type="submit" className="btn primary">Einloggen</button>
                             </form>
                         </div>
                     </div>
