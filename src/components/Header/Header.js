@@ -75,7 +75,8 @@ class Header extends React.PureComponent {
                             <li className={classnames("nav-item", {"active": active === "/#bulls"})}>
                                 <Link to={{pathname: "/", hash: "#bulls"}} className="nav-link">Über die Bulls</Link>
                                 <ul className="submenu">
-                                    <li className={classnames({"active": active === "/streamzeiten"})}><Link to={{pathname: "/streamzeiten"}} className="nav-link">Streamzeiten</Link></li>
+                                    <li className={classnames({"active": active === "/bulls"})}><Link to="/bulls" className="nav-link">Mitglieder</Link></li>
+                                    <li className={classnames({"active": active === "/streamzeiten"})}><Link to="/streamzeiten" className="nav-link">Streamzeiten</Link></li>
                                 </ul>
                             </li>
                             <li className={classnames("nav-item", {"active": active === "/#partner"})}>
