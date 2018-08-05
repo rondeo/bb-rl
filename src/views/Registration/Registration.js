@@ -86,42 +86,44 @@ class Registration extends React.PureComponent {
             passwordErrorDiv = <div className="alert alert-danger">{passwordErrorText}</div>;
         }
         return (
-            <div className="container registration">
-                <div className="row">
-                    <div className="col-12 col-md-6 offset-md-3">
-                        <h1>Registrierung</h1>
+            <div className="view full-container registration">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-md-6 offset-md-3">
+                            <h1>Registrierung</h1>
 
-                        <form ref="form" onSubmit={this.onSubmit}>
-                            <div className="required-text">Die mit <span className="required">*</span> gekennzeichneten Felder bitte ausfüllen.</div>
-                            <div className="form-group">
-                                <label htmlFor="mail">E-Mail-Adresse</label>
-                                <input type="email" className="form-control" id="mail" name="mail" aria-describedby="mailHelp" placeholder="E-Mail-Adresse"/>
-                                <small id="mailHelp" className="form-text text-muted">Wir werden deine E-Mail-Adresse niemals mit anderen teilen.</small>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="username">Benutzername <span className="required">*</span></label>
-                                <input type="text" className="form-control" id="username" name="username" placeholder="Benutzername" onChange={this.onUsernameChange} required/>
-                                {usernameStatus ? usernameStatus === 204 ? (
-                                    <div className="alert alert-success" role="alert">Benutzername ist verfügbar</div>
-                                ) : (
-                                    <div className="alert alert-danger" role="alert">Benutzername ist leider schon vergeben</div>
-                                ) : null}
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="password1">Passwort <span className="required">*</span></label>
-                                <input type="password" className="form-control" id="password1" name="password1" placeholder="Passwort" required/>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="password2">Passwort wiederholen <span className="required">*</span></label>
-                                <input type="password" className="form-control" id="password2" name="password2" placeholder="Passwort wiederholen" required/>
-                                {passwordErrorDiv}
-                            </div>
-                            <div className="form-check">
-                                <input type="checkbox" className="form-check-input" id="privacy" required/>
-                                <label className="form-check-label" htmlFor="privacy">Bitte akzeptiere unsere <Link to="/datenschutz" target="_blank">Datenschutzbestimmungen</Link>.</label>
-                            </div>
-                            <button type="submit" className="btn btn-primary">Registrierung abschließen</button>
-                        </form>
+                            <form ref="form" onSubmit={this.onSubmit}>
+                                <div className="required-text">Die mit <span className="required">*</span> gekennzeichneten Felder bitte ausfüllen.</div>
+                                <div className="form-group">
+                                    <label htmlFor="mail">E-Mail-Adresse</label>
+                                    <input type="email" className="form-control" id="mail" name="mail" aria-describedby="mailHelp" placeholder="E-Mail-Adresse"/>
+                                    <small id="mailHelp" className="form-text mail-info">Wir werden deine E-Mail-Adresse niemals mit anderen teilen.</small>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="username">Benutzername <span className="required">*</span></label>
+                                    <input type="text" className="form-control" id="username" name="username" placeholder="Benutzername" onChange={this.onUsernameChange} required/>
+                                    {usernameStatus ? usernameStatus === 204 ? (
+                                        <div className="alert alert-success" role="alert">Benutzername ist verfügbar</div>
+                                    ) : (
+                                        <div className="alert alert-danger" role="alert">Benutzername ist leider schon vergeben</div>
+                                    ) : null}
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="password1">Passwort <span className="required">*</span></label>
+                                    <input type="password" className="form-control" id="password1" name="password1" placeholder="Passwort" required/>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="password2">Passwort wiederholen <span className="required">*</span></label>
+                                    <input type="password" className="form-control" id="password2" name="password2" placeholder="Passwort wiederholen" required/>
+                                    {passwordErrorDiv}
+                                </div>
+                                <div className="form-check">
+                                    <input type="checkbox" className="form-check-input" id="privacy" required/>
+                                    <label className="form-check-label" htmlFor="privacy">Bitte akzeptiere unsere <Link to="/datenschutz" target="_blank">Datenschutzbestimmungen</Link>.</label>
+                                </div>
+                                <button type="submit" className="btn white">Registrierung abschließen</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

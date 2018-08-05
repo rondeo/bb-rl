@@ -1,4 +1,11 @@
-.container.login .access-denied {
-  margin-bottom: 50px; }
+.view.full-container.login {
+  background: url("./img/BG_Login.png") no-repeat center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding-bottom: 50px;
+  color: #fff; }
+  .view.full-container.login .container.login .access-denied {
+    margin-bottom: 50px; }
 
 /*# sourceMappingURL=Login.css.map */

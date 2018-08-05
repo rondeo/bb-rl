@@ -31,18 +31,38 @@ export default class News extends React.PureComponent {
                 author: "Malthe S.",
                 img: news1,
                 imgDetail: news1Detail,
-                category: "Hardware",
+                category: "Stream",
                 date: "28. Juli 2018",
-                title: "Hardware 1 hat einen langen Titel",
-                text: "Test"
+                title: "Homepage Online",
+                text: "Liebe Community und Mitglieder der Battleground Bulls," +
+                    "Heute möchten wir euch mitteilen, dass unsere Homepage sich aktuell in der Startphase befindet.<br>" +
+                    "Wir arbeiten stets daran, neue Features und Inhalte für euch zur Verfügung zu stellen, um euch " +
+                    "unsere Homepage so schmackhaft wie möglich zu machen." +
+                    " Ebenso streben wir an, die Homepage so benutzerfreundlich wie möglich für euch zu gestalten.<br>" +
+                    "Im Laufe der kommenden Monate werdet ihr hier immer wieder Updates vorfinden, was sich verändert" +
+                    "hat, oder was neues dazu gekommen ist.<br>" +
+                    "Wir freuen uns natürlich wenn ihr zwischendurch immer mal wieder hier vorbei schaut und guckt was " +
+                    "es neues zu entdecken gibt.<br>" +
+                    "Ebenso ist für uns ein Feedback von euch sehr sehr wichtig, da wir mit euch zusammen eine möglichst" +
+                    "perfekte Homepage erschaffen wollen. Bitte teilt uns eure Meinung im Discord mit.<br>" +
+                    "Hauptschwerpunkt dabei fällt auf unseren Stream Kanal und auf die Rocket League Turniere.<br>" +
+                    "<p>Außerdem sind wir aber auch daran interessiert, einige Features für euch zu entwickeln, was euch dazu" +
+                    "ermutigen soll in unserem Stream Kanal aktiv mit zu wirken.</p>" +
+                    "" +
+                    "<p>Wir bedanken uns für deinen Besuch und hoffen dich bald wieder zu sehen.</p>" +
+                    "" +
+                    "<p>Euer Battleground-Bulls Team</p>"
+
             },
             {
                 author: "Malthe S.",
                 img: news2,
                 imgDetail: news2Detail,
-                category: "Hardware",
+                category: "Stream",
                 date: "27. Juli 2018",
-                title: "Hardware 2"
+                title: "Subscriber Treue Icon",
+                text: "Wir freuen uns euch mitteilen zu dürfen, dass ab sofort die neuen Subscriber Icons vor eurem Nicknamen im Stream verfügbar sind. Das Bislang eher langweilige Icon mit dem lila umrandeten Stern ist geschichte und wurde von uns durch eine Reihe Bumpetys ersetzt. Freut euch also darauf, jenachdem wie lange ihr bei uns Subscriber seit, sich das Bild vor eurem Namen verändert." +
+                    "Wir haben aktuell folgende Ränge: Basic Sub: Kid Bumpety | 3-Monate Sub: Teenager Bumpety | 6-Monate Sub: Erwachsender Bumpety | 12 Monat Sub: Opa Bumpety. Wir hoffen ihr freut euch über euer neues Bildchen und seid weiterhin bestrebt uns zu untersützen. Hiermit nochmal ein riesen Dank an euch, dass ihr uns diese tollen neuen Features ermöglicht, denn ohne euch wäre es nicht machbar."
             },
             {
                 author: "Malthe S.",
@@ -123,7 +143,7 @@ export default class News extends React.PureComponent {
             <div className="view full-container news">
                 <Helmet onChangeClientState={(newState, addedTags) => this.handleScriptInject(addedTags)}>
                     <title>News - Battleground Bulls</title>
-                    <script src="/js/isotope.min.js" async defer />
+                    <script src="/js/isotope.min.js" async000 defer />
                 </Helmet>
 
                 <div className="container">

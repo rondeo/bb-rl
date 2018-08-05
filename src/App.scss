@@ -114,8 +114,21 @@ h3 {
   color: #777;
 }
 
+/**
+ * Input Field Style
+ */
+.form-control:focus{
+  border-color: $highlightColor;
+  box-shadow: 0 0 0 0.2rem rgba($highlightColor,.25);
+
+  &.blue {
+    border-color: $backgroundBlue;
+    box-shadow: 0 0 0 0.2rem rgba($backgroundBlue,.25);
+  }
+}
+
 a {
-  color: $highlightColor;
+    color: $highlightColor;
   &:hover {
     color: $highlightColor;
   }
@@ -245,3 +258,21 @@ img {
 /**
   *  Bootstrap DatePicker
   */
+
+
+/**
+ *  Custom Scrollbar
+ */
+
+
+.scrollarea.bb-scrollbar {
+  .scrollbar-container {
+    &:hover, &:active {
+
+    }
+
+    .scrollbar {
+      background: $highlightColor;
+    }
+  }
+}

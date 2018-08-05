@@ -1,5 +1,15 @@
-.container.login {
-  .access-denied {
-    margin-bottom: 50px;
+.view.full-container.login {
+  background: url("./img/BG_Login.png") no-repeat center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  padding-bottom: 50px;
+  color: #fff;
+
+  .container.login {
+    .access-denied {
+      margin-bottom: 50px;
+    }
   }
 }

@@ -28,7 +28,7 @@ export default class NewsDetail extends React.PureComponent {
                     <h1>{news.title}</h1>
                     {author}{category}
                     <img src={news.imgDetail} />
-                    <p>{news.text}</p>
+                    <p className="content" dangerouslySetInnerHTML={{__html: news.text}} />
                 </div>
             </div>
         );
