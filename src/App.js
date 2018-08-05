@@ -1,6 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import moment from "moment";
+import PerfectScrollbar from 'perfect-scrollbar';
+import $ from 'jquery';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -25,6 +27,7 @@ import Commands from "./views/Commands/Commands";
 import News from "./views/News/News";
 import NewsDetail from "./views/NewsDetail/NewsDetail";
 
+
 import requireAuthentication from './utils/AuthComponent';
 
 import './App.css';
@@ -35,7 +38,6 @@ class App extends React.PureComponent {
 
         moment.locale("de");
     }
-
     render() {
         return (
             <BrowserRouter>

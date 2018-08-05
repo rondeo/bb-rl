@@ -1,6 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
+import ScrollArea from "react-scrollbar";
 
 import "./ReadMore.css";
 
@@ -27,7 +28,7 @@ export default class ReadMore extends React.PureComponent {
         let { expanded } = this.state;
         return (
             <div ref="wrapper" className={classnames("read-more-wrapper", this.props.className, {"expanded": expanded})}>
-                <p>{this.props.children}</p>
+                <ScrollArea className="bb-scrollbar" style={{ maxHeight: "100%" }}><p>{this.props.children}</p></ScrollArea>
                 <button ref="button" onClick={this.toggle.bind(this)}>{expanded ? "Weniger lesen" : "Mehr lesen"}</button>
             </div>
         );

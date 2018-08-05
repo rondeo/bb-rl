@@ -70,17 +70,17 @@ export default class TournamentRegistration extends React.PureComponent {
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputTeamName">Teamname *</label>
-                                <input type="text" name="Team-Name" className="form-control" id="inputTeamName" placeholder="Teamname" required />
+                                <input type="text" name="Team-Name" className="form-control blue blue" id="inputTeamName" placeholder="Teamname" required />
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputMember1">Mitglied 1 *</label>
-                                <input type="text" name="Mitglied 1" className="form-control" id="inputMember1" placeholder="Mitglied 1" required />
+                                <input type="text" name="Mitglied 1" className="form-control blue blue" id="inputMember1" placeholder="Mitglied 1" required />
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputMember1Rank">Rang *</label>
-                                <select name="Rank Mitglied 1" id="inputMember1Rank" className="form-control" required>
+                                <select name="Rank Mitglied 1" id="inputMember1Rank" className="form-control blue" required>
                                     <option>Bronze 1</option>
                                     <option>Bronze 2</option>
                                     <option>Bronze 3</option>
@@ -106,11 +106,11 @@ export default class TournamentRegistration extends React.PureComponent {
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputMember2">Mitglied 2 *</label>
-                                <input type="text" name="Mitglied 2" className="form-control" id="inputMember2" placeholder="Mitglied 2" required />
+                                <input type="text" name="Mitglied 2" className="form-control blue" id="inputMember2" placeholder="Mitglied 2" required />
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputMember2Rank">Rang *</label>
-                                <select name="Rank Mitglied 2" id="inputMember2Rank" className="form-control" required>
+                                <select name="Rank Mitglied 2" id="inputMember2Rank" className="form-control blue" required>
                                     <option>Bronze 1</option>
                                     <option>Bronze 2</option>
                                     <option>Bronze 3</option>
@@ -137,11 +137,11 @@ export default class TournamentRegistration extends React.PureComponent {
                             <div className="form-row">
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputMember3">Mitglied 3 *</label>
-                                    <input type="text" name="Mitglied 3" className="form-control" id="inputMember3" placeholder="Mitglied 3" required />
+                                    <input type="text" name="Mitglied 3" className="form-control blue" id="inputMember3" placeholder="Mitglied 3" required />
                                 </div>
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputMember3Rank">Rang *</label>
-                                    <select name="Rank Mitglied 3" id="inputMember3Rank" className="form-control" required>
+                                    <select name="Rank Mitglied 3" id="inputMember3Rank" className="form-control blue" required>
                                         <option>Bronze 1</option>
                                         <option>Bronze 2</option>
                                         <option>Bronze 3</option>
@@ -167,22 +167,22 @@ export default class TournamentRegistration extends React.PureComponent {
                         ) : null}
                         <div className="form-group">
                             <label htmlFor="inputSteamLinkMember1">Steam Link Mitglied 1 *</label>
-                            <input type="url" name="Steam Link Mitglied 1" className="form-control" id="inputSteamLinkMember1" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
+                            <input type="url" name="Steam Link Mitglied 1" className="form-control blue" id="inputSteamLinkMember1" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
                         </div>
                         <div className="form-group">
                             <label htmlFor="inputSteamLinkMember2">Steam Link Mitglied 2 *</label>
-                            <input type="url" name="Steam Link Mitglied 2" className="form-control" id="inputSteamLinkMember2" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
+                            <input type="url" name="Steam Link Mitglied 2" className="form-control blue" id="inputSteamLinkMember2" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
                         </div>
                         { teams === "3vs3" ? (
                             <div className="form-group">
                                 <label htmlFor="inputSteamLinkMember3">Steam Link Mitglied 3 *</label>
-                                <input type="text" name="Steam Link Mitglied 3" className="form-control" id="inputSteamLinkMember3" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
+                                <input type="text" name="Steam Link Mitglied 3" className="form-control blue" id="inputSteamLinkMember3" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
                             </div>
                         ) : null}
                         <div className="form-row">
                             <div className="form-group col-md-5">
                                 <label htmlFor="inputDevice">Welche Plattform nutzt ihr? *</label>
-                                <select name="Plattform" id="inputDevice" className="form-control" required>
+                                <select name="Plattform" id="inputDevice" className="form-control blue" required>
                                     <option>PC</option>
                                     <option>XBOX</option>
                                     <option>Playstation 4</option>
@@ -192,7 +192,7 @@ export default class TournamentRegistration extends React.PureComponent {
                             </div>
                         <div className="form-group">
                             <label htmlFor="inputSuccessfulCheckIn">Anmeldebestätigung per E-Mail</label>
-                            <input type="email" name="mail" className="form-control" id="inputSuccessfulCheckIn" placeholder="Bsp.: Max.Mustermann@Beispiel.de (Optional)"/>
+                            <input type="email" name="mail" className="form-control blue" id="inputSuccessfulCheckIn" placeholder="Bsp.: Max.Mustermann@Beispiel.de (Optional)"/>
                         </div>
                         <div className="form-group">
                             <label>* Pflichtfeld</label>
