@@ -3,29 +3,22 @@ import DateTime from "react-datetime";
 import Helmet from "react-helmet";
 import $ from "jquery";
 
-import "react-datetime/css/react-datetime.css";
-
 import UsernameInput from "../../components/UsernameInput/UsernameInput";
+
+import {updateUser} from "./../../actions/ApplicationActions";
 
 import API from "./../../utils/API";
 
+import "react-datetime/css/react-datetime.css";
 import "./MyProfile.css";
 
 export default class MyProfile extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            birthday: "",
             usernameValid: true
         };
-        this.handleBirthdayChange = this.handleBirthdayChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-    }
-
-    handleBirthdayChange(date) {
-        this.setState({
-            birthday: date
-        });
     }
 
     onSubmit(e) {
@@ -33,13 +26,16 @@ export default class MyProfile extends React.PureComponent {
         let formData = $(e.target).serializeObject();
         console.log("submit", formData);
         console.log("username valid?", this.state.usernameValid);
-        API.getInstance()._fetch("/user/" + this.props.user.id, "PATCH", formData, null, {
-            "Authorization": "Basic " + btoa("demo:demo") //TODO replace with variables
-        })
-            .then(response => {
-                console.log(response);
-                // TODO: update user in state
-            });
+        if (this.state.usernameValid) {
+            API.getInstance()._fetch("/user/" + this.props.user.id, "PATCH", formData, null, {
+                "Authorization": "Basic " + btoa("demo:demo") //TODO replace with variables
+            })
+                .then(response => {
+                    console.log(response);
+                    // TODO: update user in state
+                    this.props.dispatch(updateUser(response));
+                });
+        }
     }
 
     render() {
@@ -105,18 +101,21 @@ export default class MyProfile extends React.PureComponent {
                                         id="inputHome"
                                         maxLength={255}
                                         placeholder="Bsp.: Bremen"
+                                        defaultValue={user.city}
                                     />
                                 </div>
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputLand">Land</label>
-                                    <input
-                                        type="text"
+                                    <select
                                         name="country"
                                         className="form-control"
                                         id="inputLand"
-                                        maxLength={255}
-                                        placeholder="Bsp.: Deutschland"
-                                    />
+                                        defaultValue={user.country}
+                                    >
+                                        <option>Deutschland</option>
+                                        <option>Österreich</option>
+                                        <option>Schweiz</option>
+                                    </select>
                                 </div>
                             </div>
                             <div className="form-row">
@@ -132,9 +131,8 @@ export default class MyProfile extends React.PureComponent {
                                             placeholder: "Bsp.: 01.01.1990",
                                             autoComplete: "off"
                                         }}
-                                        onChange={this.handleBirthdayChange}
                                         timeFormat={false}
-                                        value={this.state.birthday}
+                                        value={user.birthday || this.state.birthday}
                                         viewMode="years"
                                     />
                                 </div>
@@ -148,6 +146,7 @@ export default class MyProfile extends React.PureComponent {
                                         className="form-control"
                                         rows={4}
                                         placeholder="Ich bin bei den Bulls, weil ..."
+                                        defaultValue={user.description}
                                     />
                                 </div>
                             </div>
@@ -221,6 +220,7 @@ export default class MyProfile extends React.PureComponent {
                                         id="inputFavourite"
                                         maxLength={255}
                                         placeholder="Bsp.: PUBG, CS:GO, Rocket League"
+                                        defaultValue={user.games}
                                     />
                                 </div>
                             </div>
@@ -234,6 +234,7 @@ export default class MyProfile extends React.PureComponent {
                                         id="inputClan"
                                         maxLength={255}
                                         placeholder="Bsp.: Battleground-Bulls"
+                                        defaultValue={user.clan}
                                     />
                                 </div>
                             </div>

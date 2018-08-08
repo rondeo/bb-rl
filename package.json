@@ -38,14 +38,17 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "startLocalApi": "set REACT_APP_API=local&& react-scripts start",
+    "startLocalApi": "set REACT_APP_API=local&&react-scripts start",
+    "startDevApi": "set REACT_APP_API=dev&&react-scripts start",
     "start-https": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "serve": "serve -s build",
     "buildAndUpload": "react-scripts build & gulp upload",
     "buildAndUploadDev": "react-scripts build & gulp uploadDev",
     "upload": "gulp upload",
+    "uploadDev": "gulp uploadDev",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "styles": "node-sass --source-map src src/App.scss src/App.css && node-sass --recursive --include-path ./src/views  --source-map src/views src/views -o src/views && node-sass --recursive --include-path ./src/components --source-map src/components src/components -o src/components"
   }
 }

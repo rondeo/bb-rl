@@ -3,7 +3,7 @@ let ftpHelper = require('./utils/ftpHelper');
 
 gulp.task('upload', function () {
     let conn = ftpHelper.getConn({
-        path: 'web2/web'
+        path: 'clients/client0/web2/web'
     });
     gulp.src('build/**')
         .pipe(conn);
@@ -11,7 +11,7 @@ gulp.task('upload', function () {
 
 gulp.task('uploadDev', function () {
     let conn = ftpHelper.getConn({
-        path: 'web4/web'
+        path: 'clients/client0/web4/web'
     });
     gulp.src('build/**')
         .pipe(conn);
