@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,0BAA2B;EACzB,UAAU,EAAE,0CAA0C;EACtD,eAAe,EAAE,KAAK;EAEtB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,cAAc,EAAE,IAAI;EACpB,KAAK,EAAE,IAAI;EAGT,0DAAe;IACb,aAAa,EAAE,IAAI",
-"sources": ["Login.scss"],
-"names": [],
-"file": "Login.css"
-}
