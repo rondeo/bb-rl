@@ -35,15 +35,15 @@ export default class News extends React.PureComponent {
                 date: "28. Juli 2018",
                 title: "Homepage Online",
                 text: "Liebe Community und Mitglieder der Battleground Bulls," +
-                    "Heute möchten wir euch mitteilen, dass unsere Homepage sich aktuell in der Startphase befindet.<br>" +
+                    "heute möchten wir euch mitteilen, dass unsere Homepage sich aktuell in der Startphase befindet.<br>" +
                     "Wir arbeiten stets daran, neue Features und Inhalte für euch zur Verfügung zu stellen, um euch " +
                     "unsere Homepage so schmackhaft wie möglich zu machen." +
-                    " Ebenso streben wir an, die Homepage so benutzerfreundlich wie möglich für euch zu gestalten.<br>" +
+                    "Ebenso streben wir an, die Homepage so benutzerfreundlich wie möglich für euch zu gestalten.<br>" +
                     "Im Laufe der kommenden Monate werdet ihr hier immer wieder Updates vorfinden, was sich verändert" +
                     "hat, oder was neues dazu gekommen ist.<br>" +
-                    "Wir freuen uns natürlich wenn ihr zwischendurch immer mal wieder hier vorbei schaut und guckt was " +
-                    "es neues zu entdecken gibt.<br>" +
-                    "Ebenso ist für uns ein Feedback von euch sehr sehr wichtig, da wir mit euch zusammen eine möglichst" +
+                    "Wir freuen uns natürlich, wenn ihr zwischendurch immer mal wieder hier vorbei schaut und guckt was" +
+                    "es Neues zu entdecken gibt.<br>" +
+                    "Ebenso ist für uns ein Feedback von euch sehr, sehr wichtig, da wir mit euch zusammen eine möglichst" +
                     "perfekte Homepage erschaffen wollen. Bitte teilt uns eure Meinung im Discord mit.<br>" +
                     "Hauptschwerpunkt dabei fällt auf unseren Stream Kanal und auf die Rocket League Turniere.<br>" +
                     "<p>Außerdem sind wir aber auch daran interessiert, einige Features für euch zu entwickeln, was euch dazu" +
@@ -76,9 +76,9 @@ export default class News extends React.PureComponent {
                 author: "Malthe S.",
                 img: news4,
                 imgDetail: news4Detail,
-                category: ["Hardware", "Stream"],
+                category: "Hardware",
                 date: "25. Juli 2018",
-                title: "Hardware & Stream"
+                title: "Hardware"
             }
         ];
 
@@ -143,7 +143,7 @@ export default class News extends React.PureComponent {
             <div className="view full-container news">
                 <Helmet onChangeClientState={(newState, addedTags) => this.handleScriptInject(addedTags)}>
                     <title>News - Battleground Bulls</title>
-                    <script src="/js/isotope.min.js" async000 defer />
+                    <script src="/js/isotope.min.js" async defer />
                 </Helmet>
 
                 <div className="container">
@@ -151,8 +151,8 @@ export default class News extends React.PureComponent {
 
                     <div ref="buttonGroup" className="button-group filters-button-group">
                         <button className="btn white active" data-filter="*">Alle anzeigen</button>
-                        <button className="btn white" data-filter=".hardware">Hardware</button>
-                        <button className="btn white" data-filter=".stream">Stream</button>
+                        <button className="btn white" data-filter=".Hardware">Hardware</button>
+                        <button className="btn white" data-filter=".Stream">Stream</button>
                     </div>
 
                     <div ref="grid" className={classnames("grid", {"loading": loading})}>
