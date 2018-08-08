@@ -33,10 +33,10 @@ export default class API {
             }, header);
             if (process.env.REACT_APP_API === "local") {
                 url = CONSTANTS.API_ROUTE_LOCAL + url;
-            } else if (process.env.NODE_ENV === "development") {
+            } else if (process.env.REACT_APP_API === "dev") {
                 url = CONSTANTS.API_ROUTE_DEV + url;
             } else {
-                url = CONSTANTS.API_ROUTE_DEV + url; // TODO: Replace with "API_ROUTE_DEV"
+                url = CONSTANTS.API_ROUTE + url;
             }
         }
 

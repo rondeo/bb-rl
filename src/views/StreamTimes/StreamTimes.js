@@ -9,7 +9,8 @@ export default class StreamTimes extends React.PureComponent {
     render() {
         return (
             <div className="stream-times">
-                <Helmet><title>Stream-Zeiten - Battleground-Bulls</title></Helmet>
+                <Helmet><title>Streamzeiten - Battleground-Bulls</title></Helmet>
+
                 <img src={banner} alt="Streamzeiten" />
 
                 <ul>
