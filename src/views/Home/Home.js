@@ -10,6 +10,7 @@ import Rules from "../../components/Rules/Rules";
 import Partner from "../../components/Partner/Partner";
 
 import API from "../../utils/API";
+import {throttle} from "../../utils/helperFunctions";
 
 import "./Home.css";
 
@@ -53,6 +54,25 @@ export default class Home extends PureComponent {
                 this.resizeTwitchPlayer();
             }, 250);
         });
+
+        let arrowTimer;
+        let inDiv = false;
+        $("#twitch-embed-bb .overlay, #twitch-embed-bp .overlay")
+            .on("mouseenter", () => {
+                inDiv = true;
+            })
+            .on("mouseleave", () => {
+                inDiv = false;
+            })
+            .on("mousemove", throttle( () => {
+                $(".section.start .fp-controlArrow").css("opacity", 1);
+                clearTimeout(arrowTimer);
+                arrowTimer = setTimeout( () => {
+                    if (inDiv) {
+                        $(".section.start .fp-controlArrow").css("opacity", 0);
+                    }
+                }, 2000);
+            }, 500));
 
         this.moveToLiveStream = this.moveToLiveStream.bind(this);
 
@@ -142,7 +162,7 @@ export default class Home extends PureComponent {
                     });
                     break;
             }
-            this.resizeTwitchPlayer();
+            setTimeout(this.resizeTwitchPlayer, 1000);
         } else {
             this.openStreamTimer = setTimeout(this.openStream.bind(this, stream), 250);
         }
@@ -151,7 +171,10 @@ export default class Home extends PureComponent {
     resizeTwitchPlayer() {
         let player = $("#twitch-embed-bb iframe, #twitch-embed-bp iframe");
         if (player.length > 0) {
-            player.height(player.width() / 16 * 9);
+            player.css({
+                height: player.width() / 16 * 9 - $("nav.navbar").height(),
+                maxHeight: player.parents(".full-container").height()
+            });
         }
     }
 
@@ -191,12 +214,12 @@ export default class Home extends PureComponent {
                         <div className="slide stream">
                             <div className="full-container">
                                 <div className="actions">
-                                    {liveBB ? <img src={btnStreamBB} title="Battleground Bulls" alt="Battleground Bulls" onClick={this.openStream.bind(this, "bb")} /> : null}
-                                    {liveBP ? <img src={btnStreamBP} title="Bulls Playground" alt="Bulls Playground" onClick={this.openStream.bind(this, "bp")} /> : null}
+                                    <img className={classnames({"inactive": !liveBB})} src={btnStreamBB} title="Battleground Bulls" alt="Battleground Bulls" onClick={this.openStream.bind(this, "bb")} />
+                                    <img className={classnames({"inactive": !liveBP})} src={btnStreamBP} title="Bulls Playground" alt="Bulls Playground" onClick={this.openStream.bind(this, "bp")} />
                                 </div>
 
-                                <div id="twitch-embed-bb" />
-                                <div id="twitch-embed-bp" />
+                                <div id="twitch-embed-bb"><div className="overlay"/></div>
+                                <div id="twitch-embed-bp"><div className="overlay"/></div>
                             </div>
                         </div>
 
