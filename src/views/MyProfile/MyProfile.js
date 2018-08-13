@@ -28,11 +28,10 @@ export default class MyProfile extends React.PureComponent {
         console.log("username valid?", this.state.usernameValid);
         if (this.state.usernameValid) {
             API.getInstance()._fetch("/user/" + this.props.user.id, "PATCH", formData, null, {
-                "Authorization": "Basic " + btoa("demo:demo") //TODO replace with variables
+                "Authorization": "Basic " + btoa(this.props.user.username + ":" + this.props.user.password)
             })
                 .then(response => {
                     console.log(response);
-                    // TODO: update user in state
                     this.props.dispatch(updateUser(response));
                 });
         }

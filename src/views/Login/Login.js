@@ -36,7 +36,7 @@ class Login extends React.PureComponent {
                 console.error("Status: " + json.status + ", Error: " + json.error + ", Message: " + json.message);
             }
             let search = searchToObject(this.props.location.search);
-            this.props.dispatch(login(json));
+            this.props.dispatch(login($.extend(json, {password: formData.password})));
             this.props.history.push(search.next || "/");
         });
     }
