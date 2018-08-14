@@ -7,6 +7,7 @@ export default (state = initialState, action) => {
         case APPLICATION_LOGIN:
         case APPLICATION_UPDATE_USER:
             return {
+                ...state,
                 ...action.user
             };
         case APPLICATION_LOGOUT:
