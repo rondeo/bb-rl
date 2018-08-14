@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
+    <title>Rocket League Turnier - Battleground Bulls</title>
     <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
+          manifest.json provides metadata used when your web app is added to the
+          homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+        -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <!--
@@ -22,7 +23,34 @@
     <link rel="stylesheet" href="%PUBLIC_URL%/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/css/fonts.css">
-    <title>Rocket League Turnier - Battleground Bulls</title>
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#081A29",
+                        "text": "#cfcfe8"
+                    },
+                    "button": {
+                        "background": "transparent",
+                        "text": "#f71559",
+                        "border": "#f71559"
+                    }
+                },
+                "theme": "classic",
+                "position": "bottom-left",
+                "type": "opt-out",
+                "content": {
+                    "message": "Achtung. Das Krümelmonster möchte deine Cookies haben!!! Wenn du es ihm erlaubst, ist es mega glücklich.,
+                    "dismiss": "Och Manno...",
+                    "deny": "Meins!",
+                    "link": "Datenschutz"
+                }
+            })});
+    </script>
 </head>
 <body>
 <noscript>
