@@ -38,6 +38,7 @@ import requireAuthentication from "./utils/AuthComponent";
 import {DEFAULT_LANG, SUPPORTED_LANG} from "./i18n/supportedLanguages";
 
 import "./App.css";
+import Contact from "./views/Contact/Contact";
 
 // i18n - Translations
 addLocaleData(deLocaleData);
@@ -89,6 +90,7 @@ class App extends React.PureComponent {
                                 <Route path={messages["route.tournament"]} component={requireAuthentication(TournamentList)} exact/>
                                 <Route path={messages["route.bulls"]} component={Bulls} exact/>
                                 <Route path={messages["route.tournamentRegistration"]} component={TournamentRegistration} exact/>
+                                <Route path="/contact" component={Contact} exact/>
                                 <Route path={messages["route.calendar"]} component={requireAuthentication(Calendar)} exact/>
                                 <Route path={messages["route.myProfile"]} component={requireAuthentication(MyProfile)} exact/>
                                 <Route path={messages["route.commands"]} component={Commands} exact/>
@@ -104,7 +106,6 @@ class App extends React.PureComponent {
                     </div>
                 </BrowserRouter>
             </IntlProvider>
-
         );
     }
 }
