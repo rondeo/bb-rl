@@ -28,6 +28,7 @@ import NewsDetail from "./views/NewsDetail/NewsDetail";
 import requireAuthentication from "./utils/AuthComponent";
 
 import "./App.css";
+import Contact from "./views/Contact/Contact";
 
 class App extends React.PureComponent {
     constructor(props) {
@@ -56,6 +57,7 @@ class App extends React.PureComponent {
                             <Route path="/turniere" component={requireAuthentication(TournamentList)} exact/>
                             <Route path="/bulls" component={Bulls} exact/>
                             <Route path="/anmeldung/:teams?" component={TournamentRegistration} exact/>
+                            <Route path="/contact" component={Contact} exact/>
                             <Route path="/kalender" component={requireAuthentication(Calendar)} exact/>
                             <Route path="/mein-profil" component={requireAuthentication(MyProfile)} exact/>
                             <Route path="/befehle" component={Commands} exact/>
