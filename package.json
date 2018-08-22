@@ -24,6 +24,9 @@
     "react-datetime": "^2.14.0",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
+    "react-intl": "^2.4.0",
+    "react-intl-cra": "^0.3.3",
+    "react-intl-translations-manager": "^5.0.3",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^1.1.4",
@@ -51,6 +54,8 @@
     "uploadDev": "gulp uploadDev",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "styles": "node-sass --source-map src src/App.scss src/App.css && node-sass --recursive --include-path ./src/views  --source-map src/views src/views -o src/views && node-sass --recursive --include-path ./src/components --source-map src/components src/components -o src/components"
+    "styles": "node-sass --source-map src src/App.scss src/App.css && node-sass --recursive --include-path ./src/views  --source-map src/views src/views -o src/views && node-sass --recursive --include-path ./src/components --source-map src/components src/components -o src/components",
+    "extract:messages": "react-intl-cra src/**/*.{js,jsx} -o src/i18n/messages.json",
+    "manage:translations": "node ./src/i18n/translationRunner.js"
   }
 }

@@ -1,0 +1,172 @@
+[
+  {
+    "id": "app.aboutBulls",
+    "defaultMessage": "Über die Bulls",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.bracket",
+    "defaultMessage": "Spielplan",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.calendar",
+    "defaultMessage": "Kalender",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.home",
+    "defaultMessage": "Start",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.login",
+    "defaultMessage": "Einloggen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.logout",
+    "defaultMessage": "Ausloggen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.news",
+    "defaultMessage": "News",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.member",
+    "defaultMessage": "Mitglieder",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.myProfile",
+    "defaultMessage": "Mein Profil",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partner",
+    "defaultMessage": "Partner",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.home",
+    "defaultMessage": "/de",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.login",
+    "defaultMessage": "/de/login",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.admin",
+    "defaultMessage": "/de/admin",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.privacy",
+    "defaultMessage": "/de/datenschutz",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.imprint",
+    "defaultMessage": "/de/impressum",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.register",
+    "defaultMessage": "/de/registrieren",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.rlOverlay",
+    "defaultMessage": "/de/rl-overlay",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.schedule",
+    "defaultMessage": "/de/streamzeiten",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.tournament",
+    "defaultMessage": "/de/turniere",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.bulls",
+    "defaultMessage": "/de/bulls",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.tournamentRegistration",
+    "defaultMessage": "/de/anmeldung/:teams?",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.calendar",
+    "defaultMessage": "/de/kalender",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.myProfile",
+    "defaultMessage": "/de/mein-profil",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.commands",
+    "defaultMessage": "/de/befehle",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.news",
+    "defaultMessage": "/de/news",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.newsDetail",
+    "defaultMessage": "/de/news/:title",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.scrollDown",
+    "defaultMessage": "weiter scrollen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.settings",
+    "defaultMessage": "Einstellungen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.signIn",
+    "defaultMessage": "Registrieren",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.streamSchedule",
+    "defaultMessage": "Stream-Zeiten",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.signUpNow",
+    "defaultMessage": "Jetzt anmelden",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.teams",
+    "defaultMessage": "Teams",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournament",
+    "defaultMessage": "Turnier",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRules",
+    "defaultMessage": "Turnier-Regeln",
+    "filepath": "src/i18n/messages.js"
+  }
+]

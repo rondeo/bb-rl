@@ -1,10 +1,14 @@
 import React from "react";
-import {Link, withRouter} from "react-router-dom";
+import {injectIntl} from "react-intl";
+import {withRouter} from "react-router-dom";
 import classnames from "classnames";
 import {connect} from "react-redux";
 import $ from "jquery";
 
+import Link from "../../components/Link/Link";
+
 import {logout} from "../../actions/ApplicationActions";
+import messages from "../../i18n/messages";
 
 import "./Header.css";
 
@@ -104,11 +108,12 @@ class Header extends React.PureComponent {
     render() {
         let {active, userSidebarOpen} = this.state;
         let {user} = this.props;
+        const {intl:{formatMessage}} = this.props;
         return (
             <header>
                 <nav className="navbar navbar-expand-lg">
                     <div className="container">
-                        <Link to="/#start" className="navbar-brand"><img src={logo} alt="Battleground-Bulls"/></Link>
+                        <Link messageId="route.home" hash="start" className="navbar-brand"><img src={logo} alt="Battleground-Bulls"/></Link>
                         <div className="navbar-toggler collapsed" data-toggle="collapse"
                              data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                              aria-label="Toggle navigation">
@@ -119,29 +124,29 @@ class Header extends React.PureComponent {
                         </div>
                         <div className="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul className="navbar-nav mr-auto default">
-                                <li className={classnames("nav-item", {"active": active === "/" || active === "/#start"})}>
-                                    <Link to={{pathname: "/", hash: "#start"}} className="nav-link">Start</Link>
+                                <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.home"]) || active === formatMessage(messages["route.home"]) + "/#start"})}>
+                                    <Link messageId="route.home" hash="start" className="nav-link">{formatMessage(messages.home)}</Link>
                                 </li>
-                                <li className={classnames("nav-item", {"active": active === "/news"})}>
-                                    <Link to="/news" className="nav-link">News</Link>
+                                <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.news"])})}>
+                                    <Link messageId="route.news" className="nav-link">{formatMessage(messages.news)}</Link>
                                 </li>
-                                <li className={classnames("nav-item", {"active": active === "/#regeln"})}>
-                                    <Link to={{pathname: "/", hash: "#regeln"}} className="nav-link">Turnier</Link>
+                                <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.home"]) + "/#regeln" })}>
+                                    <Link messageId="route.home" hash="regeln" className="nav-link">{formatMessage(messages.tournament)}</Link>
                                     <ul className="submenu">
-                                        <li className={classnames("disabled", {"active": active === "/turnier/teams"})}><Link to={{pathname: "/turnier/teams"}} className="nav-link">Teams</Link></li>
-                                        <li className={classnames("disabled", {"active": active === "/turnier/spielplan"})}><Link to={{pathname: "/turnier/spielplan"}} className="nav-link">Spielplan</Link></li>
-                                        <li className={classnames({"active": active === "/#regeln"})}><Link to={{pathname: "/", hash: "#regeln"}} className="nav-link">Turnier-Regeln</Link></li>
+                                        <li className={classnames("disabled", {"active": active === "/de/turnier/teams"})}><Link to={{pathname: "/de/turnier/teams"}} className="nav-link">{formatMessage(messages.teams)}</Link></li>
+                                        <li className={classnames("disabled", {"active": active === "/de/turnier/spielplan"})}><Link to={{pathname: "/de/turnier/spielplan"}} className="nav-link">{formatMessage(messages.bracket)}</Link></li>
+                                        <li className={classnames({"active": active === formatMessage(messages["route.home"]) + "/#regeln" })}><Link messageId="route.home" hash="regeln" className="nav-link">{formatMessage(messages.tournamentRules)}</Link></li>
                                     </ul>
                                 </li>
-                                <li className={classnames("nav-item", {"active": active === "/#bulls"})}>
-                                    <Link to={{pathname: "/", hash: "#bulls"}} className="nav-link">Über die Bulls</Link>
+                                <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.home"]) + "/#bulls"})}>
+                                    <Link messageId="route.home" hash="bulls" className="nav-link">{formatMessage(messages.aboutBulls)}</Link>
                                     <ul className="submenu">
-                                        <li className={classnames({"active": active === "/bulls"})}><Link to="/bulls" className="nav-link">Mitglieder</Link></li>
-                                        <li className={classnames({"active": active === "/streamzeiten"})}><Link to="/streamzeiten" className="nav-link">Streamzeiten</Link></li>
+                                        <li className={classnames({"active": active === formatMessage(messages["route.bulls"])})}><Link messageId="route.bulls" className="nav-link">{formatMessage(messages.member)}</Link></li>
+                                        <li className={classnames({"active": active === formatMessage(messages["route.schedule"])})}><Link messageId="route.schedule" className="nav-link">{formatMessage(messages.streamSchedule)}</Link></li>
                                     </ul>
                                 </li>
-                                <li className={classnames("nav-item", {"active": active === "/#partner"})}>
-                                    <Link to={{pathname: "/", hash: "#partner"}} className="nav-link">Partner</Link>
+                                <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.home"]) + "/#partner"})}>
+                                    <Link messageId="route.home" hash="partner" className="nav-link">{formatMessage(messages.partner)}</Link>
                                 </li>
                             </ul>
                             <ul className="navbar-nav d-none d-xl-flex socials">
@@ -158,7 +163,7 @@ class Header extends React.PureComponent {
                                     </li>
                                 ) : (
                                     <li className="nav-item">
-                                        <i className="fas fa-user d-none d-lg-inline-block" /> <Link to="/login" className="nav-link">Einloggen</Link>|<Link to="/registrieren" className="nav-link">Registrieren</Link>
+                                        <i className="fas fa-user d-none d-lg-inline-block" /> <Link messageId="route.login" className="nav-link">{formatMessage(messages.login)}</Link>|<Link messageId="route.register" className="nav-link">{formatMessage(messages.signIn)}</Link>
                                     </li>
                                 )}
                             </ul>
@@ -167,10 +172,10 @@ class Header extends React.PureComponent {
                 </nav>
                 <div className={classnames("sidebar-wrapper", {"open": userSidebarOpen})}>
                     <ul ref="sidebar">
-                        <li><Link to="/mein-profil"><i className="fas fa-address-card" />Mein Profil</Link></li>
-                        {/*<li><Link to="/einstellungen"><i className="fas fa-cog" />Einstellungen</Link></li>*/}
-                        <li><Link to="/kalender"><i className="far fa-calendar-alt" />Kalender</Link></li>
-                        <li onClick={() => { this.props.dispatch(logout()); }}><Link to={this.props.location}><i className="fas fa-sign-out-alt" />Ausloggen</Link></li>
+                        <li><Link messageId="route.myProfile"><i className="fas fa-address-card" />{formatMessage(messages.myProfile)}</Link></li>
+                        {/*<li><Link to="/einstellungen"><i className="fas fa-cog" />{formatMessage(messages.settings)}</Link></li>*/}
+                        <li><Link messageId="route.calendar"><i className="far fa-calendar-alt" />{formatMessage(messages.calendar)}</Link></li>
+                        <li onClick={() => { this.props.dispatch(logout()); }}><Link to={this.props.location}><i className="fas fa-sign-out-alt" />{formatMessage(messages.logout)}</Link></li>
                     </ul>
                     <div ref="backdrop" className="backdrop" />
                 </div>
@@ -184,4 +189,4 @@ function mapStateToProps(state, props) {
         ...state
     };
 }
-export default withRouter(connect(mapStateToProps)(Header));
+export default withRouter(connect(mapStateToProps)(injectIntl(Header)));
