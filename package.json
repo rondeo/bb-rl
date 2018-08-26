@@ -35,7 +35,8 @@
   "devDependencies": {
     "ftp-deploy": "^1.2.2",
     "gulp": "^3.9.1",
-    "gulp-sftp": "^0.1.5"
+    "gulp-sftp": "^0.1.5",
+    "node-sass": "^4.9.3"
   },
   "scripts": {
     "start": "react-scripts start",
