@@ -3,6 +3,9 @@ import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import $ from "jquery";
 import {Helmet} from "react-helmet";
+import Fade from "react-reveal/Fade";
+import Flip from "react-reveal/Flip";
+import Rotate from "react-reveal/Rotate";
 
 import UsernameInput from "../../components/UsernameInput/UsernameInput";
 
@@ -80,30 +83,45 @@ class Registration extends React.PureComponent {
                     <Helmet><title>Registration - Battleground-Bulls</title></Helmet>
                     <div className="row">
                         <div className="col-12 col-md-6 offset-md-3">
-                            <h1>Registrierung</h1>
-
+                            <Fade top>
+                                <h1>Registrierung</h1>
+                            </Fade>
                             <form ref="form" onSubmit={this.onSubmit}>
-                                <div className="required-text">Die mit <span className="required">*</span> gekennzeichneten Felder bitte ausfüllen.</div>
-                                <div className="form-group">
-                                    <label htmlFor="mail">E-Mail-Adresse</label>
-                                    <input type="email" className="form-control" id="mail" name="mail" aria-describedby="mailHelp" placeholder="E-Mail-Adresse"/>
-                                    <small id="mailHelp" className="form-text mail-info">Wir werden deine E-Mail-Adresse niemals mit anderen teilen.</small>
-                                </div>
-                                <UsernameInput onChange={valid => {this.setState({usernameValid: valid});}}/>
-                                <div className="form-group">
-                                    <label htmlFor="password1">Passwort <span className="required">*</span></label>
-                                    <input type="password" className="form-control" id="password1" name="password1" placeholder="Passwort" required/>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="password2">Passwort wiederholen <span className="required">*</span></label>
-                                    <input type="password" className="form-control" id="password2" name="password2" placeholder="Passwort wiederholen" required/>
-                                    {passwordErrorDiv}
-                                </div>
-                                <div className="form-check">
-                                    <input type="checkbox" className="form-check-input" id="privacy" required/>
-                                    <label className="form-check-label" htmlFor="privacy">Bitte akzeptiere unsere <Link to="/datenschutz" target="_blank">Datenschutzbestimmungen</Link>.</label>
-                                </div>
-                                <button type="submit" className="btn white">Registrierung abschließen</button>
+                                <Fade top>
+                                    <div className="required-text">Die mit <span className="required">*</span> gekennzeichneten Felder bitte ausfüllen.</div>
+                                </Fade>
+                                <Flip top>
+                                    <div className="form-group">
+                                        <label htmlFor="mail">E-Mail-Adresse</label>
+                                        <input type="email" className="form-control" id="mail" name="mail" aria-describedby="mailHelp" placeholder="E-Mail-Adresse"/>
+                                        <small id="mailHelp" className="form-text mail-info">Wir werden deine E-Mail-Adresse niemals mit anderen teilen.</small>
+                                    </div>
+                                </Flip>
+                                <Flip bottom>
+                                    <UsernameInput onChange={valid => {this.setState({usernameValid: valid});}}/>
+                                </Flip>
+                                <Flip top>
+                                    <div className="form-group">
+                                        <label htmlFor="password1">Passwort <span className="required">*</span></label>
+                                        <input type="password" className="form-control" id="password1" name="password1" placeholder="Passwort" required/>
+                                    </div>
+                                </Flip>
+                                <Flip bottom>
+                                    <div className="form-group">
+                                        <label htmlFor="password2">Passwort wiederholen <span className="required">*</span></label>
+                                        <input type="password" className="form-control" id="password2" name="password2" placeholder="Passwort wiederholen" required/>
+                                        {passwordErrorDiv}
+                                    </div>
+                                </Flip>
+                                <Rotate bottom left>
+                                    <div className="form-check">
+                                        <input type="checkbox" className="form-check-input" id="privacy" required/>
+                                        <label className="form-check-label" htmlFor="privacy">Bitte akzeptiere unsere <Link to="/datenschutz" target="_blank">Datenschutzbestimmungen</Link>.</label>
+                                    </div>
+                                </Rotate>
+                                <Rotate bottom right>
+                                    <button type="submit" className="btn white">Registrierung abschließen</button>
+                                </Rotate>
                             </form>
                         </div>
                     </div>

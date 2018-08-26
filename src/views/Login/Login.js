@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import {connect} from "react-redux";
 import {Helmet} from "react-helmet";
+import Fade from "react-reveal/Fade";
 
 import {login} from "../../actions/ApplicationActions";
 
@@ -59,25 +60,27 @@ class Login extends React.PureComponent {
                 <div className="container">
                     <Helmet><title>Login - Battleground-Bulls</title></Helmet>
 
-                    <div className="row">
-                        <div className="col-12 col-md-6 offset-md-3">
-                            {this.renderAccessDenied()}
+                    <Fade top>
+                        <div className="row">
+                            <div className="col-12 col-md-6 offset-md-3">
+                                {this.renderAccessDenied()}
 
-                            <h1>Login</h1>
+                                <h1>Login</h1>
 
-                            <form onSubmit={this.onSubmit}>
-                                <div className="form-group">
-                                    <label htmlFor="username">Benutzername</label>
-                                    <input type="text" className="form-control" id="username" name="username" placeholder="Benutzername" required/>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="password">Passwort</label>
-                                    <input type="password" className="form-control" id="password" name="password" placeholder="Passwort" required/>
-                                </div>
-                                <button type="submit" className="btn white">Einloggen</button>
-                            </form>
+                                <form onSubmit={this.onSubmit}>
+                                    <div className="form-group">
+                                        <label htmlFor="username">Benutzername</label>
+                                        <input type="text" className="form-control" id="username" name="username" placeholder="Benutzername" required/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="password">Passwort</label>
+                                        <input type="password" className="form-control" id="password" name="password" placeholder="Passwort" required/>
+                                    </div>
+                                    <button type="submit" className="btn white">Einloggen</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
+                    </Fade>
                 </div>
             </div>
         );
