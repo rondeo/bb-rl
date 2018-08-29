@@ -130,6 +130,9 @@ class Header extends React.PureComponent {
                                 <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.news"])})}>
                                     <Link messageId="route.news" className="nav-link">{formatMessage(messages.news)}</Link>
                                 </li>
+                                <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.scum"])})}>
+                                    <Link messageId="route.scum" className="nav-link">Scum</Link>
+                                </li>
                                 <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.home"]) + "/#regeln" })}>
                                     <Link messageId="route.home" hash="regeln" className="nav-link">{formatMessage(messages.tournament)}</Link>
                                     <ul className="submenu">

@@ -9,6 +9,10 @@ export default defineMessages({
         id: 'app.bracket',
         defaultMessage: 'Spielplan'
     },
+    btnTwitch: {
+        id: 'btn.twitch',
+        defaultMessage: 'Zum Twitch Kanal'
+    },
     calendar: {
         id: 'app.calendar',
         defaultMessage: 'Kalender'
@@ -16,6 +20,10 @@ export default defineMessages({
     home: {
         id: 'app.home',
         defaultMessage: 'Start'
+    },
+    ipAddress: {
+        id: 'app.ipAddress',
+        defaultMessage: 'IP Adresse'
     },
     login: {
         id: 'app.login',
@@ -37,9 +45,21 @@ export default defineMessages({
         id: 'app.myProfile',
         defaultMessage: 'Mein Profil'
     },
+    online: {
+        id: 'app.online',
+        defaultMessage: 'Online'
+    },
     partner: {
         id: 'app.partner',
         defaultMessage: 'Partner'
+    },
+    player: {
+        id: 'app.player',
+        defaultMessage: 'Spieler'
+    },
+    port: {
+        id: 'app.port',
+        defaultMessage: 'Port'
     },
     'route.home': {
         id: 'route.home',
@@ -105,6 +125,10 @@ export default defineMessages({
         id: 'route.newsDetail',
         defaultMessage: '/de/news/:title'
     },
+    'route.scum': {
+        id: 'route.scum',
+        defaultMessage: '/de/scum'
+    },
     scrollDown: {
         id: 'app.scrollDown',
         defaultMessage: 'weiter scrollen'
@@ -113,9 +137,17 @@ export default defineMessages({
         id: 'app.settings',
         defaultMessage: 'Einstellungen'
     },
+    serverName: {
+        id: 'app.serverName',
+        defaultMessage: 'Servername'
+    },
     signIn: {
         id: 'app.signIn',
         defaultMessage: 'Registrieren'
+    },
+    status: {
+        id: 'app.status',
+        defaultMessage: 'Status'
     },
     streamSchedule: {
         id: 'app.streamSchedule',

@@ -31,6 +31,7 @@ import MyProfile from "./views/MyProfile/MyProfile";
 import Commands from "./views/Commands/Commands";
 import News from "./views/News/News";
 import NewsDetail from "./views/NewsDetail/NewsDetail";
+import Scum from "./views/Scum/Scum";
 
 import requireAuthentication from "./utils/AuthComponent";
 
@@ -93,6 +94,7 @@ class App extends React.PureComponent {
                                 <Route path={messages["route.commands"]} component={Commands} exact/>
                                 <Route path={messages["route.news"]} component={News} exact/>
                                 <Route path={messages["route.newsDetail"]} component={NewsDetail} exact/>
+                                <Route path={messages["route.scum"]} component={Scum} exact/>
                                 <Route component={NotFound} exact/>
                             </Switch>
                         </main>

@@ -1,0 +1,25 @@
+@import "../../variables";
+
+.full-container.view.scum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 50px;
+
+  background-image: url("./img/Scum-BG-3-dark.png");
+
+  .row {
+    margin-bottom: 50px;
+  }
+
+  img {
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .server-detail-view {
+    min-width: unset;
+  }
+}
