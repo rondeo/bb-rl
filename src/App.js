@@ -92,8 +92,10 @@ class App extends React.PureComponent {
                                 <Route path={messages["route.calendar"]} component={requireAuthentication(Calendar)} exact/>
                                 <Route path={messages["route.myProfile"]} component={requireAuthentication(MyProfile)} exact/>
                                 <Route path={messages["route.commands"]} component={Commands} exact/>
+                                {/*
                                 <Route path={messages["route.news"]} component={News} exact/>
                                 <Route path={messages["route.newsDetail"]} component={NewsDetail} exact/>
+                                */}
                                 <Route path={messages["route.scum"]} component={Scum} exact/>
                                 <Route component={NotFound} exact/>
                             </Switch>

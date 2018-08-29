@@ -26,7 +26,7 @@ class Scum extends React.PureComponent {
                     <Helmet><title>Scum - Battleground-Bulls</title></Helmet>
 
                     <div className="row">
-                        <div className="col-12">
+                        <div className="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
                             <img src={ScumLogo} alt="Scum" />
                         </div>
                     </div>
@@ -34,9 +34,9 @@ class Scum extends React.PureComponent {
                     <div className="row">
                         <div className="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
                             <ServerDetailView
-                                serverName="Battleground Bulls Community Server"
-                                ipAddress="127.0.0.1"
-                                port="1234"
+                                serverName="Battleground-Bulls Community"
+                                ipAddress="176.57.168.14"
+                                port="28702"
                                 slots={20}
                             />
                         </div>
