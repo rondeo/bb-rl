@@ -19,12 +19,51 @@ export class Contact extends React.PureComponent {
         this.state = {
             result: null,
             sending: false,
-            bugReport: false
+            bugReport: false,
+            sendMessages: {
+                successfullSendConfirmation: "",
+                successfullSend: "",
+                errorSend: "",
+                helmetTitle: "",
+                headline: ""
+            }
         };
     }
 
+    //TODO: Add translation
+    getStringForFormType = () => {
+        const {bugReport} = this.state;
+        const formData = $("form").serializeObject();
+
+        if (bugReport) {
+            this.setState({
+                sendMessages: {
+                    successfullSendConfirmation: "Du hast den Bug erfolgreich gemeldet! Eine Best&auml;tigungsmail wurde" +
+                        "an " + formData.mail + " versendet.",
+                    successfullSend: "Du hast den Bug erfolgreich gemeldet!",
+                    errorSend: "Leider ist beim Melden des Bugs ein Fehler aufgetreten! Bitte wendet euch an den Support " +
+                        "(<a href='mailto:support@battleground-bulls.de'>support@battleground-bulls.de</a>).",
+                    helmetTitle: "Bug Reporting",
+                    headline: "Melden eines Bug"
+                }
+            });
+        } else {
+            this.setState({
+                sendMessages: {
+                    successfullSendConfirmation: "Du hast das Kontaktformular erfolgreich gesendet!" +
+                        "Eine Best&auml;tigungsmail wurde an " + formData.mail + " versendet.",
+                    successfullSend: "Du hast das Kontaktformular erfolgreich gesendet!",
+                    errorSend: "Leider ist beim Absenden des Formulars ein Fehler aufgetreten! Bitte wendet euch an den Support " +
+                        "(<a href='mailto:support@battleground-bulls.de'>support@battleground-bulls.de</a>).",
+                    helmetTitle: "Kontakt Formular",
+                    headline: "Nimm Kontakt mit uns auf"
+                }
+            });
+        }
+    };
+
     onSubmit() {
-        fetch( "/php/contact.php", {
+        fetch("/php/contact.php", {
             body: JSON.stringify($("form").serialize()),
             method: "POST",
             headers: {
@@ -35,7 +74,7 @@ export class Contact extends React.PureComponent {
             .then(response => response.json())
             .then(json => {
                 //console.log("JSON:", json);
-                this.setState({ result: json, sending: false });
+                this.setState({result: json, sending: false});
             })
             .catch(error => {
                 console.error("Unexpected error in the sending the form: ", error);
@@ -43,40 +82,35 @@ export class Contact extends React.PureComponent {
         ReCAPTCHA.reset();
     }
 
-    renderResult() {
-        let { result, bugReport } = this.state;
-        let formData = $("form").serializeObject();
-        let successfullSendConfirmation;
-        let successfullSend;
-        let errorSend;
-
-        if(bugReport) {
-           successfullSendConfirmation = 'Du hast den Bug erfolgreich gemeldet! Eine Best&auml;tigungsmail wurde' +
-               'an ' + formData.mail + ' versendet.';
-           successfullSend = 'Du hast den Bug erfolgreich gemeldet!';
-           errorSend = 'Leider ist beim Melden des Bugs ein Fehler aufgetreten! Bitte wendet euch an den Support ' +
-               '(<a href="mailto:support@battleground-bulls.de">support@battleground-bulls.de</a>).';
-        } else {
-           successfullSendConfirmation = 'Du hast das Kontaktformular erfolgreich gesendet!' +
-               'Eine Best&auml;tigungsmail wurde an ' + formData.mail + ' versendet.';
-           successfullSend = 'Du hast das Kontaktformular erfolgreich gesendet!';
-            errorSend = 'Leider ist beim Absenden des Formulars ein Fehler aufgetreten! Bitte wendet euch an den Support ' +
-                '(<a href="mailto:support@battleground-bulls.de">support@battleground-bulls.de</a>).';
+    changeFormType = (e) => {
+        let isBugReport = false;
+        if (e.target.value === "bugReport") {
+            isBugReport = true;
         }
+        this.setState({
+            bugReport: isBugReport
+        }, this.getStringForFormType());
+    };
+
+    renderResult() {
+        const {result, sendMessages} = this.state;
 
         if (result) {
             switch (result.code) {
                 case "mail-sent-with-confirmation":
                     return <div className="alert alert-success" role="alert">
-                        {successfullSendConfirmation}
+                        Erfolg!
+                        {sendMessages.successfullSendConfirmation}
                     </div>;
                 case "mail-sent":
                     return <div className="alert alert-success" role="alert">
-                        {successfullSend}
+                        Erfolg2!
+                        {sendMessages.successfullSend}
                     </div>;
                 case "mail-not-sent":
                     return <div className="alert alert-danger" role="alert">
-                        {errorSend}
+                        Error
+                        {sendMessages.errorSend}
                     </div>;
                 default:
                     return;
@@ -84,24 +118,22 @@ export class Contact extends React.PureComponent {
         }
     }
 
-    render() {
-        let { sending, bugReport } = this.state;
-        let helmetTitle;
-        let headline;
+    componentDidMount() {
+        this.getStringForFormType();
+    }
 
-        if(bugReport) {
-            helmetTitle = 'Bug Reporting';
-            headline = 'Melden eines Bug';
-        } else {
-            helmetTitle = 'Kontakt Formular';
-            headline = 'Nimm Kontakt mit uns auf'
-        }
+    render() {
+        const { sending, sendMessages, bugReport } = this.state;
 
         return (
             <div className="view full-container contact-form">
-                <Helmet><title>{helmetTitle} - Battleground-Bulls</title></Helmet>
+                <Helmet><title>{sendMessages.helmetTitle} - Battleground-Bulls</title></Helmet>
                 <div className="container">
-                    <h1>{headline}</h1>
+                    <h1>{sendMessages.headline}</h1>
+                    <select onChange={this.changeFormType}>
+                        <option value="contact">Kontakt</option>
+                        <option value="bugReport">BugReport</option>
+                    </select>
                     <form onSubmit={(e) => { e.preventDefault(e); this.setState({ result: null, sending: true }); ReCAPTCHA.execute(e); }}>
                         <div className="form-row">
                             <div className="form-group col-md-6">
