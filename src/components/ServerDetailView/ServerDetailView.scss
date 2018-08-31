@@ -1,0 +1,29 @@
+@import "../../variables";
+
+.server-detail-view {
+  min-width: 400px;
+  padding: 25px 25px 0;
+  background-color: rgba($backgroundBlue, .9);
+  border: 2px solid $borderColorBlue;
+
+  .row {
+    margin-bottom: 25px;
+  }
+  .head {
+    color: $highlightColor;
+    font-weight: bold;
+  }
+  .text {
+    color: #fff;
+
+    &.server-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &.status {
+      color: $textColorGreen;
+      font-weight: bold;
+    }
+  }
+}

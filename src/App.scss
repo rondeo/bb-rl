@@ -45,6 +45,18 @@ body {
   }
 }
 
+// Cookie consent
+.cc-window.cc-floating {
+  max-width: none;
+  bottom: 0;
+  left: 0;
+  @media (min-width: 490px) {
+    max-width: 460px;
+    bottom: 1em;
+    left: 1em;
+  }
+}
+
 hr {
   width: 100%;
   height: 2px;
@@ -235,6 +247,13 @@ img {
   background-position: 50% 50%;
   background-size: 100% 0;
   transition: background-size .5s, color .75s;
+
+  &.large {
+    padding: 15px 25px;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+    border-width: 3px;
+  }
 
   &.primary {
     background-image: linear-gradient($highlightColor, $highlightColor);

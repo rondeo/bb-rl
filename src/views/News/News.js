@@ -1,8 +1,9 @@
 import React from "react";
 import classnames from "classnames";
 import {Helmet} from "react-helmet";
-import {Link} from "react-router-dom";
 import $ from "jquery";
+
+import Link from "../../components/Link/Link";
 
 import news1 from "./img/news1.png";
 import news1Detail from "./img/news1.png";
@@ -128,7 +129,7 @@ export default class News extends React.PureComponent {
         let newsGrids = [];
         news.forEach((news) => {
             newsGrids.push(
-                <Link to={"/news/" + news.title.replace(/ /g, "-")} className={"grid-item " + news.category} data-category={news.category} key={news.title}>
+                <Link messageId="route.newsDetail" params={{title: news.title.replace(/ /g, "-")}} className={"grid-item " + news.category} data-category={news.category} key={news.title}>
                     <div className="inner-wrapper">
                         <img src={news.img} alt="" />
                         <div className="overlay">

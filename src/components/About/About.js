@@ -1,12 +1,16 @@
 import React from 'react';
+import {injectIntl} from "react-intl";
+
+import messages from "../../i18n/messages";
 import SquareCard from '../SquareCard/SquareCard';
 
 import kuehe from './img/kuehe.png';
 import setup from './img/setup.png';
 import streamtimes from './img/streamtimes.png';
 
-export default class About extends React.PureComponent {
+class About extends React.PureComponent {
     render() {
+        const {intl:{formatMessage}} = this.props;
         return (
             <div className="section bulls">
                 <div className="container">
@@ -47,14 +51,14 @@ export default class About extends React.PureComponent {
                                 <SquareCard
                                     image={streamtimes}
                                     text="Du willst wissen wann wir online sind?"
-                                    linkTo="/streamzeiten"
+                                    linkTo="route.schedule"
                                 />
                             </div>
                             <div className="col-12 col-sm-4">
                                 <SquareCard
                                     image={kuehe}
                                     text="Du willst Mitglied der Bulls-Familie werden? - Schau dir unsere Bullen an"
-                                    linkTo="/bulls"
+                                    linkTo="route.bulls"
                                 />
                             </div>
                             <div className="col-12 col-sm-4">
@@ -68,8 +72,9 @@ export default class About extends React.PureComponent {
                     </div>
                 </div>
 
-                <div className="scroll-down"><i className="fa fa-chevron-down"/>weiter scrollen</div>
+                <div className="scroll-down"><i className="fa fa-chevron-down"/>{formatMessage(messages.scrollDown)}</div>
             </div>
         );
     }
 }
+export default injectIntl(About);
