@@ -14,6 +14,7 @@ class Footer extends PureComponent {
                 <div className="container">
                     <NavLink to={formatMessage(messages["route.privacy"])} activeClassName="active">Datenschutz</NavLink>
                     <NavLink to={formatMessage(messages["route.imprint"])} activeClassName="active">Impressum</NavLink>
+                    <NavLink to={formatMessage(messages["route.contact"])} activeClassName="active">Kontakt</NavLink>
                     {/*<NavLink to="/kontakt" activeClassName="active">Kontakt</NavLink>*/}
                 </div>
             </footer>

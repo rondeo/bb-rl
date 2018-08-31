@@ -70,6 +70,10 @@ export default defineMessages({
         id: 'app.port',
         defaultMessage: 'Port'
     },
+    'route.contact': {
+        id: 'route.contact',
+        defaultMessage: '/de/kontakt'
+    },
     'route.home': {
         id: 'route.home',
         defaultMessage: '/de'
@@ -93,7 +97,8 @@ export default defineMessages({
     'route.register': {
         id: 'route.register',
         defaultMessage: '/de/registrieren'
-    },
+    }
+    ,
     'route.rlOverlay': {
         id: 'route.rlOverlay',
         defaultMessage: '/de/rl-overlay'

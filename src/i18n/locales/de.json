@@ -47,6 +47,7 @@
   "route.bulls": "/de/bulls",
   "route.calendar": "/de/kalender",
   "route.commands": "/de/befehle",
+  "route.contact": "/de/kontakt",
   "route.home": "/de",
   "route.imprint": "/de/imprint",
   "route.login": "/de/login",

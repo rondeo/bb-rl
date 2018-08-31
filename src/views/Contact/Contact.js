@@ -4,9 +4,12 @@ import {Helmet} from "react-helmet";
 
 import ReCAPTCHA from "../../components/ReCAPTCHA/ReCAPTCHA";
 
-import "./TournamentRegistration.css";
+import "./Contact.css";
+import {injectIntl} from "react-intl";
 
-export default class Contact extends React.PureComponent {
+import messages from "../../i18n/messages";
+
+export class Contact extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -134,3 +137,4 @@ export default class Contact extends React.PureComponent {
         );
     }
 }
+export default injectIntl(Contact);
