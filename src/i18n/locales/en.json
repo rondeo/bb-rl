@@ -25,6 +25,7 @@
   "route.bulls": "/en/bulls",
   "route.calendar": "/en/calendar",
   "route.commands": "/en/command",
+  "route.contact": "/en/contact",
   "route.home": "/en",
   "route.imprint": "/en/imprint",
   "route.login": "/en/login",
