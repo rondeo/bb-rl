@@ -49,6 +49,10 @@ export default defineMessages({
         id: 'app.online',
         defaultMessage: 'Online'
     },
+    password: {
+        id: 'app.password',
+        defaultMessage: 'Passwort'
+    },
     partner: {
         id: 'app.partner',
         defaultMessage: 'Partner'

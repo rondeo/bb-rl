@@ -13,6 +13,8 @@ class ServerDetailView extends React.PureComponent {
             className,
             intl:{formatMessage},
             ipAddress,
+            isSteamServer,
+            password,
             port,
             serverName,
             slots
@@ -20,27 +22,32 @@ class ServerDetailView extends React.PureComponent {
         return (
             <div className={classNames("server-detail-view", className)}>
                 <div className="row">
-                    <div className="col-12 col-sm-8">
+                    <div className="col-12 col-sm-9">
                         <div className="head">{formatMessage(messages.serverName)}</div>
-                        <div className="text server-name" data-toggle="tooltip" data-placement="bottom" title={serverName}>{serverName}</div>
+                        <span className="text server-name" data-toggle="tooltip" data-placement="bottom" title={serverName}>{serverName}</span>
                     </div>
-                    <div className="col-12 col-sm-4">
+                    <div className="col-12 col-sm-3">
                         <div className="head">{formatMessage(messages.player)}</div>
-                        <div className="text">{slots}</div>
+                        <span className="text">{slots}</span>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-12 col-sm-4">
-                        <div className="head">{formatMessage(messages.ipAddress)}</div>
-                        <div className="text">{ipAddress}</div>
+                    <div className="col-12 col-sm-5">
+                        <div className="head">{formatMessage(messages.ipAddress)} : {formatMessage(messages.port)}</div>
+                        {isSteamServer ? (
+                            <a href={"steam://connect/" + ipAddress + ":" + port} className="text">{ipAddress}:{port}</a>
+                        ) : (
+                            <span className="text">{ipAddress}:{port}</span>
+                        )}
                     </div>
+                    {password ?
                     <div className="col-12 col-sm-4">
-                        <div className="head">{formatMessage(messages.port)}</div>
-                        <div className="text">{port}</div>
-                    </div>
-                    <div className="col-12 col-sm-4">
+                        <div className="head">{formatMessage(messages.password)}</div>
+                        <span className="text password">{password}</span>
+                    </div> : null }
+                    <div className="col-12 col-sm-3">
                         <div className="head">{formatMessage(messages.status)}</div>
-                        <div className="text status">{formatMessage(messages.online)}</div>
+                        <span className="text status">{formatMessage(messages.online)}</span>
                     </div>
                 </div>
             </div>
@@ -51,6 +58,8 @@ class ServerDetailView extends React.PureComponent {
 ServerDetailView.propTypes = {
     className: PropTypes.string,
     ipAddress: PropTypes.string.isRequired,
+    isSteamServer: PropTypes.bool,
+    password: PropTypes.string,
     port: PropTypes.string.isRequired,
     serverName: PropTypes.string.isRequired,
     slots: PropTypes.oneOfType(
