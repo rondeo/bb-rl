@@ -23,9 +23,7 @@ export class Contact extends React.PureComponent {
             sendMessages: {
                 successfullSendConfirmation: "",
                 successfullSend: "",
-                errorSend: "",
-                helmetTitle: "",
-                headline: ""
+                errorSend: ""
             }
         };
     }
@@ -42,9 +40,7 @@ export class Contact extends React.PureComponent {
                         "an " + formData.mail + " versendet.",
                     successfullSend: "Du hast den Bug erfolgreich gemeldet!",
                     errorSend: "Leider ist beim Melden des Bugs ein Fehler aufgetreten! Bitte wendet euch an den Support " +
-                        "(<a href='mailto:support@battleground-bulls.de'>support@battleground-bulls.de</a>).",
-                    helmetTitle: "Bug Reporting",
-                    headline: "Melden eines Bug"
+                        "(<a href='mailto:support@battleground-bulls.de'>support@battleground-bulls.de</a>)."
                 }
             });
         } else {
@@ -54,9 +50,7 @@ export class Contact extends React.PureComponent {
                         "Eine Best&auml;tigungsmail wurde an " + formData.mail + " versendet.",
                     successfullSend: "Du hast das Kontaktformular erfolgreich gesendet!",
                     errorSend: "Leider ist beim Absenden des Formulars ein Fehler aufgetreten! Bitte wendet euch an den Support " +
-                        "(<a href='mailto:support@battleground-bulls.de'>support@battleground-bulls.de</a>).",
-                    helmetTitle: "Kontakt Formular",
-                    headline: "Nimm Kontakt mit uns auf"
+                        "(<a href='mailto:support@battleground-bulls.de'>support@battleground-bulls.de</a>)."
                 }
             });
         }
@@ -90,6 +84,12 @@ export class Contact extends React.PureComponent {
         this.setState({
             bugReport: isBugReport
         }, this.getStringForFormType());
+    };
+
+    subjectChange = (e) => {
+        if (!e.target.value && this.state.bugReport) {
+            e.target.value = "BugReport"
+        }
     };
 
     renderResult() {
@@ -127,9 +127,9 @@ export class Contact extends React.PureComponent {
 
         return (
             <div className="view full-container contact-form">
-                <Helmet><title>{sendMessages.helmetTitle} - Battleground-Bulls</title></Helmet>
+                <Helmet><title>{bugReport ? "Bug Reporting" : "Kontakt Formular"}} - Battleground-Bulls</title></Helmet>
                 <div className="container">
-                    <h1>{sendMessages.headline}</h1>
+                    <h1>{bugReport ? "Melden eines Bug" : "Nimm Kontakt mit uns auf"}</h1>
                     <select onChange={this.changeFormType}>
                         <option value="contact">Kontakt</option>
                         <option value="bugReport">BugReport</option>
@@ -137,17 +137,22 @@ export class Contact extends React.PureComponent {
                     <form onSubmit={(e) => { e.preventDefault(e); this.setState({ result: null, sending: true }); ReCAPTCHA.execute(e); }}>
                         <div className="form-row">
                             <div className="form-group col-md-6">
-                                <label htmlFor="inputTeamName">Betreff *</label>
+                                <label htmlFor="inputTeamName">{bugReport ? "Betreff" : "Betreff*" }</label>
                                 <input
                                     type="text"
-                                    name="Team-Name"
+                                    name="subject"
                                     className="form-control blue blue"
-                                    id="inputTeamName"
+                                    id="inputSubject"
                                     placeholder="Betreff"
-                                    value={(() => {if(bugReport) { return "Bug gefunden!" } else { return ""; }})}
-                                    required
+                                    onChange={this.subjectChange}
+                                    value={bugReport ? "Bug gefunden!" : "" }
+                                    required={!bugReport}
                                 />
                             </div>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="inputSuccessfulCheckIn">Nachricht*</label>
+                            <textarea name="message" className="form-control blue" id="textareaMessage" placeholder={bugReport ? "Beschreibung des Bugs*" : "Deine Nachricht an uns"} required />
                         </div>
                         <div className="form-group">
                             <label htmlFor="inputSuccessfulCheckIn">Bestätigung per E-Mail</label>
