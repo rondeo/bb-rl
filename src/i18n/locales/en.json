@@ -15,7 +15,7 @@
   "app.password": "Passwort",
   "app.player": "Spieler",
   "app.port": "Port",
-  "app.ruleCommands": "!Registration -> Registration link (see above) !Teams -> Current team setup !Discord -> Link to our Discord",
+  "app.ruleCommands": "!Registration -> Registration link (see above) <br/> !Teams -> Current team setup <br/> !Discord -> Link to our Discord",
   "app.ruleGeneral": "All participants of the tournament have the right to be treated fairly and with due respect! In general, a polite tone is expected in the game, stream and chat. If this is not the case, we reserve the right to disqualify / ban this person / s from the tournament / chat.",
   "app.ruleHeadCommands": "Chat Commands",
   "app.ruleHeadGeneral": "General",

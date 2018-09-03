@@ -1,7 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
-import {injectIntl} from "react-intl";
+import {FormattedHTMLMessage, FormattedMessage, injectIntl} from "react-intl";
 import messages from "../../i18n/messages";
+import Link from "../Link/Link";
 
 class Rules extends React.PureComponent {
 
@@ -25,16 +26,16 @@ class Rules extends React.PureComponent {
                             aria-controls="allgemein">{formatMessage(messages.ruleHeadGeneral)}</div>
                         <div className="collapse show" id="allgemein" data-parent="#rules-container">
                               <p>
-                                  {formatMessage(messages.ruleGeneral)}
+                                  <FormattedHTMLMessage {...messages.ruleGeneral}/>
                               </p>
                         </div>
 
                         <div className="collapsed" data-toggle="collapse" data-target="#registration" role="button"
                             aria-controls="registration">{formatMessage(messages.ruleHeadTeam)}</div>
                         <div className="collapse" id="registration" data-parent="#rules-container">
-                            {formatMessage(messages.ruleTeam)}
+                            <FormattedHTMLMessage {...messages.ruleTeam}/>
                             <p>
-                                {formatMessage(messages.ruleSignIn)} <a className="link-dark" href="https://goo.gl/KEBC8z" target="_blank" rel="noopener noreferrer">{formatMessage(messages.ruleSignInForm)}</a>
+                                {formatMessage(messages.ruleSignIn)} <Link messageId="route.tournamentRegistration" params={{teams: ""}} className="link-dark">{formatMessage(messages.ruleSignInForm)}</Link>
                             </p>
                         </div>
 
@@ -42,7 +43,7 @@ class Rules extends React.PureComponent {
                             aria-controls="tournament">{formatMessage(messages.ruleHeadTournament)}</div>
                         <div className="collapse" id="tournament" data-parent="#rules-container">
                             <p>
-                                {formatMessage(messages.ruleTournament)}
+                                <FormattedHTMLMessage {...messages.ruleTournament}/>
                             </p>
                         </div>
 
@@ -50,7 +51,7 @@ class Rules extends React.PureComponent {
                             aria-controls="winner">{formatMessage(messages.ruleHeadWinner)}</div>
                         <div className="collapse" id="winner" data-parent="#rules-container">
                             <p>
-                                {formatMessage(messages.ruleWinner)}
+                                <FormattedHTMLMessage {...messages.ruleWinner}/>
                             </p>
                         </div>
 
@@ -58,7 +59,7 @@ class Rules extends React.PureComponent {
                             aria-controls="general-tournament">{formatMessage(messages.ruleHeadProcedure)}</div>
                         <div className="collapse" id="general-tournament" data-parent="#rules-container">
                             <p>
-                                {formatMessage(messages.ruleProcedure)}
+                                <FormattedHTMLMessage {...messages.ruleProcedure}/>
                             </p>
                             <p><a className="link-dark" href="https://www.twitch.tv/battleground_bulls" target="_blank" rel="noopener noreferrer">{formatMessage(messages.toTwitch)}</a></p>
                         </div>
@@ -67,7 +68,7 @@ class Rules extends React.PureComponent {
                             aria-controls="commands">{formatMessage(messages.ruleHeadCommands)}</div>
                         <div className="collapse" id="commands" data-parent="#rules-container">
                             <p>
-                                {formatMessage(messages.ruleCommands)}
+                                <FormattedHTMLMessage {...messages.ruleCommands} />
                             </p>
                         </div>
 

@@ -1,3 +1,4 @@
+import React from "react";
 import {defineMessages} from "react-intl";
 
 export default defineMessages({
@@ -139,9 +140,7 @@ export default defineMessages({
     },
     ruleCommands: {
         id: 'app.ruleCommands',
-        defaultMessage: '!Anmeldung -> Anmeldelink (siehe Oben) <br/>\n' +
-            '                                !Teams -> Aktuelle Teamaufstellung <br/>\n' +
-            '                                !Discord -> Link zu unserem Discord'
+        defaultMessage: '!Anmeldung -> Anmeldelink (siehe oben) <br/> !Teams -> Aktuelle Teamaufstellung <br/> !Discord -> Link zu unserem Discord'
     },
     ruleHeadCommands: {
         id: 'app.ruleHeadCommands',
@@ -150,22 +149,20 @@ export default defineMessages({
     ruleGeneral: {
         id: 'app.ruleGeneral',
         defaultMessage: 'Alle Teilnehmer des Turniers haben das <strong>Recht, fair</strong> und mit dem' +
-            '                                nötigen <strong>Respekt</strong> behandelt zu werden!' +
-            '                                Es wird im Allgemeinen ein <strong>höflicher Umgangston</strong> im <strong>Game,' +
-            '                                Stream</strong> und <strong>Chat</strong> erwartet.' +
-            '                                Falls dies nicht der Fall seine sollte, behalten wir uns das Recht vor, diese' +
-            '                                Person/en vom <strong>Turnier / Chat</strong> zu <strong>disqualifizieren /' +
-            '                                bannen</strong>.'
+        'nötigen <strong>Respekt</strong> behandelt zu werden! ' +
+        'Es wird im Allgemeinen ein <strong>höflicher Umgangston</strong> im <strong>Game, ' +
+        'Stream</strong> und <strong>Chat</strong> erwartet. ' +
+        'Falls dies nicht der Fall seine sollte, behalten wir uns das Recht vor, diese ' +
+        'Person/en vom <strong>Turnier / Chat</strong> zu <strong>disqualifizieren / bannen</strong>.'
     },
     ruleTeam: {
         id: 'app.ruleTeam',
-        defaultMessage: 'Ein 2v2 Team besteht aus <strong>max.</strong> 2 Spielern. Nach Start des Turniers\n' +
-            '                                werden <strong>keine Team Änderungen</strong> mehr vorgenommen. Sollte es dennoch\n' +
-            '                                zum <strong>Ausfall</strong> eines Spielers kommen wird das Team <strong>disqualifiziert\n' +
-            '                                oder der Streamer entscheidet, ob ein anderer Spieler einspringen kann/darf</strong>.\n' +
-            '                                Zudem muss jedes Team einen <strong>Teamleader</strong> ernennen, der\n' +
-            '                                für <strong>Absprachen</strong> oder <strong>Rückfragen</strong> der Turnierleitung\n' +
-            '                                zur Verfügung stehen muss.'
+        defaultMessage: 'Ein 2v2 Team besteht aus <strong>max.</strong> 2 Spielern. Nach Start des Turniers ' +
+        'werden <strong>keine Team Änderungen</strong> mehr vorgenommen. Sollte es dennoch ' +
+        'zum <strong>Ausfall</strong> eines Spielers kommen wird das Team <strong>disqualifiziert ' +
+        'oder der Streamer entscheidet, ob ein anderer Spieler einspringen kann/darf</strong>. ' +
+        'Zudem muss jedes Team einen <strong>Teamleader</strong> ernennen, der ' +
+        'für <strong>Absprachen</strong> oder <strong>Rückfragen</strong> der Turnierleitung zur Verfügung stehen muss.'
     },
     ruleHeadGeneral: {
         id: 'app.ruleHeadGeneral',
@@ -197,12 +194,10 @@ export default defineMessages({
     },
     ruleProcedure: {
         id: 'app.ruleProcedure',
-        defaultMessage: 'Alle Spiele vom Turnier werden <strong>Live</strong> von den Battleground Bulls\n' +
-            '                                gestreamt und kommentiert. Vor dem Start des Turniers wird der Turnierplan gezeigt,\n' +
-            '                                damit\n' +
-            '                                alle Teams ungefähr wissen wann sie spielen müssen. Pro Turnier werden <strong>ca.\n' +
-            '                                2-4 Stunden</strong> veranschlagt. Alle <strong>Ergebnisse</strong> werden nach dem\n' +
-            '                                Spiel <strong>Live</strong> im Turnierplan eingetragen.'
+        defaultMessage: 'Alle Spiele vom Turnier werden <strong>Live</strong> von den Battleground Bulls ' +
+        'gestreamt und kommentiert. Vor dem Start des Turniers wird der Turnierplan gezeigt, damit alle ' +
+        '2-4 Stunden</strong> veranschlagt. Alle <strong>Ergebnisse</strong> werden nach dem Spiel ' +
+        '<strong>Live</strong> im Turnierplan eingetragen.'
     },
     ruleSignIn: {
         id: 'app.ruleSignIn',
@@ -214,28 +209,23 @@ export default defineMessages({
     },
     ruleTournament: {
         id: 'app.ruleTournament',
-        defaultMessage: 'Die Anmeldung eines Teams für das Turnier, zählt nur für das <strong>aktuelle\n' +
-            '                                Turnier</strong>.\n' +
-            '                                Die Turnier-Infos werden immer zwischen Dienstag und Donnerstag im Discord / Twitter\n' +
-            '                                / Facebook und in der Steam Gruppe angekündigt. Anmeldungen gelten erst sobald\n' +
-            '                                diese Info Online ist! Alle vorherigen Anmeldungen werden gelöscht! Sobald ein Team\n' +
-            '                                sich über das von uns genutzte Formular anmeldet, wird ein Zeitstempel erstellt,\n' +
-            '                                sodass keiner benachteiligt wird wenn es heißt die Teams sind voll. Wir Nehmen nur\n' +
-            '                                die ersten vollständig ausgefüllten Anmeldungen an! Alle weiteren Anmeldungen landen\n' +
-            '                                auf der Reserve, falls ein Team nicht rechtzeitig erscheint. Erscheint ein Team\n' +
-            '                                nicht bis spätestens 15 Minuten nach Stream-Beginn, so wird dieses vom Turnier\n' +
-            '                                ausgeschlossen und es wird auf die Reserve zurückgegriffen.'
+        defaultMessage: 'Die Anmeldung eines Teams für das Turnier, zählt nur für das <strong>aktuelle Turnier</strong>. ' +
+        'Die Turnier-Infos werden immer zwischen Dienstag und Donnerstag im Discord / Twitter / Facebook und in der ' +
+        'Steam Gruppe angekündigt. Anmeldungen gelten erst sobald diese Info Online ist! Alle vorherigen ' +
+        'Anmeldungen werden gelöscht! Sobald ein Team sich über das von uns genutzte Formular anmeldet, ' +
+        'wird ein Zeitstempel erstellt, sodass keiner benachteiligt wird wenn es heißt die Teams sind voll. ' +
+        'Wir nehmen nur die ersten, vollständig ausgefüllten Anmeldungen an! Alle weiteren Anmeldungen landen ' +
+        'auf der Reserve, falls ein Team nicht rechtzeitig erscheint. Erscheint ein Team nicht bis spätestens ' +
+        '15 Minuten nach Stream-Beginn, so wird dieses vom Turnier ausgeschlossen und es wird auf die Reserve zurückgegriffen.'
     },
     ruleWinner: {
         id: 'app.ruleWinner',
-        defaultMessage: 'Den Turniersiegern wird im Discord der Rang “<strong>Turniersieger</strong>”\n' +
-            '                                verliehen. Dieser gilt in der Zeit, bis das nächste Turnier stattfindet und ein\n' +
-            '                                neuer Sieger\n' +
-            '                                gekrönt wird. In diesem Fall gibt es dann für die ehemaligen Turniersieger den Rang\n' +
-            '                                “<strong>Ehemalige Turniersieger</strong>”. Das Siegreiche Team, bekommt eine Sperre\n' +
-            '                                von\n' +
-            '                                einem Turnier, sodass dieses nicht direkt erneut gewonnen werden kann. 2 Wochen nach\n' +
-            '                                dem Sieg darf das Team wie gewohnt teilnehmen.'
+        defaultMessage: 'Den Turniersiegern wird im Discord der Rang “<strong>Turniersieger</strong>“ ' +
+        'verliehen. Dieser gilt in der Zeit, bis das nächste Turnier stattfindet und ein neuer Sieger ' +
+        'gekrönt wird. In diesem Fall gibt es dann für die ehemaligen Turniersieger den Rang ' +
+        '“<strong>Ehemalige Turniersieger</strong>”. Das siegreiche Team, bekommt eine Sperre von ' +
+        'einem Turnier, sodass dieses nicht direkt erneut gewonnen werden kann. 2 Wochen nach ' +
+        'dem Sieg darf das Team wie gewohnt teilnehmen.'
     },
     scrollDown: {
         id: 'app.scrollDown',
