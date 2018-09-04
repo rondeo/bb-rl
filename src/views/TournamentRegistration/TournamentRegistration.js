@@ -204,7 +204,7 @@ class TournamentRegistration extends React.PureComponent {
                             <label>{formatMessage(messages.tournamentRegistrationRequired)}</label>
                         </div>
                         <div className="form-group">
-                            {sending ? <button className="btn white disabled" disabled>{formatMessage(messages.tournamentRegistrationSignIn)} <i className="fas fa-cog fa-spin" /></button> : <button type="submit" className="btn white">Anmelden</button>}
+                            {sending ? <button className="btn white disabled" disabled>{formatMessage(messages.tournamentRegistrationSignIn)} <i className="fas fa-cog fa-spin" /></button> : <button type="submit" className="btn white">{formatMessage(messages.tournamentRegistrationSignIn)}</button>}
                         </div>
 
                         <ReCAPTCHA callback={this.onSubmit} />

@@ -55,6 +55,16 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "app.footerImprint",
+    "defaultMessage": "Impressum",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.footerPrivacy",
+    "defaultMessage": "Datenschutz",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "app.goUp",
     "defaultMessage": "nach oben",
     "filepath": "src/i18n/messages.js"
@@ -107,6 +117,41 @@
   {
     "id": "app.partner",
     "defaultMessage": "Partner",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerHead",
+    "defaultMessage": "Unterstütze die Battleground Bulls und kaufe über diese Links",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerMerchContent",
+    "defaultMessage": "Du möchtest unseren Stream und die Webseite unterstützen? Kaufe stylische Kleidung in unserem",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerMerchHead",
+    "defaultMessage": "Merch-Shop",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerMmogaContent",
+    "defaultMessage": "Jeder Kauf über unseren MMOGA Partner-Link unterstützt uns und kostet dich keinen Cent mehr! Egal ob aktuelle Top-Games, Gamecards, Gold oder Coins - MMOGA hat immer die besten Deals! Schau doch mal vorbei!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerMmogaHead",
+    "defaultMessage": "Du möchtest unseren Stream und die Webseite unterstützen? Kauf deine Spiele, Gamecards, Coins uvm. einfach bei MMOGA!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerRuntimeContent",
+    "defaultMessage": "Schnelle, gesunde und praktische Mahlzeiten.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerRuntimeHead",
+    "defaultMessage": "Eat, play and win!",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -335,8 +380,133 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "app.tournamentRankSilver",
+    "defaultMessage": "Silber",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRankPlatinum",
+    "defaultMessage": "Platin",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRankDiamond",
+    "defaultMessage": "Diamant",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationFeedback1",
+    "defaultMessage": "Eure Anmeldung war erfolgreich! Eine Bestätigungsmail wurde an",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationFeedback1.1",
+    "defaultMessage": "versandt.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationFeedback2",
+    "defaultMessage": "Eure Anmeldung war erfolgreich!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationFeedback3",
+    "defaultMessage": "Eure Anmeldung war leider nicht erfolgreich! Bitte wendet euch an den Support",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationHead",
+    "defaultMessage": "Turnier-Anmeldung - Battleground-Bulls",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationHead2",
+    "defaultMessage": "Turnieranmeldung Rocket League",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationInputHead",
+    "defaultMessage": "Turnier-Anmeldung - Battleground-Bulls",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationInputHead2",
+    "defaultMessage": "Turnieranmeldung Rocket League",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationInputName",
+    "defaultMessage": "Team Name *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationMember1",
+    "defaultMessage": "Mitglied 1 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationMember2",
+    "defaultMessage": "Mitglied 2 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationMember3",
+    "defaultMessage": "Mitglied 3 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationPlatform",
+    "defaultMessage": "Welche Plattform nutzt ihr? *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamnetRegistrationRank1",
+    "defaultMessage": "Rang 1 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamnetRegistrationRank2",
+    "defaultMessage": "Rang 2 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamnetRegistrationRank3",
+    "defaultMessage": "Rang 3 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationSteam1",
+    "defaultMessage": "Steam Link Mitglied 1 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationSteam2",
+    "defaultMessage": "Steam Link Mitglied 2 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationSteam3",
+    "defaultMessage": "Steam Link Mitglied 3 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationRequired",
+    "defaultMessage": "* Pflichtfeld",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "app.tournamentRules",
     "defaultMessage": "Turnier-Regeln",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationSignIn",
+    "defaultMessage": "Anmelden",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationSignInFeedback",
+    "defaultMessage": "Anmeldebestätigung per E-Mail",
     "filepath": "src/i18n/messages.js"
   }
 ]

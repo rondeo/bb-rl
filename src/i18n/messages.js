@@ -46,7 +46,14 @@ export default defineMessages({
         id: 'app.counterTournament',
         defaultMessage: 'Turnier in'
     },
-
+    footerImprint: {
+        id: 'app.footerImprint',
+        defaultMessage: 'Impressum'
+    },
+    footerPrivacy: {
+        id: 'app.footerPrivacy',
+        defaultMessage: 'Datenschutz'
+    },
     goUp: {
         id: 'app.goUp',
         defaultMessage: 'nach oben'
@@ -90,6 +97,34 @@ export default defineMessages({
     partner: {
         id: 'app.partner',
         defaultMessage: 'Partner'
+    },
+    partnerHead: {
+        id: 'app.partnerHead',
+        defaultMessage: 'Unterstütze die Battleground Bulls und kaufe über diese Links'
+    },
+    partnerMerchContent: {
+        id: 'app.partnerMerchContent',
+        defaultMessage: 'Du möchtest unseren Stream und die Webseite unterstützen? Kaufe stylische Kleidung in unserem'
+    },
+    partnerMerchHead: {
+        id: 'app.partnerMerchHead',
+        defaultMessage: 'Merch-Shop'
+    },
+    partnerMmogaContent: {
+        id: 'app.partnerMmogaContent',
+        defaultMessage: 'Jeder Kauf über unseren MMOGA Partner-Link unterstützt uns und kostet dich keinen Cent mehr! Egal ob aktuelle Top-Games, Gamecards, Gold oder Coins - MMOGA hat immer die besten Deals! Schau doch mal vorbei!'
+    },
+    partnerMmogaHead: {
+        id: 'app.partnerMmogaHead',
+        defaultMessage: 'Du möchtest unseren Stream und die Webseite unterstützen? Kauf deine Spiele, Gamecards, Coins uvm. einfach bei MMOGA!'
+    },
+    partnerRuntimeContent: {
+        id: 'app.partnerRuntimeContent',
+        defaultMessage: 'Schnelle, gesunde und praktische Mahlzeiten.'
+    },
+    partnerRuntimeHead: {
+        id: 'app.partnerRuntimeHead',
+        defaultMessage: 'Eat, play and win!'
     },
     player: {
         id: 'app.player',
@@ -302,7 +337,7 @@ export default defineMessages({
         defaultMessage: 'Turnier'
     },
     tournamentRankSilver: {
-        id: 'app.tournamentRankSilver'
+        id: 'app.tournamentRankSilver',
         defaultMessage: 'Silber'
     },
     tournamentRankPlatinum: {
@@ -311,6 +346,7 @@ export default defineMessages({
     },
     tournamentRankDiamond: {
         id: 'app.tournamentRankDiamond',
+        defaultMessage: 'Diamant'
     },
     tournamentRegistrationFeedback1: {
         id: 'app.tournamentRegistrationFeedback1',
@@ -329,7 +365,7 @@ export default defineMessages({
         defaultMessage: 'Eure Anmeldung war leider nicht erfolgreich! Bitte wendet euch an den Support'
     },
     tournamentRegistrationHead: {
-        ip: 'app.tournamentRegistrationHead',
+        id: 'app.tournamentRegistrationHead',
         defaultMessage: 'Turnier-Anmeldung - Battleground-Bulls'
     },
     tournamentRegistrationHead2: {
@@ -365,15 +401,15 @@ export default defineMessages({
         defaultMessage: 'Welche Plattform nutzt ihr? *'
     },
     tournamentRegistrationRank1: {
-        id: 'app.tournamnetRegistrationRank1',
+        id: 'app.tournamentRegistrationRank1',
         defaultMessage: 'Rang 1 *'
     },
     tournamentRegistrationRank2: {
-        id: 'app.tournamnetRegistrationRank2',
+        id: 'app.tournnamentRegistrationRank2',
         defaultMessage: 'Rang 2 *'
     },
     tournamentRegistrationRank3: {
-        id: 'app.tournamnetRegistrationRank3',
+        id: 'app.tournamentRegistrationRank3',
         defaultMessage: 'Rang 3 *'
     },
     tournamentRegistrationSteam1: {
