@@ -54,22 +54,28 @@ class App extends React.PureComponent {
         moment.locale(props.currentLanguage);
 
         const localeFromUrl = this.getLocaleFromUrl();
+        // Set application language if it differ from language from url (requested url)
         if (localeFromUrl !== props.currentLanguage) {
-            props.dispatch(setLanguage(localeFromUrl));
+            // If language from url not supported set default language
+            if (SUPPORTED_LANG.concat(DEFAULT_LANG).indexOf(localeFromUrl) === -1) {
+                props.dispatch(setLanguage(DEFAULT_LANG));
+            } else {
+                props.dispatch(setLanguage(localeFromUrl));
+            }
         }
     }
 
     componentWillUpdate(nextProps, nextState) {
-        moment.locale(nextProps.currentLanguage);
+        const localeFromUrl = this.getLocaleFromUrl();
+        if (nextProps.currentLanguage !== localeFromUrl) {
+            moment.locale(nextProps.currentLanguage);
+            // TODO: Improvement: Route to current page instead of start page
+            window.history.pushState({}, "", window.location.origin + "/" + nextProps.currentLanguage /*+ window.location.pathname.replace(localeFromUrl, nextProps.currentLanguage) + window.location.search*/);
+        }
     }
 
     getLocaleFromUrl() {
-        let locale = window.location.pathname.split("/")[1];
-        // Route to Default Language (de) if no language in URL
-        if (SUPPORTED_LANG.concat(DEFAULT_LANG).indexOf(locale) === -1) {
-            window.history.pushState({}, "", window.location.origin + "/" + DEFAULT_LANG + window.location.pathname + window.location.search);
-        }
-        return locale;
+        return window.location.pathname.split("/")[1];
     }
 
     buildLocalizedPath(url) {
