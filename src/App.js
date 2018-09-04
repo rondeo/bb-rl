@@ -57,6 +57,7 @@ class App extends React.PureComponent {
         if (localeFromUrl !== props.currentLanguage) {
             // If language from url not supported set default language
             if (SUPPORTED_LANG.concat(DEFAULT_LANG).indexOf(localeFromUrl) === -1) {
+                window.history.pushState({}, "", window.location.origin + "/" + DEFAULT_LANG);
                 props.dispatch(setLanguage(DEFAULT_LANG));
             } else {
                 props.dispatch(setLanguage(localeFromUrl));
