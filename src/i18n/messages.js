@@ -296,8 +296,107 @@ export default defineMessages({
         id: 'app.tournament',
         defaultMessage: 'Turnier'
     },
+    tournamentRankSilver: {
+        id: 'app.tournamentRankSilver'
+        defaultMessage: 'Silber'
+    },
+    tournamentRankPlatinum: {
+        id: 'app.tournamentRankPlatinum',
+        defaultMessage: 'Platin',
+    },
+    tournamentRankDiamond: {
+        id: 'app.tournamentRankDiamond',
+    },
+    tournamentRegistrationFeedback1: {
+        id: 'app.tournamentRegistrationFeedback1',
+        defaultMessage: 'Eure Anmeldung war erfolgreich! Eine Bestätigungsmail wurde an'
+    },
+    tournamentRegistationFeedback11: {
+        id: 'app.tournamentRegistrationFeedback1.1',
+            defaultMessage: 'versandt.'
+    },
+    tournamentRegistrationFeedback2: {
+        id: 'app.tournamentRegistrationFeedback2',
+        defaultMessage: 'Eure Anmeldung war erfolgreich!'
+    },
+    tournamentRegistrationFeedback3: {
+        id: 'app.tournamentRegistrationFeedback3',
+        defaultMessage: 'Eure Anmeldung war leider nicht erfolgreich! Bitte wendet euch an den Support'
+    },
+    tournamentRegistrationHead: {
+        ip: 'app.tournamentRegistrationHead',
+        defaultMessage: 'Turnier-Anmeldung - Battleground-Bulls'
+    },
+    tournamentRegistrationHead2: {
+        id: 'app.tournamentRegistrationHead2',
+        defaultMessage: 'Turnieranmeldung Rocket League'
+    },
+    tournamentRegistrationInputHead: {
+        id: 'app.tournamentRegistrationInputHead',
+        defaultMessage: 'Turnier-Anmeldung - Battleground-Bulls'
+    },
+    tournamentRegistrationInputHead2: {
+        id: 'app.tournamentRegistrationInputHead2',
+        defaultMessage: 'Turnieranmeldung Rocket League'
+    },
+    tournamentRegistrationInputName: {
+        id: 'app.tournamentRegistrationInputName',
+        defaultMessage: 'Team Name *'
+    },
+    tournamentRegistrationMember1: {
+        id: 'app.tournamentRegistrationMember1',
+        defaultMessage: 'Mitglied 1 *'
+    },
+    tournamentRegistrationMember2: {
+        id: 'app.tournamentRegistrationMember2',
+        defaultMessage: 'Mitglied 2 *'
+    },
+    tournamentRegistrationMember3: {
+        id: 'app.tournamentRegistrationMember3',
+        defaultMessage: 'Mitglied 3 *'
+    },
+    tournamentRegistrationPlatform: {
+        id: 'app.tournamentRegistrationPlatform',
+        defaultMessage: 'Welche Plattform nutzt ihr? *'
+    },
+    tournamentRegistrationRank1: {
+        id: 'app.tournamnetRegistrationRank1',
+        defaultMessage: 'Rang 1 *'
+    },
+    tournamentRegistrationRank2: {
+        id: 'app.tournamnetRegistrationRank2',
+        defaultMessage: 'Rang 2 *'
+    },
+    tournamentRegistrationRank3: {
+        id: 'app.tournamnetRegistrationRank3',
+        defaultMessage: 'Rang 3 *'
+    },
+    tournamentRegistrationSteam1: {
+        id: 'app.tournamentRegistrationSteam1',
+        defaultMessage: 'Steam Link Mitglied 1 *'
+    },
+    tournamentRegistrationSteam2: {
+        id: 'app.tournamentRegistrationSteam2',
+        defaultMessage: 'Steam Link Mitglied 2 *'
+    },
+    tournamentRegistrationSteam3: {
+        id: 'app.tournamentRegistrationSteam3',
+        defaultMessage: 'Steam Link Mitglied 3 *'
+    },
+    tournamentRegistrationRequired: {
+        id: 'app.tournamentRegistrationRequired',
+        defaultMessage: '* Pflichtfeld'
+    },
     tournamentRules: {
         id: 'app.tournamentRules',
         defaultMessage: 'Turnier-Regeln'
+    },
+    tournamentRegistrationSignIn: {
+        id: 'app.tournamentRegistrationSignIn',
+        defaultMessage: 'Anmelden'
+    },
+    tournamentRegistrationSignInFeedback: {
+        id: 'app.tournamentRegistrationSignInFeedback',
+        defaultMessage: 'Anmeldebestätigung per E-Mail'
     },
 });
