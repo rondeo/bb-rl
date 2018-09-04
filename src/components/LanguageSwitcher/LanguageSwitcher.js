@@ -4,7 +4,6 @@ import {connect} from "react-redux";
 import {injectIntl} from "react-intl";
 import $ from "jquery";
 
-import Link from "../Link/Link";
 import messages from "../../i18n/messages";
 import {SUPPORTED_LANG} from "../../i18n/supportedLanguages";
 
@@ -35,7 +34,7 @@ class LanguageSwitcher extends React.PureComponent {
         return (
             <ul className="language-switcher">
                 {SUPPORTED_LANG.map(lang => {
-                    return <li onClick={this.setLanguage.bind(this, lang)} className={classnames({"current": currentLanguage === lang})} data-toggle="tooltip" data-placement="bottom" title={formatMessage(messages['language.'+lang])} key={lang}><Link messageId={"route.lang." + lang}><img src={imgMapping[lang]} alt={lang.toUpperCase()}/></Link></li>;
+                    return <li onClick={this.setLanguage.bind(this, lang)} className={classnames({"current": currentLanguage === lang})} data-toggle="tooltip" data-placement="bottom" title={formatMessage(messages['language.'+lang])} key={lang}><img src={imgMapping[lang]} alt={lang.toUpperCase()}/></li>;
                 })}
             </ul>
         );
