@@ -105,7 +105,7 @@ export class Home extends PureComponent {
         // Request stream and look if stream is online
         API.getInstance()._fetch("https://api.twitch.tv/helix/streams?user_login=battleground_bulls", "GET", null, null, {"Client-ID": "swviygtzpvpvtpm5r79410wd6221th"}).then(json => {
             let liveBB = false;
-            if (json.data.length > 0) {
+            if (json.data && json.data.length > 0) {
                 liveBB = true;
                 // console.log(json.data[0].started_at);
                 // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
@@ -126,7 +126,7 @@ export class Home extends PureComponent {
             .then(response => { return response.json()})
             .then(json => {
                 let liveBP = false;
-                if (json.data.length > 0) {
+                if (json.data && json.data.length > 0) {
                     liveBP = true;
                     // console.log(json.data[0].started_at);
                     // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
