@@ -20,6 +20,41 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "app.counterDay",
+    "defaultMessage": "Tage",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterHours",
+    "defaultMessage": "Stunden",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterLive",
+    "defaultMessage": "Das Turnier läuft bereits!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterMinutes",
+    "defaultMessage": "Minuten",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterNext",
+    "defaultMessage": "Nächstes",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterSeconds",
+    "defaultMessage": "Sekunden",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterTournament",
+    "defaultMessage": "Turnier in",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "app.goUp",
     "defaultMessage": "nach oben",
     "filepath": "src/i18n/messages.js"
