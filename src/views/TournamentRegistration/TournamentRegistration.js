@@ -76,13 +76,13 @@ class TournamentRegistration extends React.PureComponent {
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputTeamName">{formatMessage(messages.tournamentRegistrationInputName)}</label>
-                                <input type="text" name="Team-Name" className="form-control blue blue" id="inputTeamName" placeholder="Teamname" required />
+                                <input type="text" name="Team-Name" className="form-control blue" id="inputTeamName" placeholder="Teamname" required />
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputMember1">{formatMessage(messages.tournamentRegistrationMember1)}</label>
-                                <input type="text" name="Mitglied 1" className="form-control blue blue" id="inputMember1" placeholder="Mitglied 1" required />
+                                <input type="text" name="Mitglied 1" className="form-control blue" id="inputMember1" placeholder="Mitglied 1" required />
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor="inputMember1Rank">{formatMessage(messages.tournamentRegistrationRank1)}</label>

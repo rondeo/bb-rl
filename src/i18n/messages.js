@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import {defineMessages} from "react-intl";
 
 export default defineMessages({
@@ -65,6 +65,14 @@ export default defineMessages({
     ipAddress: {
         id: 'app.ipAddress',
         defaultMessage: 'IP Adresse'
+    },
+    'language.de': {
+        id: 'language.german',
+        defaultMessage: 'Deutsch'
+    },
+    'language.en': {
+        id: 'language.english',
+        defaultMessage: 'Englisch'
     },
     login: {
         id: 'app.login',
@@ -206,6 +214,14 @@ export default defineMessages({
     'route.scum': {
         id: 'route.scum',
         defaultMessage: '/de/scum'
+    },
+    'route.lang.de': {
+        id: 'route.lang.de',
+        defaultMessage: '/de'
+    },
+    'route.lang.en': {
+        id: 'route.lang.en',
+        defaultMessage: '/en'
     },
     ruleCommands: {
         id: 'app.ruleCommands',

@@ -35,6 +35,7 @@ class Link extends React.PureComponent {
         let linkProps = Object.assign({}, this.props);
 
         delete linkProps.messageId;
+        delete linkProps.intl;
 
         if (messageId && messageId.indexOf("http") !== -1) {
             return <a className={className} href={messageId}>{children}</a>;
@@ -59,9 +60,9 @@ Link.propTypes = {
     hash: PropTypes.string,
     messageId: PropTypes.string,
     params: PropTypes.object,
-    to: PropTypes.oneOfType(
+    to: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.object
-    )
+    ])
 };
 export default injectIntl(Link);

@@ -1,4 +1,5 @@
 import React from "react";
+import {connect} from "react-redux";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {Helmet} from "react-helmet";
 import moment from "moment";
@@ -18,9 +19,9 @@ import Registration from "./views/Registration/Registration";
 import NotFound from "./views/NotFound/NotFound";
 import Privacy from "./views/Privacy/Privacy";
 import RocketLeagueOverlay from "./views/RocketLeagueOverlay/RocketLeagueOverlay";
-import NewFollower from "./views/NewFollower/NewFollower";
-import NewSub from "./views/NewSub/NewSub";
-import NewBits from "./views/NewBits/NewBits";
+// import NewFollower from "./views/NewFollower/NewFollower";
+// import NewSub from "./views/NewSub/NewSub";
+// import NewBits from "./views/NewBits/NewBits";
 import StreamTimes from "./views/StreamTimes/StreamTimes";
 import TournamentList from "./views/TournamentList/TournamentList";
 import Admin from "./views/Admin/Admin";
@@ -29,9 +30,11 @@ import TournamentRegistration from "./views/TournamentRegistration/TournamentReg
 import Calendar from "./views/Calendar/Calendar";
 import MyProfile from "./views/MyProfile/MyProfile";
 import Commands from "./views/Commands/Commands";
-import News from "./views/News/News";
-import NewsDetail from "./views/NewsDetail/NewsDetail";
+// import News from "./views/News/News";
+// import NewsDetail from "./views/NewsDetail/NewsDetail";
 import Scum from "./views/Scum/Scum";
+
+import {setLanguage} from "./actions/ApplicationActions";
 
 import requireAuthentication from "./utils/AuthComponent";
 
@@ -48,11 +51,19 @@ class App extends React.PureComponent {
     constructor(props) {
         super(props);
 
-        moment.locale(this.getLocale());
+        moment.locale(props.currentLanguage);
+
+        const localeFromUrl = this.getLocaleFromUrl();
+        if (localeFromUrl !== props.currentLanguage) {
+            props.dispatch(setLanguage(localeFromUrl));
+        }
     }
 
-    // get locale from url
-    getLocale() {
+    componentWillUpdate(nextProps, nextState) {
+        moment.locale(nextProps.currentLanguage);
+    }
+
+    getLocaleFromUrl() {
         let locale = window.location.pathname.split("/")[1];
         // Route to Default Language (de) if no language in URL
         if (SUPPORTED_LANG.concat(DEFAULT_LANG).indexOf(locale) === -1) {
@@ -62,11 +73,11 @@ class App extends React.PureComponent {
     }
 
     buildLocalizedPath(url) {
-        return "/" + this.getLocale() + url;
+        return "/" + this.getLocaleFromUrl() + url;
     }
 
     render() {
-        const locale = this.getLocale();
+        const locale = this.props.currentLanguage;
         const messages = translations[locale];
         return (
             <IntlProvider locale={locale} key={locale} messages={messages}>
@@ -81,9 +92,11 @@ class App extends React.PureComponent {
                                 <Route path={messages["route.privacy"]} component={Privacy} exact/>
                                 <Route path={messages["route.imprint"]} component={Imprint} exact/>
                                 <Route path={messages["route.login"]} component={Login} exact/>
+                                {/* Löschen?
                                 <Route path={this.buildLocalizedPath("/new-bits")} component={NewBits} exact/>
                                 <Route path={this.buildLocalizedPath("/new-follower")} component={NewFollower} exact/>
                                 <Route path={this.buildLocalizedPath("/new-sub")} component={NewSub} exact/>
+                                */}
                                 <Route path={messages["route.register"]} component={Registration} exact/>
                                 <Route path={messages["route.rlOverlay"]} component={RocketLeagueOverlay} exact/>
                                 <Route path={messages["route.schedule"]} component={StreamTimes} exact/>
@@ -110,4 +123,9 @@ class App extends React.PureComponent {
     }
 }
 
-export default App;
+function mapStateToProps(state, props) {
+    return {
+        currentLanguage: state.application.language
+    };
+}
+export default connect(mapStateToProps)(App);

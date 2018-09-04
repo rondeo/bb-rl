@@ -120,6 +120,19 @@ header {
           padding-left: 85px;
         }
 
+        .language-switcher {
+          padding: 5px 0 10px 3px;
+          @media (min-width: $navbarCollapse) {
+            margin-left: 25px;
+            padding: 18px 25px 19px 25px;
+            border-right: 1px solid $borderColorBlue;
+            border-left: 1px solid $borderColorBlue;
+          }
+          @media (min-width: $navbarCollapse) and (max-width: $breakpoint-xl - 1) {
+            display: none;
+          }
+        }
+
         .navbar-nav {
           position: relative;
           &.default {
