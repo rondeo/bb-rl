@@ -18,6 +18,35 @@ export default defineMessages({
         id: 'app.calendar',
         defaultMessage: 'Kalender'
     },
+    counterDay: {
+        id: 'app.counterDay',
+        defaultMessage: 'Tage'
+    },
+    counterHours: {
+        id: 'app.counterHours',
+        defaultMessage: 'Stunden'
+    },
+    counterLive:{
+        id: 'app.counterLive',
+        defaultMessage: 'Das Turnier läuft bereits!'
+    },
+    counterMinutes: {
+        id: 'app.counterMinutes',
+        defaultMessage: 'Minuten'
+    },
+    counterNext: {
+        id: 'app.counterNext',
+        defaultMessage: 'Nächstes'
+    },
+    counterSeconds: {
+        id: 'app.counterSeconds',
+        defaultMessage: 'Sekunden'
+    },
+    counterTournament: {
+        id: 'app.counterTournament',
+        defaultMessage: 'Turnier in'
+    },
+
     goUp: {
         id: 'app.goUp',
         defaultMessage: 'nach oben'
