@@ -80,6 +80,16 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "language.german",
+    "defaultMessage": "Deutsch",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "language.english",
+    "defaultMessage": "Englisch",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "app.login",
     "defaultMessage": "Einloggen",
     "filepath": "src/i18n/messages.js"
@@ -247,6 +257,16 @@
   {
     "id": "route.scum",
     "defaultMessage": "/de/scum",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.lang.de",
+    "defaultMessage": "/de",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.lang.en",
+    "defaultMessage": "/en",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -460,17 +480,17 @@
     "filepath": "src/i18n/messages.js"
   },
   {
-    "id": "app.tournamnetRegistrationRank1",
+    "id": "app.tournamentRegistrationRank1",
     "defaultMessage": "Rang 1 *",
     "filepath": "src/i18n/messages.js"
   },
   {
-    "id": "app.tournamnetRegistrationRank2",
+    "id": "app.tournnamentRegistrationRank2",
     "defaultMessage": "Rang 2 *",
     "filepath": "src/i18n/messages.js"
   },
   {
-    "id": "app.tournamnetRegistrationRank3",
+    "id": "app.tournamentRegistrationRank3",
     "defaultMessage": "Rang 3 *",
     "filepath": "src/i18n/messages.js"
   },

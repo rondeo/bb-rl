@@ -37,7 +37,7 @@ class Login extends React.PureComponent {
             }
             let search = searchToObject(this.props.location.search);
             this.props.dispatch(login($.extend(json, {password: formData.password})));
-            this.props.history.push(search.next || "/");
+            this.props.history.push(search.next || "/de");
         });
     }
 
@@ -83,9 +83,5 @@ class Login extends React.PureComponent {
         );
     }
 }
-function mapStateToProps(state, props) {
-    return {
-        ...state
-    };
-}
-export default connect(mapStateToProps)(Login);
+
+export default connect()(Login);

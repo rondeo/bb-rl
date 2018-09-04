@@ -1,6 +1,11 @@
-import {APPLICATION_LOGIN, APPLICATION_LOGOUT, APPLICATION_UPDATE_USER} from "../constants";
+import {DEFAULT_LANG} from "../i18n/supportedLanguages";
 
-const initialState = null;
+import {APPLICATION_LOGIN, APPLICATION_LOGOUT, APPLICATION_UPDATE_USER, APPLICATION_SET_LANGUAGE} from "../constants";
+
+const initialState = {
+    language: DEFAULT_LANG,
+    user: null
+};
 
 export default (state = initialState, action) => {
     switch (action.type) {
@@ -8,10 +13,18 @@ export default (state = initialState, action) => {
         case APPLICATION_UPDATE_USER:
             return {
                 ...state,
-                ...action.user
+                user: action.user
             };
         case APPLICATION_LOGOUT:
-            return null;
+            return {
+                ...state,
+                user: null
+            };
+        case APPLICATION_SET_LANGUAGE:
+            return {
+                ...state,
+                language: action.lang
+            };
         default:
             return state;
     }

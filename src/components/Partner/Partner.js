@@ -1,6 +1,6 @@
 import React from 'react';
 import messages from "../../i18n/messages";
-import {FormattedHTMLMessage, FormattedMessage, injectIntl} from "react-intl";
+import {injectIntl} from "react-intl";
 
 import Footer from './../Footer/Footer';
 
@@ -9,7 +9,6 @@ import Runtime_IMG from './img/Logo_Runtime_GG.png';
 import Merch_IMG from './img/Merch-Shop-Logo.png';
 
 import './Partner.css';
-
 
 class Partner extends React.PureComponent {
 

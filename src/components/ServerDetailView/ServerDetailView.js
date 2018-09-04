@@ -62,10 +62,10 @@ ServerDetailView.propTypes = {
     password: PropTypes.string,
     port: PropTypes.string.isRequired,
     serverName: PropTypes.string.isRequired,
-    slots: PropTypes.oneOfType(
+    slots: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number
-    )
+    ])
 };
 
 export default injectIntl(ServerDetailView);

@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import {FormattedHTMLMessage, FormattedMessage, injectIntl} from "react-intl";
+import {FormattedHTMLMessage, injectIntl} from "react-intl";
 import messages from "../../i18n/messages";
 import Link from "../Link/Link";
 
