@@ -92,7 +92,14 @@ export class Home extends PureComponent {
     componentDidUpdate(prevProps, prevState) {
         let currentPath = this.props.location.pathname + this.props.location.hash;
         if (currentPath !== prevProps.location.pathname + prevProps.location.hash) {
-            $.fn.fullpage.moveTo(currentPath.split("/")[2].replace("#", ""));
+            const splittedPath = currentPath.split("/");
+            let moveTo = "start";
+            splittedPath.forEach( path => {
+                if (path.indexOf("#") > -1) {
+                    moveTo = path.replace("#", "");
+                }
+            });
+            $.fn.fullpage.moveTo(moveTo);
         }
     }
 
