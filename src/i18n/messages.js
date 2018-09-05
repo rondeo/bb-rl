@@ -18,6 +18,30 @@ export default defineMessages({
         id: 'app.calendar',
         defaultMessage: 'Kalender'
     },
+    'cookie.message': {
+        id: 'cookie.message',
+        defaultMessage: 'Achtung, Achtung: Das Krümelmonster möchte deine Cookies haben! Wenn du es ihm erlaubst, ist es mega glücklich :-)'
+    },
+    'cookie.dismiss': {
+        id: 'cookie.dismiss',
+        defaultMessage: 'Och Manno...'
+    },
+    'cookie.deny': {
+        id: 'cookie.deny',
+        defaultMessage: 'Ne, geht gar nicht!'
+    },
+    'cookie.allow': {
+        id: 'cookie.allow',
+        defaultMessage: 'Ja, nimm meine Cookies!'
+    },
+    'cookie.link': {
+        id: 'cookie.link',
+        defaultMessage: 'Lies hier mehr zum Datenschutz'
+    },
+    'cookie.policy': {
+        id: 'cookie.policy',
+        defaultMessage: 'Cookies? Hier!'
+    },
     counterDay: {
         id: 'app.counterDay',
         defaultMessage: 'Tage'
