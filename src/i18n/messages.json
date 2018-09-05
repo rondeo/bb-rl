@@ -20,6 +20,36 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "cookie.message",
+    "defaultMessage": "Achtung, Achtung: Das Krümelmonster möchte deine Cookies haben! Wenn du es ihm erlaubst, ist es mega glücklich :-)",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.dismiss",
+    "defaultMessage": "Och Manno...",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.deny",
+    "defaultMessage": "Ne, geht gar nicht!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.allow",
+    "defaultMessage": "Ja, nimm meine Cookies!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.link",
+    "defaultMessage": "Lies hier mehr zum Datenschutz",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.policy",
+    "defaultMessage": "Cookies? Hier!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "app.counterDay",
     "defaultMessage": "Tage",
     "filepath": "src/i18n/messages.js"

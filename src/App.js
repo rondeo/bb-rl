@@ -57,7 +57,7 @@ class App extends React.PureComponent {
         if (localeFromUrl !== props.currentLanguage) {
             // If language from url not supported set default language
             if (SUPPORTED_LANG.concat(DEFAULT_LANG).indexOf(localeFromUrl) === -1) {
-                window.history.pushState({}, "", window.location.origin + "/" + DEFAULT_LANG);
+                window.history.pushState({}, "", window.location.origin + "/" + DEFAULT_LANG + "/");
                 props.dispatch(setLanguage(DEFAULT_LANG));
             } else {
                 props.dispatch(setLanguage(localeFromUrl));
@@ -65,12 +65,41 @@ class App extends React.PureComponent {
         }
     }
 
+    componentDidMount() {
+        const messages = translations[this.getLocaleFromUrl()];
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "rgba(8, 26, 41, 0.9)",
+                    "text": "#fff"
+                },
+                "button": {
+                    "background": "transparent",
+                    "text": "#e31d3c",
+                    "border": "#e31d3c"
+                }
+            },
+            "position": "bottom-left",
+            "type": "opt-out",
+            "content": {
+                "message": messages["cookie.message"],
+                "dismiss": messages["cookie.dismiss"],
+                "deny": messages["cookie.deny"],
+                "allow": messages["cookie.allow"],
+                "link": messages["cookie.link"],
+                "policy": messages["cookie.policy"],
+                "href": messages["route.privacy"],
+                "target": "_blank"
+            }
+        });
+    }
+
     componentWillUpdate(nextProps, nextState) {
         const localeFromUrl = this.getLocaleFromUrl();
         if (nextProps.currentLanguage !== localeFromUrl) {
             moment.locale(nextProps.currentLanguage);
             // TODO: Improvement: Route to current page instead of start page
-            window.history.pushState({}, "", window.location.origin + "/" + nextProps.currentLanguage /*+ window.location.pathname.replace(localeFromUrl, nextProps.currentLanguage) + window.location.search*/);
+            window.history.pushState({}, "", window.location.origin + "/" + nextProps.currentLanguage + "/" /*+ window.location.pathname.replace(localeFromUrl, nextProps.currentLanguage) + window.location.search*/);
         }
     }
 
