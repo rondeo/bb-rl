@@ -59,6 +59,7 @@ class About extends React.PureComponent {
                                     image={kuehe}
                                     text="Du willst Mitglied der Bulls-Familie werden? - Schau dir unsere Bullen an"
                                     linkTo="route.bulls"
+                                    linkDisabled
                                 />
                             </div>
                             <div className="col-12 col-sm-4">

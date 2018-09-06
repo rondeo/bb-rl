@@ -37,6 +37,7 @@ class Scum extends React.PureComponent {
                                 serverName="Battleground-Bulls Community"
                                 ipAddress="176.57.168.14"
                                 port="28702"
+                                password="bulls4life"
                                 slots={20}
                             />
                         </div>

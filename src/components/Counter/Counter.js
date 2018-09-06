@@ -1,10 +1,12 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import {injectIntl} from "react-intl";
 
 import './Counter.css';
+import messages from "../../i18n/messages";
 
-export default class Counter extends PureComponent {
+class Counter extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -72,18 +74,19 @@ export default class Counter extends PureComponent {
 
     render() {
         let {days, hours, minutes, seconds, distance} = this.state;
+        const { intl:{formatMessage} } = this.props;
         return (
             <div className={classnames("counter", {"ended": distance <= 0}, {"d-none": distance <= 0 && !this.props.showOnEnd})}>
-                <div className="text">Nächstes<br/>Turnier in</div>
+                <div className="text">{formatMessage(messages.counterNext)}<br/>{formatMessage(messages.counterTournament)}</div>
                 <div className="timer">
                     {distance > 0 ? (
                         <table>
                             <thead>
                             <tr>
-                                <th>Tage</th>
-                                <th>Stunden</th>
-                                <th>Minuten</th>
-                                <th>Sekunden</th>
+                                <th>{formatMessage(messages.counterDay)}</th>
+                                <th>{formatMessage(messages.counterHours)}</th>
+                                <th>{formatMessage(messages.counterMinutes)}</th>
+                                <th>{formatMessage(messages.counterSeconds)}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -96,7 +99,7 @@ export default class Counter extends PureComponent {
                             </tbody>
                         </table>
                     ) : (
-                        <div className="running">Das Turnier läuft bereits!</div>
+                        <div className="running">{formatMessage(messages.counterLive)}</div>
                     )}
                 </div>
             </div>
@@ -109,3 +112,4 @@ Counter.propTypes = {
     endCallback: PropTypes.any,
     showOnEnd: PropTypes.bool
 };
+export default injectIntl(Counter);

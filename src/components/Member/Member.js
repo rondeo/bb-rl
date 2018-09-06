@@ -29,8 +29,8 @@ export default class Member extends React.PureComponent {
 }
 Member.propTypes = {
     name: PropTypes.string,
-    job: PropTypes.oneOfType(PropTypes.array, PropTypes.string),
-    games: PropTypes.oneOfType(PropTypes.array, PropTypes.string),
+    job: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+    games: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
     description: PropTypes.string,
     img: PropTypes.string,
 };

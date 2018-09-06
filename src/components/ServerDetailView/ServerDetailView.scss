@@ -7,7 +7,16 @@
   border: 2px solid $borderColorBlue;
 
   .row {
-    margin-bottom: 25px;
+    @media (min-width: $breakpoint-sm) {
+      margin-bottom: 25px;
+    }
+
+    .col-12 {
+      margin-bottom: 15px;
+      @media (min-width: $breakpoint-sm) {
+        margin-bottom: 0;
+      }
+    }
   }
   .head {
     color: $highlightColor;
@@ -24,6 +33,29 @@
     &.status {
       color: $textColorGreen;
       font-weight: bold;
+    }
+    &.password {
+      position: relative;
+      cursor: pointer;
+      &:hover:before {
+        opacity: 0;
+      }
+      &:before {
+        content: "";
+        color: #000;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        padding: 0 2px;
+        transition: opacity .25s;
+      }
     }
   }
 }

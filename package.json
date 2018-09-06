@@ -13,6 +13,7 @@
     "express-session": "^1.15.6",
     "fullcalendar": "^3.9.0",
     "fullpage.js": "^2.9.7",
+    "gamedig": "^1.0.46",
     "iscroll": "^5.2.0",
     "jquery": "^3.3.1",
     "lodash": "^4.17.10",
@@ -29,7 +30,7 @@
     "react-intl-translations-manager": "^5.0.3",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^1.1.4",
+    "react-scripts": "^1.1.5",
     "react-scrollbar": "^0.5.4",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
@@ -37,7 +38,7 @@
   },
   "devDependencies": {
     "ftp-deploy": "^1.2.2",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-sftp": "^0.1.5",
     "node-sass": "^4.9.3"
   },
@@ -46,6 +47,7 @@
     "startLocalApi": "set REACT_APP_API=local&&react-scripts start",
     "startDevApi": "set REACT_APP_API=dev&&react-scripts start",
     "start-https": "set HTTPS=true&&react-scripts start",
+    "startExpress": "node express",
     "build": "react-scripts build",
     "serve": "serve -s build",
     "buildAndUpload": "react-scripts build & gulp upload",

@@ -92,7 +92,14 @@ export class Home extends PureComponent {
     componentDidUpdate(prevProps, prevState) {
         let currentPath = this.props.location.pathname + this.props.location.hash;
         if (currentPath !== prevProps.location.pathname + prevProps.location.hash) {
-            $.fn.fullpage.moveTo(currentPath.split("/")[2].replace("#", ""));
+            const splittedPath = currentPath.split("/");
+            let moveTo = "start";
+            splittedPath.forEach( path => {
+                if (path.indexOf("#") > -1) {
+                    moveTo = path.replace("#", "");
+                }
+            });
+            $.fn.fullpage.moveTo(moveTo);
         }
     }
 
@@ -105,7 +112,7 @@ export class Home extends PureComponent {
         // Request stream and look if stream is online
         API.getInstance()._fetch("https://api.twitch.tv/helix/streams?user_login=battleground_bulls", "GET", null, null, {"Client-ID": "swviygtzpvpvtpm5r79410wd6221th"}).then(json => {
             let liveBB = false;
-            if (json.data.length > 0) {
+            if (json.data && json.data.length > 0) {
                 liveBB = true;
                 // console.log(json.data[0].started_at);
                 // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
@@ -126,7 +133,7 @@ export class Home extends PureComponent {
             .then(response => { return response.json()})
             .then(json => {
                 let liveBP = false;
-                if (json.data.length > 0) {
+                if (json.data && json.data.length > 0) {
                     liveBP = true;
                     // console.log(json.data[0].started_at);
                     // Wir könnten "started_at" verwenden, um anzuzeigen wie lange der Kanal schon online ist - json.data[0].started_at
@@ -206,7 +213,7 @@ export class Home extends PureComponent {
                                 <div className="inner">
                                     {liveButton}
                                     {img}
-                                    <Counter endDate="July 29, 2018 16:15:00" />
+                                    <Counter endDate="September 9, 2018 16:15:00" />
                                     <div className="links">
                                         <Link messageId="route.tournamentRegistration" params={{teams: "2vs2"}} className="btn primary">{formatMessage(messages.signUpNow)}</Link>
                                         <a href="https://discord.gg/gke2aYp" className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</a>
