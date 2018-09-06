@@ -1,13 +1,13 @@
 import React from "react";
 import $ from "jquery";
 import {Helmet} from "react-helmet";
+import {injectIntl} from "react-intl";
+import messages from "../../i18n/messages";
 
 import ReCAPTCHA from "../../components/ReCAPTCHA/ReCAPTCHA";
 
 import "./Contact.css";
-import {injectIntl} from "react-intl";
 
-import messages from "../../i18n/messages";
 
 export class Contact extends React.PureComponent {
 
@@ -83,8 +83,9 @@ export class Contact extends React.PureComponent {
     };
 
     subjectChange = (e) => {
+        const {intl:{formatMessage}} = this.props;
         if (!e.target.value && this.state.bugReport) {
-            e.target.value = "BugReport"
+            e.target.value = formatMessage(messages.contactFormFoundBug);
         }
     };
 
@@ -144,7 +145,7 @@ export class Contact extends React.PureComponent {
                                     id="inputSubject"
                                     placeholder={formatMessage(messages.contactFormSubject)}
                                     onChange={this.subjectChange}
-                                    value={bugReport ? formatMessage(messages.contactFormFoundBug) : "" }
+                                    defaultValue={bugReport ? formatMessage(messages.contactFormFoundBug) : "" }
                                     required
                                 />
                             </div>
