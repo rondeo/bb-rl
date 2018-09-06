@@ -14,9 +14,65 @@ export default defineMessages({
         id: 'btn.twitch',
         defaultMessage: 'Zum Twitch Kanal'
     },
+    bugReportTitle: {
+        id: 'bugReportTitle',
+        defaultMessage: 'Melde einen Bug'
+    },
     calendar: {
         id: 'app.calendar',
         defaultMessage: 'Kalender'
+    },
+    contactFormMessage: {
+        id: 'contactFormMessage',
+        defaultMessage: 'Nachricht'
+    },
+    contactFormMessagePlaceholder: {
+        id: 'contactFormMessagePlaceholder',
+        defaultMessage: 'Deine Nachricht an uns'
+    },
+    contactFormMessagePlaceholderBug: {
+        id: 'contactFormMessagePlaceholderBug',
+        defaultMessage: 'Beschreibung des Bugs'
+    },
+    contactFormFoundBug: {
+        id: 'contactFormFoundBug',
+        defaultMessage: 'Bug gefunden!'
+    },
+    contactFormRequestConfirmationMail: {
+        id: 'contactFormRequestConfirmationMail',
+        defaultMessage: 'Best&auml;tigung per E-Mail'
+    },
+    contactFormRequestConfirmationMailPlaceholder: {
+        id: 'contactFormRequestConfirmationMailPlaceholder',
+        defaultMessage: 'Bsp.: Max.Mustermann@Beispiel.de (Optional)'
+    },
+    contactFormRequiredText: {
+        id: 'contactFormRequiredText',
+        defaultMessage: 'Pflichtfelder'
+    },
+    contactFormSelection: {
+        id: 'contactFormSelection',
+        defaultMessage: 'Art des Kontaktformulars'
+    },
+    contactFormSelectionBugReport: {
+        id: 'contactFormSelectionBugReport',
+        defaultMessage: 'Bug melden'
+    },
+    contactFormSelectionContact: {
+        id: 'contactFormSelectionContact',
+        defaultMessage: 'Kontaktformular'
+    },
+    contactFormSendBtn: {
+        id: 'contactFormSendBtn',
+        defaultMessage: 'Senden'
+    },
+    contactFormSubject: {
+        id: 'contactFormSubject',
+        defaultMessage: 'Betreff'
+    },
+    contactFormTitle: {
+        id: 'contactFormTitle',
+        defaultMessage: 'Kontaktiere uns'
     },
     'cookie.message': {
         id: 'cookie.message',
@@ -69,6 +125,10 @@ export default defineMessages({
     counterTournament: {
         id: 'app.counterTournament',
         defaultMessage: 'Turnier in'
+    },
+    footerContact: {
+        id: 'app.footerContact',
+        defaultMessage: 'Kontakt'
     },
     footerImprint: {
         id: 'app.footerImprint',
@@ -339,6 +399,26 @@ export default defineMessages({
     scrollDown: {
         id: 'app.scrollDown',
         defaultMessage: 'weiter scrollen'
+    },
+    sendFormError: {
+        id: 'app.sendError',
+        defaultMessage: 'Leider ist beim Melden des Bugs ein Fehler aufgetreten! Bitte wendet euch an den Support'
+    },
+    sendFormSuccessfull: {
+        id: 'app.sendFormSuccessfull',
+        defaultMessage: 'Du hast das Kontaktformular erfolgreich gesendet!'
+    },
+    sendFormSuccessfullBug: {
+        id: 'app.sendFormSuccessfullBug',
+        defaultMessage: 'Du hast den Bug erfolgreich gemeldet!'
+    },
+    sendFormSuccessfullMail: {
+        id: 'app.sendFormSuccessfullMail',
+        defaultMessage: 'Du hast das Kontaktformular erfolgreich gesendet! Eine Best&auml;tigungsmail wurde versendet an: '
+    },
+    sendFormSuccessfullMailBug: {
+        id: 'app.sendFormSuccessfullMailBug',
+        defaultMessage: 'Du hast den Bug erfolgreich gemeldet! Eine Best&auml;tigungsmail wurde versendet an: '
     },
     settings: {
         id: 'app.settings',
