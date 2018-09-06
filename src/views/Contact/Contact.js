@@ -31,26 +31,23 @@ export class Contact extends React.PureComponent {
     //TODO: Add translation
     getStringForFormType = () => {
         const {bugReport} = this.state;
+        const {intl:{formatMessage}} = this.props;
         const formData = $("form").serializeObject();
 
         if (bugReport) {
             this.setState({
                 sendMessages: {
-                    successfullSendConfirmation: "Du hast den Bug erfolgreich gemeldet! Eine Best&auml;tigungsmail wurde" +
-                        "an " + formData.mail + " versendet.",
-                    successfullSend: "Du hast den Bug erfolgreich gemeldet!",
-                    errorSend: "Leider ist beim Melden des Bugs ein Fehler aufgetreten! Bitte wendet euch an den Support " +
-                        "(<a href='mailto:support@battleground-bulls.de'>support@battleground-bulls.de</a>)."
+                    successfullSendConfirmation: formatMessage(messages.sendFormSuccessfullMailBug) + formData.mail,
+                    successfullSend: formatMessage(messages.sendFormSuccessfullBug),
+                    errorSend: formatMessage(messages.sendFormError) + "(<a href='mailto:support@battleground-bulls.de'>support&commat;battleground-bulls.de</a>)."
                 }
             });
         } else {
             this.setState({
                 sendMessages: {
-                    successfullSendConfirmation: "Du hast das Kontaktformular erfolgreich gesendet!" +
-                        "Eine Best&auml;tigungsmail wurde an " + formData.mail + " versendet.",
-                    successfullSend: "Du hast das Kontaktformular erfolgreich gesendet!",
-                    errorSend: "Leider ist beim Absenden des Formulars ein Fehler aufgetreten! Bitte wendet euch an den Support " +
-                        "(<a href='mailto:support@battleground-bulls.de'>support@battleground-bulls.de</a>)."
+                    successfullSendConfirmation: formatMessage(messages.sendFormSuccessfullMail) + formData.mail,
+                    successfullSend: formatMessage(messages.sendFormSuccessfull),
+                    errorSend: formatMessage(messages.sendFormError) + "(<a href='mailto:support@battleground-bulls.de'>support&commat;battleground-bulls.de</a>)."
                 }
             });
         }
@@ -67,7 +64,6 @@ export class Contact extends React.PureComponent {
         })
             .then(response => response.json())
             .then(json => {
-                //console.log("JSON:", json);
                 this.setState({result: json, sending: false});
             })
             .catch(error => {
@@ -99,17 +95,14 @@ export class Contact extends React.PureComponent {
             switch (result.code) {
                 case "mail-sent-with-confirmation":
                     return <div className="alert alert-success" role="alert">
-                        Erfolg!
                         {sendMessages.successfullSendConfirmation}
                     </div>;
                 case "mail-sent":
                     return <div className="alert alert-success" role="alert">
-                        Erfolg2!
                         {sendMessages.successfullSend}
                     </div>;
                 case "mail-not-sent":
                     return <div className="alert alert-danger" role="alert">
-                        Error
                         {sendMessages.errorSend}
                     </div>;
                 default:
@@ -123,46 +116,52 @@ export class Contact extends React.PureComponent {
     }
 
     render() {
-        const { sending, sendMessages, bugReport } = this.state;
+        const { sending, bugReport } = this.state;
+        const {intl:{formatMessage}} = this.props;
 
         return (
             <div className="view full-container contact-form">
-                <Helmet><title>{bugReport ? "Bug Reporting" : "Kontakt Formular"}} - Battleground-Bulls</title></Helmet>
+                <Helmet><title>{bugReport ? formatMessage(messages.bugReportTitle) : formatMessage(messages.contactFormTitle)} - Battleground-Bulls</title></Helmet>
                 <div className="container">
-                    <h1>{bugReport ? "Melden eines Bug" : "Nimm Kontakt mit uns auf"}</h1>
-                    <select onChange={this.changeFormType}>
-                        <option value="contact">Kontakt</option>
-                        <option value="bugReport">BugReport</option>
-                    </select>
+                    <h1>{bugReport ? formatMessage(messages.bugReportTitle) : formatMessage(messages.contactFormTitle)}</h1>
                     <form onSubmit={(e) => { e.preventDefault(e); this.setState({ result: null, sending: true }); ReCAPTCHA.execute(e); }}>
                         <div className="form-row">
                             <div className="form-group col-md-6">
-                                <label htmlFor="inputTeamName">{bugReport ? "Betreff" : "Betreff*" }</label>
+                                <label htmlFor="selectForm">{formatMessage(messages.contactFormSelection)}*</label>
+                                <select id="selectForm" onChange={this.changeFormType} className="form-control blue blue">
+                                    <option value="contact">{formatMessage(messages.contactFormSelectionContact)}</option>
+                                    <option value="bugReport">{formatMessage(messages.contactFormSelectionBugReport)}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-row">
+                            <div className="form-group col-md-6">
+                                <label htmlFor="inputSubject">{formatMessage(messages.contactFormSubject)}*</label>
                                 <input
                                     type="text"
                                     name="subject"
                                     className="form-control blue blue"
                                     id="inputSubject"
-                                    placeholder="Betreff"
+                                    placeholder={formatMessage(messages.contactFormSubject)}
                                     onChange={this.subjectChange}
-                                    value={bugReport ? "Bug gefunden!" : "" }
-                                    required={!bugReport}
+                                    value={bugReport ? formatMessage(messages.contactFormFoundBug) : "" }
+                                    required
                                 />
                             </div>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="inputSuccessfulCheckIn">Nachricht*</label>
-                            <textarea name="message" className="form-control blue" id="textareaMessage" placeholder={bugReport ? "Beschreibung des Bugs*" : "Deine Nachricht an uns"} required />
+                            <label htmlFor="inputSuccessfulCheckIn">{formatMessage(messages.contactFormMessage)}*</label>
+                            <textarea name="message" className="form-control blue" id="textareaMessage"rows="7" placeholder={bugReport ? formatMessage(messages.contactFormMessagePlaceholderBug) + "*" : formatMessage(messages.contactFormMessagePlaceholder) + "*"} required />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="inputSuccessfulCheckIn">Bestätigung per E-Mail</label>
-                            <input type="email" name="mail" className="form-control blue" id="inputSuccessfulCheckIn" placeholder="Bsp.: Max.Mustermann@Beispiel.de (Optional)"/>
+                            <label htmlFor="inputSuccessfulCheckIn">{formatMessage(messages.contactFormRequestConfirmationMail)}</label>
+                            <input type="email" name="mail" className="form-control blue" id="inputSuccessfulCheckIn" placeholder={formatMessage(messages.contactFormRequestConfirmationMailPlaceholder)}/>
                         </div>
                         <div className="form-group">
-                            <label>* Pflichtfeld</label>
+                            <label>* {formatMessage(messages.contactFormRequiredText)}</label>
                         </div>
                         <div className="form-group">
-                            {sending ? <button className="btn white disabled" disabled>Anmelden <i className="fas fa-cog fa-spin" /></button> : <button type="submit" className="btn white">Anmelden</button>}
+                            {sending ? <button className="btn white disabled" disabled>{formatMessage(messages.contactFormSendBtn)} <i className="fas fa-cog fa-spin" /></button> : <button type="submit" className="btn white">{formatMessage(messages.contactFormSendBtn)}</button>}
                         </div>
 
                         <ReCAPTCHA callback={this.onSubmit} />
