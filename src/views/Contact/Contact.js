@@ -8,8 +8,7 @@ import ReCAPTCHA from "../../components/ReCAPTCHA/ReCAPTCHA";
 
 import "./Contact.css";
 
-
-export class Contact extends React.PureComponent {
+class Contact extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -58,17 +57,17 @@ export class Contact extends React.PureComponent {
             body: JSON.stringify($("form").serialize()),
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "KindOfForm": this.state.bugReport ? "bugReport" : "contactForm"
+                "Content-Type": "application/json" /*,
+                "KindOfForm": this.state.bugReport ? "bugReport" : "contactForm"*/
             }
         })
-            .then(response => response.json())
-            .then(json => {
-                this.setState({result: json, sending: false});
-            })
-            .catch(error => {
-                console.error("Unexpected error in the sending the form: ", error);
-            });
+        .then(response => response.json())
+        .then(json => {
+            this.setState({result: json, sending: false});
+        })
+        .catch(error => {
+            console.error("Unexpected error in the sending the form: ", error);
+        });
         ReCAPTCHA.reset();
     }
 

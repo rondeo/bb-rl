@@ -15,7 +15,7 @@ export default defineMessages({
         defaultMessage: 'Zum Twitch Kanal'
     },
     bugReportTitle: {
-        id: 'bugReportTitle',
+        id: 'bugReport.title',
         defaultMessage: 'Melde einen Bug'
     },
     calendar: {
@@ -23,55 +23,55 @@ export default defineMessages({
         defaultMessage: 'Kalender'
     },
     contactFormMessage: {
-        id: 'contactFormMessage',
+        id: 'contactForm.message',
         defaultMessage: 'Nachricht'
     },
     contactFormMessagePlaceholder: {
-        id: 'contactFormMessagePlaceholder',
+        id: 'contactForm.messagePlaceholder',
         defaultMessage: 'Deine Nachricht an uns'
     },
     contactFormMessagePlaceholderBug: {
-        id: 'contactFormMessagePlaceholderBug',
+        id: 'contactForm.messagePlaceholderBug',
         defaultMessage: 'Beschreibung des Bugs'
     },
     contactFormFoundBug: {
-        id: 'contactFormFoundBug',
+        id: 'contactForm.foundBug',
         defaultMessage: 'Bug gefunden!'
     },
     contactFormRequestConfirmationMail: {
-        id: 'contactFormRequestConfirmationMail',
-        defaultMessage: 'Best&auml;tigung per E-Mail'
+        id: 'contactForm.requestConfirmationMail',
+        defaultMessage: 'Bestätigung per E-Mail'
     },
     contactFormRequestConfirmationMailPlaceholder: {
-        id: 'contactFormRequestConfirmationMailPlaceholder',
+        id: 'contactForm.requestConfirmationMailPlaceholder',
         defaultMessage: 'Bsp.: Max.Mustermann@Beispiel.de (Optional)'
     },
     contactFormRequiredText: {
-        id: 'contactFormRequiredText',
+        id: 'contactForm.requiredText',
         defaultMessage: 'Pflichtfelder'
     },
     contactFormSelection: {
-        id: 'contactFormSelection',
+        id: 'contactForm.selection',
         defaultMessage: 'Art des Kontaktformulars'
     },
     contactFormSelectionBugReport: {
-        id: 'contactFormSelectionBugReport',
+        id: 'contactForm.selectionBugReport',
         defaultMessage: 'Bug melden'
     },
     contactFormSelectionContact: {
-        id: 'contactFormSelectionContact',
+        id: 'contactForm.selectionContact',
         defaultMessage: 'Kontaktformular'
     },
     contactFormSendBtn: {
-        id: 'contactFormSendBtn',
+        id: 'contactForm.sendBtn',
         defaultMessage: 'Senden'
     },
     contactFormSubject: {
-        id: 'contactFormSubject',
+        id: 'contactForm.subject',
         defaultMessage: 'Betreff'
     },
     contactFormTitle: {
-        id: 'contactFormTitle',
+        id: 'contactForm.title',
         defaultMessage: 'Kontaktiere uns'
     },
     'cookie.message': {
@@ -401,7 +401,7 @@ export default defineMessages({
         defaultMessage: 'weiter scrollen'
     },
     sendFormError: {
-        id: 'app.sendError',
+        id: 'app.sendFormError',
         defaultMessage: 'Leider ist beim Melden des Bugs ein Fehler aufgetreten! Bitte wendet euch an den Support'
     },
     sendFormSuccessfull: {
