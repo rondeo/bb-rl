@@ -6,6 +6,45 @@ export default defineMessages({
         id: 'app.aboutBulls',
         defaultMessage: 'Über die Bulls'
     },
+    aboutContent1: {
+        id: 'app.aboutContent1',
+        defaultMessage: 'Die Battleground Bulls bestehen aus einem kleinen familiären Haufen Zweibeiner,\n' +
+            '                                    die durch eine Idee von Patrick aka m4kar0ny und Malthe aka xPainHunt3r\n' +
+            '                                    zusammengefunden haben. Die Idee bestand darin, einen eigenen Stream Kanal zu\n' +
+            '                                    gründen, um auf neue Interessante und vor allem gleichgesinnte Leute aus\n' +
+            '                                    dem Bereich Gaming zu treffen. Mittlerweile wurde die Idee zu einer kleinen\n' +
+            '                                    Lebensaufgabe.'
+    },
+    aboutContent2: {
+        id: 'app.aboutContent2',
+        defaultMessage: 'Wir haben uns als Aufgabe gesetzt eine Community für alle zu Gründen, die Lust auf nette und korrekte Leute haben, die'
+    },
+    aboutContent3: {
+        id: 'app.aboutContent3',
+        defaultMessage: 'sich über die Spiele, egal ob neu\n' +
+            '                                    oder alt, austauschen und diese ebenfalls zusammen spielen können. Unser Motto\n' +
+            '                                    ist es somit, dass niemand alleine spielen muss. Unser Ziel ist es die\n' +
+            '                                    Familie mit eurer Hilfe wachsen zu lassen und den Stream so unterhaltsam wie\n' +
+            '                                    möglich zu gestalten.'
+    },
+    aboutContent4: {
+        id: 'app.aboutContent4',
+        defaultMessage: 'Eine Übersicht unseres Stream-Inhaltes werdet Ihr in Kürze ebenfalls auf dieser\n' +
+            '                                    Seite zu sehen bekommen. Also schaut zwischendurch immer mal wieder rein,\n' +
+            '                                    um zu sehen ob es etwas Neues gibt.'
+    },
+    aboutLink1: {
+        id: 'app.aboutLink1',
+        defaultMessage: 'Du willst wissen wann wir online sind?'
+    },
+    aboutLink2: {
+        id: 'app.aboutLink2',
+        defaultMessage: 'Du willst Mitglied der Bulls-Familie werden? - Schau dir unsere Bullen an'
+    },
+    aboutLink3: {
+        id: 'app.aboutLink3',
+        defaultMessage: 'Hier gehts zu unserem Streaming-Setup'
+    },
     bracket: {
         id: 'app.bracket',
         defaultMessage: 'Spielplan'
