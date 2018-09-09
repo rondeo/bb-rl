@@ -48,10 +48,66 @@
     "id": "btn.twitch",
     "defaultMessage": "Zum Twitch Kanal",
     "filepath": "src/i18n/messages.js"
+  },{
+    "id": "bugReport.title",
+    "defaultMessage": "Melde einen Bug",
+    "filepath": "src/i18n/messages.js"
   },
   {
     "id": "app.calendar",
     "defaultMessage": "Kalender",
+    "filepath": "src/i18n/messages.js"
+  },{
+    "id": "contactForm.message",
+    "defaultMessage": "Nachricht",
+    "filepath": "src/i18n/messages.js"
+  },{
+    "id": "contactForm.messagePlaceholder",
+    "defaultMessage": "Deine Nachricht an uns",
+    "filepath": "src/i18n/messages.js"
+  }, {
+    "id": "contactForm.messagePlaceholderBug",
+    "defaultMessage": "Beschreibung des Bugs",
+    "filepath": "src/i18n/messages.js"
+  }, {
+    "id": "contactForm.foundBug",
+    "defaultMessage": "Bug gefunden!",
+    "filepath": "src/i18n/messages.js"
+  }, {
+    "id": "contactForm.requestConfirmationMail",
+    "defaultMessage": "Bestätigung per E-Mail",
+    "filepath": "src/i18n/messages.js"
+  }, {
+    "id": "contactForm.requestConfirmationMailPlaceholder",
+    "defaultMessage": "Bsp.: Max.Mustermann@Beispiel.de (Optional)",
+    "filepath": "src/i18n/messages.js"
+  }, {
+    "id": "contactForm.requiredText",
+    "defaultMessage": "Pflichtfelder",
+    "filepath": "src/i18n/messages.js"
+  },{
+    "id": "contactForm.selection",
+    "defaultMessage": "Art des Kontaktformulars",
+    "filepath": "src/i18n/messages.js"
+  }, {
+    "id": "contactForm.selectionBugReport",
+    "defaultMessage": "Bug melden",
+    "filepath": "src/i18n/messages.js"
+  }, {
+    "id": "contactForm.selectionContact",
+    "defaultMessage": "Kontaktformular",
+    "filepath": "src/i18n/messages.js"
+  }, {
+    "id": "contactForm.sendBtn",
+    "defaultMessage": "Senden",
+    "filepath": "src/i18n/messages.js"
+  }, {
+    "id": "contactForm.subject",
+    "defaultMessage": "Betreff",
+    "filepath": "src/i18n/messages.js"
+  }, {
+    "id": "contactForm.title",
+    "defaultMessage": "Kontaktiere uns",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -417,6 +473,11 @@
   {
     "id": "app.scrollDown",
     "defaultMessage": "weiter scrollen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.sendFormError",
+    "defaultMessage": "Leider ist beim Melden des Bugs ein Fehler aufgetreten! Bitte wendet euch an den Support",
     "filepath": "src/i18n/messages.js"
   },
   {
