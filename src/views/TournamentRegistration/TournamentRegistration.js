@@ -1,14 +1,10 @@
 import React from "react";
 import $ from "jquery";
 import {Helmet} from "react-helmet";
-import {injectIntl} from "react-intl";
-import messages from "../../i18n/messages";
-
-import ReCAPTCHA from "../../components/ReCAPTCHA/ReCAPTCHA";
 
 import "./TournamentRegistration.css";
 
-class TournamentRegistration extends React.PureComponent {
+export default class TournamentRegistration extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -21,7 +17,10 @@ class TournamentRegistration extends React.PureComponent {
         };
     }
 
-    onSubmit() {
+    onSubmit(e) {
+        e.preventDefault();
+        this.setState({ result: null, sending: true });
+
         fetch("/php/tournament-registration.php", {
             body: JSON.stringify($("form").serialize()),
             method: "POST",
@@ -37,24 +36,22 @@ class TournamentRegistration extends React.PureComponent {
             .catch(error => {
                 console.error("Unexpected error in tournament registration: ", error);
             });
-        ReCAPTCHA.reset();
     }
 
     renderResult() {
-        const {intl:{formatMessage}} = this.props;
         let { result } = this.state;
         let render = null;
         let formData = $("form").serializeObject();
         if (result) {
             switch (result.code) {
                 case "mail-sent-with-confirmation":
-                    render = <div className="alert alert-success" role="alert">{formatMessage(messages.tournamentRegistrationFeedback1)} {formData.mail} {formatMessage(messages.tournamentRegistationFeedback11)}</div>;
+                    render = <div className="alert alert-success" role="alert">Eure Anmeldung war erfolgreich! Eine Bestätigungsmail wurde an {formData.mail} versandt.</div>;
                     break;
                 case "mail-sent":
-                    render = <div className="alert alert-success" role="alert">{formatMessage(messages.tournamentRegistrationFeedback2)}</div>;
+                    render = <div className="alert alert-success" role="alert">Eure Anmeldung war erfolgreich!</div>;
                     break;
                 case "mail-not-sent":
-                    render = <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback3)} (<a href="mailto:support@battleground-bulls.de">support@battleground-bulls.de</a>).</div>;
+                    render = <div className="alert alert-danger" role="alert">Eure Anmeldung war leider nicht erfolgreich! Bitte wendet euch an den Support (<a href="mailto:support@battleground-bulls.de">support@battleground-bulls.de</a>).</div>;
                     break;
                 default:
                     break;
@@ -64,44 +61,43 @@ class TournamentRegistration extends React.PureComponent {
     }
 
     render() {
-        const {intl:{formatMessage}} = this.props;
         let { sending } = this.state;
         let teams = this.props.match.params ? this.props.match.params.teams : null;
         return (
             <div className="view full-container tournament-registration">
-                <Helmet><title>{formatMessage(messages.tournamentRegistrationHead)}</title></Helmet>
+                <Helmet><title>Turnier-Anmeldung - Battleground-Bulls</title></Helmet>
                 <div className="container">
-                    <h1>{formatMessage(messages.tournamentRegistrationHead2)} {teams}</h1>
-                    <form onSubmit={(e) => { e.preventDefault(e); this.setState({ result: null, sending: true }); ReCAPTCHA.execute(e); }}>
+                    <h1>Turnieranmeldung Rocket League {teams}</h1>
+                    <form onSubmit={this.onSubmit}>
                         <div className="form-row">
                             <div className="form-group col-md-6">
-                                <label htmlFor="inputTeamName">{formatMessage(messages.tournamentRegistrationInputName)}</label>
-                                <input type="text" name="Team-Name" className="form-control blue" id="inputTeamName" placeholder="Teamname" required />
+                                <label htmlFor="inputTeamName">Teamname *</label>
+                                <input type="text" name="Team-Name" className="form-control blue blue" id="inputTeamName" placeholder="Teamname" required />
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="form-group col-md-6">
-                                <label htmlFor="inputMember1">{formatMessage(messages.tournamentRegistrationMember1)}</label>
-                                <input type="text" name="Mitglied 1" className="form-control blue" id="inputMember1" placeholder="Mitglied 1" required />
+                                <label htmlFor="inputMember1">Mitglied 1 *</label>
+                                <input type="text" name="Mitglied 1" className="form-control blue blue" id="inputMember1" placeholder="Mitglied 1" required />
                             </div>
                             <div className="form-group col-md-6">
-                                <label htmlFor="inputMember1Rank">{formatMessage(messages.tournamentRegistrationRank1)}</label>
+                                <label htmlFor="inputMember1Rank">Rang *</label>
                                 <select name="Rank Mitglied 1" id="inputMember1Rank" className="form-control blue" required>
                                     <option>Bronze 1</option>
                                     <option>Bronze 2</option>
                                     <option>Bronze 3</option>
-                                    <option>{formatMessage(messages.tournamentRankSilver)} 1</option>
-                                    <option>{formatMessage(messages.tournamentRankSilver)} 2</option>
-                                    <option>{formatMessage(messages.tournamentRankSilver)} 3</option>
+                                    <option>Silber 1</option>
+                                    <option>Silber 2</option>
+                                    <option>Silber 3</option>
                                     <option>Gold 1</option>
                                     <option>Gold 2</option>
                                     <option>Gold 3</option>
-                                    <option>{formatMessage(messages.tournamentRankPlatinum)} 1</option>
-                                    <option>{formatMessage(messages.tournamentRankPlatinum)} 2</option>
-                                    <option>{formatMessage(messages.tournamentRankPlatinum)} 3</option>
-                                    <option>{formatMessage(messages.tournamentRankDiamond)} 1</option>
-                                    <option>{formatMessage(messages.tournamentRankDiamond)} 2</option>
-                                    <option>{formatMessage(messages.tournamentRankDiamond)} 3</option>
+                                    <option>Platin 1</option>
+                                    <option>Platin 2</option>
+                                    <option>Platin 3</option>
+                                    <option>Diamant 1</option>
+                                    <option>Diamant 2</option>
+                                    <option>Diamant 3</option>
                                     <option>Champion 1</option>
                                     <option>Champion 2</option>
                                     <option>Champion 3</option>
@@ -111,27 +107,27 @@ class TournamentRegistration extends React.PureComponent {
                         </div>
                         <div className="form-row">
                             <div className="form-group col-md-6">
-                                <label htmlFor="inputMember2">{formatMessage(messages.tournamentRegistrationMember2)}</label>
+                                <label htmlFor="inputMember2">Mitglied 2 *</label>
                                 <input type="text" name="Mitglied 2" className="form-control blue" id="inputMember2" placeholder="Mitglied 2" required />
                             </div>
                             <div className="form-group col-md-6">
-                                <label htmlFor="inputMember2Rank">{formatMessage(messages.tournamentRegistrationRank2)}</label>
+                                <label htmlFor="inputMember2Rank">Rang *</label>
                                 <select name="Rank Mitglied 2" id="inputMember2Rank" className="form-control blue" required>
                                     <option>Bronze 1</option>
                                     <option>Bronze 2</option>
                                     <option>Bronze 3</option>
-                                    <option>{formatMessage(messages.tournamentRankSilver)} 1</option>
-                                    <option>{formatMessage(messages.tournamentRankSilver)} 2</option>
-                                    <option>{formatMessage(messages.tournamentRankSilver)} 3</option>
+                                    <option>Silber 1</option>
+                                    <option>Silber 2</option>
+                                    <option>Silber 3</option>
                                     <option>Gold 1</option>
                                     <option>Gold 2</option>
                                     <option>Gold 3</option>
-                                    <option>{formatMessage(messages.tournamentRankPlatinum)} 1</option>
-                                    <option>{formatMessage(messages.tournamentRankPlatinum)} 2</option>
-                                    <option>{formatMessage(messages.tournamentRankPlatinum)} 3</option>
-                                    <option>{formatMessage(messages.tournamentRankDiamond)} 1</option>
-                                    <option>{formatMessage(messages.tournamentRankDiamond)} 2</option>
-                                    <option>{formatMessage(messages.tournamentRankDiamond)} 3</option>
+                                    <option>Platin 1</option>
+                                    <option>Platin 2</option>
+                                    <option>Platin 3</option>
+                                    <option>Diamant 1</option>
+                                    <option>Diamant 2</option>
+                                    <option>Diamant 3</option>
                                     <option>Champion 1</option>
                                     <option>Champion 2</option>
                                     <option>Champion 3</option>
@@ -142,27 +138,27 @@ class TournamentRegistration extends React.PureComponent {
                         { teams === "3vs3" ? (
                             <div className="form-row">
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputMember3">{formatMessage(messages.tournamentRegistrationMember3)}</label>
+                                    <label htmlFor="inputMember3">Mitglied 3 *</label>
                                     <input type="text" name="Mitglied 3" className="form-control blue" id="inputMember3" placeholder="Mitglied 3" required />
                                 </div>
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputMember3Rank">{formatMessage(messages.tournamentRegistrationRank3)}</label>
+                                    <label htmlFor="inputMember3Rank">Rang *</label>
                                     <select name="Rank Mitglied 3" id="inputMember3Rank" className="form-control blue" required>
                                         <option>Bronze 1</option>
                                         <option>Bronze 2</option>
                                         <option>Bronze 3</option>
-                                        <option>{formatMessage(messages.tournamentRankSilver)} 1</option>
-                                        <option>{formatMessage(messages.tournamentRankSilver)} 2</option>
-                                        <option>{formatMessage(messages.tournamentRankSilver)} 3</option>
+                                        <option>Silber 1</option>
+                                        <option>Silber 2</option>
+                                        <option>Silber 3</option>
                                         <option>Gold 1</option>
                                         <option>Gold 2</option>
                                         <option>Gold 3</option>
-                                        <option>{formatMessage(messages.tournamentRankPlatinum)} 1</option>
-                                        <option>{formatMessage(messages.tournamentRankPlatinum)} 2</option>
-                                        <option>{formatMessage(messages.tournamentRankPlatinum)} 3</option>
-                                        <option>{formatMessage(messages.tournamentRankDiamond)} 1</option>k
-                                        <option>{formatMessage(messages.tournamentRankDiamond)} 2</option>
-                                        <option>{formatMessage(messages.tournamentRankDiamond)} 3</option>
+                                        <option>Platin 1</option>
+                                        <option>Platin 2</option>
+                                        <option>Platin 3</option>
+                                        <option>Diamant 1</option>
+                                        <option>Diamant 2</option>
+                                        <option>Diamant 3</option>
                                         <option>Champion 1</option>
                                         <option>Champion 2</option>
                                         <option>Champion 3</option>
@@ -172,22 +168,22 @@ class TournamentRegistration extends React.PureComponent {
                             </div>
                         ) : null}
                         <div className="form-group">
-                            <label htmlFor="inputSteamLinkMember1">{formatMessage(messages.tournamentRegistrationSteam1)}</label>
+                            <label htmlFor="inputSteamLinkMember1">Steam Link Mitglied 1 *</label>
                             <input type="url" name="Steam Link Mitglied 1" className="form-control blue" id="inputSteamLinkMember1" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="inputSteamLinkMember2">{formatMessage(messages.tournamentRegistrationSteam2)}</label>
+                            <label htmlFor="inputSteamLinkMember2">Steam Link Mitglied 2 *</label>
                             <input type="url" name="Steam Link Mitglied 2" className="form-control blue" id="inputSteamLinkMember2" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
                         </div>
                         { teams === "3vs3" ? (
                             <div className="form-group">
-                                <label htmlFor="inputSteamLinkMember3">{formatMessage(messages.tournamentRegistrationSteam3)}</label>
+                                <label htmlFor="inputSteamLinkMember3">Steam Link Mitglied 3 *</label>
                                 <input type="text" name="Steam Link Mitglied 3" className="form-control blue" id="inputSteamLinkMember3" placeholder="Bsp.: https://steamcommunity.com/id/xPainHunt3r/" required />
                             </div>
                         ) : null}
                         <div className="form-row">
                             <div className="form-group col-md-5">
-                                <label htmlFor="inputDevice">{formatMessage(messages.tournamentRegistrationPlatform)}</label>
+                                <label htmlFor="inputDevice">Welche Plattform nutzt ihr? *</label>
                                 <select name="Plattform" id="inputDevice" className="form-control blue" required>
                                     <option>PC</option>
                                     <option>XBOX</option>
@@ -197,17 +193,15 @@ class TournamentRegistration extends React.PureComponent {
                                 </div>
                             </div>
                         <div className="form-group">
-                            <label htmlFor="inputSuccessfulCheckIn">{formatMessage(messages.tournamentRegistrationSignInFeedback)}</label>
+                            <label htmlFor="inputSuccessfulCheckIn">Anmeldebestätigung per E-Mail</label>
                             <input type="email" name="mail" className="form-control blue" id="inputSuccessfulCheckIn" placeholder="Bsp.: Max.Mustermann@Beispiel.de (Optional)"/>
                         </div>
                         <div className="form-group">
-                            <label>{formatMessage(messages.tournamentRegistrationRequired)}</label>
+                            <label>* Pflichtfeld</label>
                         </div>
                         <div className="form-group">
-                            {sending ? <button className="btn white disabled" disabled>{formatMessage(messages.tournamentRegistrationSignIn)} <i className="fas fa-cog fa-spin" /></button> : <button type="submit" className="btn white">{formatMessage(messages.tournamentRegistrationSignIn)}</button>}
+                            {sending ? <button className="btn white disabled" disabled>Anmelden <i className="fas fa-cog fa-spin" /></button> : <button type="submit" className="btn white">Anmelden</button>}
                         </div>
-
-                        <ReCAPTCHA callback={this.onSubmit} />
 
                         {this.renderResult()}
                     </form>
@@ -216,4 +210,3 @@ class TournamentRegistration extends React.PureComponent {
         );
     }
 }
-export default injectIntl(TournamentRegistration);
