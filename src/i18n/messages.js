@@ -528,6 +528,14 @@ export default defineMessages({
 
 
     /**
+     * Seite Bulls (Mitglieder)
+     */
+    bullsHeading: {
+        id: 'bulls.heading',
+        defaultMessage: 'Das sind wir - die Bullen im Stall'
+    },
+
+    /**
      * Uhrzeit und Datum
      */
     monday: {

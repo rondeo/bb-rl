@@ -605,6 +605,11 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "bulls.heading",
+    "defaultMessage": "Das sind wir - die Bullen im Stall",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "weekday.monday",
     "defaultMessage": "Montag",
     "filepath": "src/i18n/messages.js"
