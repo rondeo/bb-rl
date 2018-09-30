@@ -2,6 +2,9 @@
 import {defineMessages} from "react-intl";
 
 export default defineMessages({
+    /**
+     * App / Allgemeines
+     */
     aboutBulls: {
         id: 'app.aboutBulls',
         defaultMessage: 'Über die Bulls'
@@ -205,6 +208,10 @@ export default defineMessages({
         id: 'app.port',
         defaultMessage: 'Port'
     },
+    readMore: {
+        id: 'app.readMore',
+        defaultMessage: 'mehr erfahren'
+    },
     'route.home': {
         id: 'route.home',
         defaultMessage: '/de'
@@ -392,7 +399,11 @@ export default defineMessages({
     },
     streamSchedule: {
         id: 'app.streamSchedule',
-        defaultMessage: 'Stream-Zeiten'
+        defaultMessage: 'Streamzeiten'
+    },
+    streamScheduleNote: {
+        id: 'app.streamScheduleNote',
+        defaultMessage: 'Alle anderen Tage streamen wir spontan.<br/>Änderungen werden im Discord mitgeteilt!'
     },
     signUpNow: {
         id: 'app.signUpNow',
@@ -514,4 +525,53 @@ export default defineMessages({
         id: 'app.tournamentRegistrationSignInFeedback',
         defaultMessage: 'Anmeldebestätigung per E-Mail'
     },
+
+
+    /**
+     * Uhrzeit und Datum
+     */
+    monday: {
+        id: 'weekday.monday',
+        defaultMessage: 'Montag'
+    },
+    tuesday: {
+        id: 'weekday.tuesday',
+        defaultMessage: 'Dienstag'
+    },
+    wednesday: {
+        id: 'weekday.wednesday',
+        defaultMessage: 'Mittwoch'
+    },
+    thursday: {
+        id: 'weekday.thursday',
+        defaultMessage: 'Donnerstag'
+    },
+    friday: {
+        id: 'weekday.friday',
+        defaultMessage: 'Freitag'
+    },
+    saturday: {
+        id: 'weekday.saturday',
+        defaultMessage: 'Samstag'
+    },
+    sunday: {
+        id: 'weekday.sunday',
+        defaultMessage: 'Sonntag'
+    },
+    from: {
+        id: 'time.from',
+        defaultMessage: 'von'
+    },
+    to: {
+        id: 'time.to',
+        defaultMessage: 'bis'
+    },
+    circa: {
+        id: 'time.circa',
+        defaultMessage: 'ca'
+    },
+    clock: {
+        id: 'time.clock',
+        defaultMessage: 'Uhr'
+    }
 });

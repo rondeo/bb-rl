@@ -38,6 +38,7 @@
   "app.password": "Passwort",
   "app.player": "Spieler",
   "app.port": "Port",
+  "app.readMore": "read more",
   "app.ruleCommands": "!Registration -> Registration link (see above) <br/> !Teams -> Current team setup <br/> !Discord -> Link to our Discord",
   "app.ruleGeneral": "All participants of the tournament have the right to be treated fairly and with due respect! In general, a polite tone is expected in the game, stream and chat. If this is not the case, we reserve the right to disqualify / ban this person / s from the tournament / chat.",
   "app.ruleHeadCommands": "Chat Commands",
@@ -61,6 +62,7 @@
   "app.signUpNow": "Sign up now",
   "app.status": "Status",
   "app.streamSchedule": "Schedule",
+  "app.streamScheduleNote": "All other days we stream spontaneously.<br/>Changes are reported in Discord!",
   "app.teams": "Teams",
   "app.toTwitch": "Visit our Twitch-Channel",
   "app.tournament": "Tournament",
@@ -117,5 +119,16 @@
   "route.schedule": "/en/schedule",
   "route.scum": "/de/scum",
   "route.tournament": "/en/tournament",
-  "route.tournamentRegistration": "/en/registration/:teams?"
+  "route.tournamentRegistration": "/en/registration/:teams?",
+  "time.circa": "ca",
+  "time.clock": "o'clock",
+  "time.from": "from",
+  "time.to": "to",
+  "weekday.friday": "Friday",
+  "weekday.monday": "Monday",
+  "weekday.saturday": "Saturday",
+  "weekday.sunday": "Sunday",
+  "weekday.thursday": "Thursday",
+  "weekday.tuesday": "Tuesday",
+  "weekday.wednesday": "Wednesday"
 }
