@@ -1,13 +1,16 @@
 import React, {PureComponent} from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
+import {injectIntl} from "react-intl";
+import PropTypes from "prop-types";
 import $ from "jquery";
+
+import messages from "../../i18n/messages";
 
 import Link from "../../components/Link/Link";
 
 import "./SquareCard.css";
 
-export default class SquareCard extends PureComponent {
+class SquareCard extends PureComponent {
 
     componentDidMount() {
         let card = $(this.refs.card);
@@ -15,8 +18,8 @@ export default class SquareCard extends PureComponent {
     }
 
     render() {
-        let {children, image, alt, text, linkTo, linkText, linkDisabled} = this.props;
-        let moreText = linkText || "mehr erfahren";
+        const {children, image, alt, text, linkTo, linkText, linkDisabled, intl:{formatMessage}} = this.props;
+        let moreText = linkText || formatMessage(messages.readMore);
         return (
             <div className="square-card" ref="card">
                 {children ? children : (
@@ -42,3 +45,5 @@ SquareCard.propTypes = {
     linkText: PropTypes.string,
     linkDisabled: PropTypes.bool
 };
+
+export default injectIntl(SquareCard);
