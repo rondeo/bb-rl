@@ -1,6 +1,9 @@
 ﻿import React from "react";
 import {Helmet} from "react-helmet";
+import {injectIntl} from "react-intl";
 import $ from "jquery";
+
+import messages from "../../i18n/messages";
 
 import Member from "../../components/Member/Member";
 
@@ -10,7 +13,7 @@ import img_xPain from "./img/Malthe_xPainHunt3r.png";
 import img_Madness from "./img/Andi_MrMadness.png";
 import img_Unknown from "./img/Unknown.png";
 
-export default class Bulls extends React.PureComponent {
+class Bulls extends React.PureComponent {
 
     componentDidMount() {
         $(this.refs.bulls).fullpage();
@@ -21,16 +24,17 @@ export default class Bulls extends React.PureComponent {
     }
 
     render() {
+        const {intl: {formatMessage}} = this.props;
         return (
             <div ref="bulls" className="view full-container bulls">
+                <Helmet>
+                    <title>{formatMessage(messages.member)} - Battleground-Bulls</title>
+                </Helmet>
+
                 <div className="section">
                     <div className="slide">
-                        <Helmet>
-                            <title>Member - Battleground-Bulls</title>
-                        </Helmet>
-
                         <div className="container">
-                            <h1>Das sind wir - die Bullen im Stall</h1>
+                            <h1>{formatMessage(messages.bullsHeading)}</h1>
 
                             <div className="row">
                                 <div className="col-md-6">
@@ -66,8 +70,7 @@ export default class Bulls extends React.PureComponent {
                         </div>
                     </div>
                     <div className="slide">
-                        <Helmet><title>Member - Battleground-Bulls</title></Helmet>
-                <div className="container">
+                        <div className="container">
                             <h1>Das sind wir - die Bullen im Stall</h1>
 
                             <div className="row">
@@ -108,3 +111,5 @@ export default class Bulls extends React.PureComponent {
         );
     }
 }
+
+export default injectIntl(Bulls);
