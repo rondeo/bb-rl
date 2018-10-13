@@ -42,7 +42,7 @@ class Partner extends React.PureComponent {
                             <div className="col-12 col-sm-6 col-md-4 merch-shop">
                                 <a href="https://shop.spreadshirt.de/Battleground-Bulls/" target="_blank" rel="noopener noreferrer"><img src={Merch_IMG} alt="Merch-Shop"/><h2>{formatMessage(messages.partnerMerchHead)}</h2></a>
                                 <p>
-                                    <strong>{formatMessage(messages.partnerMerchContent)}<a className="link-light" href="https://shop.spreadshirt.de/Battleground-Bulls/" target="_blank" rel="noopener noreferrer">{formatMessage(messages.partnerMerchHead)}</a>!</strong>
+                                    <strong>{formatMessage(messages.partnerMerchContent)} <a className="link-light" href="https://shop.spreadshirt.de/Battleground-Bulls/" target="_blank" rel="noopener noreferrer">{formatMessage(messages.partnerMerchHead)}</a>!</strong>
                                 </p>
                             </div>
                         </div>
