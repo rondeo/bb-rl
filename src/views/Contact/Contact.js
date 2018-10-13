@@ -27,7 +27,6 @@ class Contact extends React.PureComponent {
         };
     }
 
-    //TODO: Add translation
     getStringForFormType = () => {
         const {bugReport} = this.state;
         const {intl:{formatMessage}} = this.props;
@@ -38,7 +37,7 @@ class Contact extends React.PureComponent {
                 sendMessages: {
                     successfullSendConfirmation: formatMessage(messages.sendFormSuccessfullMailBug) + formData.mail,
                     successfullSend: formatMessage(messages.sendFormSuccessfullBug),
-                    errorSend: formatMessage(messages.sendFormError) + "(<a href='mailto:support@battleground-bulls.de'>support&commat;battleground-bulls.de</a>)."
+                    errorSend: formatMessage(messages.sendFormError) + '(<a href="mailto:support@battleground-bulls.de">support&commat;battleground-bulls.de</a>).'
                 }
             });
         } else {
@@ -46,7 +45,7 @@ class Contact extends React.PureComponent {
                 sendMessages: {
                     successfullSendConfirmation: formatMessage(messages.sendFormSuccessfullMail) + formData.mail,
                     successfullSend: formatMessage(messages.sendFormSuccessfull),
-                    errorSend: formatMessage(messages.sendFormError) + "(<a href='mailto:support@battleground-bulls.de'>support&commat;battleground-bulls.de</a>)."
+                    errorSend: formatMessage(messages.sendFormError) + '(<a href="mailto:support@battleground-bulls.de">support&commat;battleground-bulls.de</a>).'
                 }
             });
         }
@@ -57,8 +56,7 @@ class Contact extends React.PureComponent {
             body: JSON.stringify($("form").serialize()),
             method: "POST",
             headers: {
-                "Content-Type": "application/json" /*,
-                "KindOfForm": this.state.bugReport ? "bugReport" : "contactForm"*/
+                "Content-Type": "application/json"
             }
         })
         .then(response => response.json())
@@ -66,7 +64,7 @@ class Contact extends React.PureComponent {
             this.setState({result: json, sending: false});
         })
         .catch(error => {
-            console.error("Unexpected error in the sending the form: ", error);
+            console.error("Unexpected error in sending the form: ", error);
         });
         ReCAPTCHA.reset();
     }
@@ -78,7 +76,7 @@ class Contact extends React.PureComponent {
         }
         this.setState({
             bugReport: isBugReport
-        }, this.getStringForFormType());
+        });
     };
 
     subjectChange = (e) => {

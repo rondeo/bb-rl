@@ -27,6 +27,7 @@ import TournamentList from "./views/TournamentList/TournamentList";
 import Admin from "./views/Admin/Admin";
 import Bulls from "./views/Bulls/Bulls";
 import TournamentRegistration from "./views/TournamentRegistration/TournamentRegistration";
+import Contact from "./views/Contact/Contact";
 import Calendar from "./views/Calendar/Calendar";
 import MyProfile from "./views/MyProfile/MyProfile";
 import Commands from "./views/Commands/Commands";
@@ -41,7 +42,6 @@ import requireAuthentication from "./utils/AuthComponent";
 import {DEFAULT_LANG, SUPPORTED_LANG} from "./i18n/supportedLanguages";
 
 import "./App.css";
-import Contact from "./views/Contact/Contact";
 
 // i18n - Translations
 addLocaleData(deLocaleData);
