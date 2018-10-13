@@ -7,33 +7,19 @@ header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 header('Content-Type: application/json;charset=UTF-8');
 
-// ======= Daten werden aus dem Header geholt:
-$headers = apache_request_headers();
-
 // ======= Daten werden aus dem Body geholt:
 $data = array();
 parse_str(json_decode(file_get_contents('php://input')), $data);
 
+print_r($data);
+
 // ======= Konfiguration:
+
+$mailTo = 'contact@battleground-bulls.de';
+$mailFrom = '"Kontakt" <contact@battleground-bulls.de>';
 $mailSubject = '';
 $mailText = '';
 $mailSent1 = $mailSent2 = false;
-
-foreach ($headers as $header => $value) {
-    if ($header == "KindOfForm" && $value == "bugReport") {
-        $mailTo = 'bugs@battleground-bulls.de';
-        $mailFrom = '"Bug Reporting" <bugs@battleground-bulls.de>';
-        $mailSubject = 'Melden eines Bugs';
-        $mailSent1 = $mailSent2 = false;
-    } else if($header == "KindOfForm" && $value == "contactForm") {
-        $mailTo = 'contact@battleground-bulls.de';
-        $mailFrom = '"Kontakt" <contact@battleground-bulls.de>';
-    } else {
-        $mailTo = 'anmeldung@battleground-bulls.de';
-        $mailFrom = '"Rocket League Anmeldung" <anmeldung@battleground-bulls.de>';
-        $mailSubject = 'Turnier-Anmeldung';
-    }
-}
 
 // ======= Text der Mail aus den Formularfeldern erstellen:
 
@@ -78,12 +64,9 @@ if (isset($data) && count($data) > 0) {
 if ($data && $data['mail'])
 {
     $mailTo = $data['mail'];
-    $mailSubject = 'Bestätigung der Turnieranmeldung';
-    $mailText  = "Vielen Dank für deine Anmeldung. \n\n";
-    $mailText .= "Hiermit bestätigen wir eure Anmeldung! \n\n";
-    $mailText .= "Du kannst die Teamübersicht und das Bracket unter folgenden Links sehen: \n";
-    $mailText .= "Teamübersicht - https://goo.gl/vS1M3Q \n";
-    $mailText .= "Bracket - https://goo.gl/F8zHDx \n\n";
+    $mailSubject = 'Bestätigung der Kontaktaufnahme';
+    $mailText  = "Vielen Dank für deine Nachricht. \n\n";
+    $mailText .= "Hiermit bestätigen wir, dass deine Nachricht an uns versendet wurde! \n\n";
     $mailText .= "Liebe Grüße \n";
     $mailText .= "Deine Bulls";
     $mailSent2 = @mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
@@ -95,7 +78,7 @@ $responseJson = array();
 if ($mailSent1 == TRUE && $mailSent2 === TRUE) {
     $responseJson = array(
         'code' => 'mail-sent-with-confirmation',
-        'message' => 'Successful registration and confirmation sent.',
+        'message' => 'Successful confirmation sent.',
         'status' => 'OK'
     );
 }
@@ -103,7 +86,7 @@ if ($mailSent1 == TRUE && $mailSent2 === TRUE) {
 else if ($mailSent1 == TRUE) {
     $responseJson = array(
         'code' => 'mail-sent',
-        'message' => 'Successful registration.',
+        'message' => 'Successful sent.',
         'status' => 'OK'
     );
 }
