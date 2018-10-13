@@ -11,12 +11,10 @@ header('Content-Type: application/json;charset=UTF-8');
 $data = array();
 parse_str(json_decode(file_get_contents('php://input')), $data);
 
-print_r($data);
-
 // ======= Konfiguration:
 
 $mailTo = 'contact@battleground-bulls.de';
-$mailFrom = '"Kontakt" <contact@battleground-bulls.de>';
+$mailFrom = '"Kontakt" <info@battleground-bulls.de>';
 $mailSubject = '';
 $mailText = '';
 $mailSent1 = $mailSent2 = false;
