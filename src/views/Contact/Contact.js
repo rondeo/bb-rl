@@ -37,7 +37,7 @@ class Contact extends React.PureComponent {
                 sendMessages: {
                     successfullSendConfirmation: formatMessage(messages.sendFormSuccessfullMailBug) + formData.mail,
                     successfullSend: formatMessage(messages.sendFormSuccessfullBug),
-                    errorSend: formatMessage(messages.sendFormError) + '(<a href="mailto:support@battleground-bulls.de">support&commat;battleground-bulls.de</a>).'
+                    errorSend: formatMessage(messages.sendFormError) + <a href={"mailto:support@battleground-bulls.de"}>support&commat;battleground-bulls.de</a> + '.'
                 }
             });
         } else {
@@ -45,7 +45,7 @@ class Contact extends React.PureComponent {
                 sendMessages: {
                     successfullSendConfirmation: formatMessage(messages.sendFormSuccessfullMail) + formData.mail,
                     successfullSend: formatMessage(messages.sendFormSuccessfull),
-                    errorSend: formatMessage(messages.sendFormError) + '(<a href="mailto:support@battleground-bulls.de">support&commat;battleground-bulls.de</a>).'
+                    errorSend: formatMessage(messages.sendFormError) + <a href={"mailto:support@battleground-bulls.de"}>support&commat;battleground-bulls.de</a> + '.'
                 }
             });
         }
