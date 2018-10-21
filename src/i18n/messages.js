@@ -534,6 +534,14 @@ export default defineMessages({
         id: 'app.tournamentRegistrationFeedback3',
         defaultMessage: 'Eure Anmeldung war leider nicht erfolgreich! Bitte wendet euch an den Support'
     },
+    tournamentRegistrationFeedback4: {
+        id: 'app.tournamentRegistrationFeedback4',
+        defaultMessage: 'Der Recaptcha-Prozess scheint manipuliert worden zu sein! Bitte wende dich an den Support'
+    },
+    tournamentRegistrationFeedback5: {
+        id: 'app.tournamentRegistrationFeedback5',
+        defaultMessage: 'Unbekannter Fehler. Bitte wende dich an den Support'
+    },
     tournamentRegistrationHead: {
         id: 'app.tournamentRegistrationHead',
         defaultMessage: 'Turnier-Anmeldung - Battleground-Bulls'
@@ -541,6 +549,14 @@ export default defineMessages({
     tournamentRegistrationHead2: {
         id: 'app.tournamentRegistrationHead2',
         defaultMessage: 'Turnieranmeldung Rocket League'
+    },
+    tournamentRegistrationInfoRecaptcha: {
+        id: 'app.tournamentRegistrationInfoRecaptcha',
+        defaultMessage: 'Recaptcha wird überprüft.'
+    },
+    tournamentRegistrationInfoMailSending: {
+        id: 'app.tournamentRegistrationInfoMailSending',
+        defaultMessage: 'E-Mail wird versendet.'
     },
     tournamentRegistrationInputHead: {
         id: 'app.tournamentRegistrationInputHead',
