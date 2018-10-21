@@ -17,7 +17,14 @@
         margin-top: 10px;
       }
       .alert {
-        margin-top: 50px;
+        &.alert-info {
+          margin-top: 10px;
+          margin-bottom: 0;
+          padding: .45rem 1.25rem;
+        }
+        &.alert-danger {
+          margin-top: 50px;
+        }
       }
     }
 }

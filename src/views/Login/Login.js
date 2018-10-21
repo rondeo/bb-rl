@@ -29,7 +29,7 @@ class Login extends React.PureComponent {
         let headers = new Headers();
         headers.append("Authorization", "Basic " + btoa(formData.username + ":" + formData.password));
 
-        API.getInstance()._fetch("/user/login", "POST", null, null, {
+        API.getInstance()._fetch("/user/login", "GET", null, null, {
             "Authorization": "Basic " + btoa(formData.username + ":" + formData.password)
         }).then(json => {
             if (json.error) {
