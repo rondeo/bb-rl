@@ -18,7 +18,6 @@
     "jquery": "^3.3.1",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
-    "npm": "^6.4.1",
     "path": "^0.12.7",
     "popper.js": "^1.14.3",
     "prop-types": "^15.6.2",
@@ -39,7 +38,7 @@
   },
   "devDependencies": {
     "ftp-deploy": "^1.2.2",
-    "gulp": "^4.0.0",
+    "gulp": "^3.9.1",
     "gulp-sftp": "^0.1.5",
     "node-sass": "^4.9.3"
   },
@@ -52,7 +51,7 @@
     "build": "react-scripts build",
     "serve": "serve -s build",
     "buildAndUpload": "react-scripts build & gulp upload",
-    "buildAndUploadDev": "react-scripts build & gulp uploadDev",
+    "buildAndUploadDev": "set REACT_APP_API=dev&&react-scripts build & gulp uploadDev",
     "upload": "gulp upload",
     "uploadDev": "gulp uploadDev",
     "test": "react-scripts test --env=jsdom",
