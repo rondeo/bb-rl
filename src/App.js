@@ -139,6 +139,7 @@ class App extends React.PureComponent {
                                 <Route path={messages["route.tournament"]} component={requireAuthentication(TournamentList)} exact/>
                                 <Route path={messages["route.bulls"]} component={Bulls} exact/>
                                 <Route path={messages["route.tournamentRegistration"]} component={TournamentRegistration} exact/>
+                                <Route path={messages["route.calendar"]} component={Contact} exact/>
                                 <Route path="/contact" component={Contact} exact/>
                                 <Route path={messages["route.calendar"]} component={requireAuthentication(Calendar)} exact/>
                                 <Route path={messages["route.myProfile"]} component={requireAuthentication(MyProfile)} exact/>
