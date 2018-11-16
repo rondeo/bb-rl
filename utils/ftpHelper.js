@@ -1,4 +1,5 @@
 const sftp = require('gulp-sftp');
+const keyfile = require('./key');
 
 let ftpHelper = {
     ftpDeploy: null,
@@ -9,8 +10,8 @@ let ftpHelper = {
             user: "web",
             port: "22",
             remotePath: config.path,
-            key: "C:/Users/MORITZ-DESKTOP/.ssh/id_rsa_openssh",
-            passphrase: "fifa00:11momo"
+            key: keyfile.key,
+            passphrase: keyfile.passphrase
         });
     }
 };
