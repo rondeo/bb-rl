@@ -13,11 +13,13 @@ class Contact extends React.PureComponent {
     constructor(props) {
         super(props);
 
+        this.execRecaptcha = this.execRecaptcha.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             result: null,
             sending: false,
+            recaptcha: false,
             bugReport: false,
             sendMessages: {
                 successfullSendConfirmation: "",
@@ -25,6 +27,42 @@ class Contact extends React.PureComponent {
                 errorSend: ""
             }
         };
+    }
+
+    execRecaptcha(e) {
+        e.preventDefault(e);
+
+        this.setState({
+            result: null,
+            recaptcha: true,
+            sending: false
+        });
+
+        ReCAPTCHA.execute(e);
+    }
+
+    onSubmit(recaptchaResponse) {
+        console.log("real submit", recaptchaResponse);
+        // Valid Recaptcha
+        if (recaptchaResponse.success) {
+            fetch("/php/contact.php", {
+                body: JSON.stringify($("form").serialize()),
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+                .then(response => response.json())
+                .then(json => {
+                    this.setState({result: json, recaptcha: false, sending: false});
+                })
+                .catch(error => {
+                    this.setState({result: { code: "unknown-error" }, recaptcha: false, sending: false});
+                    console.error("Unexpected error in tournament registration: ", error);
+                });
+        } else {
+            this.setState({result: { code: "recaptcha-not-valid" }, recaptcha: false, sending: false});
+        }
     }
 
     getStringForFormType = () => {
@@ -51,24 +89,6 @@ class Contact extends React.PureComponent {
         }
     };
 
-    onSubmit() {
-        fetch("/php/contact.php", {
-            body: JSON.stringify($("form").serialize()),
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(response => response.json())
-        .then(json => {
-            this.setState({result: json, sending: false});
-        })
-        .catch(error => {
-            console.error("Unexpected error in sending the form: ", error);
-        });
-        ReCAPTCHA.reset();
-    }
-
     changeFormType = (e) => {
         let isBugReport = false;
         if (e.target.value === "bugReport") {
@@ -87,9 +107,12 @@ class Contact extends React.PureComponent {
     };
 
     renderResult() {
-        const {result, sendMessages} = this.state;
+        const {intl:{formatMessage}} = this.props;
+        const {result, sendMessages, recaptcha, sending} = this.state;
 
-        if (result) {
+        if (recaptcha) {
+            return <div className="alert alert-info" role="alert">{formatMessage(messages.tournamentRegistrationInfoRecaptcha)}</div>;
+        } else if (sending) {
             switch (result.code) {
                 case "mail-sent-with-confirmation":
                     return <div className="alert alert-success" role="alert">
