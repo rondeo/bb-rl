@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {Helmet} from "react-helmet";
 import moment from "moment";
+import SnowStorm from "react-snowstorm";
 
 // i18n - Translations
 import {IntlProvider, addLocaleData} from "react-intl";
@@ -121,6 +122,11 @@ class App extends React.PureComponent {
                     <div id="app">
                         <Helmet htmlAttributes={{"lang": locale}}/>
                         <Header/>
+                        <SnowStorm
+                            excludeMobile={false}
+                            flakesMax={256}
+                            flakesMaxActive={128}
+                        />
                         <main>
                             <Switch>
                                 <Route path={messages["route.home"]} component={Home} exact/>
