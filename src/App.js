@@ -161,7 +161,6 @@ class App extends React.PureComponent {
                     </div>
                 </BrowserRouter>
             </IntlProvider>
-
         );
     }
 }
