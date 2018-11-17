@@ -315,13 +315,13 @@
     "filepath": "src/i18n/messages.js"
   },
   {
-    "id": "app.readMore",
-    "defaultMessage": "mehr erfahren",
+    "id": "route.contact",
+    "defaultMessage": "/de/kontakt",
     "filepath": "src/i18n/messages.js"
   },
   {
-    "id": "route.contact",
-    "defaultMessage": "/de/kontakt",
+    "id": "app.readMore",
+    "defaultMessage": "mehr erfahren",
     "filepath": "src/i18n/messages.js"
   },
   {
