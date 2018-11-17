@@ -111,24 +111,33 @@ class Contact extends React.PureComponent {
         const {result, sendMessages, recaptcha, sending} = this.state;
 
         if (recaptcha) {
-            return <div className="alert alert-info" role="alert">{formatMessage(messages.tournamentRegistrationInfoRecaptcha)}</div>;
-        } else if (sending) {
             switch (result.code) {
                 case "mail-sent-with-confirmation":
-                    return <div className="alert alert-success" role="alert">
-                        {sendMessages.successfullSendConfirmation}
+                    return <div>
+                        <div className="alert alert-info" role="alert">{formatMessage(messages.tournamentRegistrationInfoRecaptcha)}</div>
+                        <div className="alert alert-success" role="alert" >;
+                            {sendMessages.successfullSendConfirmation}
+                        </div>
                     </div>;
                 case "mail-sent":
-                    return <div className="alert alert-success" role="alert">
-                        {sendMessages.successfullSend}
+                    return <div>
+                        <div className="alert alert-info" role="alert">{formatMessage(messages.tournamentRegistrationInfoRecaptcha)}</div>
+                        <div className="alert alert-success" role="alert">
+                            {sendMessages.successfullSend}
+                        </div>
                     </div>;
                 case "mail-not-sent":
-                    return <div className="alert alert-danger" role="alert">
-                        {sendMessages.errorSend}
+                    return <div>
+                        <div className="alert alert-info" role="alert">{formatMessage(messages.tournamentRegistrationInfoRecaptcha)}</div>
+                        <div className="alert alert-danger" role="alert">
+                            {sendMessages.errorSend}
+                        </div>
                     </div>;
                 default:
                     return;
             }
+        } else if (sending) {
+            return <div className="alert alert-info" role="alert">{formatMessage(messages.tournamentRegistrationInfoMailSending)}</div>;
         }
     }
 
