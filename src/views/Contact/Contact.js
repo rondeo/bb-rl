@@ -57,8 +57,8 @@ class Contact extends React.PureComponent {
                     this.setState({result: json, recaptcha: false, sending: false});
                 })
                 .catch(error => {
-                    this.setState({result: { code: "unknown-error" }, recaptcha: false, sending: false});
-                    console.error("Unexpected error in tournament registration: ", error);
+                    this.setState({result: { code: error.value }, recaptcha: false, sending: false});
+                    //console.error("Unexpected error in tournament registration: ", error);
                 });
         } else {
             this.setState({result: { code: "recaptcha-not-valid" }, recaptcha: false, sending: false});
