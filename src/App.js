@@ -35,6 +35,7 @@ import Commands from "./views/Commands/Commands";
 // import News from "./views/News/News";
 // import NewsDetail from "./views/NewsDetail/NewsDetail";
 import Scum from "./views/Scum/Scum";
+import AdventCalendar from "./views/AdventCalendar/AdventCalendar";
 
 import {setLanguage} from "./actions/ApplicationActions";
 
@@ -154,6 +155,7 @@ class App extends React.PureComponent {
                                 <Route path={messages["route.newsDetail"]} component={NewsDetail} exact/>
                                 */}
                                 <Route path={messages["route.scum"]} component={Scum} exact/>
+                                <Route path={messages["route.adventCalendar"]} component={AdventCalendar} exact/>
                                 <Route component={NotFound} exact/>
                             </Switch>
                         </main>

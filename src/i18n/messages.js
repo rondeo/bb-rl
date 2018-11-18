@@ -48,6 +48,10 @@ export default defineMessages({
         id: 'app.aboutLink3',
         defaultMessage: 'Hier gehts zu unserem Streaming-Setup'
     },
+    adventCalendar: {
+        id: 'app.adventCalendar',
+        defaultMessage: 'Adventskalender'
+    },
     bracket: {
         id: 'app.bracket',
         defaultMessage: 'Spielplan'
@@ -344,6 +348,10 @@ export default defineMessages({
     'route.scum': {
         id: 'route.scum',
         defaultMessage: '/de/scum'
+    },
+    'route.adventCalendar': {
+        id: 'route.adventCalendar',
+        defaultMessage: '/de/adventskalender'
     },
     'route.lang.de': {
         id: 'route.lang.de',

@@ -131,9 +131,11 @@ class Header extends React.PureComponent {
                                 <li className={classnames("nav-item", "disabled", {"active": active === formatMessage(messages["route.news"])})}>
                                     <Link messageId="route.news" className="nav-link">{formatMessage(messages.news)}</Link>
                                 </li>
-                                <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.scum"])})}>
+                                {/**
+                                 <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.scum"])})}>
                                     <Link messageId="route.scum" className="nav-link">Scum</Link>
                                 </li>
+                                 **/}
                                 <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.home"]) + "/#regeln" })}>
                                     <Link messageId="route.home" hash="regeln" className="nav-link">{formatMessage(messages.tournament)}</Link>
                                     <ul className="submenu">
@@ -147,6 +149,7 @@ class Header extends React.PureComponent {
                                     <ul className="submenu">
                                         <li className={classnames({"active": active === formatMessage(messages["route.bulls"])})}><Link messageId="route.bulls" className="nav-link disabled">{formatMessage(messages.member)}</Link></li>
                                         <li className={classnames({"active": active === formatMessage(messages["route.schedule"])})}><Link messageId="route.schedule" className="nav-link">{formatMessage(messages.streamSchedule)}</Link></li>
+                                        <li className={classnames({"active": active === formatMessage(messages["route.adventCalendar"])})}><Link messageId="route.adventCalendar" className="nav-link">{formatMessage(messages.adventCalendar)}</Link></li>
                                     </ul>
                                 </li>
                                 <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.home"]) + "/#partner"})}>

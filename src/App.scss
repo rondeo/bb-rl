@@ -135,13 +135,13 @@ h3 {
 /**
  * Input Field Style
  */
-.form-control:focus{
+.form-control:focus {
   border-color: $highlightColor;
-  box-shadow: 0 0 0 0.2rem rgba($highlightColor,.25);
+  box-shadow: 0 0 0 0.2rem rgba($highlightColor, .25);
 
   &.blue {
     border-color: $backgroundBlue;
-    box-shadow: 0 0 0 0.2rem rgba($backgroundBlue,.25);
+    box-shadow: 0 0 0 0.2rem rgba($backgroundBlue, .25);
   }
 }
 
@@ -179,7 +179,7 @@ h3 {
 }
 
 a {
-    color: $highlightColor;
+  color: $highlightColor;
   &:hover {
     color: $highlightColor;
   }
@@ -379,4 +379,44 @@ img {
 .loader {
   margin-top: 12px;
   padding: .375rem 0;
+}
+
+/**
+ * Radio
+ */
+
+#radio {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+
+  .microsite {
+    height: 72px !important;
+    #rde-player .rde-progress {
+      background-color: $highlightColor !important;
+    }
+  }
+  .radio-instance-1 .rde-equaliser-container .rde-equaliser-column .rde-colour-bar {
+    background-color: $highlightColor !important;
+  }
+  .radio-instance-1 #rde-player .rde-btn:hover {
+    color: $highlightColor !important;
+  }
+  .microsite, #rde-top-bar {
+    background: none;
+  }
+  .microsite #rde-player {
+    background: $backgroundBlue;
+    border-top: none;
+  }
+}
+
+#rde-player .dropdown-menu.rde-dropdown-menu-volume {
+  top: auto;
+  bottom: 100%;
+}
+
+.rde-top-bar-height {
+  display: none;
 }
