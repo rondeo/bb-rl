@@ -51,9 +51,10 @@ if (isset($data) && count($data) > 0) {
 
     // ======= Mailversand
     // Mail versenden und Versanderfolg merken
-    print_r($mailTo);
-    print_r($mailSubject);
-    print_r($mailFrom);
+    print_r("MailTo: ",$mailTo);
+    print_r("MailSubject: ",$mailSubject);
+    print_r("MailText: ",$mailText);
+    print_r("MailFrom: ",$mailFrom);
     $mailSent1 = @mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
 } // if
 
@@ -68,11 +69,17 @@ if ($data && $data['mail'])
     $mailText .= "Hiermit bestätigen wir, dass deine Nachricht an uns versendet wurde! \n\n";
     $mailText .= "Liebe Grüße \n";
     $mailText .= "Deine Bulls";
+    print_r("MailTo: ",$mailTo);
+    print_r("MailSubject: ",$mailSubject);
+    print_r("MailText: ",$mailText);
+    print_r("MailFrom: ",$mailFrom);
     $mailSent2 = @mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
 }
 
 $responseJson = array();
 
+print_r("mailSent1: ",$mailSent1);
+print_r("mailSent2: ",$mailSent2);
 // Wenn der Mailversand und die Bestätigungsmail erfolgreich waren:
 if ($mailSent1 == TRUE && $mailSent2 === TRUE) {
     $responseJson = array(
