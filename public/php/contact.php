@@ -30,9 +30,7 @@ if (isset($data) && count($data) > 0) {
           // "Feldname:" und Zeilenumbruch dem Mailtext hinzufügen
           $mailText .= $name . ":\n";
           // alle Werte des Feldes abarbeiten
-          print_r("Before second foreach");
           foreach ($value as $entry) {
-              print_r("In second foreach");
              // Einrückungsleerzeichen, Wert und Zeilenumbruch
              // dem Mailtext hinzufügen
              $mailText .= "   " . $value . "\n";
@@ -40,7 +38,6 @@ if (isset($data) && count($data) > 0) {
       } // ENDE: if
       // Wenn der Feldwert ein einzelner Feldwert ist:
       else {
-          print_r("Else");
           // "Feldname:", Wert und Zeilenumbruch dem Mailtext hinzufügen
           $mailText .= $name . ": " . $value . "\n";
       } // ENDE: else
@@ -57,6 +54,9 @@ if (isset($data) && count($data) > 0) {
 
     // ======= Mailversand
     // Mail versenden und Versanderfolg merken
+    print_r($mailTo);
+    print_r($mailSubject);
+    print_r($mailFrom);
     $mailSent1 = @mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
 } // if
 
