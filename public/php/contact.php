@@ -13,7 +13,7 @@ parse_str(json_decode(file_get_contents('php://input')), $data);
 // ======= Konfiguration:
 
 $mailTo = 'alice@battleground-bulls.de';
-$mailFrom = '"Kontakt" <alice@battleground-bulls.de>';
+$mailFrom = 'alice@battleground-bulls.de';
 $mailSubject = '';
 $mailText = '';
 $mailSent1 = $mailSent2 = false;
