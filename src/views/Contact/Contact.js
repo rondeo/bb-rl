@@ -52,13 +52,13 @@ class Contact extends React.PureComponent {
                     "Content-Type": "application/json"
                 }
             })
-                .then(response => {console.log(response); return response.json();})
+                .then(response => response.json())
                 .then(json => {
                     this.setState({result: json, recaptcha: false, sending: false});
                 })
                 .catch(error => {
                     this.setState({result: { code: error.value }, recaptcha: false, sending: false});
-                    //console.error("Unexpected error in tournament registration: ", error);
+                    console.log("Unexpected error in tournament registration: ", error);
                 });
         } else {
             this.setState({result: { code: "recaptcha-not-valid" }, recaptcha: false, sending: false});
