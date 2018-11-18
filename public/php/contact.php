@@ -10,7 +10,6 @@ header('Content-Type: application/json;charset=UTF-8');
 // ======= Daten werden aus dem Body geholt:
 $data = array();
 parse_str(json_decode(file_get_contents('php://input')), $data);
-print_r($data);
 // ======= Konfiguration:
 
 $mailTo = 'alice@battleground-bulls.de';
@@ -25,7 +24,6 @@ if (isset($data) && count($data) > 0) {
    foreach($data as $name => $value) {
       // Wenn der Feldwert aus mehreren Werten besteht:
       // (z.B. <select multiple>)
-       print_r($value);
       if (is_array($value)) {
           // "Feldname:" und Zeilenumbruch dem Mailtext hinzufügen
           $mailText .= $name . ":\n";
@@ -47,7 +45,6 @@ if (isset($data) && count($data) > 0) {
     // ======= Korrekturen vor dem Mailversand
     // Wenn PHP "Magic Quotes" vor Apostrophzeichen einfügt:
     if (get_magic_quotes_gpc()) {
-        print_r("Magic Quotes");
         // eventuell eingefügte Backslashes entfernen
         $mailText = stripslashes($mailText);
     }
@@ -86,7 +83,6 @@ if ($mailSent1 == TRUE && $mailSent2 === TRUE) {
 }
 // Wenn der Mailversand erfolgreich war:
 else if ($mailSent1 == TRUE) {
-    print_r("if mailSent1 == TRUE");
     $responseJson = array(
         'code' => 'mail-sent',
         'message' => 'Successful sent.',
