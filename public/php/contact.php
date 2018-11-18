@@ -13,7 +13,7 @@ parse_str(json_decode(file_get_contents('php://input')), $data);
 // ======= Konfiguration:
 
 $mailTo = 'alice@battleground-bulls.de';
-$mailFrom = 'alice@battleground-bulls.de';
+$mailFrom = '"Kontakt" alice@battleground-bulls.de';
 $mailSubject = '';
 $mailText = '';
 $mailSent1 = $mailSent2 = false;
@@ -55,7 +55,7 @@ if (isset($data) && count($data) > 0) {
 
     // ======= Mailversand
     // Mail versenden und Versanderfolg merken
-    $mailSent1 = mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom, $headers);
+    $mailSent1 = mail($mailTo, $mailSubject, $mailText, $headers);
 } // if
 
 // ======= Bestätigungsversand
@@ -69,19 +69,11 @@ if ($data && $data['mail'])
     $mailText .= "Hiermit bestätigen wir, dass deine Nachricht an uns versendet wurde! \n\n";
     $mailText .= "Liebe Grüße \n";
     $mailText .= "Deine Bulls";
-    $mailSent2 = mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom, $headers);
+    $mailSent2 = mail($mailTo, $mailSubject, $mailText, $headers);
 }
 
 $responseJson = array();
-print_r(array(
-    "Data" => $data,
-    "MailTo" => $mailTo,
-    "MailSubject" => $mailSubject,
-"MailText" => $mailText,
-"MailFrom" => $mailFrom,
-"mailSent1" => $mailSent1,
-"mailSent2" => $mailSent2
-));
+
 // Wenn der Mailversand und die Bestätigungsmail erfolgreich waren:
 if ($mailSent1 == TRUE && $mailSent2 === TRUE) {
     $responseJson = array(
