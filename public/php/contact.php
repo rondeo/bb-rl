@@ -17,6 +17,10 @@ $mailFrom = 'alice@battleground-bulls.de';
 $mailSubject = '';
 $mailText = '';
 $mailSent1 = $mailSent2 = false;
+$headers  = "From: Kontakt ".$mailFrom."\n";
+$headers .= "X-Sender: Kontakt ".$mailFrom."\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=UTF-8\n";
 
 // ======= Text der Mail aus den Formularfeldern erstellen:
 if (isset($data) && count($data) > 0) {
@@ -51,7 +55,7 @@ if (isset($data) && count($data) > 0) {
 
     // ======= Mailversand
     // Mail versenden und Versanderfolg merken
-    $mailSent1 = mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
+    $mailSent1 = mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom, $headers);
 } // if
 
 // ======= Bestätigungsversand
@@ -65,7 +69,7 @@ if ($data && $data['mail'])
     $mailText .= "Hiermit bestätigen wir, dass deine Nachricht an uns versendet wurde! \n\n";
     $mailText .= "Liebe Grüße \n";
     $mailText .= "Deine Bulls";
-    $mailSent2 = mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
+    $mailSent2 = mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom, $headers);
 }
 
 $responseJson = array();
