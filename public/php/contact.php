@@ -10,8 +10,8 @@ header('Content-Type: application/json;charset=UTF-8');
 // ======= Daten werden aus dem Body geholt:
 $data = array();
 parse_str(json_decode(file_get_contents('php://input')), $data);
-// ======= Konfiguration:
 
+// ======= Konfiguration:
 $mailTo = 'alice@battleground-bulls.de';
 $mailFrom = '"Kontakt" alice@battleground-bulls.de';
 $mailSubject = '';
@@ -55,7 +55,7 @@ if (isset($data) && count($data) > 0) {
 
     // ======= Mailversand
     // Mail versenden und Versanderfolg merken
-    $mailSent1 = mail($mailTo, $mailSubject, $mailText, $headers);
+    $mailSent1 = @mail($mailTo, $mailSubject, $mailText, $headers);
 } // if
 
 // ======= Bestätigungsversand
@@ -69,7 +69,7 @@ if ($data && $data['mail'])
     $mailText .= "Hiermit bestätigen wir, dass deine Nachricht an uns versendet wurde! \n\n";
     $mailText .= "Liebe Grüße \n";
     $mailText .= "Deine Bulls";
-    $mailSent2 = mail($mailTo, $mailSubject, $mailText, $headers);
+    $mailSent2 = @mail($mailTo, $mailSubject, $mailText, $headers);
 }
 
 $responseJson = array();
