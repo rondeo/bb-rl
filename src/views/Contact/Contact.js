@@ -52,7 +52,7 @@ class Contact extends React.PureComponent {
                     "Content-Type": "application/json"
                 }
             })
-                .then(response => response.json())
+                .then(response => {console.log(response); return response.json();})
                 .then(json => {
                     this.setState({result: json, recaptcha: false, sending: false});
                 })
