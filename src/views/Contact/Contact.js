@@ -177,7 +177,7 @@ class Contact extends React.PureComponent {
                         </div>
                         <div className="form-row">
                             <div className="form-group col-xs-auto">
-                                {recaptcha || sending ? <button className="btn white disabled" disabled>{formatMessage(messages.tournamentRegistrationSignIn)} <i className="fas fa-cog fa-spin" /></button> : <button type="submit" className="btn white">{formatMessage(messages.tournamentRegistrationSignIn)}</button>}
+                                {recaptcha || sending ? <button className="btn white disabled" disabled>{formatMessage(messages.contactFormSendBtn)} <i className="fas fa-cog fa-spin" /></button> : <button type="submit" className="btn white">{formatMessage(messages.contactFormSendBtn)}</button>}
                             </div>
                             <div className="form-group col-xs-auto">
                                 {this.renderInfo()}
