@@ -460,11 +460,11 @@ export default defineMessages({
     },
     sendFormSuccessfullMail: {
         id: 'app.sendFormSuccessfullMail',
-        defaultMessage: 'Du hast das Kontaktformular erfolgreich gesendet! Eine Best&auml;tigungsmail wurde versendet an: '
+        defaultMessage: 'Du hast das Kontaktformular erfolgreich gesendet! Eine Bestätigungsmail wurde versendet an: '
     },
     sendFormSuccessfullMailBug: {
         id: 'app.sendFormSuccessfullMailBug',
-        defaultMessage: 'Du hast den Bug erfolgreich gemeldet! Eine Best&auml;tigungsmail wurde versendet an: '
+        defaultMessage: 'Du hast den Bug erfolgreich gemeldet! Eine Bestätigungsmail wurde versendet an: '
     },
     settings: {
         id: 'app.settings',

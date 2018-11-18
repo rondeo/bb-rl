@@ -20,12 +20,7 @@ class Contact extends React.PureComponent {
             result: null,
             sending: false,
             recaptcha: false,
-            bugReport: false,
-            sendMessages: {
-                successfullSendConfirmation: "",
-                successfullSend: "",
-                errorSend: ""
-            }
+            bugReport: false
         };
     }
 
@@ -65,30 +60,6 @@ class Contact extends React.PureComponent {
         }
     }
 
-    getStringForFormType = () => {
-        const {bugReport} = this.state;
-        const {intl:{formatMessage}} = this.props;
-        const formData = $("form").serializeObject();
-
-        if (bugReport) {
-            this.setState({
-                sendMessages: {
-                    successfullSendConfirmation: formatMessage(messages.sendFormSuccessfullMailBug) + formData.mail,
-                    successfullSend: formatMessage(messages.sendFormSuccessfullBug),
-                    errorSend: formatMessage(messages.sendFormError) + <a href={"mailto:support@battleground-bulls.de"}>support&commat;battleground-bulls.de</a> + '.'
-                }
-            });
-        } else {
-            this.setState({
-                sendMessages: {
-                    successfullSendConfirmation: formatMessage(messages.sendFormSuccessfullMail) + formData.mail,
-                    successfullSend: formatMessage(messages.sendFormSuccessfull),
-                    errorSend: formatMessage(messages.sendFormError) + <a href={"mailto:support@battleground-bulls.de"}>support&commat;battleground-bulls.de</a> + '.'
-                }
-            });
-        }
-    };
-
     changeFormType = (e) => {
         let isBugReport = false;
         if (e.target.value === "bugReport") {
@@ -108,45 +79,59 @@ class Contact extends React.PureComponent {
 
     renderResult() {
         const {intl:{formatMessage}} = this.props;
-        const {result, sendMessages, recaptcha, sending} = this.state;
+        const {result, bugReport} = this.state;
+        const formData = $("form").serializeObject();
 
-        if (recaptcha) {
+        let successfullSendConfirmation;
+        let successfullSend;
+        let errorSend;
+
+        if (bugReport) {
+            successfullSendConfirmation = formatMessage(messages.sendFormSuccessfullMailBug) + formData.mail;
+            successfullSend = formatMessage(messages.sendFormSuccessfullBug);
+            errorSend = formatMessage(messages.sendFormError) + <a href={"mailto:support@battleground-bulls.de"}>support&commat;battleground-bulls.de</a> + '.'
+        } else {
+            successfullSendConfirmation = formatMessage(messages.sendFormSuccessfullMail) + formData.mail;
+            successfullSend = formatMessage(messages.sendFormSuccessfull);
+            errorSend = formatMessage(messages.sendFormError) + <a href={"mailto:support@battleground-bulls.de"}>support&commat;battleground-bulls.de</a> + '.';
+        }
+
+        if (result) {
             switch (result.code) {
                 case "mail-sent-with-confirmation":
-                    return <div>
-                        <div className="alert alert-info" role="alert">{formatMessage(messages.tournamentRegistrationInfoRecaptcha)}</div>
-                        <div className="alert alert-success" role="alert" >;
-                            {sendMessages.successfullSendConfirmation}
-                        </div>
-                    </div>;
+                    return <div className="alert alert-success" role="alert" >{successfullSendConfirmation} </div>;
                 case "mail-sent":
-                    return <div>
-                        <div className="alert alert-info" role="alert">{formatMessage(messages.tournamentRegistrationInfoRecaptcha)}</div>
-                        <div className="alert alert-success" role="alert">
-                            {sendMessages.successfullSend}
-                        </div>
-                    </div>;
+                    return <div className="alert alert-success" role="alert">{successfullSend} </div>;
                 case "mail-not-sent":
-                    return <div>
-                        <div className="alert alert-info" role="alert">{formatMessage(messages.tournamentRegistrationInfoRecaptcha)}</div>
-                        <div className="alert alert-danger" role="alert">
-                            {sendMessages.errorSend}
-                        </div>
-                    </div>;
+                    return <div className="alert alert-danger" role="alert">{errorSend} </div>;
+                case "recaptcha-not-valid":
+                    return <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback4)} (<a href="mailto:support@battleground-bulls.de">support@battleground-bulls.de</a>).</div>;
+                case "unknown-error":
+                    return <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback5)} (<a href="mailto:support@battleground-bulls.de">support@battleground-bulls.de</a>).</div>;
                 default:
                     return;
             }
-        } else if (sending) {
-            return <div className="alert alert-info" role="alert">{formatMessage(messages.tournamentRegistrationInfoMailSending)}</div>;
         }
     }
 
-    componentDidMount() {
-        this.getStringForFormType();
+    renderInfo() {
+        const {intl:{formatMessage}} = this.props;
+        const {recaptcha, sending} = this.state;
+        if (recaptcha) {
+            return <div className="loader">
+                    <span className="fa fa-spinner fa-spin" />&nbsp;&nbsp;
+                    {formatMessage(messages.tournamentRegistrationInfoRecaptcha)}
+                </div>;
+        } else if (sending) {
+            return <div className="loader">
+                    <span className="fa fa-spinner fa-spin" />&nbsp;&nbsp;
+                    {formatMessage(messages.tournamentRegistrationInfoMailSending)}
+                </div>;
+        }
     }
 
     render() {
-        const { sending, bugReport } = this.state;
+        const {recaptcha, sending, bugReport } = this.state;
         const {intl:{formatMessage}} = this.props;
 
         return (
@@ -154,7 +139,7 @@ class Contact extends React.PureComponent {
                 <Helmet><title>{bugReport ? formatMessage(messages.bugReportTitle) : formatMessage(messages.contactFormTitle)} - Battleground-Bulls</title></Helmet>
                 <div className="container">
                     <h1>{bugReport ? formatMessage(messages.bugReportTitle) : formatMessage(messages.contactFormTitle)}</h1>
-                    <form onSubmit={(e) => { e.preventDefault(e); this.setState({ result: null, sending: true }); ReCAPTCHA.execute(e); }}>
+                    <form onSubmit={this.execRecaptcha}>
                         <div className="form-row">
                             <div className="form-group col-md-6">
                                 <label htmlFor="selectForm">{formatMessage(messages.contactFormSelection)}*</label>
@@ -190,12 +175,16 @@ class Contact extends React.PureComponent {
                         <div className="form-group">
                             <label>* {formatMessage(messages.contactFormRequiredText)}</label>
                         </div>
-                        <div className="form-group">
-                            {sending ? <button className="btn white disabled" disabled>{formatMessage(messages.contactFormSendBtn)} <i className="fas fa-cog fa-spin" /></button> : <button type="submit" className="btn white">{formatMessage(messages.contactFormSendBtn)}</button>}
+                        <div className="form-row">
+                            <div className="form-group col-xs-auto">
+                                {recaptcha || sending ? <button className="btn white disabled" disabled>{formatMessage(messages.tournamentRegistrationSignIn)} <i className="fas fa-cog fa-spin" /></button> : <button type="submit" className="btn white">{formatMessage(messages.tournamentRegistrationSignIn)}</button>}
+                            </div>
+                            <div className="form-group col-xs-auto">
+                                {this.renderInfo()}
+                            </div>
                         </div>
 
                         <ReCAPTCHA callback={this.onSubmit} />
-
                         {this.renderResult()}
                     </form>
                 </div>

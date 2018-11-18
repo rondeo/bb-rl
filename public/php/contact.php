@@ -1,5 +1,7 @@
 <?php
-
+error_reporting(-1);
+ini_set('display_errors', 'On');
+set_error_handler("var_dump");
 // ======= Benötigte Header setzen:
 
 header('Access-Control-Allow-Origin: *');
@@ -12,39 +14,19 @@ $data = array();
 parse_str(json_decode(file_get_contents('php://input')), $data);
 
 // ======= Konfiguration:
-$mailTo = 'alice@battleground-bulls.de';
-$mailFrom = '"Kontakt" alice@battleground-bulls.de';
+$mailTo = 'kontakt@battleground-bulls.de';
+$mailFrom = '"Battleground Bulls" <support@battleground-bulls.de>';
 $mailSubject = '';
 $mailText = '';
+$headers  = 'From: '.$mailFrom."\r\n";
+$headers .= 'MIME-Version: 1.0'."\r\n";
+$headers .= 'Content-Type: text/html; charset=UTF-8'."\r\n";
 $mailSent1 = $mailSent2 = false;
-$headers  = "From: Kontakt ".$mailFrom."\n";
-$headers .= "X-Sender: Kontakt ".$mailFrom."\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/html; charset=UTF-8\n";
 
 // ======= Text der Mail aus den Formularfeldern erstellen:
 if (isset($data) && count($data) > 0) {
-   // alle Formularfelder der Reihe nach durchgehen:
-   foreach($data as $name => $value) {
-      // Wenn der Feldwert aus mehreren Werten besteht:
-      // (z.B. <select multiple>)
-      if (is_array($value)) {
-          // "Feldname:" und Zeilenumbruch dem Mailtext hinzufügen
-          $mailText .= $name . ":\n";
-          // alle Werte des Feldes abarbeiten
-          foreach ($value as $entry) {
-             // Einrückungsleerzeichen, Wert und Zeilenumbruch
-             // dem Mailtext hinzufügen
-             $mailText .= "   " . $value . "\n";
-          } // ENDE: foreach
-      } // ENDE: if
-      // Wenn der Feldwert ein einzelner Feldwert ist:
-      else {
-          // "Feldname:", Wert und Zeilenumbruch dem Mailtext hinzufügen
-          $mailText .= $name . ": " . $value . "\n";
-      } // ENDE: else
-   } // ENDE: foreach
-
+      $mailSubject = $data['subject'];
+      $mailText = $data['message'];
 
     // ======= Korrekturen vor dem Mailversand
     // Wenn PHP "Magic Quotes" vor Apostrophzeichen einfügt:
@@ -55,7 +37,7 @@ if (isset($data) && count($data) > 0) {
 
     // ======= Mailversand
     // Mail versenden und Versanderfolg merken
-    $mailSent1 = @mail($mailTo, $mailSubject, $mailText, $headers);
+    $mailSent1 = mail($mailTo, $mailSubject, nl2br($mailText), $headers);
 } // if
 
 // ======= Bestätigungsversand
@@ -63,17 +45,22 @@ if (isset($data) && count($data) > 0) {
 
 if ($data && $data['mail'])
 {
+    $prevMailText = $mailText;
+    $prevMailSubject = $mailSubject;
     $mailTo = $data['mail'];
     $mailSubject = 'Bestätigung der Kontaktaufnahme';
-    $mailText  = "Vielen Dank für deine Nachricht. \n\n";
-    $mailText .= "Hiermit bestätigen wir, dass deine Nachricht an uns versendet wurde! \n\n";
+    $mailText  = "Vielen Dank für deine Nachricht. \n \n";
+    $mailText .= "Hiermit bestätigen wir, dass deine Nachricht an uns versendet wurde! \n \n";
     $mailText .= "Liebe Grüße \n";
     $mailText .= "Deine Bulls";
-    $mailSent2 = @mail($mailTo, $mailSubject, $mailText, $headers);
+    $mailText .= "\n\n\n================================================================================ \n\n\n";
+    $mailText .= "Deine Nachricht:\n\n";
+    $mailText .= "Betreff: ".$prevMailSubject."\n\n";
+    $mailText .= $prevMailText;
+    $mailSent2 = mail($mailTo, $mailSubject, nl2br($mailText), $headers);
 }
 
 $responseJson = array();
-
 // Wenn der Mailversand und die Bestätigungsmail erfolgreich waren:
 if ($mailSent1 == TRUE && $mailSent2 === TRUE) {
     $responseJson = array(
