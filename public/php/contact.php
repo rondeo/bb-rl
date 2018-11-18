@@ -20,15 +20,12 @@ $mailText = '';
 $mailSent1 = $mailSent2 = false;
 
 // ======= Text der Mail aus den Formularfeldern erstellen:
-
-print_r("Before if");
 if (isset($data) && count($data) > 0) {
    // alle Formularfelder der Reihe nach durchgehen:
-    print_r("Before first foreach");
    foreach($data as $name => $value) {
       // Wenn der Feldwert aus mehreren Werten besteht:
       // (z.B. <select multiple>)
-       print_r("Before second if");
+       print_r($value);
       if (is_array($value)) {
           // "Feldname:" und Zeilenumbruch dem Mailtext hinzufügen
           $mailText .= $name . ":\n";
@@ -68,7 +65,6 @@ if (isset($data) && count($data) > 0) {
 
 if ($data && $data['mail'])
 {
-    print_r("if (data && data[mail]");
     $mailTo = $data['mail'];
     $mailSubject = 'Bestätigung der Kontaktaufnahme';
     $mailText  = "Vielen Dank für deine Nachricht. \n\n";
@@ -82,7 +78,6 @@ $responseJson = array();
 
 // Wenn der Mailversand und die Bestätigungsmail erfolgreich waren:
 if ($mailSent1 == TRUE && $mailSent2 === TRUE) {
-    print_r("if mailSent1 && mailSent2 == TRUE");
     $responseJson = array(
         'code' => 'mail-sent-with-confirmation',
         'message' => 'Successful confirmation sent.',
@@ -100,7 +95,6 @@ else if ($mailSent1 == TRUE) {
 }
 // Wenn die Mail nicht versendet werden konnte:
 else {
-    print_r("else mailSent1 == TRUE");
     $responseJson = array(
         'code' => 'mail-not-sent',
         'message' => 'E-Mail not sent.',
