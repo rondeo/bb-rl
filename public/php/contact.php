@@ -51,7 +51,7 @@ if (isset($data) && count($data) > 0) {
 
     // ======= Mailversand
     // Mail versenden und Versanderfolg merken
-    $mailSent1 = @mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
+    $mailSent1 = mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
 } // if
 
 // ======= Bestätigungsversand
@@ -65,7 +65,7 @@ if ($data && $data['mail'])
     $mailText .= "Hiermit bestätigen wir, dass deine Nachricht an uns versendet wurde! \n\n";
     $mailText .= "Liebe Grüße \n";
     $mailText .= "Deine Bulls";
-    $mailSent2 = @mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
+    $mailSent2 = mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
 }
 
 $responseJson = array();
