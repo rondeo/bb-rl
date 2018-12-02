@@ -27,12 +27,12 @@ class AdventCalendar extends React.PureComponent {
 
                 <div className="calendar-wrap">
                     <div className="calendar">
-                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="ist bald verfügbar"></div>
+                        <div className="cube" data-active data-bg-color="#0c283e" data-title="The Escapists"></div>
+                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="LEGO Fluch der Karibik"></div>
+                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="am 04.12. verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="am 04.12. verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="am 06.12 verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="am 06.12 verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#081a29" data-title="ist bald verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="ist bald verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#0c283e" data-title="ist bald verfügbar"></div>
@@ -54,16 +54,14 @@ class AdventCalendar extends React.PureComponent {
                     </div>
                     <div className="content">
                         <div className="content__block">
-                            <h3 className="content__title">Tag 1</h3>
-                            <p className="content__description">If everyone demanded peace instead of another television
-                                set, then there'd be peace.</p>
-                            <p className="content__meta">John Lennon</p>
+                            <h3 className="content__title">The Escapists</h3>
+                            <p className="content__description">„The Escapists“ bietet die Gelegenheit, einen heiteren Einblick in das alltägliche Gefängnisleben zu erhalten. Hauptziel aller Häftlinge ist natürlich die Flucht!</p>
+                            <p className="content__meta">xPainHunter</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 2</h3>
-                            <p className="content__description">To be content with little is difficult; to be content
-                                with much, impossible.</p>
-                            <p className="content__meta">Marie von Ebner-Eschenbach</p>
+                            <h3 className="content__title">LEGO® Pirates of the Caribbean: The Video Game</h3>
+                            <p className="content__description">LEGO® Pirates of the Caribbean: The Video Game is an action adventure game that brings the Pirates of the Caribbean world and all its colorful characters to life in LEGO Brick form. Players experience all the memorable scenes from all four films in the humorous and quirky LEGO Video Games style.</p>
+                            <p className="content__meta">xPainHunter</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Tag 3</h3>
