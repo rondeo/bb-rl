@@ -56,12 +56,12 @@ class AdventCalendar extends React.PureComponent {
                         <div className="content__block">
                             <h3 className="content__title">The Escapists</h3>
                             <p className="content__description">„The Escapists“ bietet die Gelegenheit, einen heiteren Einblick in das alltägliche Gefängnisleben zu erhalten. Hauptziel aller Häftlinge ist natürlich die Flucht!</p>
-                            <p className="content__meta">Justendo</p>
+                            <p className="content__meta">Gewinner - Justendo</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">LEGO® Pirates of the Caribbean: The Video Game</h3>
                             <p className="content__description">LEGO® Pirates of the Caribbean: The Video Game is an action adventure game that brings the Pirates of the Caribbean world and all its colorful characters to life in LEGO Brick form. Players experience all the memorable scenes from all four films in the humorous and quirky LEGO Video Games style.</p>
-                            <p className="content__meta">MrMadNess</p>
+                            <p className="content__meta">Gewinner - MrMadNess</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Tag 3</h3>
