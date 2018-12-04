@@ -66,12 +66,12 @@ class AdventCalendar extends React.PureComponent {
                         <div className="content__block">
                             <h3 className="content__title">Tembo - Badass Elefant</h3>
                             <p className="content__description">In Shell City wurde nach einem verheerenden Angriff der PHANTOM-Streitkräfte der Notstand ausgerufen. Schreckliche Kriegsmaschinen, mit Totenköpfen dekoriert, terrorisieren die Stadt und hinterlassen nichts als Zerstörung! Die Nationalgarde steht den Eindringlingen hilflos gegenüber und deshalb zieht General Krenman im Kampf gegen das Böse seinen letzten Trumpf.</p>
-                            <p className="content__meta">Gewinner - </p>
+                            <p className="content__meta">Gewinner - v!ruZ</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Murderous Pursuits</h3>
                             <p className="content__description">Murderous Pursuits ist ein Stealth-Spiel für 1 bis 8 Spieler in dem es heißt: töten oder getötet werden! Verfolge clever dein Ziel, in der viktorianischen Zeit Gejagter genannt, um dann zum perfekten Zeitpunkt zuzuschlagen. Doch sei auf der Hut und gib dich den anderen Spielern, die dich jagen, nicht zu erkennen!</p>
-                            <p className="content__meta">Gewinner - </p>
+                            <p className="content__meta">Gewinner - ExTorIalS</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Tag 5</h3>
