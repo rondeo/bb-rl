@@ -29,8 +29,8 @@ class AdventCalendar extends React.PureComponent {
                     <div className="calendar">
                         <div className="cube" data-active data-bg-color="#0c283e" data-title="The Escapists"></div>
                         <div className="cube" data-active data-bg-color="#e31d3c" data-title="LEGO Fluch der Karibik"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="am 04.12. verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="am 04.12. verfügbar"></div>
+                        <div className="cube" data-active data-bg-color="#081a29" data-title="Tembo - Badass Elefant"></div>
+                        <div className="cube" data-active data-bg-color="#9e1d38" data-title="Murderous Pursuits"></div>
                         <div className="cube" data-inactive data-bg-color="#0c283e" data-title="am 06.12 verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="am 06.12 verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#081a29" data-title="ist bald verfügbar"></div>
@@ -61,19 +61,17 @@ class AdventCalendar extends React.PureComponent {
                         <div className="content__block">
                             <h3 className="content__title">LEGO® Pirates of the Caribbean: The Video Game</h3>
                             <p className="content__description">LEGO® Pirates of the Caribbean: The Video Game is an action adventure game that brings the Pirates of the Caribbean world and all its colorful characters to life in LEGO Brick form. Players experience all the memorable scenes from all four films in the humorous and quirky LEGO Video Games style.</p>
-                            <p className="content__meta">Gewinner - MrMadNess</p>
+                            <p className="content__meta">Gewinner - SDMadNess</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 3</h3>
-                            <p className="content__description">The things you own end up owning you. It's only after
-                                you lose everything that you're free to do anything.</p>
-                            <p className="content__meta">Chuck Palahniuk</p>
+                            <h3 className="content__title">Tembo - Badass Elefant</h3>
+                            <p className="content__description">In Shell City wurde nach einem verheerenden Angriff der PHANTOM-Streitkräfte der Notstand ausgerufen. Schreckliche Kriegsmaschinen, mit Totenköpfen dekoriert, terrorisieren die Stadt und hinterlassen nichts als Zerstörung! Die Nationalgarde steht den Eindringlingen hilflos gegenüber und deshalb zieht General Krenman im Kampf gegen das Böse seinen letzten Trumpf.</p>
+                            <p className="content__meta">Gewinner - </p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 4</h3>
-                            <p className="content__description">A lot of people get so hung up on what they can't have
-                                that they don't think for a second about whether they really want it.</p>
-                            <p className="content__meta">Lionel Shriver</p>
+                            <h3 className="content__title">Murderous Pursuits</h3>
+                            <p className="content__description">Murderous Pursuits ist ein Stealth-Spiel für 1 bis 8 Spieler in dem es heißt: töten oder getötet werden! Verfolge clever dein Ziel, in der viktorianischen Zeit Gejagter genannt, um dann zum perfekten Zeitpunkt zuzuschlagen. Doch sei auf der Hut und gib dich den anderen Spielern, die dich jagen, nicht zu erkennen!</p>
+                            <p className="content__meta">Gewinner - </p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Tag 5</h3>
