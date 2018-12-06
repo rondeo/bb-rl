@@ -31,8 +31,8 @@ class AdventCalendar extends React.PureComponent {
                         <div className="cube" data-active data-bg-color="#e31d3c" data-title="LEGO Fluch der Karibik"></div>
                         <div className="cube" data-active data-bg-color="#081a29" data-title="Tembo - Badass Elefant"></div>
                         <div className="cube" data-active data-bg-color="#9e1d38" data-title="Murderous Pursuits"></div>
-                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="am 06.12 verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="am 06.12 verfügbar"></div>
+                        <div className="cube" data-active data-bg-color="#0c283e" data-title="Life is Strange EP 1-5"></div>
+                        <div className="cube" data-active data-bg-color="#e31d3c" data-title="Tomb Raider"></div>
                         <div className="cube" data-inactive data-bg-color="#081a29" data-title="ist bald verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="ist bald verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#0c283e" data-title="ist bald verfügbar"></div>
@@ -74,16 +74,14 @@ class AdventCalendar extends React.PureComponent {
                             <p className="content__meta">Gewinner - ExTorIalS</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 5</h3>
-                            <p className="content__description">It is the preoccupation with possessions, more than
-                                anything else that prevents us from living freely and nobly.</p>
-                            <p className="content__meta">Bertrand Russell</p>
+                            <h3 className="content__title">Life is Strange Episode 1-5</h3>
+                            <p className="content__description">Life Is Strange ist ein preisgekröntes und von Kritikern gefeiertes Abenteuerspiel in Episoden, das dem Spieler erlaubt, die Zeit zurückzudrehen und so Vergangenheit, Gegenwart und Zukunft zu beeinflussen.</p>
+                            <p className="content__meta">Gewinner - MrsMadneSS</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 6</h3>
-                            <p className="content__description">What is the use of a house if you haven't got a
-                                tolerable planet to put it on?</p>
-                            <p className="content__meta">Henry David Thoreau</p>
+                            <h3 className="content__title">Tomb Raider</h3>
+                            <p className="content__description">Tomb Raider erzählt die aufregende Geschichte von Lara Croft und ihrem Aufstieg zur knallharten Überlebenskünstlerin.</p>
+                            <p className="content__meta">Gewinner - Jan</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Tag 7</h3>
