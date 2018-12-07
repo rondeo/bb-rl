@@ -52,7 +52,7 @@ class AdventCalendar extends React.PureComponent {
                         <div className="cube" data-inactive data-bg-color="#081a29" data-title="ist bald verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="ist bald verfügbar"></div>
                     </div>
-                    <div className="content">
+                    <div className="content-wrapper">
                         <div className="content__block">
                             <h3 className="content__title">The Escapists</h3>
                             <p className="content__description">„The Escapists“ bietet die Gelegenheit, einen heiteren Einblick in das alltägliche Gefängnisleben zu erhalten. Hauptziel aller Häftlinge ist natürlich die Flucht!</p>
