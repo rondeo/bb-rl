@@ -216,7 +216,7 @@ export class Home extends PureComponent {
                                     <Counter endDate="September 9, 2018 16:15:00" />
                                     <div className="links">
                                         <Link messageId="route.adventCalendar" className="btn primary">{formatMessage(messages.adventCalendar)}</Link>
-                                        {/*<Link messageId="route.tournamentRegistration" params={{teams: "2vs2"}} className="btn primary">{formatMessage(messages.signUpNow)}</Link>*/}
+                                        <Link messageId="route.tournamentRegistration" params={{teams: "2vs2"}} className="btn primary">{formatMessage(messages.signUpNow)}</Link>
                                         <a href="https://discord.gg/gke2aYp" className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</a>
                                     </div>
                                 </div>

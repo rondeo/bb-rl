@@ -27,15 +27,15 @@ class AdventCalendar extends React.PureComponent {
 
                 <div className="calendar-wrap">
                     <div className="calendar">
-                        <div className="cube" data-active data-bg-color="#0c283e" data-title="The Escapists"></div>
-                        <div className="cube" data-active data-bg-color="#e31d3c" data-title="LEGO Fluch der Karibik"></div>
-                        <div className="cube" data-active data-bg-color="#081a29" data-title="Tembo - Badass Elefant"></div>
-                        <div className="cube" data-active data-bg-color="#9e1d38" data-title="Murderous Pursuits"></div>
-                        <div className="cube" data-active data-bg-color="#0c283e" data-title="Life is Strange EP 1-5"></div>
-                        <div className="cube" data-active data-bg-color="#e31d3c" data-title="Tomb Raider"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="ist bald verfügbar"></div>
+                        <div className="cube" data-bg-color="#0c283e" data-title="The Escapists"></div>
+                        <div className="cube" data-bg-color="#e31d3c" data-title="LEGO Fluch der Karibik"></div>
+                        <div className="cube" data-bg-color="#081a29" data-title="Tembo - Badass Elefant"></div>
+                        <div className="cube" data-bg-color="#9e1d38" data-title="Murderous Pursuits"></div>
+                        <div className="cube" data-bg-color="#0c283e" data-title="Life is Strange EP 1-5"></div>
+                        <div className="cube" data-bg-color="#e31d3c" data-title="Tomb Raider"></div>
+                        <div className="cube" data-bg-color="#081a29" data-title="Just Cause 3 XXL"></div>
+                        <div className="cube" data-bg-color="#9e1d38" data-title="Wizard of Legend"></div>
+                        <div className="cube" data-bg-color="#0c283e" data-title="Project CARS 2"></div>
                         <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="ist bald verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#081a29" data-title="ist bald verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="ist bald verfügbar"></div>
@@ -84,25 +84,19 @@ class AdventCalendar extends React.PureComponent {
                             <p className="content__meta">Gewinner - Jan</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 7</h3>
-                            <p className="content__description">Normal is getting dressed in clothes that you buy for
-                                work and driving through traffic in a car that you are still paying for - in order to
-                                get to the job you need to pay for the clothes and the car, and the house you leave
-                                vacant all day so you can afford to live in it.</p>
-                            <p className="content__meta">Ellen Goodman</p>
+                            <h3 className="content__title">Just Cause 3 XXL</h3>
+                            <p className="content__description">Die Just Cause 3: XXL Edition enthält das von Kritikern gefeierte Spiel Just Cause 3 sowie eine großartige Auswahl zusätzlicher Missionen, explosiver Waffen und Fahrzeuge, die das Spielerlebnis in Medici erweitern. Dies ist die ultimative Version – Neulinge, die sich sofort in Ricos Missionen stürzen wollen, können dies mit einem erweiterten Arsenal und exotischen neuen Fahrzeugen tun.</p>
+                            <p className="content__meta">Gewinner - niggo</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 8</h3>
-                            <p className="content__description">The reality of loving God is loving him like he's a
-                                Superhero who actually saved you from stuff rather than a Santa Claus who merely gave
-                                you some stuff.</p>
-                            <p className="content__meta">Criss Jami</p>
+                            <h3 className="content__title">Wizard of Legend</h3>
+                            <p className="content__description">Wizard of Legend ist ein rasanter Dungeoncrawler mit Schwerpunkt auf dynamischen Magiekämpfen. Wenn du dich schnell bewegst und noch schneller deine Zaubersprüche einsetzt, kannst du sie zu verheerenden Kombos verketten, um deine Gegner zu dezimieren.</p>
+                            <p className="content__meta">Gewinner - Trippno</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 9</h3>
-                            <p className="content__description">Every increased possession loads us with new
-                                weariness.</p>
-                            <p className="content__meta">John Ruskin</p>
+                            <h3 className="content__title">Project CARS 2</h3>
+                            <p className="content__description">Nach dem höchst erfolgreichen Debüt 2015 führt Project CARS 2 die Reihe und ihre Fans in eine fantastische neue Ära des Motorsports und vereint dabei den absolut authentischen Realismus der modernsten Rennsimulation der Welt mit dem puren Spaß spektakulärer Rennaction. Erleben Sie das ultimative Rennfahrererlebnis.</p>
+                            <p className="content__meta">Gewinner - yousafe</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Tag 10</h3>
