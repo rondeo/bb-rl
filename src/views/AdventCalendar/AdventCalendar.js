@@ -36,21 +36,21 @@ class AdventCalendar extends React.PureComponent {
                         <div className="cube" data-bg-color="#081a29" data-title="Just Cause 3 XXL"></div>
                         <div className="cube" data-bg-color="#9e1d38" data-title="Wizard of Legend"></div>
                         <div className="cube" data-bg-color="#0c283e" data-title="Project CARS 2"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="ist bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="ist bald verfügbar"></div>
+                        <div className="cube" data-active data-bg-color="#e31d3c" data-title="Metal Gear Solid V"></div>
+                        <div className="cube" data-active data-bg-color="#081a29" data-title="The Dwarves"></div>
+                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="ab dem 13.12 verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="ab dem 13.12 verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="bald verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="bald verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="bald verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="bald verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="bald verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="bald verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="bald verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="bald verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="bald verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="bald verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="bald verfügbar"></div>
                     </div>
                     <div className="content wrapper">
                         <div className="content__block">
@@ -76,7 +76,7 @@ class AdventCalendar extends React.PureComponent {
                         <div className="content__block">
                             <h3 className="content__title">Life is Strange Episode 1-5</h3>
                             <p className="content__description">Life Is Strange ist ein preisgekröntes und von Kritikern gefeiertes Abenteuerspiel in Episoden, das dem Spieler erlaubt, die Zeit zurückzudrehen und so Vergangenheit, Gegenwart und Zukunft zu beeinflussen.</p>
-                            <p className="content__meta">Gewinner - MrsMadneSS</p>
+                            <p className="content__meta">Gewinner - Mrs MadneSS</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Tomb Raider</h3>
@@ -99,17 +99,14 @@ class AdventCalendar extends React.PureComponent {
                             <p className="content__meta">Gewinner - yousafe</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 10</h3>
-                            <p className="content__description">The Christmas tree, twinkling with lights, had a
-                                mountain of gifts piled up beneath it, like offerings to the great god of excess.</p>
-                            <p className="content__meta">Tess Gerritsen</p>
+                            <h3 className="content__title">Metal Gear Solid V</h3>
+                            <p className="content__description">World-renowned Kojima Productions brings the Metal Gear Solid franchise to Steam with METAL GEAR SOLID V: GROUND ZEROES. Play as the legendary hero Snake and infiltrate a Cuban military base to rescue the hostages. Can you make it out alive?</p>
+                            <p className="content__meta">Gewiner - GoLoaT</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 11</h3>
-                            <p className="content__description">Whoever prefers the material comforts of life over
-                                intellectual wealth is like the owner of a palace who moves into the servants' quarters
-                                and leaves the sumptuous rooms empty.</p>
-                            <p className="content__meta">Marie von Ebner-Eschenbach</p>
+                            <h3 className="content__title">The Dwarves</h3>
+                            <p className="content__description">Wenige Helden stehen Hunderten Feinden gegenüber – kannst du das coolste Fantasy-Volk überhaupt zum Sieg gegen die dunklen Horden führen? Erkunde eine riesige Welt, schlage taktische Echtzeitschlachten und erlebe die grandiose Geschichte nach dem Bestseller von Markus Heitz.</p>
+                            <p className="content__meta">Gewinner - Atliris</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Tag 12</h3>
