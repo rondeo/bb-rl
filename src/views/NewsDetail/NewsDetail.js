@@ -1,6 +1,6 @@
 import React from "react";
-import {Link} from "react-router-dom";
 
+import Link from "../../components/Link/Link";
 import News from "./../News/News";
 
 import "./NewsDetail.css";
@@ -23,7 +23,7 @@ export default class NewsDetail extends React.PureComponent {
         return (
             <div className="view full-container news-detail">
                 <div className="container">
-                    <Link to="/news"><i className="far fa-caret-square-left" />Alle News</Link>
+                    <Link messageId="route.news"><i className="far fa-caret-square-left" />Alle News</Link>
                     <div className="date">{news.date}</div>
                     <h1>{news.title}</h1>
                     {author}{category}

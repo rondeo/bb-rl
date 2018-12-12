@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import './Imprint.css';
+import {Helmet} from "react-helmet";
 
 export default class Imprint extends PureComponent {
 
@@ -10,6 +11,7 @@ export default class Imprint extends PureComponent {
     render() {
         return (
             <div className="container imprint">
+                <Helmet><title>Imprint - Battleground-Bulls</title></Helmet>
                 <h1>Impressum</h1>
 
                 <h5> Angaben gemäß § 5 TMG</h5>

@@ -14,9 +14,12 @@ parse_str(json_decode(file_get_contents('php://input')), $data);
 // ======= Konfiguration:
 
 $mailTo = 'anmeldung@battleground-bulls.de';
-$mailFrom = '"Rocket League Anmeldung" <anmeldung@battleground-bulls.de>';
+$mailFrom = '"Rocket League Anmeldung" <support@battleground-bulls.de>';
 $mailSubject = 'Turnier-Anmeldung';
 $mailText = '';
+$headers  = 'From: '.$mailFrom."\r\n";
+$headers .= 'MIME-Version: 1.0'."\r\n";
+$headers .= 'Content-Type: text/html; charset=UTF-8'."\r\n";
 $mailSent1 = $mailSent2 = false;
 
 // ======= Text der Mail aus den Formularfeldern erstellen:
@@ -53,7 +56,7 @@ if (isset($data) && count($data) > 0) {
 
     // ======= Mailversand
     // Mail versenden und Versanderfolg merken
-    $mailSent1 = @mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
+    $mailSent1 = @mail($mailTo, $mailSubject, nl2br($mailText), $headers);
 } // if
 
 // ======= Bestätigungsversand
@@ -70,7 +73,7 @@ if ($data && $data['mail'])
     $mailText .= "Bracket - https://goo.gl/F8zHDx \n\n";
     $mailText .= "Liebe Grüße \n";
     $mailText .= "Deine Bulls";
-    $mailSent2 = @mail($mailTo, $mailSubject, $mailText, "From: ".$mailFrom);
+    $mailSent2 = @mail($mailTo, $mailSubject, nl2br($mailText), $headers);
 }
 
 $responseJson = array();

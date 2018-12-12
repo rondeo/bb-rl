@@ -1,12 +1,16 @@
 import React from 'react';
+import {injectIntl} from "react-intl";
+
+import messages from "../../i18n/messages";
 import SquareCard from '../SquareCard/SquareCard';
 
 import kuehe from './img/kuehe.png';
 import setup from './img/setup.png';
 import streamtimes from './img/streamtimes.png';
 
-export default class About extends React.PureComponent {
+class About extends React.PureComponent {
     render() {
+        const {intl:{formatMessage}} = this.props;
         return (
             <div className="section bulls">
                 <div className="container">
@@ -15,30 +19,18 @@ export default class About extends React.PureComponent {
                         <div className="row">
                             <div className="col-12 col-md-6">
                                 <p>
-                                    Die Battleground Bulls bestehen aus einem kleinen familiären Haufen Zweibeiner,
-                                    die durch eine Idee von Patrick aka m4kar0ny und Malthe aka xPainHunt3r
-                                    zusammengefunden haben. Die Idee bestand darin, einen eigenen Stream Kanal zu
-                                    gründen, um auf neue Interessante und vor allem gleichgesinnte Leute aus
-                                    dem Bereich Gaming zu treffen. Mittlerweile wurde die Idee zu einer kleinen
-                                    Lebensaufgabe.
+                                    {formatMessage(messages.aboutContent1)}
                                 </p>
                                 <p>
-                                    Wir haben uns als Aufgabe gesetzt eine Community für alle zu Gründen, die Lust
-                                    auf nette und korrekte Leute haben, die
+                                    {formatMessage(messages.aboutContent2)}
                                 </p>
                             </div>
                             <div className="col-12 col-md-6">
                                 <p>
-                                    sich über die Spiele, egal ob neu
-                                    oder alt, austauschen und diese ebenfalls zusammen spielen können. Unser Motto
-                                    ist es somit, dass niemand alleine spielen muss. Unser Ziel ist es die
-                                    Familie mit eurer Hilfe wachsen zu lassen und den Stream so unterhaltsam wie
-                                    möglich zu gestalten.
+                                    {formatMessage(messages.aboutContent3)}
                                 </p>
                                 <p>
-                                    Eine Übersicht unseres Stream-Inhaltes werdet Ihr in Kürze ebenfalls auf dieser
-                                    Seite zu sehen bekommen. Also schaut zwischendurch immer mal wieder rein,
-                                    um zu sehen ob es etwas Neues gibt.
+                                    {formatMessage(messages.aboutContent4)}
                                 </p>
                             </div>
                         </div>
@@ -46,21 +38,22 @@ export default class About extends React.PureComponent {
                             <div className="col-12 col-sm-4">
                                 <SquareCard
                                     image={streamtimes}
-                                    text="Du willst wissen wann wir online sind?"
-                                    linkTo="/streamzeiten"
+                                    text={formatMessage(messages.aboutLink1)}
+                                    linkTo="route.schedule"
                                 />
                             </div>
                             <div className="col-12 col-sm-4">
                                 <SquareCard
                                     image={kuehe}
-                                    text="Du willst Mitglied der Bulls-Familie werden? - Schau dir unsere Bullen an"
-                                    linkTo="/bulls"
+                                    text= {formatMessage(messages.aboutLink2)}
+                                    linkTo="route.bulls"
+                                    linkDisabled
                                 />
                             </div>
                             <div className="col-12 col-sm-4">
                                 <SquareCard
                                     image={setup}
-                                    text="Hier gehts zu unserem Streaming-Setup"
+                                    text={formatMessage(messages.aboutLink3)}
                                     linkTo="https://docs.google.com/document/d/1cQO5QDKdD0eSQG0GA1yMonL7T0TjIHBzxzlK8iShJRY/"
                                 />
                             </div>
@@ -68,8 +61,9 @@ export default class About extends React.PureComponent {
                     </div>
                 </div>
 
-                <div className="scroll-down"><i className="fa fa-chevron-down"/>weiter scrollen</div>
+                <div className="scroll-down"><i className="fa fa-chevron-down"/>{formatMessage(messages.scrollDown)}</div>
             </div>
         );
     }
 }
+export default injectIntl(About);

@@ -1,5 +1,8 @@
 import React from 'react';
+import {Helmet} from "react-helmet";
+
 import './Privacy.css';
+
 
 export default class Privacy extends React.PureComponent {
 
@@ -10,6 +13,7 @@ export default class Privacy extends React.PureComponent {
     render() {
         return (
             <div className="container privacy">
+                <Helmet><title>Datenschutz - Battleground-Bulls</title></Helmet>
                 <h1>Datenschutz</h1>
                 <div className="row">
                     <div className="col-12">
@@ -200,7 +204,7 @@ export default class Privacy extends React.PureComponent {
                             Datenschutzerklärung gesondert behandelt.
                         </p>
 
-                        <h3>Kontakformular</h3>
+                        <h3>Kontaktformular</h3>
                         <p>
                             Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem
                             Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der

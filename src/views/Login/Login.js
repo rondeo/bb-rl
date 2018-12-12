@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import {connect} from "react-redux";
+import {Helmet} from "react-helmet";
 
 import {login} from "../../actions/ApplicationActions";
 
@@ -28,15 +29,15 @@ class Login extends React.PureComponent {
         let headers = new Headers();
         headers.append("Authorization", "Basic " + btoa(formData.username + ":" + formData.password));
 
-        API.getInstance()._fetch("/user/login", "POST", null, null, {
+        API.getInstance()._fetch("/user/login", "GET", null, null, {
             "Authorization": "Basic " + btoa(formData.username + ":" + formData.password)
         }).then(json => {
             if (json.error) {
                 console.error("Status: " + json.status + ", Error: " + json.error + ", Message: " + json.message);
             }
             let search = searchToObject(this.props.location.search);
-            this.props.dispatch(login(json));
-            this.props.history.push(search.next || "/");
+            this.props.dispatch(login($.extend(json, {password: formData.password})));
+            this.props.history.push(search.next || "/de");
         });
     }
 
@@ -44,6 +45,7 @@ class Login extends React.PureComponent {
         let search = searchToObject(this.props.location.search);
         return search.role ? (
             <div className="access-denied">
+                <Helmet><title>Zugriff verweigert - Battleground-Bulls</title></Helmet>
                 <div className="alert alert-danger">
                     <h1>Zugriff verweigert.</h1> <br/> Bitte logge dich mit der richtigen Berechtigung ein.
                 </div>
@@ -55,6 +57,8 @@ class Login extends React.PureComponent {
         return (
             <div className="view full-container login">
                 <div className="container">
+                    <Helmet><title>Login - Battleground-Bulls</title></Helmet>
+
                     <div className="row">
                         <div className="col-12 col-md-6 offset-md-3">
                             {this.renderAccessDenied()}
@@ -70,7 +74,7 @@ class Login extends React.PureComponent {
                                     <label htmlFor="password">Passwort</label>
                                     <input type="password" className="form-control" id="password" name="password" placeholder="Passwort" required/>
                                 </div>
-                                <button type="submit" className="btn btn-primary">Einloggen</button>
+                                <button type="submit" className="btn white">Einloggen</button>
                             </form>
                         </div>
                     </div>
@@ -79,9 +83,5 @@ class Login extends React.PureComponent {
         );
     }
 }
-function mapStateToProps(state, props) {
-    return {
-        ...state
-    };
-}
-export default connect(mapStateToProps)(Login);
+
+export default connect()(Login);

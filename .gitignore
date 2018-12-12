@@ -178,3 +178,10 @@ src/**/*.css
 src/**/*.css.map
 
 .idea/**
+
+public/**/vendor
+public/**/composer.lock
+
+package-lock.json
+
+utils/key.js

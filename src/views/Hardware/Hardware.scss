@@ -1,0 +1,40 @@
+@import "./../../variables";
+
+.view.full-container.hardware {
+  //background: url("./img/Commands-BG.png");
+  color: #000000;
+  .container {
+    padding-bottom: 100px;
+  }
+
+  .hardware {
+    display: inline-block;
+    width: 250px;
+    margin-right: 15px;
+    margin-top: 0.5rem;
+    &:before, &:after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: $highlightColor;
+    }
+    &:before {
+      content: "\f105";
+      margin-right: 25px;
+    }
+    &:after {
+      content: "\f101";
+      float: right;
+    }
+  }
+  .description {
+    display: inline-block;
+  }
+
+  h5 {
+    margin-top: 2rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+}

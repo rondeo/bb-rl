@@ -1,12 +1,16 @@
 import React, {PureComponent} from "react";
-import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
-import classnames from 'classnames';
-import $ from 'jquery';
+import classnames from "classnames";
+import {injectIntl} from "react-intl";
+import PropTypes from "prop-types";
+import $ from "jquery";
 
-import './SquareCard.css';
+import messages from "../../i18n/messages";
 
-export default class SquareCard extends PureComponent {
+import Link from "../../components/Link/Link";
+
+import "./SquareCard.css";
+
+class SquareCard extends PureComponent {
 
     componentDidMount() {
         let card = $(this.refs.card);
@@ -14,8 +18,8 @@ export default class SquareCard extends PureComponent {
     }
 
     render() {
-        let {children, image, alt, text, linkTo, linkText, linkDisabled} = this.props;
-        let moreText = linkText || "mehr erfahren";
+        const {children, image, alt, text, linkTo, linkText, linkDisabled, intl:{formatMessage}} = this.props;
+        let moreText = linkText || formatMessage(messages.readMore);
         return (
             <div className="square-card" ref="card">
                 {children ? children : (
@@ -24,7 +28,7 @@ export default class SquareCard extends PureComponent {
                         <div className="text">
                             {text}
                         </div>
-                        {linkTo ? linkTo.indexOf("http") !== -1 ? <a href={linkTo} className={classnames({"disabled": linkDisabled})} target="_blank" rel="noopener noreferrer">{moreText}</a> : <Link to={linkTo} className={classnames({"disabled": linkDisabled})}>{moreText}</Link> : null}
+                        <Link messageId={linkTo} className={classnames({"disabled": linkDisabled})}>{moreText}</Link>
                     </div>
                 )
                 }
@@ -41,3 +45,5 @@ SquareCard.propTypes = {
     linkText: PropTypes.string,
     linkDisabled: PropTypes.bool
 };
+
+export default injectIntl(SquareCard);

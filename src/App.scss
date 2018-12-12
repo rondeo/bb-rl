@@ -6,6 +6,7 @@
     z-index: 10;
     margin-bottom: $footerHeight;
     min-height: calc(100vh - (#{$headerHeight} + 59px) - #{$footerHeight});
+    background-color: #fff;
 
     > .container:not(.home), > .view {
       margin-top: $headerHeight;
@@ -38,6 +39,22 @@ body {
       display: none;
     }
   }
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+// Cookie consent
+.cc-window.cc-floating {
+  max-width: none;
+  bottom: 0;
+  left: 0;
+  @media (min-width: 490px) {
+    max-width: 460px;
+    bottom: 1em;
+    left: 1em;
+  }
 }
 
 hr {
@@ -49,6 +66,7 @@ h3 {
   margin-top: 25px;
   margin-bottom: 45px;
 }
+
 /**
  * Floating labels
  */
@@ -117,18 +135,51 @@ h3 {
 /**
  * Input Field Style
  */
-.form-control:focus{
+.form-control:focus {
   border-color: $highlightColor;
-  box-shadow: 0 0 0 0.2rem rgba($highlightColor,.25);
+  box-shadow: 0 0 0 0.2rem rgba($highlightColor, .25);
 
   &.blue {
     border-color: $backgroundBlue;
-    box-shadow: 0 0 0 0.2rem rgba($backgroundBlue,.25);
+    box-shadow: 0 0 0 0.2rem rgba($backgroundBlue, .25);
+  }
+}
+
+.form-control {
+  border-radius: 0;
+  &:focus {
+    border-color: $highlightColor;
+    box-shadow: 0 0 0 0.2rem rgba($highlightColor, .25);
+  }
+}
+
+.custom-select {
+  border-radius: 0;
+  &:focus {
+    border-color: $highlightColor;
+    box-shadow: inset 0 1px 2px rgba(darken($highlightColor, .25), .75), 0 0 5px rgba($highlightColor, .5);
+  }
+}
+
+.alert {
+  border-radius: 0;
+}
+
+.nav.nav-tabs {
+  &.light .nav-link {
+    color: $textColorLight;
+    border-radius: 0;
+    &:not(.collapsed) {
+      border: 1px solid #fff;
+    }
+  }
+  .nav-item:not(:first-child) {
+    margin-left: -1px;
   }
 }
 
 a {
-    color: $highlightColor;
+  color: $highlightColor;
   &:hover {
     color: $highlightColor;
   }
@@ -137,6 +188,41 @@ a {
     color: $disabledColor;
     cursor: unset;
     text-decoration: none;
+  }
+
+  &.link-light {
+    background-color: transparent;
+    background-image: linear-gradient($textColorLight, $textColorLight);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 0;
+    transition: background-size .5s, color .75s;
+    color: $highlightColor;
+    border-color: $highlightColor;
+    box-shadow: inset 0 -2px 0 $textColorLight;
+
+    &:hover {
+      background-size: 100% 100%;
+      color: $textColorDark;
+    }
+  }
+
+  &.link-dark {
+    padding: 2px;
+    background-color: transparent;
+    background-image: linear-gradient($highlightColor, $highlightColor);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 0;
+    transition: background-size .5s, color .75s;
+    color: $textColorDark;
+    border-color: $highlightColor;
+    box-shadow: inset 0 -2px 0 $highlightColor;
+
+    &:hover {
+      background-size: 100% 100%;
+      color: $textColorLight;
+    }
   }
 }
 
@@ -161,6 +247,13 @@ img {
   background-position: 50% 50%;
   background-size: 100% 0;
   transition: background-size .5s, color .75s;
+
+  &.large {
+    padding: 15px 25px;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+    border-width: 3px;
+  }
 
   &.primary {
     background-image: linear-gradient($highlightColor, $highlightColor);
@@ -207,7 +300,6 @@ img {
   }
 }
 
-
 /**
  *  Fullpage.js
  */
@@ -241,7 +333,6 @@ img {
   }
 }
 
-
 /**
   *  Responsive changes
   */
@@ -253,17 +344,17 @@ img {
   }
 }
 
-
-
 /**
-  *  Bootstrap DatePicker
+  *  React DateTimePicker
   */
 
+.rdt .rdtPicker {
+  color: $textColorDark;
+}
 
 /**
  *  Custom Scrollbar
  */
-
 
 .scrollarea.bb-scrollbar {
   .scrollbar-container {
@@ -275,4 +366,57 @@ img {
       background: $highlightColor;
     }
   }
+}
+
+/**
+ *  SnowStorm
+ */
+
+.___snowStorm___ {
+  z-index: 100 !important;
+}
+
+.loader {
+  margin-top: 12px;
+  padding: .375rem 0;
+}
+
+/**
+ * Radio
+ */
+
+#radio {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+
+  .microsite {
+    height: 72px !important;
+    #rde-player .rde-progress {
+      background-color: $highlightColor !important;
+    }
+  }
+  .radio-instance-1 .rde-equaliser-container .rde-equaliser-column .rde-colour-bar {
+    background-color: $highlightColor !important;
+  }
+  .radio-instance-1 #rde-player .rde-btn:hover {
+    color: $highlightColor !important;
+  }
+  .microsite, #rde-top-bar {
+    background: none;
+  }
+  .microsite #rde-player {
+    background: $backgroundBlue;
+    border-top: none;
+  }
+}
+
+#rde-player .dropdown-menu.rde-dropdown-menu-volume {
+  top: auto;
+  bottom: 100%;
+}
+
+.rde-top-bar-height {
+  display: none;
 }

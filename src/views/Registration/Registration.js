@@ -1,14 +1,17 @@
 import React from "react";
+import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import $ from "jquery";
+import {Helmet} from "react-helmet";
 
+import UsernameInput from "../../components/UsernameInput/UsernameInput";
+
+import {login} from "../../actions/ApplicationActions";
+import {searchToObject} from "../../utils/helperFunctions";
 import API from "./../../utils/API";
 import {ERROR_PASSWORD_NOT_EQUAL} from "./../../constants";
 
 import "./Registration.css";
-import {login} from "../../actions/ApplicationActions";
-import {searchToObject} from "../../utils/helperFunctions";
-import {connect} from "react-redux";
 
 class Registration extends React.PureComponent {
 
@@ -16,12 +19,11 @@ class Registration extends React.PureComponent {
         super(props);
 
         this.state = {
-            usernameStatus: null,
-            errors: null
+            errors: null,
+            usernameValid: false
         };
 
         this.onSubmit = this.onSubmit.bind(this);
-        this.onUsernameChange = this.onUsernameChange.bind(this);
     }
 
     componentDidMount() {
@@ -32,11 +34,11 @@ class Registration extends React.PureComponent {
         e.preventDefault();
 
         let formData = $(this.refs.form).serializeObject();
-        console.log("submit", this.state.usernameStatus, formData);
+        console.log("submit", this.state.usernameValid, formData);
 
         this.setState({ errors: null });
 
-        if (this.state.usernameStatus === 204 && formData.password1 === formData.password2) {
+        if (this.state.usernameValid && formData.password1 === formData.password2) {
             API.getInstance()._fetch("/user", "POST", {
                 mail: formData.mail,
                 password: formData.password1,
@@ -57,21 +59,8 @@ class Registration extends React.PureComponent {
         }
     }
 
-    onUsernameChange(e) {
-        let input = $(e.target);
-        clearTimeout(this.usernameChangeTimeout);
-        this.usernameChangeTimeout = setTimeout(() => {
-            let username = input.val();
-            API.getInstance()._fetch("/user/checkUsername", "POST", {username: username})
-                .always(response => {
-                    this.setState({ usernameStatus: response.status });
-                });
-        }, 500);
-    }
-
     render() {
-        let { usernameStatus, errors } = this.state;
-        console.log(usernameStatus)
+        let { errors } = this.state;
         let passwordErrorDiv = null,
             passwordErrorText = null;
         if (errors && errors.password) {
@@ -88,6 +77,7 @@ class Registration extends React.PureComponent {
         return (
             <div className="view full-container registration">
                 <div className="container">
+                    <Helmet><title>Registration - Battleground-Bulls</title></Helmet>
                     <div className="row">
                         <div className="col-12 col-md-6 offset-md-3">
                             <h1>Registrierung</h1>
@@ -99,15 +89,7 @@ class Registration extends React.PureComponent {
                                     <input type="email" className="form-control" id="mail" name="mail" aria-describedby="mailHelp" placeholder="E-Mail-Adresse"/>
                                     <small id="mailHelp" className="form-text mail-info">Wir werden deine E-Mail-Adresse niemals mit anderen teilen.</small>
                                 </div>
-                                <div className="form-group">
-                                    <label htmlFor="username">Benutzername <span className="required">*</span></label>
-                                    <input type="text" className="form-control" id="username" name="username" placeholder="Benutzername" onChange={this.onUsernameChange} required/>
-                                    {usernameStatus ? usernameStatus === 204 ? (
-                                        <div className="alert alert-success" role="alert">Benutzername ist verfügbar</div>
-                                    ) : (
-                                        <div className="alert alert-danger" role="alert">Benutzername ist leider schon vergeben</div>
-                                    ) : null}
-                                </div>
+                                <UsernameInput onChange={valid => {this.setState({usernameValid: valid});}}/>
                                 <div className="form-group">
                                     <label htmlFor="password1">Passwort <span className="required">*</span></label>
                                     <input type="password" className="form-control" id="password1" name="password1" placeholder="Passwort" required/>
@@ -130,9 +112,4 @@ class Registration extends React.PureComponent {
         );
     }
 }
-function mapStateToProps(state, props) {
-    return {
-        ...state
-    };
-}
-export default connect(mapStateToProps)(Registration);
+export default connect()(Registration);

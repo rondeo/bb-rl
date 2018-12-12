@@ -1,0 +1,792 @@
+[
+  {
+    "id": "app.aboutBulls",
+    "defaultMessage": "Über die Bulls",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.aboutContent1",
+    "defaultMessage": "Die Battleground Bulls bestehen aus einem kleinen familiären Haufen Zweibeiner,\n                                    die durch eine Idee von Patrick aka m4kar0ny und Malthe aka xPainHunt3r\n                                    zusammengefunden haben. Die Idee bestand darin, einen eigenen Stream Kanal zu\n                                    gründen, um auf neue Interessante und vor allem gleichgesinnte Leute aus\n                                    dem Bereich Gaming zu treffen. Mittlerweile wurde die Idee zu einer kleinen\n                                    Lebensaufgabe.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.aboutContent2",
+    "defaultMessage": "Wir haben uns als Aufgabe gesetzt eine Community für alle zu Gründen, die Lust auf nette und korrekte Leute haben, die",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.aboutContent3",
+    "defaultMessage": "sich über die Spiele, egal ob neu\n                                    oder alt, austauschen und diese ebenfalls zusammen spielen können. Unser Motto\n                                    ist es somit, dass niemand alleine spielen muss. Unser Ziel ist es die\n                                    Familie mit eurer Hilfe wachsen zu lassen und den Stream so unterhaltsam wie\n                                    möglich zu gestalten.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.aboutContent4",
+    "defaultMessage": "Eine Übersicht unseres Stream-Inhaltes werdet Ihr in Kürze ebenfalls auf dieser\n                                    Seite zu sehen bekommen. Also schaut zwischendurch immer mal wieder rein,\n                                    um zu sehen ob es etwas Neues gibt.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.aboutLink1",
+    "defaultMessage": "Du willst wissen wann wir online sind?",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.aboutLink2",
+    "defaultMessage": "Du willst Mitglied der Bulls-Familie werden? - Schau dir unsere Bullen an",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.aboutLink3",
+    "defaultMessage": "Hier gehts zu unserem Streaming-Setup",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.bracket",
+    "defaultMessage": "Spielplan",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "btn.twitch",
+    "defaultMessage": "Zum Twitch Kanal",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "bugReport.title",
+    "defaultMessage": "Melde einen Bug",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.calendar",
+    "defaultMessage": "Kalender",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.message",
+    "defaultMessage": "Nachricht",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.messagePlaceholder",
+    "defaultMessage": "Deine Nachricht an uns",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.messagePlaceholderBug",
+    "defaultMessage": "Beschreibung des Bugs",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.foundBug",
+    "defaultMessage": "Bug gefunden!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.requestConfirmationMail",
+    "defaultMessage": "Bestätigung per E-Mail",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.requestConfirmationMailPlaceholder",
+    "defaultMessage": "Bsp.: Max.Mustermann@Beispiel.de (Optional)",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.requiredText",
+    "defaultMessage": "Pflichtfelder",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.selection",
+    "defaultMessage": "Art des Kontaktformulars",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.selectionBugReport",
+    "defaultMessage": "Bug melden",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.selectionContact",
+    "defaultMessage": "Kontaktformular",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.sendBtn",
+    "defaultMessage": "Senden",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.subject",
+    "defaultMessage": "Betreff",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "contactForm.title",
+    "defaultMessage": "Kontaktiere uns",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.message",
+    "defaultMessage": "Achtung, Achtung: Das Krümelmonster möchte deine Cookies haben! Wenn du es ihm erlaubst, ist es mega glücklich :-)",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.dismiss",
+    "defaultMessage": "Och Manno...",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.deny",
+    "defaultMessage": "Ne, geht gar nicht!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.allow",
+    "defaultMessage": "Ja, nimm meine Cookies!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.link",
+    "defaultMessage": "Lies hier mehr zum Datenschutz",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.policy",
+    "defaultMessage": "Cookies? Hier!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterDay",
+    "defaultMessage": "Tage",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterHours",
+    "defaultMessage": "Stunden",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterLive",
+    "defaultMessage": "Das Turnier läuft bereits!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterMinutes",
+    "defaultMessage": "Minuten",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterNext",
+    "defaultMessage": "Nächstes",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterSeconds",
+    "defaultMessage": "Sekunden",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.counterTournament",
+    "defaultMessage": "Turnier in",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.footerContact",
+    "defaultMessage": "Kontakt",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.footerImprint",
+    "defaultMessage": "Impressum",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.footerPrivacy",
+    "defaultMessage": "Datenschutz",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.goUp",
+    "defaultMessage": "nach oben",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.home",
+    "defaultMessage": "Start",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ipAddress",
+    "defaultMessage": "IP Adresse",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "language.german",
+    "defaultMessage": "Deutsch",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "language.english",
+    "defaultMessage": "Englisch",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.login",
+    "defaultMessage": "Einloggen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.logout",
+    "defaultMessage": "Ausloggen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.news",
+    "defaultMessage": "News",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.member",
+    "defaultMessage": "Mitglieder",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.myProfile",
+    "defaultMessage": "Mein Profil",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.online",
+    "defaultMessage": "Online",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.password",
+    "defaultMessage": "Passwort",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partner",
+    "defaultMessage": "Partner",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerHead",
+    "defaultMessage": "Unterstütze die Battleground Bulls und kaufe über diese Links",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerMerchContent",
+    "defaultMessage": "Du möchtest unseren Stream und die Webseite unterstützen? Kaufe stylische Kleidung in unserem",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerMerchHead",
+    "defaultMessage": "Merch-Shop",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerMmogaContent",
+    "defaultMessage": "Jeder Kauf über unseren MMOGA Partner-Link unterstützt uns und kostet dich keinen Cent mehr! Egal ob aktuelle Top-Games, Gamecards, Gold oder Coins - MMOGA hat immer die besten Deals! Schau doch mal vorbei!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerMmogaHead",
+    "defaultMessage": "Du möchtest unseren Stream und die Webseite unterstützen? Kauf deine Spiele, Gamecards, Coins uvm. einfach bei MMOGA!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerRuntimeContent",
+    "defaultMessage": "Schnelle, gesunde und praktische Mahlzeiten.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.partnerRuntimeHead",
+    "defaultMessage": "Eat, play and win!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.player",
+    "defaultMessage": "Spieler",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.port",
+    "defaultMessage": "Port",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.readMore",
+    "defaultMessage": "mehr erfahren",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.contact",
+    "defaultMessage": "/de/kontakt",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.home",
+    "defaultMessage": "/de",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.login",
+    "defaultMessage": "/de/login",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.admin",
+    "defaultMessage": "/de/admin",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.privacy",
+    "defaultMessage": "/de/datenschutz",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.imprint",
+    "defaultMessage": "/de/impressum",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.register",
+    "defaultMessage": "/de/registrieren",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.rlOverlay",
+    "defaultMessage": "/de/rl-overlay",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.schedule",
+    "defaultMessage": "/de/streamzeiten",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.tournament",
+    "defaultMessage": "/de/turniere",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.bulls",
+    "defaultMessage": "/de/bulls",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.tournamentRegistration",
+    "defaultMessage": "/de/anmeldung/:teams?",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.calendar",
+    "defaultMessage": "/de/kalender",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.myProfile",
+    "defaultMessage": "/de/mein-profil",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.commands",
+    "defaultMessage": "/de/befehle",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.news",
+    "defaultMessage": "/de/news",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.newsDetail",
+    "defaultMessage": "/de/news/:title",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.scum",
+    "defaultMessage": "/de/scum",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.lang.de",
+    "defaultMessage": "/de",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.lang.en",
+    "defaultMessage": "/en",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleCommands",
+    "defaultMessage": "!Anmeldung -> Anmeldelink (siehe oben) <br/> !Teams -> Aktuelle Teamaufstellung <br/> !Discord -> Link zu unserem Discord",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleHeadCommands",
+    "defaultMessage": "Chat Befehle",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleGeneral",
+    "defaultMessage": "Alle Teilnehmer des Turniers haben das <strong>Recht, fair</strong> und mit demnötigen <strong>Respekt</strong> behandelt zu werden! Es wird im Allgemeinen ein <strong>höflicher Umgangston</strong> im <strong>Game, Stream</strong> und <strong>Chat</strong> erwartet. Falls dies nicht der Fall seine sollte, behalten wir uns das Recht vor, diese Person/en vom <strong>Turnier / Chat</strong> zu <strong>disqualifizieren / bannen</strong>.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleTeam",
+    "defaultMessage": "Ein 2v2 Team besteht aus <strong>max.</strong> 2 Spielern. Nach Start des Turniers werden <strong>keine Team Änderungen</strong> mehr vorgenommen. Sollte es dennoch zum <strong>Ausfall</strong> eines Spielers kommen wird das Team <strong>disqualifiziert oder der Streamer entscheidet, ob ein anderer Spieler einspringen kann/darf</strong>. Zudem muss jedes Team einen <strong>Teamleader</strong> ernennen, der für <strong>Absprachen</strong> oder <strong>Rückfragen</strong> der Turnierleitung zur Verfügung stehen muss.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleHeadGeneral",
+    "defaultMessage": "Allgemeines",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleHeadTeam",
+    "defaultMessage": "Teamanmeldung",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleHeadTournament",
+    "defaultMessage": "Turnier",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleHeadProcedure",
+    "defaultMessage": "Ablauf",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleHeadWinner",
+    "defaultMessage": "Sieger",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleHeader",
+    "defaultMessage": "Turnier-Regeln",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleNotice",
+    "defaultMessage": "Hinweis: Mögliche Änderungen sind während des Streams durch den Streamer möglich!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleProcedure",
+    "defaultMessage": "Alle Spiele vom Turnier werden <strong>Live</strong> von den Battleground Bulls gestreamt und kommentiert. Vor dem Start des Turniers wird der Turnierplan gezeigt, damit alle 2-4 Stunden</strong> veranschlagt. Alle <strong>Ergebnisse</strong> werden nach dem Spiel <strong>Live</strong> im Turnierplan eingetragen.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleSignIn",
+    "defaultMessage": "Anmeldung bitte hier ausfüllen:",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleSignInForm",
+    "defaultMessage": "Anmeldeformular",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleTournament",
+    "defaultMessage": "Die Anmeldung eines Teams für das Turnier, zählt nur für das <strong>aktuelle Turnier</strong>. Die Turnier-Infos werden immer zwischen Dienstag und Donnerstag im Discord / Twitter / Facebook und in der Steam Gruppe angekündigt. Anmeldungen gelten erst sobald diese Info Online ist! Alle vorherigen Anmeldungen werden gelöscht! Sobald ein Team sich über das von uns genutzte Formular anmeldet, wird ein Zeitstempel erstellt, sodass keiner benachteiligt wird wenn es heißt die Teams sind voll. Wir nehmen nur die ersten, vollständig ausgefüllten Anmeldungen an! Alle weiteren Anmeldungen landen auf der Reserve, falls ein Team nicht rechtzeitig erscheint. Erscheint ein Team nicht bis spätestens 15 Minuten nach Stream-Beginn, so wird dieses vom Turnier ausgeschlossen und es wird auf die Reserve zurückgegriffen.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.ruleWinner",
+    "defaultMessage": "Den Turniersiegern wird im Discord der Rang “<strong>Turniersieger</strong>“ verliehen. Dieser gilt in der Zeit, bis das nächste Turnier stattfindet und ein neuer Sieger gekrönt wird. In diesem Fall gibt es dann für die ehemaligen Turniersieger den Rang “<strong>Ehemalige Turniersieger</strong>”. Das siegreiche Team, bekommt eine Sperre von einem Turnier, sodass dieses nicht direkt erneut gewonnen werden kann. 2 Wochen nach dem Sieg darf das Team wie gewohnt teilnehmen.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.scrollDown",
+    "defaultMessage": "weiter scrollen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.sendFormError",
+    "defaultMessage": "Leider ist beim Melden des Bugs ein Fehler aufgetreten! Bitte wendet euch an den Support",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.sendFormSuccessfull",
+    "defaultMessage": "Du hast das Kontaktformular erfolgreich gesendet!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.sendFormSuccessfullBug",
+    "defaultMessage": "Du hast den Bug erfolgreich gemeldet!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.sendFormSuccessfullMail",
+    "defaultMessage": "Du hast das Kontaktformular erfolgreich gesendet! Eine Bestätigungsmail wurde versendet an:",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.sendFormSuccessfullMailBug",
+    "defaultMessage": "Du hast den Bug erfolgreich gemeldet! Eine Bestätigungsmail wurde versendet an:",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.settings",
+    "defaultMessage": "Einstellungen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.serverName",
+    "defaultMessage": "Servername",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.signIn",
+    "defaultMessage": "Registrieren",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.status",
+    "defaultMessage": "Status",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.streamSchedule",
+    "defaultMessage": "Streamzeiten",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.streamScheduleNote",
+    "defaultMessage": "Alle anderen Tage streamen wir spontan.<br/>Änderungen werden im Discord mitgeteilt!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.signUpNow",
+    "defaultMessage": "Jetzt anmelden",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.teams",
+    "defaultMessage": "Teams",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.toTwitch",
+    "defaultMessage": "Hier geht es zu unserem Twitch-Kanal",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournament",
+    "defaultMessage": "Turnier",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRankSilver",
+    "defaultMessage": "Silber",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRankPlatinum",
+    "defaultMessage": "Platin",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRankDiamond",
+    "defaultMessage": "Diamant",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationFeedback1",
+    "defaultMessage": "Eure Anmeldung war erfolgreich! Eine Bestätigungsmail wurde an",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationFeedback1.1",
+    "defaultMessage": "versandt.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationFeedback2",
+    "defaultMessage": "Eure Anmeldung war erfolgreich!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationFeedback3",
+    "defaultMessage": "Eure Anmeldung war leider nicht erfolgreich! Bitte wendet euch an den Support",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationFeedback4",
+    "defaultMessage": "Der Recaptcha-Prozess scheint manipuliert worden zu sein! Bitte wende dich an den Support",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationFeedback5",
+    "defaultMessage": "Unbekannter Fehler. Bitte wende dich an den Support",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationHead",
+    "defaultMessage": "Turnier-Anmeldung - Battleground-Bulls",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationHead2",
+    "defaultMessage": "Turnieranmeldung Rocket League",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationInfoRecaptcha",
+    "defaultMessage": "Recaptcha wird überprüft.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationInfoMailSending",
+    "defaultMessage": "E-Mail wird versendet.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationInputHead",
+    "defaultMessage": "Turnier-Anmeldung - Battleground-Bulls",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationInputHead2",
+    "defaultMessage": "Turnieranmeldung Rocket League",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationInputName",
+    "defaultMessage": "Team Name *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationMember1",
+    "defaultMessage": "Mitglied 1 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationMember2",
+    "defaultMessage": "Mitglied 2 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationMember3",
+    "defaultMessage": "Mitglied 3 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationPlatform",
+    "defaultMessage": "Welche Plattform nutzt ihr? *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationRank1",
+    "defaultMessage": "Rang 1 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournnamentRegistrationRank2",
+    "defaultMessage": "Rang 2 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationRank3",
+    "defaultMessage": "Rang 3 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationSteam1",
+    "defaultMessage": "Steam Link Mitglied 1 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationSteam2",
+    "defaultMessage": "Steam Link Mitglied 2 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationSteam3",
+    "defaultMessage": "Steam Link Mitglied 3 *",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationRequired",
+    "defaultMessage": "* Pflichtfeld",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRules",
+    "defaultMessage": "Turnier-Regeln",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationSignIn",
+    "defaultMessage": "Anmelden",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.tournamentRegistrationSignInFeedback",
+    "defaultMessage": "Anmeldebestätigung per E-Mail",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "bulls.heading",
+    "defaultMessage": "Das sind wir - die Bullen im Stall",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "weekday.monday",
+    "defaultMessage": "Montag",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "weekday.tuesday",
+    "defaultMessage": "Dienstag",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "weekday.wednesday",
+    "defaultMessage": "Mittwoch",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "weekday.thursday",
+    "defaultMessage": "Donnerstag",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "weekday.friday",
+    "defaultMessage": "Freitag",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "weekday.saturday",
+    "defaultMessage": "Samstag",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "weekday.sunday",
+    "defaultMessage": "Sonntag",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "time.from",
+    "defaultMessage": "von",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "time.to",
+    "defaultMessage": "bis",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "time.circa",
+    "defaultMessage": "ca",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "time.clock",
+    "defaultMessage": "Uhr",
+    "filepath": "src/i18n/messages.js"
+  }
+]
