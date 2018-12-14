@@ -13,20 +13,14 @@
   button {
     position: fixed;
     top: 0;
-    width: 188px;
+    width: 350px;
     height: 200px;
     opacity: 0;
-    &.blue-1 {
-      left: 565px;
-    }
-    &.blue-2 {
-      left: 348px;
-    }
-    &.orange-1 {
+    &.blue {
       left: 1165px;
     }
-    &.orange-2 {
-      left: 1385px;
+    &.orange {
+      left: 400px;
     }
     &.reset {
       left: 788px;
