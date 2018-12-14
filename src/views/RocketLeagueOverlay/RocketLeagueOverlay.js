@@ -95,8 +95,8 @@ export default class RocketLeagueOverlay extends React.PureComponent {
         }
         return (
             <div id="rl-overlay">
-                <img ref="winnerImg" src={winnerImgSrc} alt="" />
                 <img ref="img" src={imgSrc} alt="" />
+                <img ref="winnerImg" src={winnerImgSrc} alt="" />
                 <button className="blue" onClick={this.updateBlue} disabled={disabled}>Blau</button>
                 <button className="orange" onClick={this.updateOrange} disabled={disabled}>Orange</button>
                 <button className="reset" onClick={() => { this.setState({ counterBlue: 0, counterOrange: 0, disabled: false }); }}>Reset</button>
