@@ -38,6 +38,13 @@ body {
     nav, footer {
       display: none;
     }
+    .cc-revoke {
+      display: none;
+    }
+  }
+
+  &.no-snow .___snowStorm___ {
+    display: none !important;
   }
 
   &.no-scroll {

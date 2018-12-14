@@ -1,6 +1,8 @@
 import React from "react";
 import $ from "jquery";
 
+import {searchToObject} from '../../utils/helperFunctions';
+
 import IMG_Blank from "./img/RL-Overlay-leer.png";
 import b1o0 from "./img/1b-0o.png";
 import b2o0 from "./img/2b-0o.png";
@@ -21,22 +23,57 @@ export default class RocketLeagueOverlay extends React.PureComponent {
 
         this.state = {
             counterBlue: 0,
-            counterOrange: 0
+            counterOrange: 0,
+            disabled: false
         };
+
+        this.updateBlue = this.updateBlue.bind(this);
+        this.updateOrange = this.updateOrange.bind(this);
     }
 
     componentDidMount() {
-        $("body").addClass("blank");
+        const $body = $("body");
+        $body.addClass("blank");
+
+        // Schnee Standard deaktiviert - mit ?snow=true kann Schnee aktiviert werden
+        let search = searchToObject(this.props.location.search);
+        if (typeof search.snow === "undefined" || search.snow === "false") {
+            $body.addClass("no-snow");
+        }
     }
 
     componentWillUnmount() {
         $("body").removeClass("blank");
     }
 
+    updateBlue() {
+        let counterBlue = this.state.counterBlue+1,
+            disabled = this.state.disabled;
+        if (counterBlue >= 2) {
+            disabled = true;
+        }
+        this.setState({
+            counterBlue: counterBlue,
+            disabled: disabled
+        });
+    }
+
+    updateOrange() {
+        let counterOrange = this.state.counterOrange+1,
+            disabled = this.state.disabled;
+        if (counterOrange >= 2) {
+            disabled = true;
+        }
+        this.setState({
+            counterOrange: counterOrange,
+            disabled: disabled
+        });
+    }
+
     render() {
         let imgSrc = IMG_Blank;
         let winnerImgSrc = null;
-        let { counterBlue, counterOrange } = this.state;
+        let { counterBlue, counterOrange, disabled } = this.state;
         if (counterBlue === 1 && counterOrange === 0) {
             imgSrc = b1o0;
         } else if (counterBlue === 2 && counterOrange === 0) {
@@ -60,11 +97,9 @@ export default class RocketLeagueOverlay extends React.PureComponent {
             <div id="rl-overlay">
                 <img ref="winnerImg" src={winnerImgSrc} alt="" />
                 <img ref="img" src={imgSrc} alt="" />
-                <button className="blue-1" onClick={() => { this.setState({ counterBlue: 1 }); }}>Blau 1</button>
-                <button className="blue-2" onClick={() => { this.setState({ counterBlue: 2 }); }}>Blau 2</button>
-                <button className="orange-1" onClick={() => { this.setState({ counterOrange: 1 }); }}>Orange 1</button>
-                <button className="orange-2" onClick={() => { this.setState({ counterOrange: 2 }); }}>Orange 2</button>
-                <button className="reset" onClick={() => { this.setState({ counterBlue: 0, counterOrange: 0 }); }}>Reset</button>
+                <button className="blue" onClick={this.updateBlue} disabled={disabled}>Blau</button>
+                <button className="orange" onClick={this.updateOrange} disabled={disabled}>Orange</button>
+                <button className="reset" onClick={() => { this.setState({ counterBlue: 0, counterOrange: 0, disabled: false }); }}>Reset</button>
             </div>
         );
     }
