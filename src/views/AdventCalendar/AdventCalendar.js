@@ -38,19 +38,19 @@ class AdventCalendar extends React.PureComponent {
                         <div className="cube" data-bg-color="#0c283e" data-title="Project CARS 2"></div>
                         <div className="cube" data-active data-bg-color="#e31d3c" data-title="Metal Gear Solid V"></div>
                         <div className="cube" data-active data-bg-color="#081a29" data-title="The Dwarves"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="ab dem 13.12 verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="ab dem 13.12 verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="bald verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="bald verfügbar"></div>
+                        <div className="cube" data-active data-bg-color="#9e1d38" data-title="Cities Skylines"></div>
+                        <div className="cube" data-active data-bg-color="#0c283e" data-title="Darksiders 1+2"></div>
+                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="Am 14.12. verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="Am 15.12. verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="Am 16.12. verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="Am 17.12. verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="Am 18.12. verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="Am 19.12. verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="Am 20.12. verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="Am 21.12. verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="Am 22.12. verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="Am 23.12. verfügbar"></div>
+                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="Am 24.12. verfügbar"></div>
                     </div>
                     <div className="content wrapper">
                         <div className="content__block">
@@ -109,18 +109,14 @@ class AdventCalendar extends React.PureComponent {
                             <p className="content__meta">Gewinner - Atliris</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 12</h3>
-                            <p className="content__description">An attitude to life which seeks fulfilment in the
-                                single-minded pursuit of wealth - in short, materialism - does not fit into this world,
-                                because it contains within itself no limiting principle, while the environment in which
-                                it is placed is strictly limited.</p>
-                            <p className="content__meta">Ernst F. Schumacher</p>
+                            <h3 className="content__title">Cities Skylines</h3>
+                            <p className="content__description">Cities: Skylines ist die moderne Version der klassischen Städtebausimulation. Mit neuen Gameplay-Elementen stellt das Spiel Sie vor den Nervenkitzel und die Herausforderung, eine echte Stadt zu errichten und am Laufen zu halten, während es zugleich die bekannte Städtebau-Erfahrung </p>
+                            <p className="content__meta">Gewinner - Wird neu verlost!</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 13</h3>
-                            <p className="content__description">To have so little, and it of so little value, was to be
-                                quaintly free.</p>
-                            <p className="content__meta">Wallace Stegner</p>
+                            <h3 className="content__title">Darksiders Franchise - <p>Pack</p></h3>
+                            <p className="content__description">Krieg – der erste Reiter der Apokalypse – wurde von den Mächten des Bösen betrogen. Nun wird ihm vorgeworfen, das Ende der Welt vorzeitig ausgelöst zu haben, indem er das heilige Gesetz von Himmel und Hölle gebrochen hat.</p>
+                            <p className="content__meta">Gewinner - Marieeeeee</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Tag 14</h3>
