@@ -40,9 +40,9 @@ class AdventCalendar extends React.PureComponent {
                         <div className="cube" data-active data-bg-color="#081a29" data-title="The Dwarves"></div>
                         <div className="cube" data-active data-bg-color="#9e1d38" data-title="Cities Skylines"></div>
                         <div className="cube" data-active data-bg-color="#0c283e" data-title="Darksiders 1+2"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="Am 14.12. verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="Am 15.12. verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="Am 16.12. verfügbar"></div>
+                        <div className="cube" data-active data-bg-color="#e31d3c" data-title="The Escapists"></div>
+                        <div className="cube" data-active data-bg-color="#081a29" data-title="Lego - Star Wars"></div>
+                        <div className="cube" data-active data-bg-color="#9e1d38" data-title="Trackmania 2 Stadium"></div>
                         <div className="cube" data-inactive data-bg-color="#0c283e" data-title="Am 17.12. verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="Am 18.12. verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#081a29" data-title="Am 19.12. verfügbar"></div>
@@ -55,7 +55,7 @@ class AdventCalendar extends React.PureComponent {
                     <div className="content wrapper">
                         <div className="content__block">
                             <h3 className="content__title">The Escapists</h3>
-                            <p className="content__description">„The Escapists“ bietet die Gelegenheit, einen heiteren Einblick in das alltägliche Gefängnisleben zu erhalten. Hauptziel aller Häftlinge ist natürlich die Flucht!</p>
+                            <p className="content__description">The Escapists“ bietet die Gelegenheit, einen heiteren Einblick in das alltägliche Gefängnisleben zu erhalten. Hauptziel aller Häftlinge ist natürlich die Flucht!</p>
                             <p className="content__meta">Gewinner - Justendo</p>
                         </div>
                         <div className="content__block">
@@ -119,23 +119,19 @@ class AdventCalendar extends React.PureComponent {
                             <p className="content__meta">Gewinner - Marieeeeee</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 14</h3>
-                            <p className="content__description">I've always felt that your belongings have never been on
-                                a level with you.</p>
-                            <p className="content__meta">George Eliot</p>
+                            <h3 className="content__title">The Escapists</h3>
+                            <p className="content__description">The Escapists“ bietet die Gelegenheit, einen heiteren Einblick in das alltägliche Gefängnisleben zu erhalten. Hauptziel aller Häftlinge ist natürlich die Flucht!</p>
+                            <p className="content__meta">Gewinner - Bl4ck3nd</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 15</h3>
-                            <p className="content__description">We all need new ideas, images, and experiences far more
-                                than we need new stoves or cars or computers.</p>
-                            <p className="content__meta">Bill Holm</p>
+                            <h3 className="content__title">Lego - Star Wars</h3>
+                            <p className="content__description">Das beste LEGO®-Videospiel-Franchise kehrt triumphal zurück – mit einer witzigen Reise, die auf dem Blockbuster basiert. Das Spiel bietet zudem brandneue Story-Elemente aus dem Star-Wars-Universum aus der Zeit zwischen Star Wars: Die Rückkehr der Jedi-Ritter und Star Wars: Das Imperium schlägt zurück</p>
+                            <p className="content__meta">Gewinner - Malachanis</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 16</h3>
-                            <p className="content__description">We are being called upon to act against a prevailing
-                                culture, to undermine our own entrenched tendency to accumulate and to consume, and to
-                                refuse to define our individuality by our presumed ability to do whatever we want.</p>
-                            <p className="content__meta">Lyanda Lynn Haupt</p>
+                            <h3 className="content__title">Trackmania ² Stadium</h3>
+                            <p className="content__description">TrackMania2 Stadium markiert das Comeback des von Millionen Spielern geliebten „Stadion“-Settings aus TrackMania Nations Forever. Dieses Mal als Teil der ManiaPlanet-Umgebung, die einen verbesserten Service rund ums Spiel, hochwertige Grafik und einen mächtigen Editor bietet.</p>
+                            <p className="content__meta">Gewinner - Showdown</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Tag 17</h3>
