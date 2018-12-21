@@ -43,10 +43,10 @@ class AdventCalendar extends React.PureComponent {
                         <div className="cube" data-active data-bg-color="#e31d3c" data-title="The Escapists"></div>
                         <div className="cube" data-active data-bg-color="#081a29" data-title="Lego - Star Wars"></div>
                         <div className="cube" data-active data-bg-color="#9e1d38" data-title="Trackmania 2 Stadium"></div>
-                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="Am 17.12. verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="Am 18.12. verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="Am 19.12. verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="Am 20.12. verfügbar"></div>
+                        <div className="cube" data-active data-bg-color="#0c283e" data-title="The Evil Within"></div>
+                        <div className="cube" data-active data-bg-color="#e31d3c" data-title="Tomb Raider"></div>
+                        <div className="cube" data-active data-bg-color="#081a29" data-title="Borderlands"></div>
+                        <div className="cube" data-active data-bg-color="#9e1d38" data-title="LEGO - Marvel Heroes 2"></div>
                         <div className="cube" data-inactive data-bg-color="#0c283e" data-title="Am 21.12. verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="Am 22.12. verfügbar"></div>
                         <div className="cube" data-inactive data-bg-color="#081a29" data-title="Am 23.12. verfügbar"></div>
@@ -134,31 +134,24 @@ class AdventCalendar extends React.PureComponent {
                             <p className="content__meta">Gewinner - Showdown</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 17</h3>
-                            <p className="content__description">The way of the consumerist culture is to spend so much
-                                energy chasing happiness that it has none left to be happy.</p>
-                            <p className="content__meta">Criss Jami</p>
+                            <h3 className="content__title">The Evil Within</h3>
+                            <p className="content__description">The Evil Within ist das neue Projekt aus Shinji Mikami’s Edelschmiede Tango Gameworks. Shinji Mikami ist der Mastermind zahlreicher Klassiker und Erfinder der erfolgreichen Resident Evil-Serie. In bester Survival Horror Tradition führt Sie die Geschichte in eine verstörende Welt die Ihnen den Atem stocken lässt, gespickt mit hinterhältigen Fallen und abscheulichen Vorrichtungen. Im Kampf gegen bestialische Kreaturen, erleben Sie das pure Grauen.</p>
+                            <p className="content__meta">Gewinner - Alice</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 18</h3>
-                            <p className="content__description">Advertising has us chasing cars and clothes, working
-                                jobs we hate so we can buy shit we don't need.</p>
-                            <p className="content__meta">Chuck Palahniuk</p>
+                            <h3 className="content__title">Tomb Raider</h3>
+                            <p className="content__description">Tomb Raider erzählt die aufregende Geschichte von Lara Croft und ihrem Aufstieg zur knallharten Überlebenskünstlerin.</p>
+                            <p className="content__meta">Gewinner - Fennek112</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 19</h3>
-                            <p className="content__description">Our economy is based on spending billions to persuade
-                                people that happiness is buying things, and then insisting that the only way to have a
-                                viable economy is to make things for people to buy so they’ll have jobs and get enough
-                                money to buy things.</p>
-                            <p className="content__meta">Philip Slater</p>
+                            <h3 className="content__title">Borderlands</h3>
+                            <p className="content__description">Lock, Load, & Face the MadnessBereiten Sie sich auf schier unfassbaren Wahnsinn vor! Spielen Sie als einer von vier schießfreudigen Söldnern und erledigen Sie alles, was Ihnen im Weg steht!Mit fesselnder Action bietet dieses FPS-Spiel ein riesiges Waffenarsenal, RPG-Elemente und Koop zu viert*.</p>
+                            <p className="content__meta">Gewinner - Private</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 20</h3>
-                            <p className="content__description">The real opposition is that between the ego-bound man,
-                                whose existence is structured by the principle of having, and the free man, who has
-                                overcome his egocentricity.</p>
-                            <p className="content__meta">Erich Fromm</p>
+                            <h3 className="content__title">LEGO - Marvel Heroes 2</h3>
+                            <p className="content__description">Es ist SOWEIT! Begib dich in LEGO® Marvel Super Heroes 2 zusammen mit deinen Lieblingshelden und -schurken aus verschiedenen Zeitaltern und Realitäten in einem brandneuen, originellen Abenteuer auf die Jagd nach dem zeitreisenden Kang dem Eroberer!</p>
+                            <p className="content__meta">Gewinner - Typhonia</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Tag 21</h3>
