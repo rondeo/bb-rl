@@ -1,4 +1,5 @@
 import React from "react";
+import {connect} from "react-redux";
 import DateTime from "react-datetime";
 import Helmet from "react-helmet";
 import $ from "jquery";
@@ -12,7 +13,7 @@ import API from "./../../utils/API";
 import "react-datetime/css/react-datetime.css";
 import "./MyProfile.css";
 
-export default class MyProfile extends React.PureComponent {
+class MyProfile extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -382,3 +383,9 @@ export default class MyProfile extends React.PureComponent {
         )
     }
 }
+function mapStateToProps(state, props) {
+    return {
+        user: state.application.user
+    };
+}
+export default connect(mapStateToProps)(MyProfile);

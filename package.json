@@ -46,7 +46,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "startLocalApi": "set REACT_APP_API=local&&react-scripts start",
+    "startLocalProdApi": "set REACT_APP_API=local_prod&&react-scripts start",
+    "startLocalDevApi": "set REACT_APP_API=local&&react-scripts start",
     "startDevApi": "set REACT_APP_API=dev&&react-scripts start",
     "start-https": "set HTTPS=true&&react-scripts start",
     "startExpress": "node express",

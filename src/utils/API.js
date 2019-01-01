@@ -35,6 +35,8 @@ export default class API {
                 url = CONSTANTS.API_ROUTE_LOCAL + url;
             } else if (process.env.REACT_APP_API === "dev") {
                 url = CONSTANTS.API_ROUTE_DEV + url;
+            } else if (process.env.REACT_APP_API === "local_prod") {
+                url = CONSTANTS.API_ROUTE_LOCAL_PROD + url;
             } else {
                 url = CONSTANTS.API_ROUTE + url;
             }
@@ -67,18 +69,31 @@ export default class API {
             .then(json => {
                 if (json.error) {
                     console.error("Status: " + json.status + ", Error: " + json.error + ", Message: " + json.message);
-                    dfr.reject(json);
+                    dfr.reject(this._parseError(json));
                 }
                 dfr.resolve(json);
             })
             .catch(error => {
                 console.error("Unexpected Error in API", error);
-                dfr.reject({error: error});
+                dfr.reject({error: this._parseError(error)});
             });
         return dfr;
     }
 
     _parseJson(response) {
         return includes([204, 409], response.status) ? { status: response.status } : response.json()
+    }
+
+    _parseError(error) {
+        if (error && error.message) {
+            switch (error.message) {
+                default:
+                    return {
+                        message: "Unbekannter Fehler - Bitte kontaktiere einen Admin"
+                    };
+            }
+        } else {
+            return error;
+        }
     }
 }

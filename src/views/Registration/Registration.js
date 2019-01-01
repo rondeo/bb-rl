@@ -34,7 +34,6 @@ class Registration extends React.PureComponent {
         e.preventDefault();
 
         let formData = $(this.refs.form).serializeObject();
-        console.log("submit", this.state.usernameValid, formData);
 
         this.setState({ errors: null });
 
@@ -44,14 +43,10 @@ class Registration extends React.PureComponent {
                 password: formData.password1,
                 username: formData.username
             }).then(response => {
-                console.log(response);
-                if (response.error) {
-                    console.error("Status: " + response.status + ", Error: " + response.error + ", Message: " + response.message);
-                }
                 if (response.id) {
                     let search = searchToObject(this.props.location.search);
                     this.props.dispatch(login(response));
-                    this.props.history.push(search.next || "/");
+                    this.props.history.push(search.next || "/" + this.props.language);
                 }
             });
         } else if (formData.password1 !== formData.password2) {
@@ -112,4 +107,9 @@ class Registration extends React.PureComponent {
         );
     }
 }
-export default connect()(Registration);
+function mapStateToProps(state, props) {
+    return {
+        language: state.application.language
+    };
+}
+export default connect(mapStateToProps)(Registration);

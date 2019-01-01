@@ -21,7 +21,7 @@ export default function requireAuthentication(ChildComponent, role = null) {
         }
     }
     function mapStateToProps(state) {
-        return { user: state.user };
+        return { user: state.application.user };
     }
     return connect(mapStateToProps)(injectIntl(AuthComponent));
 }

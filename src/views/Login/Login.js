@@ -15,6 +15,10 @@ class Login extends React.PureComponent {
     constructor(props) {
         super(props);
 
+        this.state = {
+            error: null
+        };
+
         this.onSubmit = this.onSubmit.bind(this);
     }
 
@@ -32,12 +36,11 @@ class Login extends React.PureComponent {
         API.getInstance()._fetch("/user/login", "GET", null, null, {
             "Authorization": "Basic " + btoa(formData.username + ":" + formData.password)
         }).then(json => {
-            if (json.error) {
-                console.error("Status: " + json.status + ", Error: " + json.error + ", Message: " + json.message);
-            }
             let search = searchToObject(this.props.location.search);
             this.props.dispatch(login($.extend(json, {password: formData.password})));
-            this.props.history.push(search.next || "/de");
+            this.props.history.push(search.next || "/" + this.props.language);
+        }).catch(error => {
+            this.setState({ error: error });
         });
     }
 
@@ -51,6 +54,14 @@ class Login extends React.PureComponent {
                 </div>
             </div>
         ) : null;
+    }
+
+    renderErrors() {
+        let error = this.state.error;
+        if (error !== null && error.message) {
+            return <div className="alert alert-danger">{error.message}</div>;
+        }
+        return null;
     }
 
     render() {
@@ -75,6 +86,7 @@ class Login extends React.PureComponent {
                                     <input type="password" className="form-control" id="password" name="password" placeholder="Passwort" required/>
                                 </div>
                                 <button type="submit" className="btn white">Einloggen</button>
+                                {this.renderErrors()}
                             </form>
                         </div>
                     </div>
@@ -83,5 +95,9 @@ class Login extends React.PureComponent {
         );
     }
 }
-
-export default connect()(Login);
+function mapStateToProps(state, props) {
+    return {
+        language: state.application.language
+    };
+}
+export default connect(mapStateToProps)(Login);
