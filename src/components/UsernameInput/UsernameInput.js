@@ -55,7 +55,7 @@ UsernameInput.PropTypes = {
 };
 function mapStateToProps(state, props) {
     return {
-        user: state.user
+        user: state.application.user
     };
 }
 export default connect(mapStateToProps)(UsernameInput);
