@@ -47,10 +47,10 @@ class AdventCalendar extends React.PureComponent {
                         <div className="cube" data-active data-bg-color="#e31d3c" data-title="Tomb Raider"></div>
                         <div className="cube" data-active data-bg-color="#081a29" data-title="Borderlands"></div>
                         <div className="cube" data-active data-bg-color="#9e1d38" data-title="LEGO - Marvel Heroes 2"></div>
-                        <div className="cube" data-inactive data-bg-color="#0c283e" data-title="Am 21.12. verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#e31d3c" data-title="Am 22.12. verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="Am 23.12. verfügbar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="Am 24.12. verfügbar"></div>
+                        <div className="cube" data-active data-bg-color="#0c283e" data-title="Cities Skyline"></div>
+                        <div className="cube" data-active data-bg-color="#e31d3c" data-title="Mega Man Collection"></div>
+                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="Rocket League Turnier Januar"></div>
+                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="Rocket League Turnier Januar"></div>
                     </div>
                     <div className="content wrapper">
                         <div className="content__block">
@@ -154,14 +154,15 @@ class AdventCalendar extends React.PureComponent {
                             <p className="content__meta">Gewinner - Typhonia</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 21</h3>
-                            <p className="content__description">Happy slaves are the bitterest enemies of freedom.</p>
-                            <p className="content__meta">Marie von Ebner-Eschenbach</p>
+                            <h3 className="content__title">Cities Skylines</h3>
+                            <p className="content__description">Cities: Skylines ist die moderne Version der klassischen Städtebausimulation. Mit neuen Gameplay-Elementen stellt das Spiel Sie vor den Nervenkitzel und die Herausforderung, eine echte Stadt zu errichten und am Laufen zu halten, während es zugleich die bekannte Städtebau-Erfahrung</p>
+                            <p className="content__meta">Gewinner - </p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 22</h3>
-                            <p className="content__description">Happy slaves are the bitterest enemies of freedom.</p>
-                            <p className="content__meta">Marie von Ebner-Eschenbach</p>
+                            <h3 className="content__title">Mega Man Collection</h3>
+                            <p className="content__description">Die Mega Man Legacy Collection feiert die 8-bit-Geschichte von Capcoms ikonischem Blauen Bomber. Die Legacy Collection enthält Neuauflagen der originalen sechs Mega-Man-Spiele und wird langjährige Fans daran erinnern und Neueinsteigern zeigen, was Mega Man zu einer so beliebten und ikonischen Figur gemacht hat. Die Mega Man Legacy Collection enthält alle sechs Spiele und noch vieles mehr.
+                            </p>
+                            <p className="content__meta">Gewinner - Justendo</p>
                         </div>
                         <div className="content__block">
                             <h3 className="content__title">Tag 23</h3>
