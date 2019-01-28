@@ -49,8 +49,8 @@ class AdventCalendar extends React.PureComponent {
                         <div className="cube" data-active data-bg-color="#9e1d38" data-title="LEGO - Marvel Heroes 2"></div>
                         <div className="cube" data-active data-bg-color="#0c283e" data-title="Cities Skyline"></div>
                         <div className="cube" data-active data-bg-color="#e31d3c" data-title="Mega Man Collection"></div>
-                        <div className="cube" data-inactive data-bg-color="#081a29" data-title="Rocket League Turnier Januar"></div>
-                        <div className="cube" data-inactive data-bg-color="#9e1d38" data-title="Rocket League Turnier Januar"></div>
+                        <div className="cube" data-active data-bg-color="#081a29" data-title="Shadow of the TombRaider"></div>
+                        <div className="cube" data-active data-bg-color="#9e1d38" data-title="COD Black Ops 4"></div>
                     </div>
                     <div className="content wrapper">
                         <div className="content__block">
@@ -165,14 +165,14 @@ class AdventCalendar extends React.PureComponent {
                             <p className="content__meta">Gewinner - Justendo</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 23</h3>
-                            <p className="content__description">Happy slaves are the bitterest enemies of freedom.</p>
-                            <p className="content__meta">Marie von Ebner-Eschenbach</p>
+                            <h3 className="content__title">Shadow of the TombRaider</h3>
+                            <p className="content__description">Lara Croft hat nur wenig Zeit, um die Welt vor einer Maya-Apokalypse zu retten. Dabei erfüllt sich ihr Schicksal, und sie wird zum Tomb Raider.</p>
+                            <p className="content__meta">Gewinner - Trippno</p>
                         </div>
                         <div className="content__block">
-                            <h3 className="content__title">Tag 24</h3>
-                            <p className="content__description">Happy slaves are the bitterest enemies of freedom.</p>
-                            <p className="content__meta">Marie von Ebner-Eschenbach</p>
+                            <h3 className="content__title">Call of Duty Black Ops 4</h3>
+                            <p className="content__description">Call of Duty®: Black Ops 4 bietet harte, realistische Mehrspieler-Kämpfe, das größte Zombies-Paket aller Zeiten mit drei vollwertigen Untoten-Abenteuern und Blackout, wo das Black Ops-Universum in einem gewaltigen Battle-Royale-Erlebnis zum Leben erwacht. Black Ops 4 wird das wohl stabilste, ausgefeilteste und modifizierbarste Call of Duty® für PC aller Zeiten werden.</p>
+                            <p className="content__meta">Gewinner - Riptrg</p>
                         </div>
                         <div className="content__number">0</div>
                         <button className="btn white btn-back">&crarr;</button>
