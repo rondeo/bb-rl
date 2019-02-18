@@ -123,11 +123,11 @@ class App extends React.PureComponent {
                     <div id="app">
                         <Helmet htmlAttributes={{"lang": locale}}/>
                         <Header/>
-                        <SnowStorm
-                            excludeMobile={false}
-                            flakesMax={256}
-                            flakesMaxActive={128}
-                        />
+                        {/*<SnowStorm*/}
+                            {/*excludeMobile={false}*/}
+                            {/*flakesMax={256}*/}
+                            {/*flakesMaxActive={128}*/}
+                        {/*/>*/}
                         <main>
                             <Switch>
                                 <Route path={messages["route.home"]} component={Home} exact/>
