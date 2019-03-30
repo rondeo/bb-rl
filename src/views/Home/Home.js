@@ -28,6 +28,7 @@ export class Home extends PureComponent {
         this.state = {
             liveBB: false,
             liveBP: false,
+            showRegistrationBtn: true,
             Twitch: null
         };
     }
@@ -213,9 +214,9 @@ export class Home extends PureComponent {
                                 <div className="inner">
                                     {liveButton}
                                     {img}
-                                    <Counter endDate="March 3, 2019 16:15:00" />
+                                    <Counter endDate="March 3, 2019 15:15:00" endCallback={() => { console.log("end");this.setState({showRegistrationBtn: false}) }} />
                                     <div className="links">
-                                        <Link messageId="route.tournamentRegistration" params={{teams: "2vs2"}} className="btn primary">{formatMessage(messages.signUpNow)}</Link>
+                                        {this.state.showRegistrationBtn ? <Link messageId="route.tournamentRegistration" params={{teams: "2vs2"}} className="btn primary">{formatMessage(messages.signUpNow)}</Link> : null}
                                         {/*<Link messageId="route.adventCalendar" className="btn primary">{formatMessage(messages.adventCalendar)}</Link>*/}
                                         <Link messageId="route.schedule" className="btn primary">{formatMessage(messages.streamSchedule)}</Link>
                                         <a href="https://discord.gg/gke2aYp" className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</a>
