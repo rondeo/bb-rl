@@ -1,3 +1,6 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 @import "variables";
 
 #app {
@@ -52,6 +55,20 @@ body {
   }
 }
 
+hr {
+  width: 100%;
+  height: 2px;
+}
+
+h3 {
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+
+.highlighted-text {
+  color: $highlightColor;
+}
+
 // Cookie consent
 .cc-window.cc-floating {
   max-width: none;
@@ -62,16 +79,6 @@ body {
     bottom: 1em;
     left: 1em;
   }
-}
-
-hr {
-  width: 100%;
-  height: 2px;
-}
-
-h3 {
-  margin-top: 25px;
-  margin-bottom: 45px;
 }
 
 /**
@@ -426,4 +433,37 @@ img {
 
 .rde-top-bar-height {
   display: none;
+}
+
+/**
+ * Slick Slider
+ */
+
+$slickDotsSize: 30px;
+.slick-slider.default {
+  .slick-dots {
+    bottom: 25px;
+
+    li, button {
+      width: $slickDotsSize;
+      height: $slickDotsSize;
+
+      &.slick-active, &:hover {
+        button:before {
+          color: $highlightColor;
+        }
+      }
+
+      &:before {
+        width: $slickDotsSize;
+        height: $slickDotsSize;
+        line-height: $slickDotsSize;
+        font-size: 20px;
+        color: #fff;
+        text-shadow: 0 0 10px #000;
+        opacity: 1;
+        transition: .3s color;
+      }
+    }
+  }
 }

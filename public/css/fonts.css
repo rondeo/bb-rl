@@ -48,3 +48,16 @@
     font-weight: bold;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Riffic';
+    src: url('../font/riffic-free/RifficFree-Bold.ttf');
+    src: local('Riffic'),
+    url('./../font/riffic-free/RifficFree-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./../font/riffic-free/RifficFree-Bold.woff2') format('woff2'),
+    url('./../font/riffic-free/RifficFree-Bold.woff') format('woff'),
+    url('./../font/riffic-free/RifficFree-Bold.ttf') format('ttf'),
+    url('./../font/riffic-free/RifficFree-Bold.svg#RifficFree-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}

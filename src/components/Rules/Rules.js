@@ -18,7 +18,7 @@ class Rules extends React.PureComponent {
             <div ref="rules" className="section regeln">
                 <div className="container">
                     <div className="inner" id="rules-container">
-                        <h2>{formatMessage(messages.ruleHeader)}</h2>
+                        <h2><FormattedHTMLMessage {...messages.tournamentRules}/></h2>
 
                         <p className="text-uppercase text-muted">{formatMessage(messages.ruleNotice)}</p>
 

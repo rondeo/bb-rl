@@ -9,6 +9,10 @@ export default defineMessages({
         id: 'app.aboutBulls',
         defaultMessage: 'Über die Bulls'
     },
+    aboutBullsHtmlFormatted: {
+        id: 'app.aboutBullsHtmlFormatted',
+        defaultMessage: 'Über die <span class="highlighted-text">Bulls</span>'
+    },
     aboutContent1: {
         id: 'app.aboutContent1',
         defaultMessage: 'Die Battleground Bulls bestehen aus einem kleinen familiären Haufen Zweibeiner,\n' +
@@ -599,7 +603,7 @@ export default defineMessages({
         defaultMessage: 'Rang 1 *'
     },
     tournamentRegistrationRank2: {
-        id: 'app.tournnamentRegistrationRank2',
+        id: 'app.tournamentRegistrationRank2',
         defaultMessage: 'Rang 2 *'
     },
     tournamentRegistrationRank3: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {injectIntl} from "react-intl";
+import {FormattedHTMLMessage, injectIntl} from "react-intl";
 
 import messages from "../../i18n/messages";
 import SquareCard from '../SquareCard/SquareCard';
@@ -15,7 +15,7 @@ class About extends React.PureComponent {
             <div className="section bulls">
                 <div className="container">
                     <div className="inner">
-                        <h2>Über die Bulls</h2>
+                        <h2><FormattedHTMLMessage {...messages.aboutBullsHtmlFormatted} /></h2>
                         <div className="row">
                             <div className="col-12 col-md-6">
                                 <p>
