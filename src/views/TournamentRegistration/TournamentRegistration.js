@@ -234,7 +234,7 @@ class TournamentRegistration extends React.PureComponent {
                             </div>
                         <div className="form-group">
                             <label htmlFor="inputSuccessfulCheckIn">{formatMessage(messages.tournamentRegistrationSignInFeedback)}</label>
-                            <input type="email" name="mail" className="form-control blue" id="inputSuccessfulCheckIn" placeholder="Bsp.: Max.Mustermann@Beispiel.de (Optional)"/>
+                            <input type="email" name="mail" className="form-control blue" id="inputSuccessfulCheckIn" placeholder={formatMessage(messages.contactFormRequestConfirmationMailPlaceholder)}/>
                         </div>
                         <div className="form-group">
                             <label>{formatMessage(messages.tournamentRegistrationRequired)}</label>

@@ -5,24 +5,16 @@
   min-height: inherit;
   padding: 0;
 
+  h2 {
+    text-transform: uppercase;
+    font-family: "Riffic", serif;
+  }
+
   > .fullpage-inner-wrapper {
-    &:not(.live) .section.start {
-      .fp-controlArrow {
-        &.fp-prev {
-          left: -1000px;
-        }
-        &.fp-next {
-          right: -1000px;
-        }
-      }
-    }
     &.live .section.start {
-      .fp-controlArrow {
-        opacity: 1;
-      }
-      .slide.start img {
-        position: relative;
+      .logo-wrapper {
         cursor: pointer;
+        pointer-events: all;
       }
     }
   }
@@ -40,91 +32,61 @@
     }
 
     &.start {
-      background-image: url("./img/Bulls-BG-Start.jpg");
+      $partnerHeight: 140px;
+
+      .placeholder {
+        position: relative;
+        margin-top: $headerHeight;
+        height: calc(100vh - #{$headerHeight} - #{$partnerHeight});
+      }
 
       #twitch-embed-bb, #twitch-embed-bp {
-        position: relative;
-        max-height: 100%;
-        .overlay {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-        }
+        display: none;
+        position: absolute;
+        z-index: 5;
+        height: 100%;
+        width: 100%;
         iframe {
           height: 0;
           max-width: 100%;
+          max-height: 100%;
           box-shadow: 0 0 50px 0 black;
         }
       }
 
-      .fp-controlArrow {
-        opacity: 0;
-        transition: .3s;
-      }
+      .slider {
+        position: relative;
+        margin-top: $headerHeight;
+        height: calc(100vh - #{$headerHeight} - #{$partnerHeight});
 
-      .slide.start {
-        img {
-          display: block;
+        .overlay {
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.3);
+          pointer-events: none;
+        }
+
+        .logo-wrapper {
+          position: absolute;
+          z-index: 2;
           width: 400px;
-          margin: 0 auto 50px;
-        }
-      }
+          height: 405px;
+          top: 50%;
+          left: 50%;
+          margin-top: -250px;
+          margin-left: -200px;
+          pointer-events: none;
 
-      .slide.stream .full-container {
-        width: 100%;
-        height: 100%;
-        padding-top: $headerHeight;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .actions {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          img {
-            width: 30%;
-            margin: 0 25px;
-            cursor: pointer;
-            transition: transform .5s;
-            &:hover {
-              transform: scale(1.3);
-            }
-            &.inactive {
-              filter: grayscale(100%);
-              pointer-events: none;
-            }
-          }
-        }
-      }
-
-      .container {
-        height: 100%;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-
-        .inner {
-          position: relative;
-          margin-top: $headerHeight;
-
-          .btn.back {
-            margin: 25px auto 0;
-          }
-
-          .live {
+          .live-btn {
             position: absolute;
             top: 0;
             right: -115px;
             color: $highlightColor;
             font-size: 1.8em;
             cursor: pointer;
+
             .record {
               display: inline-block;
               border-radius: 100%;
@@ -151,28 +113,122 @@
               -webkit-box-shadow: 0 0 0 0 rgba(227, 29, 60, 0);
             }
           }
+        }
+
+        .slide-content {
+          width: 100%;
+          height: calc(100vh - #{$headerHeight} - #{$partnerHeight});
+
+          .slide-image {
+            width: 100%;
+            height: 100%;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+        }
+
+        .slick-dots {
+          bottom: 50px;
+        }
+      }
+
+      .partner {
+        height: $partnerHeight;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: $backgroundBlue;
+
+        .image-wrapper {
+          position: relative;
+          width: 270px;
+          height: calc(#{$partnerHeight} - 40px);
+
+          &:hover {
+            img:first-child {
+              opacity: 0;
+            }
+            img.highlight {
+              opacity: 1;
+            }
+          }
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity .3s;
+          }
+
+          .highlight {
+            opacity: 0;
+          }
+        }
+
+        .tournament-info {
+
+          .counter .timer {
+            color: #fff;
+            font-size: 3.2em;
+
+            table {
+              width: 400px;
+              top: 8px;
+
+              td:after {
+                right: 10px;
+              }
+            }
+          }
 
           .links {
-            margin: 25px auto 0;
-            .twitch {
-              min-width: 300px;
+            margin-right: 35px;
+          }
+        }
+      }
+
+      // Brauchen wir noch?
+      .stream .full-container {
+        width: 100%;
+        height: 100%;
+        padding-top: $headerHeight;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .actions {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 30%;
+            margin: 0 25px;
+            cursor: pointer;
+            transition: transform .5s;
+            &:hover {
+              transform: scale(1.3);
             }
-            a {
-              padding: 15px 25px;
-              margin-bottom: 25px;
-              font-size: 1.5em;
-              border-width: 3px;
+            &.inactive {
+              filter: grayscale(100%);
+              pointer-events: none;
             }
           }
         }
       }
     }
+
+
     &.bulls {
       background-image: url("./img/Bulls-BG-Bulls.jpg");
       color: #fff;
 
       h2 {
-        color: $highlightColor;
+        text-align: center;
+        font-size: 3em;
+        margin-bottom: 1em;
       }
 
       .square-card {

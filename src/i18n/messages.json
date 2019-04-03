@@ -5,6 +5,11 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "app.aboutBullsHtmlFormatted",
+    "defaultMessage": "Über die <span class=\"highlighted-text\">Bulls</span>",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "app.aboutContent1",
     "defaultMessage": "Die Battleground Bulls bestehen aus einem kleinen familiären Haufen Zweibeiner,\n                                    die durch eine Idee von Patrick aka m4kar0ny und Malthe aka xPainHunt3r\n                                    zusammengefunden haben. Die Idee bestand darin, einen eigenen Stream Kanal zu\n                                    gründen, um auf neue Interessante und vor allem gleichgesinnte Leute aus\n                                    dem Bereich Gaming zu treffen. Mittlerweile wurde die Idee zu einer kleinen\n                                    Lebensaufgabe.",
     "filepath": "src/i18n/messages.js"
@@ -481,7 +486,7 @@
   },
   {
     "id": "app.ruleHeader",
-    "defaultMessage": "Turnier-Regeln",
+    "defaultMessage": "Turnier-<span class=\"highlighted-text\">Regeln</span>",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -700,7 +705,7 @@
     "filepath": "src/i18n/messages.js"
   },
   {
-    "id": "app.tournnamentRegistrationRank2",
+    "id": "app.tournamentRegistrationRank2",
     "defaultMessage": "Rang 2 *",
     "filepath": "src/i18n/messages.js"
   },
