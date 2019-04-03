@@ -25,9 +25,12 @@ import slideImage3 from "./img/slider/battlefield-v.jpg";
 import slideImage4 from "./img/slider/dark-siders-wallpapers-1920x1080.jpg";
 import slideImage5 from "./img/slider/the-division-2-hd-wallpaper.jpg";
 
-import Partner_MMOGA from './img/partner/Partner_MMOGA.png';
-import Partner_Runtime from './img/partner/Partner_Runtime.png';
-import Partner_Merch from './img/partner/Partner_Merch.png';
+import Partner_MMOGA from './img/partner/MMOGA.png';
+import Partner_MMOGA_Hightlight from './img/partner/MMOGA-Highlight.png';
+import Partner_Runtime from './img/partner/Runtime.png';
+import Partner_Runtime_Hightlight from './img/partner/Runtime-Highlight.png';
+import Partner_Spreadshirt from './img/partner/Spreadshirt.png';
+import Partner_Spreadshirt_Hightlight from './img/partner/Spreadshirt-Highlight.png';
 
 export class Home extends PureComponent {
 
@@ -67,6 +70,15 @@ export class Home extends PureComponent {
             this.resizeTimer = setTimeout(() => {
                 this.resizeTwitchPlayer();
             }, 250);
+        });
+
+        $(this.refs.fullpage).find(".partner .image").each(function() {
+            const el = $(this);
+            el.css("background-image", $(this).data("src"));
+            el.on("mouseover", function () {
+                console.log($(this).data("src-hover"))
+                el.css("background-image", $(this).data("src-hover"));
+            });
         });
 
         this.openStream = this.openStream.bind(this);
@@ -214,8 +226,14 @@ export class Home extends PureComponent {
                         </div>
 
                         <div className="container-fluid partner">
-                            <img src={Partner_MMOGA}/>
-                            <img src={Partner_Runtime}/>
+                            <a className="image-wrapper" href="https://www.mmoga.de/?ref=29428" target="_blank" rel="noopener noreferrer">
+                                <img src={Partner_MMOGA} />
+                                <img className="highlight" src={Partner_MMOGA_Hightlight} />
+                            </a>
+                            <a className="image-wrapper" href="https://runtime.idevaffiliate.com/780-1-3-2.html" target="_blank" rel="noopener noreferrer">
+                                <img src={Partner_Runtime} />
+                                <img className="highlight" src={Partner_Runtime_Hightlight} />
+                            </a>
                             <div className={classnames("tournament-info", {"d-none": !this.state.showTournamentInfo})}>
                                 <Counter endDate="March 3, 2019 15:15:00" endCallback={() => { this.setState({showRegistrationBtn: false, showTournamentInfo: false}) }} />
                                 <div className="links">
@@ -225,8 +243,10 @@ export class Home extends PureComponent {
                                     {/*<a href="https://discord.gg/gke2aYp" className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</a>*/}
                                 </div>
                             </div>
-                            <img src={Partner_Merch}/>
-                            <img src={Partner_Merch}/>
+                            <a className="image-wrapper" href="https://shop.spreadshirt.de/Battleground-Bulls/" target="_blank" rel="noopener noreferrer">
+                                <img src={Partner_Spreadshirt} />
+                                <img className="highlight" src={Partner_Spreadshirt_Hightlight} />
+                            </a>
                         </div>
                     </div>
 

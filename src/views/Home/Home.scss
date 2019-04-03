@@ -140,9 +140,32 @@
         justify-content: space-evenly;
         background-color: $backgroundBlue;
 
-        img {
-          width: auto;
+        .image-wrapper {
+          position: relative;
+          width: 270px;
           height: calc(#{$partnerHeight} - 40px);
+
+          &:hover {
+            img:first-child {
+              opacity: 0;
+            }
+            img.highlight {
+              opacity: 1;
+            }
+          }
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity .3s;
+          }
+
+          .highlight {
+            opacity: 0;
+          }
         }
 
         .tournament-info {

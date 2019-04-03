@@ -135,6 +135,7 @@
   "route.calendar": "/en/calendar",
   "route.commands": "/en/command",
   "route.contact": "/en/contact",
+  "route.gaOptOut": "/en/opt-out",
   "route.home": "/en",
   "route.imprint": "/en/imprint",
   "route.lang.de": "/de",

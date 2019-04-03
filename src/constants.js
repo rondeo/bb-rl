@@ -7,6 +7,8 @@ export const API_ROUTE_LOCAL_PROD = "http://localhost:8000";
 
 export const ERROR_PASSWORD_NOT_EQUAL = "password_not_equal";
 
+export const COOKIE_COOKIECONSENT_STATUS = "cookieconsent_status";
+export const COOKIE_OPT_OUT = "ga_opt_out";
 
 // Actions
 export const APPLICATION_LOGIN = "APPLICATION_LOGIN";

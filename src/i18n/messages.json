@@ -425,6 +425,11 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "route.gaOptOut",
+    "defaultMessage": "/de/ga-opt-out",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "route.lang.de",
     "defaultMessage": "/de",
     "filepath": "src/i18n/messages.js"

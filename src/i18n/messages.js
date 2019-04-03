@@ -357,6 +357,10 @@ export default defineMessages({
         id: 'route.adventCalendar',
         defaultMessage: '/de/adventskalender'
     },
+    'route.gaOptOut': {
+        id: 'route.gaOptOut',
+        defaultMessage: '/de/opt-out'
+    },
     'route.lang.de': {
         id: 'route.lang.de',
         defaultMessage: '/de'
