@@ -131,6 +131,7 @@
   "route.calendar": "/de/kalender",
   "route.commands": "/de/befehle",
   "route.contact": "/de/kontakt",
+  "route.gaOptOut": "/de/opt-out",
   "route.home": "/de",
   "route.imprint": "/de/impressum",
   "route.lang.de": "/de",

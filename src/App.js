@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {Helmet} from "react-helmet";
 import moment from "moment";
 import SnowStorm from "react-snowstorm";
+import ReactGA from 'react-ga';
 
 // i18n - Translations
 import {IntlProvider, addLocaleData} from "react-intl";
@@ -36,8 +37,10 @@ import Commands from "./views/Commands/Commands";
 // import NewsDetail from "./views/NewsDetail/NewsDetail";
 import Scum from "./views/Scum/Scum";
 import AdventCalendar from "./views/AdventCalendar/AdventCalendar";
+import GAOptOut from "./views/GAOptOut/GAOptOut";
 
 import {setLanguage} from "./actions/ApplicationActions";
+import {COOKIE_COOKIECONSENT_STATUS, COOKIE_OPT_OUT} from "./constants";
 
 import requireAuthentication from "./utils/AuthComponent";
 
@@ -69,6 +72,9 @@ class App extends React.PureComponent {
     }
 
     componentDidMount() {
+        this.onCookieStatusChange = this.onCookieStatusChange.bind(this);
+        this.initReactGA = this.initReactGA.bind(this);
+
         const messages = translations[this.getLocaleFromUrl()];
         window.cookieconsent.initialise({
             "palette": {
@@ -93,8 +99,11 @@ class App extends React.PureComponent {
                 "policy": messages["cookie.policy"],
                 "href": messages["route.privacy"],
                 "target": "_blank"
-            }
+            },
+            onStatusChange: this.onCookieStatusChange
         });
+
+        this.initReactGA();
     }
 
     componentWillUpdate(nextProps, nextState) {
@@ -106,12 +115,31 @@ class App extends React.PureComponent {
         }
     }
 
+    buildLocalizedPath(url) {
+        return "/" + this.getLocaleFromUrl() + url;
+    }
+
     getLocaleFromUrl() {
         return window.location.pathname.split("/")[1];
     }
 
-    buildLocalizedPath(url) {
-        return "/" + this.getLocaleFromUrl() + url;
+    initReactGA() {
+        if (document.cookie.indexOf(COOKIE_COOKIECONSENT_STATUS + "=allow") > -1 && document.cookie.indexOf(COOKIE_OPT_OUT +"=true") === -1) {
+            console.log("GA");
+            ReactGA.initialize({
+                trackingId: "UA-137561848-1",
+                debug: true,
+                gaOptions: {
+                    cookieDomain: "none"
+                }
+            });
+            ReactGA.pageview("/");
+        }
+    }
+
+    onCookieStatusChange(status, chosenBefore) {
+        console.log(this,status,chosenBefore);
+        this.initReactGA();
     }
 
     render() {
@@ -155,6 +183,7 @@ class App extends React.PureComponent {
                                 <Route path={messages["route.newsDetail"]} component={NewsDetail} exact/>
                                 */}
                                 <Route path={messages["route.scum"]} component={Scum} exact/>
+                                <Route path={messages["route.gaOptOut"]} component={GAOptOut} exact/>
                                 <Route path={messages["route.adventCalendar"]} component={AdventCalendar} exact/>
                                 <Route component={NotFound} exact/>
                             </Switch>

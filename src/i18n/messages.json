@@ -40,6 +40,11 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "app.adventCalendar",
+    "defaultMessage": "Adventskalender",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "app.bracket",
     "defaultMessage": "Spielplan",
     "filepath": "src/i18n/messages.js"
@@ -407,6 +412,16 @@
   {
     "id": "route.scum",
     "defaultMessage": "/de/scum",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.adventCalendar",
+    "defaultMessage": "/de/adventskalender",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.gaOptOut",
+    "defaultMessage": "/de/ga-opt-out",
     "filepath": "src/i18n/messages.js"
   },
   {
