@@ -40,9 +40,10 @@ import AdventCalendar from "./views/AdventCalendar/AdventCalendar";
 import GAOptOut from "./views/GAOptOut/GAOptOut";
 
 import {setLanguage} from "./actions/ApplicationActions";
-import {COOKIE_COOKIECONSENT_STATUS, COOKIE_OPT_OUT} from "./constants";
+import {GOOGLE_ANALYTICS_TRACKING_ID, COOKIE_COOKIECONSENT_STATUS, COOKIE_OPT_OUT} from "./constants";
 
 import requireAuthentication from "./utils/AuthComponent";
+import withTracker from "./utils/TrackingComponent";
 
 import {DEFAULT_LANG, SUPPORTED_LANG} from "./i18n/supportedLanguages";
 
@@ -124,16 +125,18 @@ class App extends React.PureComponent {
     }
 
     initReactGA() {
-        if (document.cookie.indexOf(COOKIE_COOKIECONSENT_STATUS + "=allow") > -1 && document.cookie.indexOf(COOKIE_OPT_OUT +"=true") === -1) {
-            console.log("GA");
-            ReactGA.initialize({
-                trackingId: "UA-137561848-1",
-                debug: true,
-                gaOptions: {
-                    cookieDomain: "none"
-                }
-            });
-            ReactGA.pageview("/");
+        ReactGA.initialize({
+            trackingId: GOOGLE_ANALYTICS_TRACKING_ID,
+            debug: true,
+            gaOptions: {
+                cookieDomain: "none"
+            }
+        });
+        ReactGA.pageview(document.location.pathname);
+
+        // Anonymize IP
+        if (document.cookie.indexOf(COOKIE_COOKIECONSENT_STATUS + "=deny") > -1 || document.cookie.indexOf(COOKIE_OPT_OUT +"=true") > -1) {
+            ReactGA.set({ anonymizeIp: true });
         }
     }
 
@@ -158,34 +161,34 @@ class App extends React.PureComponent {
                         {/*/>*/}
                         <main>
                             <Switch>
-                                <Route path={messages["route.home"]} component={Home} exact/>
-                                <Route path={messages["route.admin"]} component={requireAuthentication(Admin, "ROLE_ADMIN")} exact/>
-                                <Route path={messages["route.privacy"]} component={Privacy} exact/>
-                                <Route path={messages["route.imprint"]} component={Imprint} exact/>
-                                <Route path={messages["route.login"]} component={Login} exact/>
+                                <Route path={messages["route.home"]} component={withTracker(Home)} exact/>
+                                <Route path={messages["route.admin"]} component={withTracker(requireAuthentication(Admin, "ROLE_ADMIN"))} exact/>
+                                <Route path={messages["route.privacy"]} component={withTracker(Privacy)} exact/>
+                                <Route path={messages["route.imprint"]} component={withTracker(Imprint)} exact/>
+                                <Route path={messages["route.login"]} component={withTracker(Login)} exact/>
                                 {/* Löschen?
                                 <Route path={this.buildLocalizedPath("/new-bits")} component={NewBits} exact/>
                                 <Route path={this.buildLocalizedPath("/new-follower")} component={NewFollower} exact/>
                                 <Route path={this.buildLocalizedPath("/new-sub")} component={NewSub} exact/>
                                 */}
-                                <Route path={messages["route.register"]} component={Registration} exact/>
-                                <Route path={messages["route.rlOverlay"]} component={RocketLeagueOverlay} exact/>
-                                <Route path={messages["route.schedule"]} component={StreamTimes} exact/>
-                                <Route path={messages["route.tournament"]} component={requireAuthentication(TournamentList)} exact/>
-                                <Route path={messages["route.bulls"]} component={Bulls} exact/>
-                                <Route path={messages["route.tournamentRegistration"]} component={TournamentRegistration} exact/>
-                                <Route path={messages["route.contact"]} component={Contact} exact/>
-                                <Route path={messages["route.calendar"]} component={requireAuthentication(Calendar)} exact/>
-                                <Route path={messages["route.myProfile"]} component={requireAuthentication(MyProfile)} exact/>
-                                <Route path={messages["route.commands"]} component={Commands} exact/>
+                                <Route path={messages["route.register"]} component={withTracker(Registration)} exact/>
+                                <Route path={messages["route.rlOverlay"]} component={withTracker(RocketLeagueOverlay)} exact/>
+                                <Route path={messages["route.schedule"]} component={withTracker(StreamTimes)} exact/>
+                                <Route path={messages["route.tournament"]} component={withTracker(requireAuthentication(TournamentList))} exact/>
+                                <Route path={messages["route.bulls"]} component={withTracker(Bulls)} exact/>
+                                <Route path={messages["route.tournamentRegistration"]} component={withTracker(TournamentRegistration)} exact/>
+                                <Route path={messages["route.contact"]} component={withTracker(Contact)} exact/>
+                                <Route path={messages["route.calendar"]} component={withTracker(requireAuthentication(Calendar))} exact/>
+                                <Route path={messages["route.myProfile"]} component={withTracker(requireAuthentication(MyProfile))} exact/>
+                                <Route path={messages["route.commands"]} component={withTracker(Commands)} exact/>
                                 {/*
                                 <Route path={messages["route.news"]} component={News} exact/>
                                 <Route path={messages["route.newsDetail"]} component={NewsDetail} exact/>
                                 */}
-                                <Route path={messages["route.scum"]} component={Scum} exact/>
-                                <Route path={messages["route.gaOptOut"]} component={GAOptOut} exact/>
-                                <Route path={messages["route.adventCalendar"]} component={AdventCalendar} exact/>
-                                <Route component={NotFound} exact/>
+                                {/*<Route path={messages["route.scum"]} component={withTracker(Scum)} exact/>*/}
+                                <Route path={messages["route.gaOptOut"]} component={withTracker(GAOptOut)} exact/>
+                                {/*<Route path={messages["route.adventCalendar"]} component={withTracker(AdventCalendar)} exact/>*/}
+                                <Route component={withTracker(NotFound)} exact/>
                             </Switch>
                         </main>
                         <Footer/>

@@ -42,8 +42,6 @@ export class Home extends PureComponent {
             showTournamentInfo: true,
             Twitch: null
         };
-        this.checkIfTwitchLoaded = this.checkIfTwitchLoaded.bind(this);
-        this.checkIfTwitchLoaded();
     }
 
     componentDidMount() {
@@ -76,12 +74,14 @@ export class Home extends PureComponent {
             const el = $(this);
             el.css("background-image", $(this).data("src"));
             el.on("mouseover", function () {
-                console.log($(this).data("src-hover"))
                 el.css("background-image", $(this).data("src-hover"));
             });
         });
 
         this.openStream = this.openStream.bind(this);
+
+        this.checkIfTwitchLoaded = this.checkIfTwitchLoaded.bind(this);
+        this.checkIfTwitchLoaded();
 
         this.checkBBStreamIsOnline = this.checkBBStreamIsOnline.bind(this);
         this.checkBBStreamIsOnline();

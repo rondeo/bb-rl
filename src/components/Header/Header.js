@@ -23,10 +23,6 @@ class Header extends React.PureComponent {
             active: props.location.pathname + props.location.hash,
             userSidebarOpen: false
         };
-
-        this.hideSidebar = this.hideSidebar.bind(this);
-        this.setUserSidebarWidth = this.setUserSidebarWidth.bind(this);
-        this.toggleUserSidebar = this.toggleUserSidebar.bind(this);
     }
 
     componentWillMount() {
@@ -38,6 +34,10 @@ class Header extends React.PureComponent {
     }
 
     componentDidMount() {
+        this.hideSidebar = this.hideSidebar.bind(this);
+        this.setUserSidebarWidth = this.setUserSidebarWidth.bind(this);
+        this.toggleUserSidebar = this.toggleUserSidebar.bind(this);
+
         $(".nav-item")
             .on("mouseenter", function () {
                 $(this).find("ul.submenu").slideDown(200);
@@ -160,8 +160,9 @@ class Header extends React.PureComponent {
                             <ul className="navbar-nav d-none d-xl-flex socials">
                                 <li className="nav-item"><a className="nav-link" href="https://www.twitch.tv/battleground_bulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitch" /></a></li>
                                 <li className="nav-item"><a className="nav-link" href="https://discord.gg/gke2aYp" target="_blank" rel="noopener noreferrer"><i className="fab fa-discord" /></a></li>
-                                <li className="nav-item"><a className="nav-link" href="https://www.facebook.com/groups/BattlegroundBuLLs/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href="https://instagram.com/BattleBulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram" /></a></li>
                                 <li className="nav-item"><a className="nav-link" href="https://twitter.com/BattleBulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href="https://www.facebook.com/groups/BattlegroundBuLLs/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f" /></a></li>
                                 <li className="nav-item"><a className="nav-link" href="https://www.youtube.com/channel/UCPSSW0COqKjF5nSn-3aYh7w" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube" /></a></li>
                             </ul>
                             <ul ref="navSignIn" className="navbar-nav sign-in">

@@ -504,7 +504,7 @@ export default defineMessages({
     },
     streamScheduleNote: {
         id: 'app.streamScheduleNote',
-        defaultMessage: 'Alle anderen Tage streamen wir spontan.<br/>Änderungen werden im Discord mitgeteilt!'
+        defaultMessage: 'Alle anderen Tage streamen wir spontan.<br/>Die angegebenen Zeiten können variieren.<br/>Änderungen werden im Discord mitgeteilt!'
     },
     signUpNow: {
         id: 'app.signUpNow',

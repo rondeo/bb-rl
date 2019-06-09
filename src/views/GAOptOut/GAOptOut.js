@@ -1,7 +1,10 @@
 import React, {PureComponent} from "react";
 import {Helmet} from "react-helmet";
 
+import ReactGAUtil from "../../utils/ReactGAUtil";
+
 import {COOKIE_OPT_OUT} from "../../constants";
+import ReactGA from "react-ga";
 
 export default class GAOptOut extends PureComponent {
 
@@ -32,11 +35,23 @@ export default class GAOptOut extends PureComponent {
     optOut() {
         this.createCookie(COOKIE_OPT_OUT, true, 365*20);
         this.setState({ optOut: true });
+
+        ReactGAUtil.sendEvent("GA", "Opt-Out", "GA Opt-In-Out");
+
+        this.reloadPage();
     }
 
     optIn() {
         this.createCookie(COOKIE_OPT_OUT, false,365*20);
         this.setState({ optOut: false });
+
+        ReactGAUtil.sendEvent("GA", "Opt-In", "GA Opt-In-Out");
+
+        this.reloadPage();
+    }
+
+    reloadPage() {
+        window.location.reload();
     }
 
     render() {

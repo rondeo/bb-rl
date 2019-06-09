@@ -7,6 +7,8 @@ export const API_ROUTE_LOCAL_PROD = "http://localhost:8000";
 
 export const ERROR_PASSWORD_NOT_EQUAL = "password_not_equal";
 
+export const GOOGLE_ANALYTICS_TRACKING_ID = "UA-137561848-1";
+
 export const COOKIE_COOKIECONSENT_STATUS = "cookieconsent_status";
 export const COOKIE_OPT_OUT = "ga_opt_out";
 
