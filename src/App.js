@@ -125,18 +125,20 @@ class App extends React.PureComponent {
     }
 
     initReactGA() {
-        ReactGA.initialize({
-            trackingId: GOOGLE_ANALYTICS_TRACKING_ID,
-            debug: true,
-            gaOptions: {
-                cookieDomain: "none"
-            }
-        });
-        ReactGA.pageview(document.location.pathname);
+        if (process.env.REACT_APP_DEVELOPMENT !== "true") {
+            ReactGA.initialize({
+                trackingId: GOOGLE_ANALYTICS_TRACKING_ID,
+                debug: true,
+                gaOptions: {
+                    cookieDomain: "none"
+                }
+            });
+            ReactGA.pageview(document.location.pathname);
 
-        // Anonymize IP
-        if (document.cookie.indexOf(COOKIE_COOKIECONSENT_STATUS + "=deny") > -1 || document.cookie.indexOf(COOKIE_OPT_OUT +"=true") > -1) {
-            ReactGA.set({ anonymizeIp: true });
+            // Anonymize IP
+            if (document.cookie.indexOf(COOKIE_COOKIECONSENT_STATUS + "=deny") > -1 || document.cookie.indexOf(COOKIE_OPT_OUT + "=true") > -1) {
+                ReactGA.set({anonymizeIp: true});
+            }
         }
     }
 

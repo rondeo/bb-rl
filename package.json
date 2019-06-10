@@ -32,6 +32,7 @@
     "react-intl-translations-manager": "^5.0.3",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
+    "react-router-sitemap": "^1.2.0",
     "react-scripts": "^1.1.5",
     "react-scrollbar": "^0.5.4",
     "react-slick": "^0.23.2",
@@ -42,13 +43,17 @@
     "steam-login": "^0.1.7"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
     "ftp-deploy": "^1.2.2",
     "gulp": "^3.9.1",
     "gulp-sftp": "^0.1.5",
     "node-sass": "^4.9.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set REACT_APP_DEVELOPMENT=true&&react-scripts start",
     "startLocalProdApi": "set REACT_APP_API=local_prod&&react-scripts start",
     "startLocalDevApi": "set REACT_APP_API=local&&react-scripts start",
     "startDevApi": "set REACT_APP_API=dev&&react-scripts start",
@@ -56,12 +61,13 @@
     "startExpress": "node express",
     "build": "react-scripts build",
     "serve": "serve -s build",
-    "buildAndUpload": "react-scripts build & gulp upload",
-    "buildAndUploadDev": "set REACT_APP_API=dev&&react-scripts build & gulp uploadDev",
+    "buildAndUpload": "npm run sitemap & react-scripts build & gulp upload",
+    "buildAndUploadDev": "set REACT_APP_DEVELOPMENT=true&&set REACT_APP_API=dev&&npm run sitemap & react-scripts build & gulp uploadDev",
     "upload": "gulp upload",
     "uploadDev": "gulp uploadDev",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "sitemap": "babel-node utils/sitemap-generator.js",
     "styles": "node-sass --source-map src src/App.scss src/App.css && node-sass --recursive --include-path ./src/views  --source-map src/views src/views -o src/views && node-sass --recursive --include-path ./src/components --source-map src/components src/components -o src/components",
     "extract:messages": "react-intl-cra src/**/*.{js,jsx} -o src/i18n/messages.json",
     "manage:translations": "node ./src/i18n/translationRunner.js"

@@ -128,7 +128,7 @@
   "cookie.policy": "Cookies? Hier!",
   "language.english": "Englisch",
   "language.german": "Deutsch",
-  "route.admin": "/de",
+  "route.admin": "/de/admin",
   "route.adventCalendar": "/de/adventskalender",
   "route.bulls": "/de/bulls",
   "route.calendar": "/de/kalender",
