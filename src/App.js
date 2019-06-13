@@ -21,9 +21,6 @@ import Registration from "./views/Registration/Registration";
 import NotFound from "./views/NotFound/NotFound";
 import Privacy from "./views/Privacy/Privacy";
 import RocketLeagueOverlay from "./views/RocketLeagueOverlay/RocketLeagueOverlay";
-// import NewFollower from "./views/NewFollower/NewFollower";
-// import NewSub from "./views/NewSub/NewSub";
-// import NewBits from "./views/NewBits/NewBits";
 import StreamTimes from "./views/StreamTimes/StreamTimes";
 import TournamentList from "./views/TournamentList/TournamentList";
 import Admin from "./views/Admin/Admin";
@@ -168,11 +165,6 @@ class App extends React.PureComponent {
                                 <Route path={messages["route.privacy"]} component={withTracker(Privacy)} exact/>
                                 <Route path={messages["route.imprint"]} component={withTracker(Imprint)} exact/>
                                 <Route path={messages["route.login"]} component={withTracker(Login)} exact/>
-                                {/* Löschen?
-                                <Route path={this.buildLocalizedPath("/new-bits")} component={NewBits} exact/>
-                                <Route path={this.buildLocalizedPath("/new-follower")} component={NewFollower} exact/>
-                                <Route path={this.buildLocalizedPath("/new-sub")} component={NewSub} exact/>
-                                */}
                                 <Route path={messages["route.register"]} component={withTracker(Registration)} exact/>
                                 <Route path={messages["route.rlOverlay"]} component={withTracker(RocketLeagueOverlay)} exact/>
                                 <Route path={messages["route.schedule"]} component={withTracker(StreamTimes)} exact/>
