@@ -264,6 +264,8 @@ header {
 
             .logged-in {
               .username {
+                border: none;
+                outline: none;
                 cursor: pointer;
                 padding-right: 15px;
                 padding-left: 15px;

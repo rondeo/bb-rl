@@ -48,7 +48,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "ftp-deploy": "^1.2.2",
-    "gulp": "^4.0.2",
+    "gulp": "^3.9.1",
     "gulp-sftp": "^0.1.5",
     "node-sass": "^4.12.0"
   },
@@ -72,16 +72,7 @@
     "extract:messages": "react-intl-cra src/**/*.{js,jsx} -o src/i18n/messages.json",
     "manage:translations": "node ./src/i18n/translationRunner.js"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": [
+    "defaults"
+  ]
 }

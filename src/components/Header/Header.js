@@ -23,6 +23,10 @@ class Header extends React.PureComponent {
             active: props.location.pathname + props.location.hash,
             userSidebarOpen: false
         };
+
+        this.hideSidebar = this.hideSidebar.bind(this);
+        this.setUserSidebarWidth = this.setUserSidebarWidth.bind(this);
+        this.toggleUserSidebar = this.toggleUserSidebar.bind(this);
     }
 
     componentWillMount() {
@@ -34,10 +38,6 @@ class Header extends React.PureComponent {
     }
 
     componentDidMount() {
-        this.hideSidebar = this.hideSidebar.bind(this);
-        this.setUserSidebarWidth = this.setUserSidebarWidth.bind(this);
-        this.toggleUserSidebar = this.toggleUserSidebar.bind(this);
-
         $(".nav-item")
             .on("mouseenter", function () {
                 $(this).find("ul.submenu").slideDown(200);
@@ -168,7 +168,7 @@ class Header extends React.PureComponent {
                             <ul ref="navSignIn" className="navbar-nav sign-in">
                                 {user ? (
                                     <li className="nav-item logged-in">
-                                        <a className="username" onClick={this.toggleUserSidebar}><i className="fas fa-user"/>{user.username}</a>
+                                        <button className="username" onClick={this.toggleUserSidebar}><i className="fas fa-user"/>{user.username}</button>
                                     </li>
                                 ) : (
                                     <li className="nav-item">
