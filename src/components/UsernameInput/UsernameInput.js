@@ -47,7 +47,7 @@ class UsernameInput extends React.PureComponent {
         );
     }
 }
-UsernameInput.PropTypes = {
+UsernameInput.propTypes = {
     className: PropTypes.string,
     defaultValue: PropTypes.bool,
     onChange: PropTypes.func,

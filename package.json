@@ -6,7 +6,7 @@
   "dependencies": {
     "3d-react-carousal": "^2.0.0",
     "animate.css": "^3.6.1",
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.3.1",
     "build": "^0.1.4",
     "classnames": "^2.2.6",
     "express": "^4.16.3",
@@ -15,10 +15,10 @@
     "fullpage.js": "^2.9.7",
     "gamedig": "^1.0.46",
     "iscroll": "^5.2.0",
-    "jquery": "^3.3.1",
-    "lodash": "^4.17.10",
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.11",
     "moment": "^2.22.2",
-    "npm": "^6.4.1",
+    "npm": "^6.9.0",
     "path": "^0.12.7",
     "popper.js": "^1.14.3",
     "prop-types": "^15.6.2",
@@ -28,12 +28,12 @@
     "react-ga": "^2.5.7",
     "react-helmet": "^5.2.0",
     "react-intl": "^2.4.0",
-    "react-intl-cra": "^0.3.3",
+    "react-intl-cra": "^0.3.4",
     "react-intl-translations-manager": "^5.0.3",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-router-sitemap": "^1.2.0",
-    "react-scripts": "^1.1.5",
+    "react-scripts": "^3.0.1",
     "react-scrollbar": "^0.5.4",
     "react-slick": "^0.23.2",
     "react-snowstorm": "0.0.2",
@@ -48,9 +48,9 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "ftp-deploy": "^1.2.2",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-sftp": "^0.1.5",
-    "node-sass": "^4.9.3"
+    "node-sass": "^4.12.0"
   },
   "scripts": {
     "start": "set REACT_APP_DEVELOPMENT=true&&react-scripts start",
@@ -71,5 +71,17 @@
     "styles": "node-sass --source-map src src/App.scss src/App.css && node-sass --recursive --include-path ./src/views  --source-map src/views src/views -o src/views && node-sass --recursive --include-path ./src/components --source-map src/components src/components -o src/components",
     "extract:messages": "react-intl-cra src/**/*.{js,jsx} -o src/i18n/messages.json",
     "manage:translations": "node ./src/i18n/translationRunner.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
