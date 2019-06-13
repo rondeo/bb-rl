@@ -18,22 +18,28 @@ class StreamTimes extends React.PureComponent {
                 <img src={banner} alt={formatMessage(messages.streamSchedule)} />
 
                 <ul>
-                    <li>
-                        <div className="day">{formatMessage(messages.monday)}</div>
-                        <div className="time">{formatMessage(messages.circa)} 19:30 {formatMessage(messages.to)} 23:00 {formatMessage(messages.clock)}</div>
-                        <div className="streamer">Trippno - Marvin</div>
-                    </li>
+                    {/*
+                        <li>
+                            <div className="day">{formatMessage(messages.monday)}</div>
+                            <div
+                                className="time">{formatMessage(messages.circa)} 19:30 {formatMessage(messages.to)} 23:00 {formatMessage(messages.clock)}</div>
+                            <div className="streamer">Trippno - Marvin</div>
+                        </li>
+                    */}
                     <li>
                         <div className="day">{formatMessage(messages.tuesday)}</div>
                         <div className="time">{formatMessage(messages.circa)} 19:30 {formatMessage(messages.to)} 23:00 {formatMessage(messages.clock)}</div>
                         <div className="streamer">m4kar0ny - Patrick</div>
                     </li>
+                    {/*
                     <li>
                         <div className="day">{formatMessage(messages.wednesday)}</div>
                         <div className="time">{formatMessage(messages.circa)} 19:30 {formatMessage(messages.to)} 23:00 {formatMessage(messages.clock)}</div>
                         <div className="streamer">xPainHunter - Malthe</div>
                     </li>
+                    */}
                 </ul>
+                {/*
                 <ul>
                     <li>
                         <div className="day">{formatMessage(messages.thursday)}</div>
@@ -51,6 +57,7 @@ class StreamTimes extends React.PureComponent {
                         <div className="streamer">xPainHunter - Malthe</div>
                     </li>
                 </ul>
+                */}
 
                 <div className="note"><FormattedHTMLMessage {...messages.streamScheduleNote} /></div>
             </div>

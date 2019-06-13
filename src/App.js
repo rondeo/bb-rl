@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {Helmet} from "react-helmet";
 import moment from "moment";
-import SnowStorm from "react-snowstorm";
+// import SnowStorm from "react-snowstorm";
 import ReactGA from 'react-ga';
 
 // i18n - Translations
@@ -35,8 +35,8 @@ import MyProfile from "./views/MyProfile/MyProfile";
 import Commands from "./views/Commands/Commands";
 // import News from "./views/News/News";
 // import NewsDetail from "./views/NewsDetail/NewsDetail";
-import Scum from "./views/Scum/Scum";
-import AdventCalendar from "./views/AdventCalendar/AdventCalendar";
+// import Scum from "./views/Scum/Scum";
+// import AdventCalendar from "./views/AdventCalendar/AdventCalendar";
 import GAOptOut from "./views/GAOptOut/GAOptOut";
 
 import {setLanguage} from "./actions/ApplicationActions";

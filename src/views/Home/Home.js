@@ -227,12 +227,12 @@ export class Home extends PureComponent {
 
                         <div className="container-fluid partner">
                             <a className="image-wrapper" href="https://www.mmoga.de/?ref=29428" target="_blank" rel="noopener noreferrer">
-                                <img src={Partner_MMOGA} />
-                                <img className="highlight" src={Partner_MMOGA_Hightlight} />
+                                <img src={Partner_MMOGA} alt="MMOGA" />
+                                <img className="highlight" src={Partner_MMOGA_Hightlight} alt="MMOGA" />
                             </a>
                             <a className="image-wrapper" href="https://runtime.idevaffiliate.com/780-1-3-2.html" target="_blank" rel="noopener noreferrer">
-                                <img src={Partner_Runtime} />
-                                <img className="highlight" src={Partner_Runtime_Hightlight} />
+                                <img src={Partner_Runtime} alt="Runtime" />
+                                <img className="highlight" src={Partner_Runtime_Hightlight} alt="Runtime" />
                             </a>
                             <div className={classnames("tournament-info", {"d-none": !this.state.showTournamentInfo})}>
                                 <Counter endDate="March 3, 2019 15:15:00" endCallback={() => { this.setState({showRegistrationBtn: false, showTournamentInfo: false}) }} />
@@ -244,8 +244,8 @@ export class Home extends PureComponent {
                                 </div>
                             </div>
                             <a className="image-wrapper" href="https://shop.spreadshirt.de/Battleground-Bulls/" target="_blank" rel="noopener noreferrer">
-                                <img src={Partner_Spreadshirt} />
-                                <img className="highlight" src={Partner_Spreadshirt_Hightlight} />
+                                <img src={Partner_Spreadshirt} alt="Spreadshirt" />
+                                <img className="highlight" src={Partner_Spreadshirt_Hightlight} alt="Spreadshirt" />
                             </a>
                         </div>
                     </div>

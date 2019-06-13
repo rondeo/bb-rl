@@ -75,7 +75,7 @@ class Rules extends React.PureComponent {
                     </div>
                 </div>
 
-                <div className="scroll-up"><i className="fa fa-chevron-up"/>{formatMessage(messages.goUp)}</div>
+                <div className="scroll-down"><i className="fa fa-chevron-down"/>{formatMessage(messages.scrollDown)}</div>
             </div>
         );
     }

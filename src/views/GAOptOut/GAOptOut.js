@@ -4,7 +4,6 @@ import {Helmet} from "react-helmet";
 import ReactGAUtil from "../../utils/ReactGAUtil";
 
 import {COOKIE_OPT_OUT} from "../../constants";
-import ReactGA from "react-ga";
 
 export default class GAOptOut extends PureComponent {
 

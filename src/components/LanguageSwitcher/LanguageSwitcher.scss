@@ -5,11 +5,12 @@ ul.language-switcher {
   li {
     display: inline-block;
     cursor: pointer;
+    filter: grayscale(80%);
     &:not(:last-child) {
       margin-right: 8px;
     }
     &.current {
-      filter: grayscale(80%);
+      filter: none;
       pointer-events: none;
     }
   }
